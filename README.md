@@ -1,13 +1,14 @@
 # Give Your Voice  
-A free voice recording software to ease the production of audio books.
+A free voice recording software to ease the production of audio books.  
 License: GPLv3  
-Author: Lulu
+Author: Lulu  
 
 > You can support the development by [donating](https://www.paypal.com/donate/?hosted_button_id=GZAR296S5LYBG)
 
 # Target platform
-Windows and Linux 64b
-MacOS: work in progress
+Windows 64b (tested on Win10)  
+Linux 64b (tested on Ubuntu 22.04 LTS)  
+MacOS: to do  
 
 # Features
 - One directory per section (chapter/text/poem) -> your project is well organized.
@@ -41,4 +42,4 @@ Background noise analisys before recording voice
 ![Background noise analisys before recording voice](https://github.com/Lulu04/Give-Your-Voice/blob/main/screenshot/02recording.png)
 
 The mixer window where you produce the MP3 files
-![The mixer window where you produce the MP3 files](https://github.com/Lulu04/Give-Your-Voice/blob/main/screenshot/03mixer.png)
+![The mixer window where you produce the MP3 files](https://github.com/Lulu04/Give-Your-Voice/blob/main/screenshot/03mixer.png)  
