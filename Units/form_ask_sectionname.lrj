@@ -1,0 +1,19 @@
+{"version":1,"strings":[
+{"hash":162652101,"name":"tformasksectionname.label1.caption","sourcebytes":[105,110,99,108,117,114,101,32,117,110,101,32,101,110,116,195,170,116,101,32,100,101,32,110,117,109,195,169,114,111,32,100,101,32,108,105,118,114,101,44,32,116,111,109,101,32,111,117,32,97,117,116,114,101],"value":"inclure une ent\u00EAte de num\u00E9ro de livre, tome ou autre"},
+{"hash":240177806,"name":"tformasksectionname.label2.caption","sourcebytes":[105,110,99,108,117,114,101,32,117,110,101,32,101,110,116,195,170,116,101,32,100,117,32,116,121,112,101,32,100,101,32,115,101,99,116,105,111,110],"value":"inclure une ent\u00EAte du type de section"},
+{"hash":5404860,"name":"tformasksectionname.label3.caption","sourcebytes":[76,97,98,101,108],"value":"Label"},
+{"hash":5404860,"name":"tformasksectionname.label4.caption","sourcebytes":[76,97,98,101,108],"value":"Label"},
+{"hash":8063877,"name":"tformasksectionname.label5.caption","sourcebytes":[116,105,116,114,101],"value":"titre"},
+{"hash":5404860,"name":"tformasksectionname.label11.caption","sourcebytes":[76,97,98,101,108],"value":"Label"},
+{"hash":5404860,"name":"tformasksectionname.label12.caption","sourcebytes":[76,97,98,101,108],"value":"Label"},
+{"hash":5404860,"name":"tformasksectionname.label6.caption","sourcebytes":[76,97,98,101,108],"value":"Label"},
+{"hash":5404860,"name":"tformasksectionname.label7.caption","sourcebytes":[76,97,98,101,108],"value":"Label"},
+{"hash":5404860,"name":"tformasksectionname.label13.caption","sourcebytes":[76,97,98,101,108],"value":"Label"},
+{"hash":95904478,"name":"tformasksectionname.bok.caption","sourcebytes":[67,114,195,169,101,114,32,108,97,32,115,101,99,116,105,111,110],"value":"Cr\u00E9er la section"},
+{"hash":5404860,"name":"tformasksectionname.bcancel.caption","sourcebytes":[76,97,98,101,108],"value":"Label"},
+{"hash":5404860,"name":"tformasksectionname.label9.caption","sourcebytes":[76,97,98,101,108],"value":"Label"},
+{"hash":141356453,"name":"tformasksectionname.label8.caption","sourcebytes":[65,112,101,114,195,167,117],"value":"Aper\u00E7u"},
+{"hash":5404860,"name":"tformasksectionname.label10.caption","sourcebytes":[76,97,98,101,108],"value":"Label"},
+{"hash":5404860,"name":"tformasksectionname.label14.caption","sourcebytes":[76,97,98,101,108],"value":"Label"},
+{"hash":5404860,"name":"tformasksectionname.label16.caption","sourcebytes":[76,97,98,101,108],"value":"Label"}
+]}

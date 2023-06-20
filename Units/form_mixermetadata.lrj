@@ -1,0 +1,14 @@
+{"version":1,"strings":[
+{"hash":44605219,"name":"tformmixermetadata.caption","sourcebytes":[86,195,169,114,105,102,105,99,97,116,105,111,110,32,100,101,115,32,109,195,169,116,97,100,111,110,110,195,169,101,115],"value":"V\u00E9rification des m\u00E9tadonn\u00E9es"},
+{"hash":55440627,"name":"tformmixermetadata.label17.caption","sourcebytes":[86,195,169,114,105,102,105,101,122,32,115,118,112,32,108,101,115,32,109,195,169,116,97,100,111,110,110,195,169,101,115,32,195,160,32,105,110,99,108,117,114,101,32,97,117,32,77,80,51],"value":"V\u00E9rifiez svp les m\u00E9tadonn\u00E9es \u00E0 inclure au MP3"},
+{"hash":5966725,"name":"tformmixermetadata.label23.caption","sourcebytes":[84,105,116,114,101],"value":"Titre"},
+{"hash":144378597,"name":"tformmixermetadata.label24.caption","sourcebytes":[65,114,116,105,115,116,101],"value":"Artiste"},
+{"hash":4729277,"name":"tformmixermetadata.label25.caption","sourcebytes":[65,108,98,117,109],"value":"Album"},
+{"hash":5096837,"name":"tformmixermetadata.label26.caption","sourcebytes":[71,101,110,114,101],"value":"Genre"},
+{"hash":305317,"name":"tformmixermetadata.label27.caption","sourcebytes":[68,97,116,101],"value":"Date"},
+{"hash":202384565,"name":"tformmixermetadata.label29.caption","sourcebytes":[67,111,109,109,101,110,116,97,105,114,101],"value":"Commentaire"},
+{"hash":62375717,"name":"tformmixermetadata.bmix.hint","sourcebytes":[108,97,110,99,101,32,108,101,32,109,105,120,97,103,101],"value":"lance le mixage"},
+{"hash":5368994,"name":"tformmixermetadata.bmix.caption","sourcebytes":[77,73,88,69,82],"value":"MIXER"},
+{"hash":237431785,"name":"tformmixermetadata.label30.caption","sourcebytes":[118,111,117,115,32,112,111,117,118,101,122,32,115,97,105,115,105,114,32,105,99,105,32,118,111,116,114,101,32,110,111,109,32,111,117,32,112,115,101,117,100,111,32,40,101,120,58,32,116,101,120,116,101,32,108,117,32,112,97,114,32,82,111,115,105,101,41],"value":"vous pouvez saisir ici votre nom ou pseudo (ex: texte lu par Rosie)"},
+{"hash":5704357,"name":"tformmixermetadata.label28.caption","sourcebytes":[80,105,115,116,101],"value":"Piste"}
+]}

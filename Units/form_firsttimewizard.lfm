@@ -1,0 +1,384 @@
+object FormFirstRun: TFormFirstRun
+  Left = 223
+  Height = 624
+  Top = 54
+  Width = 959
+  BorderIcons = []
+  BorderStyle = bsNone
+  ClientHeight = 624
+  ClientWidth = 959
+  Color = 3355443
+  OnCreate = FormCreate
+  OnShow = FormShow
+  Position = poWorkAreaCenter
+  LCLVersion = '2.2.4.0'
+  object Shape1: TShape
+    Left = 0
+    Height = 624
+    Top = 0
+    Width = 959
+    Align = alClient
+    Brush.Style = bsClear
+    Pen.Color = 33023
+    Pen.Width = 4
+  end
+  object Label2: TLabel
+    AnchorSideLeft.Control = Owner
+    AnchorSideLeft.Side = asrCenter
+    AnchorSideTop.Control = Label1
+    AnchorSideTop.Side = asrBottom
+    Left = 331
+    Height = 20
+    Top = 90
+    Width = 297
+    Alignment = taCenter
+    BorderSpacing.Top = 20
+    Caption = 'Bienvenu(e) dans l''assistant de démarrage'
+    Font.Color = 14342874
+    Font.Height = 20
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label3: TLabel
+    AnchorSideTop.Control = Label4
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = ComboBox1
+    Left = 143
+    Height = 20
+    Top = 198
+    Width = 184
+    Anchors = [akTop, akRight]
+    BorderSpacing.Top = 40
+    BorderSpacing.Right = 10
+    Caption = 'SVP, choisissez votre langue'
+    Font.Color = 14342874
+    Font.Height = 20
+    ParentColor = False
+    ParentFont = False
+  end
+  object ComboBox1: TComboBox
+    AnchorSideLeft.Control = Owner
+    AnchorSideLeft.Side = asrCenter
+    AnchorSideTop.Control = Label3
+    AnchorSideTop.Side = asrCenter
+    Left = 337
+    Height = 28
+    Top = 194
+    Width = 284
+    Font.Height = 20
+    ItemHeight = 20
+    Items.Strings = (
+      'English (en)'
+      'Français (fr)'
+    )
+    OnSelect = ComboBox1Select
+    ParentFont = False
+    Style = csDropDownList
+    TabOrder = 0
+  end
+  object Label1: TLabel
+    AnchorSideLeft.Control = Owner
+    AnchorSideLeft.Side = asrCenter
+    AnchorSideTop.Control = Owner
+    Left = 314
+    Height = 50
+    Top = 20
+    Width = 330
+    BorderSpacing.Top = 20
+    Caption = 'Give your Voice !'
+    Font.Color = 13295615
+    Font.Height = 50
+    Font.Name = 'Arial Black'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object SpeedButton1: TSpeedButton
+    AnchorSideLeft.Control = Owner
+    AnchorSideLeft.Side = asrCenter
+    AnchorSideTop.Control = ComboBox1
+    AnchorSideTop.Side = asrBottom
+    Cursor = crHandPoint
+    Left = 449
+    Height = 28
+    Top = 242
+    Width = 60
+    AutoSize = True
+    BorderSpacing.Top = 20
+    Caption = 'Label'
+    Images = DataModule1.ImageList1
+    ImageIndex = 14
+    OnClick = SpeedButton1Click
+  end
+  object Panel1: TPanel
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = ComboBox1
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    Left = 10
+    Height = 192
+    Top = 272
+    Width = 939
+    Anchors = [akTop, akLeft, akRight]
+    BorderSpacing.Left = 10
+    BorderSpacing.Top = 50
+    BorderSpacing.Right = 10
+    BevelOuter = bvNone
+    ClientHeight = 192
+    ClientWidth = 939
+    Color = 3355443
+    ParentColor = False
+    TabOrder = 1
+    object Label6: TLabel
+      AnchorSideLeft.Control = Panel1
+      AnchorSideTop.Control = Panel1
+      AnchorSideRight.Control = Panel1
+      AnchorSideRight.Side = asrBottom
+      Left = 10
+      Height = 17
+      Top = 0
+      Width = 929
+      Anchors = [akTop, akLeft, akRight]
+      BorderSpacing.Left = 10
+      Caption = 'Sélectionnez le périphérique à utiliser pour enregistrer votre voix'
+      Font.Color = 14342874
+      Font.Height = 18
+      ParentColor = False
+      ParentFont = False
+      WordWrap = True
+    end
+    object Label7: TLabel
+      AnchorSideLeft.Control = Panel1
+      AnchorSideTop.Control = Panel3
+      AnchorSideTop.Side = asrBottom
+      AnchorSideRight.Control = Panel1
+      AnchorSideRight.Side = asrBottom
+      Left = 10
+      Height = 17
+      Top = 90
+      Width = 929
+      Anchors = [akTop, akLeft, akRight]
+      BorderSpacing.Left = 10
+      BorderSpacing.Top = 20
+      Caption = 'Sélectionnez le périphérique à utiliser pour écouter le son'
+      Font.Color = 14342874
+      Font.Height = 18
+      ParentColor = False
+      ParentFont = False
+      WordWrap = True
+    end
+    object CBCapture: TComboBox
+      AnchorSideLeft.Control = Panel1
+      AnchorSideTop.Control = Label6
+      AnchorSideTop.Side = asrBottom
+      AnchorSideBottom.Side = asrBottom
+      Left = 10
+      Height = 23
+      Top = 17
+      Width = 849
+      Anchors = [akTop, akLeft, akRight]
+      BorderSpacing.Left = 10
+      BorderSpacing.Right = 5
+      ItemHeight = 15
+      OnSelect = CBPlaybackSelect
+      Style = csDropDownList
+      TabOrder = 0
+    end
+    object CBPlayback: TComboBox
+      AnchorSideLeft.Control = Panel1
+      AnchorSideTop.Control = Label7
+      AnchorSideTop.Side = asrBottom
+      AnchorSideRight.Control = BTestPlaybackDevice
+      Left = 10
+      Height = 23
+      Top = 107
+      Width = 849
+      Anchors = [akTop, akLeft, akRight]
+      BorderSpacing.Left = 10
+      BorderSpacing.Right = 5
+      ItemHeight = 15
+      OnSelect = CBPlaybackSelect
+      Style = csDropDownList
+      TabOrder = 1
+    end
+    object BTestPlaybackDevice: TSpeedButton
+      AnchorSideTop.Control = CBPlayback
+      AnchorSideRight.Control = Panel1
+      AnchorSideRight.Side = asrBottom
+      AnchorSideBottom.Control = CBPlayback
+      AnchorSideBottom.Side = asrBottom
+      Cursor = crHandPoint
+      Left = 864
+      Height = 23
+      Top = 107
+      Width = 65
+      Anchors = [akTop, akRight, akBottom]
+      BorderSpacing.Right = 10
+      Constraints.MinWidth = 65
+      Caption = 'Label'
+      Font.Color = clBlack
+      Font.Height = 12
+      Font.Style = [fsBold]
+      OnClick = BTestPlaybackDeviceClick
+      ParentFont = False
+    end
+    object Label8: TLabel
+      AnchorSideLeft.Control = Panel1
+      AnchorSideTop.Control = CBPlayback
+      AnchorSideTop.Side = asrBottom
+      AnchorSideRight.Control = Panel1
+      AnchorSideRight.Side = asrBottom
+      AnchorSideBottom.Control = Panel1
+      AnchorSideBottom.Side = asrBottom
+      Left = 10
+      Height = 17
+      Top = 140
+      Width = 929
+      Anchors = [akTop, akLeft, akRight]
+      BorderSpacing.Left = 10
+      BorderSpacing.Top = 10
+      Caption = 'Note: pour qu''il soit détecté, un périphérique audio doit être connecté à l''ordinateur avant de lancer le logiciel.'
+      Font.Color = 14342874
+      Font.Height = 18
+      Font.Style = [fsBold, fsItalic]
+      ParentColor = False
+      ParentFont = False
+      WordWrap = True
+    end
+    object Panel3: TPanel
+      AnchorSideLeft.Control = CBCapture
+      AnchorSideLeft.Side = asrCenter
+      AnchorSideTop.Control = CBCapture
+      AnchorSideTop.Side = asrBottom
+      AnchorSideRight.Side = asrBottom
+      Left = 246
+      Height = 20
+      Top = 50
+      Width = 376
+      BorderSpacing.Top = 10
+      BevelOuter = bvNone
+      Color = 1973790
+      ParentColor = False
+      TabOrder = 2
+    end
+    object Label9: TLabel
+      AnchorSideLeft.Control = Panel1
+      AnchorSideRight.Control = Panel3
+      AnchorSideBottom.Control = Panel3
+      AnchorSideBottom.Side = asrBottom
+      Left = 215
+      Height = 17
+      Top = 53
+      Width = 31
+      Anchors = [akRight, akBottom]
+      BorderSpacing.Left = 10
+      Caption = 'Label'
+      Font.Color = 14342874
+      Font.Height = 18
+      ParentColor = False
+      ParentFont = False
+      WordWrap = True
+    end
+  end
+  object Label4: TLabel
+    AnchorSideLeft.Control = Owner
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    Left = 0
+    Height = 34
+    Top = 124
+    Width = 959
+    Alignment = taCenter
+    Anchors = [akTop, akLeft, akRight]
+    Caption = 'Nous allons vous demander quelques informations pour configurer le logiciel.'#13#10'Ceci n''est à faire qu''une seule fois. Vous pourrez modifier les paramètres ultérieurement dans la fenêtre d''options du programme.'
+    Font.Color = 14342874
+    Font.Height = 18
+    ParentColor = False
+    ParentFont = False
+    WordWrap = True
+  end
+  object SpeedButton3: TSpeedButton
+    AnchorSideLeft.Control = Owner
+    AnchorSideLeft.Side = asrCenter
+    AnchorSideTop.Control = Panel1
+    AnchorSideTop.Side = asrBottom
+    Cursor = crHandPoint
+    Left = 449
+    Height = 28
+    Top = 464
+    Width = 60
+    AutoSize = True
+    Caption = 'Label'
+    Images = DataModule1.ImageList1
+    ImageIndex = 14
+    Visible = False
+    OnClick = SpeedButton1Click
+  end
+  object Panel2: TPanel
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = Panel1
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = Owner
+    AnchorSideBottom.Side = asrBottom
+    Left = 10
+    Height = 120
+    Top = 494
+    Width = 939
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    BorderSpacing.Left = 10
+    BorderSpacing.Top = 30
+    BorderSpacing.Right = 10
+    BorderSpacing.Bottom = 10
+    BevelOuter = bvNone
+    ClientHeight = 120
+    ClientWidth = 939
+    Color = 3355443
+    ParentColor = False
+    TabOrder = 2
+    object SpeedButton2: TSpeedButton
+      AnchorSideLeft.Control = Panel2
+      AnchorSideLeft.Side = asrCenter
+      AnchorSideBottom.Control = Panel2
+      AnchorSideBottom.Side = asrBottom
+      Cursor = crHandPoint
+      Left = 362
+      Height = 28
+      Top = 82
+      Width = 215
+      Anchors = [akLeft, akBottom]
+      AutoSize = True
+      BorderSpacing.Bottom = 10
+      Caption = 'Cliquez pour fermer cet assistant'
+      Font.Style = [fsBold]
+      Images = DataModule1.ImageList1
+      ImageIndex = 14
+      OnClick = SpeedButton2Click
+      ParentFont = False
+    end
+    object Label5: TLabel
+      AnchorSideLeft.Control = Panel2
+      AnchorSideTop.Control = Panel2
+      AnchorSideRight.Control = Panel2
+      AnchorSideRight.Side = asrBottom
+      Left = 20
+      Height = 40
+      Top = 20
+      Width = 899
+      Alignment = taCenter
+      Anchors = [akTop, akLeft, akRight]
+      BorderSpacing.Left = 20
+      BorderSpacing.Top = 20
+      BorderSpacing.Right = 20
+      Caption = 'C''est tout !'#13#10'Nous allons maintenant ouvrir le gestionnaire de projet, vous pourrez en créer ou en charger un.'
+      Font.Color = 14342874
+      Font.Height = 20
+      ParentColor = False
+      ParentFont = False
+      WordWrap = True
+    end
+  end
+end

@@ -1,0 +1,535 @@
+object FormProjectManager: TFormProjectManager
+  Left = 313
+  Height = 575
+  Top = 63
+  Width = 850
+  BorderIcons = [biSystemMenu]
+  Caption = 'Gestionnaire de projets'
+  ClientHeight = 575
+  ClientWidth = 850
+  Color = 3355443
+  Constraints.MaxWidth = 850
+  Constraints.MinHeight = 570
+  Constraints.MinWidth = 850
+  Font.Color = 14342874
+  Font.Height = 20
+  KeyPreview = True
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  OnKeyUp = FormKeyUp
+  OnShow = FormShow
+  Position = poMainFormCenter
+  LCLVersion = '2.2.4.0'
+  object Shape1: TShape
+    Left = 0
+    Height = 575
+    Top = 0
+    Width = 850
+    Align = alClient
+    Brush.Style = bsClear
+    Pen.Color = 33023
+    Pen.Width = 4
+  end
+  object Label1: TLabel
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = Owner
+    Left = 10
+    Height = 20
+    Top = 20
+    Width = 135
+    BorderSpacing.Left = 10
+    BorderSpacing.Top = 20
+    Caption = 'Répertoires de travail'
+    Font.Color = 14342874
+    Font.Height = 20
+    Font.Style = [fsItalic]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label3: TLabel
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = Panel3
+    AnchorSideTop.Side = asrBottom
+    Left = 10
+    Height = 20
+    Top = 208
+    Width = 94
+    BorderSpacing.Left = 10
+    BorderSpacing.Top = 20
+    Caption = 'Projets trouvés'
+    Font.Color = 14342874
+    Font.Height = 20
+    Font.Style = [fsItalic]
+    ParentColor = False
+    ParentFont = False
+  end
+  object PanelToolsProject: TPanel
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideTop.Control = Panel4
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = Panel4
+    AnchorSideBottom.Side = asrBottom
+    Left = 609
+    Height = 342
+    Top = 228
+    Width = 232
+    Anchors = [akTop, akRight, akBottom]
+    BorderSpacing.Right = 9
+    BevelColor = 33023
+    BevelOuter = bvNone
+    ClientHeight = 342
+    ClientWidth = 232
+    Color = 3355443
+    ParentColor = False
+    TabOrder = 0
+    object BCancel: TSpeedButton
+      AnchorSideLeft.Control = PanelToolsProject
+      AnchorSideTop.Side = asrBottom
+      AnchorSideRight.Control = PanelToolsProject
+      AnchorSideRight.Side = asrBottom
+      AnchorSideBottom.Control = PanelToolsProject
+      AnchorSideBottom.Side = asrBottom
+      Cursor = crHandPoint
+      Left = 20
+      Height = 28
+      Top = 304
+      Width = 192
+      Anchors = [akLeft, akRight, akBottom]
+      AutoSize = True
+      BorderSpacing.Left = 20
+      BorderSpacing.Right = 20
+      BorderSpacing.Bottom = 10
+      Caption = 'Label'
+      Font.Color = clBlack
+      Font.Height = 20
+      Images = DataModule1.ImageList1
+      ImageIndex = 15
+      OnClick = BOpenProjectClick
+      ParentFont = False
+    end
+    object BUnzipProject: TSpeedButton
+      AnchorSideLeft.Control = PanelToolsProject
+      AnchorSideTop.Control = BZipProject
+      AnchorSideTop.Side = asrBottom
+      AnchorSideRight.Control = PanelToolsProject
+      AnchorSideRight.Side = asrBottom
+      Cursor = crHandPoint
+      Left = 8
+      Height = 28
+      Hint = 'Pour décompresser un projet précédemment zippé'
+      Top = 144
+      Width = 216
+      Anchors = [akTop, akLeft, akRight]
+      AutoSize = True
+      BorderSpacing.Left = 8
+      BorderSpacing.Top = 10
+      BorderSpacing.Right = 8
+      Caption = 'Dézipper'
+      Font.Color = clBlack
+      Font.Height = 20
+      Images = DataModule1.ImageList1
+      ImageIndex = 42
+      OnClick = BOpenProjectClick
+      ShowHint = True
+      ParentFont = False
+      ParentShowHint = False
+    end
+    object BZipProject: TSpeedButton
+      AnchorSideLeft.Control = PanelToolsProject
+      AnchorSideTop.Control = BOpenProject
+      AnchorSideTop.Side = asrBottom
+      AnchorSideRight.Control = PanelToolsProject
+      AnchorSideRight.Side = asrBottom
+      Cursor = crHandPoint
+      Left = 8
+      Height = 28
+      Hint = 'Lorsqu''un projet est terminé, vous pouvez compresser son contenu au format ZIP'#13#10'afin de gagner de la place sur votre disque.'
+      Top = 106
+      Width = 216
+      Anchors = [akTop, akLeft, akRight]
+      AutoSize = True
+      BorderSpacing.Left = 8
+      BorderSpacing.Top = 30
+      BorderSpacing.Right = 8
+      Caption = 'Zipper'
+      Font.Color = clBlack
+      Font.Height = 20
+      Images = DataModule1.ImageList1
+      ImageIndex = 43
+      OnClick = BOpenProjectClick
+      ShowHint = True
+      ParentFont = False
+      ParentShowHint = False
+    end
+    object BOpenProject: TSpeedButton
+      AnchorSideLeft.Control = PanelToolsProject
+      AnchorSideTop.Control = BNewProject
+      AnchorSideTop.Side = asrBottom
+      AnchorSideRight.Control = PanelToolsProject
+      AnchorSideRight.Side = asrBottom
+      Cursor = crHandPoint
+      Left = 8
+      Height = 28
+      Hint = 'Ouvre le projet sélectionné'
+      Top = 48
+      Width = 216
+      Anchors = [akTop, akLeft, akRight]
+      AutoSize = True
+      BorderSpacing.Left = 8
+      BorderSpacing.Top = 10
+      BorderSpacing.Right = 8
+      Caption = 'Ouvrir'
+      Font.Color = clBlack
+      Font.Height = 20
+      Images = DataModule1.ImageList1
+      ImageIndex = 40
+      OnClick = BOpenProjectClick
+      ShowHint = True
+      ParentFont = False
+      ParentShowHint = False
+    end
+    object BNewProject: TSpeedButton
+      AnchorSideLeft.Control = PanelToolsProject
+      AnchorSideTop.Control = PanelToolsProject
+      AnchorSideRight.Control = PanelToolsProject
+      AnchorSideRight.Side = asrBottom
+      Cursor = crHandPoint
+      Left = 8
+      Height = 28
+      Hint = 'Créer un nouveau projet de lecture dans ce répertoire'
+      Top = 10
+      Width = 216
+      Anchors = [akTop, akLeft, akRight]
+      AutoSize = True
+      BorderSpacing.Left = 8
+      BorderSpacing.Top = 10
+      BorderSpacing.Right = 8
+      Caption = 'Nouveau'
+      Font.Color = clBlack
+      Font.Height = 20
+      Images = DataModule1.ImageList1
+      ImageIndex = 39
+      OnClick = BOpenProjectClick
+      ShowHint = True
+      ParentFont = False
+      ParentShowHint = False
+    end
+    object BDeleteProject: TSpeedButton
+      AnchorSideLeft.Control = PanelToolsProject
+      AnchorSideTop.Control = BUnzipProject
+      AnchorSideTop.Side = asrBottom
+      AnchorSideRight.Control = PanelToolsProject
+      AnchorSideRight.Side = asrBottom
+      Cursor = crHandPoint
+      Left = 8
+      Height = 28
+      Hint = 'Pour supprimer un projet du disque'
+      Top = 202
+      Width = 216
+      Anchors = [akTop, akLeft, akRight]
+      AutoSize = True
+      BorderSpacing.Left = 8
+      BorderSpacing.Top = 30
+      BorderSpacing.Right = 8
+      Caption = 'Supprimer'
+      Font.Color = clBlack
+      Font.Height = 20
+      Images = DataModule1.ImageList1
+      ImageIndex = 22
+      OnClick = BOpenProjectClick
+      ShowHint = True
+      ParentFont = False
+      ParentShowHint = False
+    end
+  end
+  object PanelToolsFolder: TPanel
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideTop.Control = Panel3
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = Panel3
+    AnchorSideBottom.Side = asrBottom
+    Left = 612
+    Height = 148
+    Top = 40
+    Width = 229
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    BorderSpacing.Left = 5
+    BorderSpacing.Right = 9
+    BevelColor = 33023
+    BevelOuter = bvNone
+    ClientHeight = 148
+    ClientWidth = 229
+    Color = 3355443
+    ParentColor = False
+    TabOrder = 1
+    object BSearchFolder: TSpeedButton
+      AnchorSideLeft.Control = PanelToolsFolder
+      AnchorSideTop.Control = PanelToolsFolder
+      AnchorSideTop.Side = asrCenter
+      AnchorSideRight.Control = PanelToolsFolder
+      AnchorSideRight.Side = asrBottom
+      Cursor = crHandPoint
+      Left = 8
+      Height = 28
+      Hint = 'Ajoute un nouveau répertoire de travail à la liste'
+      Top = 60
+      Width = 213
+      Anchors = [akTop, akLeft, akRight]
+      AutoSize = True
+      BorderSpacing.Left = 8
+      BorderSpacing.Right = 8
+      Caption = 'Rechercher'
+      Font.Color = clBlack
+      Font.Height = 20
+      Images = DataModule1.ImageList1
+      ImageIndex = 54
+      OnClick = BOpenProjectClick
+      ShowHint = True
+      ParentFont = False
+      ParentShowHint = False
+    end
+  end
+  object BHelp: TSpeedButton
+    AnchorSideTop.Control = Owner
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    Cursor = crHelp
+    Left = 819
+    Height = 24
+    Top = 7
+    Width = 24
+    Anchors = [akTop, akRight]
+    BorderSpacing.Top = 7
+    BorderSpacing.Right = 7
+    Flat = True
+    Images = DataModule1.ImageList1
+    ImageIndex = 45
+    OnClick = BHelpClick
+    ShowHint = True
+    ParentShowHint = False
+  end
+  object Panel3: TPanel
+    AnchorSideLeft.Control = Label1
+    AnchorSideTop.Control = Label1
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = TVProjects
+    AnchorSideRight.Side = asrBottom
+    Left = 10
+    Height = 148
+    Top = 40
+    Width = 598
+    Anchors = [akTop, akLeft, akRight]
+    BevelColor = 33023
+    ClientHeight = 148
+    ClientWidth = 598
+    TabOrder = 3
+    object TVPaths: TTreeView
+      Left = 1
+      Height = 146
+      Top = 1
+      Width = 596
+      Align = alClient
+      Anchors = [akTop, akLeft, akBottom]
+      BackgroundColor = 2631720
+      BorderStyle = bsNone
+      Color = 2631720
+      ExpandSignColor = 14342874
+      ExpandSignType = tvestArrowFill
+      Font.Color = 14342874
+      Font.Height = 20
+      HotTrack = True
+      Images = DataModule1.ImageList1
+      Indent = 30
+      ParentFont = False
+      ReadOnly = True
+      RightClickSelect = True
+      ScrollBars = ssAutoBoth
+      ShowButtons = False
+      ShowLines = False
+      ShowRoot = False
+      SortType = stText
+      TabOrder = 0
+      ToolTips = False
+      OnChanging = TVPathsChanging
+      OnSelectionChanged = TVPathsSelectionChanged
+      Options = [tvoAutoItemHeight, tvoHideSelection, tvoHotTrack, tvoKeepCollapsedNodes, tvoReadOnly, tvoRightClickSelect, tvoNoDoubleClickExpand]
+      TreeLineColor = 14342874
+      TreeLinePenStyle = psSolid
+    end
+  end
+  object Panel4: TPanel
+    AnchorSideLeft.Control = Label3
+    AnchorSideTop.Control = Label3
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = PanelToolsProject
+    AnchorSideBottom.Control = Owner
+    AnchorSideBottom.Side = asrBottom
+    Left = 10
+    Height = 342
+    Top = 228
+    Width = 594
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    BorderSpacing.Right = 5
+    BorderSpacing.Bottom = 5
+    BevelColor = 33023
+    ClientHeight = 342
+    ClientWidth = 594
+    TabOrder = 4
+    object TVProjects: TTreeView
+      Left = 1
+      Height = 340
+      Top = 1
+      Width = 592
+      Align = alClient
+      Anchors = [akTop, akLeft, akBottom]
+      BackgroundColor = 2631720
+      BorderStyle = bsNone
+      Color = 2631720
+      ExpandSignColor = 14342874
+      ExpandSignType = tvestArrowFill
+      Font.Color = 14342874
+      Font.Height = 20
+      HotTrack = True
+      Images = DataModule1.ImageList1
+      Indent = 30
+      ParentFont = False
+      ReadOnly = True
+      RightClickSelect = True
+      ScrollBars = ssAutoBoth
+      ShowRoot = False
+      SortType = stText
+      TabOrder = 0
+      ToolTips = False
+      OnChanging = TVPathsChanging
+      OnDblClick = TVProjectsDblClick
+      OnSelectionChanged = TVProjectsSelectionChanged
+      Options = [tvoAutoItemHeight, tvoHideSelection, tvoHotTrack, tvoKeepCollapsedNodes, tvoReadOnly, tvoRightClickSelect, tvoShowButtons, tvoShowLines, tvoNoDoubleClickExpand]
+      TreeLineColor = 14342874
+      TreeLinePenStyle = psSolid
+    end
+  end
+  object PanelZipProgress: TPanel
+    AnchorSideLeft.Control = TVProjects
+    AnchorSideTop.Control = TVProjects
+    AnchorSideTop.Side = asrCenter
+    AnchorSideRight.Control = TVProjects
+    AnchorSideRight.Side = asrBottom
+    Left = 30
+    Height = 193
+    Top = 310
+    Width = 558
+    Anchors = [akTop, akLeft, akRight]
+    BorderSpacing.Left = 20
+    BorderSpacing.Right = 20
+    BevelColor = 33023
+    BevelWidth = 2
+    ClientHeight = 193
+    ClientWidth = 558
+    TabOrder = 2
+    Visible = False
+    object Notebook1: TNotebook
+      Left = 2
+      Height = 189
+      Top = 2
+      Width = 554
+      PageIndex = 0
+      Align = alClient
+      TabOrder = 0
+      object PageZipper: TPage
+        object Label2: TLabel
+          AnchorSideLeft.Control = PageZipper
+          AnchorSideLeft.Side = asrCenter
+          AnchorSideTop.Control = PageZipper
+          Left = 259
+          Height = 20
+          Top = 10
+          Width = 36
+          BorderSpacing.Left = 20
+          BorderSpacing.Top = 10
+          Caption = 'Label'
+          ParentColor = False
+          WordWrap = True
+        end
+        object Panel1: TPanel
+          AnchorSideLeft.Control = PageZipper
+          AnchorSideTop.Control = Label2
+          AnchorSideTop.Side = asrBottom
+          AnchorSideRight.Control = PageZipper
+          AnchorSideRight.Side = asrBottom
+          Left = 10
+          Height = 24
+          Top = 30
+          Width = 534
+          Anchors = [akTop, akLeft, akRight]
+          BorderSpacing.Left = 10
+          BorderSpacing.Right = 10
+          Color = 1973790
+          ParentColor = False
+          TabOrder = 0
+        end
+        object Label4: TLabel
+          AnchorSideLeft.Control = PageZipper
+          AnchorSideLeft.Side = asrCenter
+          AnchorSideTop.Control = Panel1
+          AnchorSideTop.Side = asrBottom
+          Left = 259
+          Height = 20
+          Top = 64
+          Width = 36
+          BorderSpacing.Left = 20
+          BorderSpacing.Top = 10
+          Caption = 'Label'
+          ParentColor = False
+          WordWrap = True
+        end
+        object Panel2: TPanel
+          AnchorSideLeft.Control = PageZipper
+          AnchorSideTop.Control = Label4
+          AnchorSideTop.Side = asrBottom
+          AnchorSideRight.Control = PageZipper
+          AnchorSideRight.Side = asrBottom
+          Left = 10
+          Height = 24
+          Top = 84
+          Width = 534
+          Anchors = [akTop, akLeft, akRight]
+          BorderSpacing.Left = 10
+          BorderSpacing.Right = 10
+          Color = 1973790
+          ParentColor = False
+          TabOrder = 1
+        end
+        object BCancelZipper: TSpeedButton
+          AnchorSideLeft.Control = PageZipper
+          AnchorSideLeft.Side = asrCenter
+          AnchorSideTop.Side = asrBottom
+          AnchorSideRight.Side = asrBottom
+          AnchorSideBottom.Control = PageZipper
+          AnchorSideBottom.Side = asrBottom
+          Cursor = crHandPoint
+          Left = 248
+          Height = 28
+          Top = 151
+          Width = 59
+          Anchors = [akLeft, akBottom]
+          AutoSize = True
+          BorderSpacing.Bottom = 10
+          Caption = 'Label'
+          Font.Color = clBlack
+          Font.Height = 13
+          Images = DataModule1.ImageList1
+          ImageIndex = 15
+          OnClick = BOpenProjectClick
+          ParentFont = False
+        end
+      end
+    end
+  end
+  object SelectDirectoryDialog1: TSelectDirectoryDialog
+    Title = 'Choisir le répertoire des projets'
+    Left = 672
+    Top = 16
+  end
+end

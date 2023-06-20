@@ -1,0 +1,265 @@
+object FormNewProject: TFormNewProject
+  Left = 388
+  Height = 331
+  Top = 174
+  Width = 741
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsSingle
+  Caption = 'Nouveau projet de lecture'
+  ClientHeight = 331
+  ClientWidth = 741
+  Color = 4802889
+  Font.Color = 14342874
+  Font.Height = 20
+  KeyPreview = True
+  OnKeyUp = FormKeyUp
+  OnShow = FormShow
+  Position = poMainFormCenter
+  LCLVersion = '2.2.4.0'
+  object Shape1: TShape
+    Left = 0
+    Height = 331
+    Top = 0
+    Width = 741
+    Align = alClient
+    Brush.Style = bsClear
+    Pen.Color = clMoneyGreen
+  end
+  object Label1: TLabel
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = Label2
+    AnchorSideTop.Side = asrBottom
+    Left = 10
+    Height = 20
+    Top = 50
+    Width = 122
+    BorderSpacing.Left = 10
+    BorderSpacing.Top = 20
+    Caption = 'Prénom de l''auteur'
+    Font.Color = 14342874
+    Font.Height = 20
+    Font.Style = [fsItalic]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Edit1: TEdit
+    AnchorSideLeft.Control = Label1
+    AnchorSideTop.Control = Label1
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    Left = 10
+    Height = 20
+    Top = 70
+    Width = 721
+    Anchors = [akTop, akLeft, akRight]
+    BorderSpacing.Right = 10
+    BorderStyle = bsNone
+    Color = 1973790
+    Font.Color = 14342874
+    Font.Height = 20
+    Font.Style = [fsBold]
+    OnChange = Edit1Change
+    ParentFont = False
+    TabOrder = 0
+  end
+  object Label4: TLabel
+    AnchorSideLeft.Control = Label1
+    AnchorSideTop.Control = Edit1
+    AnchorSideTop.Side = asrBottom
+    Left = 10
+    Height = 20
+    Top = 110
+    Width = 104
+    BorderSpacing.Top = 20
+    Caption = 'Nom de l''auteur'
+    Font.Color = 14342874
+    Font.Height = 20
+    Font.Style = [fsItalic]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Edit2: TEdit
+    AnchorSideLeft.Control = Label1
+    AnchorSideTop.Control = Label4
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    Left = 10
+    Height = 20
+    Top = 130
+    Width = 721
+    Anchors = [akTop, akLeft, akRight]
+    BorderSpacing.Right = 10
+    BorderStyle = bsNone
+    Color = 1973790
+    Font.Color = 14342874
+    Font.Height = 20
+    Font.Style = [fsBold]
+    OnChange = Edit1Change
+    ParentFont = False
+    TabOrder = 1
+  end
+  object Edit3: TEdit
+    AnchorSideLeft.Control = Label1
+    AnchorSideTop.Control = Label19
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    Left = 10
+    Height = 20
+    Top = 190
+    Width = 721
+    Anchors = [akTop, akLeft, akRight]
+    BorderSpacing.Right = 10
+    BorderStyle = bsNone
+    Color = 1973790
+    Font.Color = 14342874
+    Font.Height = 20
+    Font.Style = [fsBold]
+    OnChange = Edit1Change
+    ParentFont = False
+    TabOrder = 2
+  end
+  object BCreateProject: TSpeedButton
+    AnchorSideLeft.Control = Owner
+    AnchorSideLeft.Side = asrCenter
+    AnchorSideBottom.Control = Owner
+    AnchorSideBottom.Side = asrBottom
+    Cursor = crHandPoint
+    Left = 295
+    Height = 28
+    Top = 283
+    Width = 150
+    Anchors = [akLeft, akBottom]
+    AutoSize = True
+    BorderSpacing.Bottom = 20
+    Constraints.MinWidth = 150
+    Caption = 'Créer le projet'
+    Flat = True
+    Font.Color = clBlack
+    Font.Height = 20
+    Images = DataModule1.ImageList1
+    ImageIndex = 39
+    Transparent = False
+    OnClick = BCreateProjectClick
+    ParentFont = False
+  end
+  object Label19: TLabel
+    AnchorSideLeft.Control = Label1
+    AnchorSideTop.Control = Edit2
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    Left = 10
+    Height = 20
+    Top = 170
+    Width = 101
+    BorderSpacing.Top = 20
+    BorderSpacing.Right = 10
+    Caption = 'Titre de l''oeuvre'
+    Font.Color = 14342874
+    Font.Height = 20
+    Font.Style = [fsItalic]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label2: TLabel
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = Owner
+    Left = 10
+    Height = 20
+    Top = 10
+    Width = 306
+    Alignment = taCenter
+    BorderSpacing.Left = 10
+    BorderSpacing.Top = 10
+    Caption = 'Informations sur l''oeuvre que vous allez lire'
+    Font.Color = 3124978
+    Font.Height = 20
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label11: TLabel
+    AnchorSideLeft.Control = Label1
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = Edit1
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = Label1
+    AnchorSideBottom.Side = asrBottom
+    Left = 142
+    Height = 13
+    Top = 57
+    Width = 589
+    Anchors = [akLeft, akRight, akBottom]
+    BorderSpacing.Left = 10
+    Caption = 'Label'
+    Font.Color = 10853885
+    Font.Height = 13
+    ParentColor = False
+    ParentFont = False
+    Visible = False
+  end
+  object Label23: TLabel
+    AnchorSideLeft.Control = Label4
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = Edit2
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = Label4
+    AnchorSideBottom.Side = asrBottom
+    Left = 124
+    Height = 13
+    Top = 117
+    Width = 607
+    Anchors = [akLeft, akRight, akBottom]
+    BorderSpacing.Left = 10
+    Caption = 'Label'
+    Font.Color = 10853885
+    Font.Height = 13
+    ParentColor = False
+    ParentFont = False
+    Visible = False
+  end
+  object Label24: TLabel
+    AnchorSideLeft.Control = Label19
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideTop.Side = asrBottom
+    AnchorSideBottom.Control = Label19
+    AnchorSideBottom.Side = asrBottom
+    Left = 121
+    Height = 13
+    Top = 177
+    Width = 27
+    Anchors = [akLeft, akBottom]
+    BorderSpacing.Left = 10
+    Caption = 'Label'
+    Font.Color = 10853885
+    Font.Height = 13
+    ParentColor = False
+    ParentFont = False
+    Visible = False
+  end
+  object Label28: TLabel
+    AnchorSideLeft.Control = Edit3
+    AnchorSideTop.Control = Edit3
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = Edit3
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Side = asrBottom
+    Left = 10
+    Height = 15
+    Top = 210
+    Width = 721
+    Anchors = [akTop, akLeft, akRight]
+    Caption = 'S''il existe déjà une version enregistrée de cette oeuvre, ajoutez à la fin du titre le numéro de celle que vous allez produire (ex: V2)'
+    Font.Color = 14342874
+    Font.Height = 15
+    Font.Style = [fsItalic]
+    ParentColor = False
+    ParentFont = False
+    WordWrap = True
+  end
+end

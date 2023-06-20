@@ -1,0 +1,993 @@
+object FormMixer: TFormMixer
+  Left = 87
+  Height = 696
+  Top = 72
+  Width = 1164
+  Caption = 'Mixer'
+  ClientHeight = 696
+  ClientWidth = 1164
+  Color = 3355443
+  KeyPreview = True
+  OnActivate = FormActivate
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  OnKeyDown = FormKeyDown
+  OnShow = FormShow
+  Position = poWorkAreaCenter
+  LCLVersion = '2.2.4.0'
+  WindowState = wsMaximized
+  object PanelTop: TPanel
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = Owner
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Side = asrBottom
+    Left = 0
+    Height = 176
+    Top = 0
+    Width = 1164
+    Anchors = [akTop, akLeft, akRight]
+    BevelColor = 33023
+    BevelOuter = bvNone
+    ClientHeight = 176
+    ClientWidth = 1164
+    Color = 3355443
+    ParentColor = False
+    TabOrder = 0
+    object PanelTools: TPanel
+      AnchorSideLeft.Control = PanelAudioEffect
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = PanelTop
+      AnchorSideRight.Control = Panel4
+      AnchorSideBottom.Control = PanelTop
+      AnchorSideBottom.Side = asrBottom
+      Left = 264
+      Height = 176
+      Top = 0
+      Width = 760
+      Anchors = [akTop, akLeft, akRight, akBottom]
+      BevelColor = 33023
+      ClientHeight = 176
+      ClientWidth = 760
+      TabOrder = 0
+      object PanelNavigate: TPanel
+        AnchorSideLeft.Control = PanelTools
+        AnchorSideRight.Side = asrBottom
+        AnchorSideBottom.Control = PanelTools
+        AnchorSideBottom.Side = asrBottom
+        Left = 21
+        Height = 32
+        Top = 142
+        Width = 162
+        Anchors = [akLeft, akBottom]
+        BorderSpacing.Left = 20
+        BorderSpacing.Bottom = 1
+        BevelOuter = bvNone
+        ClientHeight = 32
+        ClientWidth = 162
+        TabOrder = 0
+        object BBackward: TSpeedButton
+          AnchorSideLeft.Control = PanelNavigate
+          AnchorSideTop.Control = PanelNavigate
+          AnchorSideBottom.Control = PanelNavigate
+          AnchorSideBottom.Side = asrBottom
+          Cursor = crHandPoint
+          Left = 0
+          Height = 32
+          Hint = 'Place le curseur au début'
+          Top = -1
+          Width = 32
+          Anchors = [akLeft, akBottom]
+          BorderSpacing.Bottom = 1
+          Color = 1973790
+          Flat = True
+          Images = DataModule1.ImageList1
+          ImageIndex = 9
+          Transparent = False
+          OnClick = BPlayClick
+          ShowHint = True
+          ParentShowHint = False
+        end
+        object BForward: TSpeedButton
+          AnchorSideLeft.Control = BBackward
+          AnchorSideLeft.Side = asrBottom
+          AnchorSideBottom.Control = PanelNavigate
+          AnchorSideBottom.Side = asrBottom
+          Cursor = crHandPoint
+          Left = 37
+          Height = 32
+          Hint = 'Place le curseur à la fin'
+          Top = -1
+          Width = 32
+          Anchors = [akLeft, akBottom]
+          BorderSpacing.Left = 5
+          BorderSpacing.Bottom = 1
+          Color = 1973790
+          Flat = True
+          Images = DataModule1.ImageList1
+          ImageIndex = 10
+          Transparent = False
+          OnClick = BPlayClick
+          ShowHint = True
+          ParentShowHint = False
+        end
+        object BPlay: TSpeedButton
+          AnchorSideLeft.Control = BForward
+          AnchorSideLeft.Side = asrBottom
+          AnchorSideTop.Control = PanelNavigate
+          AnchorSideRight.Control = BStop
+          AnchorSideBottom.Control = PanelNavigate
+          AnchorSideBottom.Side = asrBottom
+          Cursor = crHandPoint
+          Left = 93
+          Height = 32
+          Hint = 'Pré-écoute'
+          Top = -1
+          Width = 32
+          Anchors = [akRight, akBottom]
+          BorderSpacing.Right = 5
+          BorderSpacing.Bottom = 1
+          Color = 1973790
+          Flat = True
+          Images = DataModule1.ImageList1
+          ImageIndex = 6
+          Transparent = False
+          OnClick = BPlayClick
+          ShowHint = True
+          ParentShowHint = False
+        end
+        object BStop: TSpeedButton
+          AnchorSideLeft.Control = BPlay
+          AnchorSideLeft.Side = asrBottom
+          AnchorSideTop.Control = PanelNavigate
+          AnchorSideRight.Control = PanelNavigate
+          AnchorSideRight.Side = asrBottom
+          AnchorSideBottom.Control = PanelNavigate
+          AnchorSideBottom.Side = asrBottom
+          Cursor = crHandPoint
+          Left = 130
+          Height = 32
+          Hint = 'Stop'
+          Top = -1
+          Width = 32
+          Anchors = [akRight, akBottom]
+          BorderSpacing.Left = 3
+          BorderSpacing.Bottom = 1
+          Color = 1973790
+          Flat = True
+          Images = DataModule1.ImageList1
+          ImageIndex = 7
+          Transparent = False
+          OnClick = BPlayClick
+          ShowHint = True
+          ParentShowHint = False
+        end
+      end
+      object PanelUndoRedo: TPanel
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideRight.Control = PanelTools
+        AnchorSideRight.Side = asrBottom
+        AnchorSideBottom.Control = PanelTools
+        AnchorSideBottom.Side = asrBottom
+        Left = 672
+        Height = 32
+        Top = 142
+        Width = 72
+        Anchors = [akRight, akBottom]
+        BorderSpacing.Right = 15
+        BorderSpacing.Bottom = 1
+        BevelOuter = bvNone
+        ClientHeight = 32
+        ClientWidth = 72
+        TabOrder = 1
+        Visible = False
+        object BRedo: TSpeedButton
+          AnchorSideLeft.Control = BUndo
+          AnchorSideLeft.Side = asrBottom
+          AnchorSideTop.Control = PanelUndoRedo
+          AnchorSideRight.Side = asrBottom
+          AnchorSideBottom.Control = PanelUndoRedo
+          AnchorSideBottom.Side = asrBottom
+          Cursor = crHandPoint
+          Left = 37
+          Height = 32
+          Hint = 'Refaire'
+          Top = -1
+          Width = 32
+          Anchors = [akLeft, akBottom]
+          BorderSpacing.Left = 5
+          BorderSpacing.Bottom = 1
+          Color = 1973790
+          Flat = True
+          Images = DataModule1.ImageList1
+          ImageIndex = 24
+          Transparent = False
+          OnClick = BPlayClick
+          ShowHint = True
+          ParentShowHint = False
+        end
+        object BUndo: TSpeedButton
+          AnchorSideLeft.Control = PanelUndoRedo
+          AnchorSideTop.Control = PanelUndoRedo
+          AnchorSideBottom.Control = PanelUndoRedo
+          AnchorSideBottom.Side = asrBottom
+          Cursor = crHandPoint
+          Left = 0
+          Height = 32
+          Hint = 'Annuler'
+          Top = -1
+          Width = 32
+          Anchors = [akLeft, akBottom]
+          BorderSpacing.Bottom = 1
+          Color = 1973790
+          Flat = True
+          Images = DataModule1.ImageList1
+          ImageIndex = 25
+          Transparent = False
+          OnClick = BPlayClick
+          ShowHint = True
+          ParentShowHint = False
+        end
+      end
+      object PanelView: TPanel
+        AnchorSideLeft.Control = PanelTools
+        AnchorSideLeft.Side = asrCenter
+        AnchorSideBottom.Control = PanelTools
+        AnchorSideBottom.Side = asrBottom
+        Left = 344
+        Height = 32
+        Top = 142
+        Width = 72
+        Anchors = [akLeft, akBottom]
+        BorderSpacing.Bottom = 1
+        BevelOuter = bvNone
+        ClientHeight = 32
+        ClientWidth = 72
+        TabOrder = 2
+        object BZoomAll: TSpeedButton
+          AnchorSideLeft.Control = PanelView
+          AnchorSideTop.Control = PanelView
+          AnchorSideRight.Side = asrBottom
+          AnchorSideBottom.Control = PanelView
+          AnchorSideBottom.Side = asrBottom
+          Cursor = crHandPoint
+          Left = 0
+          Height = 32
+          Hint = 'Tout voir (Alt + A)'
+          Top = -1
+          Width = 32
+          Anchors = [akLeft, akBottom]
+          BorderSpacing.Bottom = 1
+          Color = 1973790
+          Flat = True
+          Images = DataModule1.ImageList1
+          ImageIndex = 29
+          Transparent = False
+          OnClick = BPlayClick
+          ShowHint = True
+          ParentShowHint = False
+        end
+        object BShowVolumeEnvelope: TSpeedButton
+          AnchorSideLeft.Control = BZoomAll
+          AnchorSideLeft.Side = asrBottom
+          AnchorSideBottom.Control = PanelView
+          AnchorSideBottom.Side = asrBottom
+          Cursor = crHandPoint
+          Left = 37
+          Height = 32
+          Hint = 'Montre/cache les enveloppes de volume'
+          Top = -1
+          Width = 32
+          Anchors = [akLeft, akBottom]
+          BorderSpacing.Left = 5
+          BorderSpacing.Bottom = 1
+          Color = 1973790
+          Flat = True
+          Images = DataModule1.ImageList1
+          ImageIndex = 47
+          Transparent = False
+          OnClick = BPlayClick
+          ShowHint = True
+          ParentShowHint = False
+        end
+      end
+      object Label5: TLabel
+        AnchorSideLeft.Control = PanelTools
+        AnchorSideTop.Control = PanelTools
+        Left = 6
+        Height = 20
+        Top = 6
+        Width = 72
+        BorderSpacing.Left = 5
+        BorderSpacing.Top = 5
+        Caption = 'Mixage de '
+        Font.Color = 14342874
+        Font.Height = 20
+        Font.Style = [fsItalic]
+        ParentColor = False
+        ParentFont = False
+        WordWrap = True
+      end
+      object Label6: TLabel
+        AnchorSideLeft.Control = Label5
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = Label5
+        AnchorSideRight.Side = asrBottom
+        Left = 78
+        Height = 20
+        Top = 6
+        Width = 34
+        Caption = 'Label'
+        Font.Color = 14342874
+        Font.Height = 20
+        Font.Style = [fsItalic]
+        ParentColor = False
+        ParentFont = False
+        WordWrap = True
+      end
+      object Label7: TLabel
+        AnchorSideLeft.Control = Label9
+        AnchorSideTop.Control = ComboBox1
+        AnchorSideTop.Side = asrBottom
+        Left = 6
+        Height = 20
+        Top = 70
+        Width = 34
+        BorderSpacing.Top = 10
+        Caption = 'Label'
+        Font.Color = 14342874
+        Font.Height = 20
+        Font.Style = [fsItalic]
+        ParentColor = False
+        ParentFont = False
+        WordWrap = True
+      end
+      object ComboBox1: TComboBox
+        AnchorSideLeft.Control = Label9
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = Label9
+        AnchorSideTop.Side = asrCenter
+        Left = 215
+        Height = 28
+        Top = 32
+        Width = 238
+        BorderSpacing.Left = 5
+        Font.Height = 20
+        ItemHeight = 20
+        OnSelect = ComboBox1Select
+        ParentFont = False
+        Style = csDropDownList
+        TabOrder = 3
+      end
+      object Label9: TLabel
+        AnchorSideLeft.Control = PanelTools
+        AnchorSideTop.Control = Label5
+        AnchorSideTop.Side = asrBottom
+        Left = 6
+        Height = 20
+        Top = 36
+        Width = 204
+        BorderSpacing.Left = 5
+        BorderSpacing.Top = 10
+        Caption = 'Respecter le format de fichier de'
+        Font.Color = 14342874
+        Font.Height = 20
+        Font.Style = [fsItalic]
+        ParentColor = False
+        ParentFont = False
+        WordWrap = True
+      end
+      object Label8: TLabel
+        AnchorSideLeft.Control = Label7
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = Label7
+        AnchorSideTop.Side = asrCenter
+        AnchorSideRight.Control = PanelTools
+        AnchorSideRight.Side = asrBottom
+        Cursor = crHandPoint
+        Left = 45
+        Height = 20
+        Hint = 'Cliquez pour modifier'
+        Top = 70
+        Width = 704
+        Anchors = [akTop, akLeft, akRight]
+        BorderSpacing.Left = 5
+        BorderSpacing.Right = 10
+        Caption = 'Label'
+        Color = 1973790
+        Font.Color = 8978431
+        Font.Height = 20
+        ParentColor = False
+        ParentFont = False
+        ParentShowHint = False
+        ShowHint = True
+        Transparent = False
+        WordWrap = True
+        OnClick = BPlayClick
+      end
+      object CheckBox1: TCheckBox
+        AnchorSideLeft.Control = Label8
+        AnchorSideTop.Control = Label8
+        AnchorSideTop.Side = asrBottom
+        Cursor = crHandPoint
+        Left = 45
+        Height = 19
+        Top = 100
+        Width = 20
+        BorderSpacing.Top = 10
+        OnChange = ComboBox1Select
+        TabOrder = 4
+      end
+      object Label10: TLabel
+        AnchorSideLeft.Control = CheckBox1
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = CheckBox1
+        AnchorSideTop.Side = asrCenter
+        Cursor = crHandPoint
+        Left = 65
+        Height = 20
+        Top = 99
+        Width = 143
+        BorderSpacing.Top = 10
+        Caption = 'normaliser le fichier à'
+        Font.Color = 14342874
+        Font.Height = 20
+        ParentColor = False
+        ParentFont = False
+        WordWrap = True
+      end
+      object FSE3: TFloatSpinEdit
+        AnchorSideLeft.Control = Label10
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = Label10
+        AnchorSideTop.Side = asrCenter
+        AnchorSideBottom.Side = asrCenter
+        Left = 213
+        Height = 28
+        Top = 95
+        Width = 69
+        BorderSpacing.Left = 5
+        Color = 1973790
+        DecimalPlaces = 1
+        Font.Color = 14342874
+        Font.Height = 20
+        Increment = 0.5
+        MaxValue = 105
+        MinValue = 75
+        OnChange = ComboBox1Select
+        ParentFont = False
+        TabOrder = 5
+        Value = 89
+      end
+      object Label18: TLabel
+        AnchorSideLeft.Control = FSE3
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideBottom.Control = FSE3
+        AnchorSideBottom.Side = asrCenter
+        Left = 285
+        Height = 20
+        Top = 99
+        Width = 18
+        Anchors = [akLeft, akBottom]
+        BorderSpacing.Left = 3
+        Caption = 'dB'
+        Font.Color = 14342874
+        Font.Height = 20
+        ParentColor = False
+        ParentFont = False
+      end
+    end
+    object PanelAudioEffect: TPanel
+      AnchorSideLeft.Control = PanelTop
+      AnchorSideTop.Control = PanelTop
+      AnchorSideBottom.Control = PanelTop
+      AnchorSideBottom.Side = asrBottom
+      Left = 0
+      Height = 176
+      Top = 0
+      Width = 264
+      Anchors = [akTop, akLeft, akBottom]
+      BevelColor = 33023
+      ClientHeight = 176
+      ClientWidth = 264
+      TabOrder = 1
+      object BCompressor: TSpeedButton
+        AnchorSideLeft.Control = PanelAudioEffect
+        AnchorSideTop.Control = Label16
+        AnchorSideTop.Side = asrBottom
+        AnchorSideBottom.Side = asrBottom
+        Cursor = crHandPoint
+        Left = 11
+        Height = 25
+        Top = 36
+        Width = 88
+        AutoSize = True
+        BorderSpacing.Left = 10
+        BorderSpacing.Top = 10
+        Constraints.MaxHeight = 25
+        Caption = 'COMPRESSER'
+        Font.Color = clBlack
+        Font.Height = 12
+        Images = DataModule1.ImageList1
+        ImageIndex = 14
+        OnClick = BBassBoostClick
+        ShowHint = True
+        ParentFont = False
+        ParentShowHint = False
+      end
+      object BBassBoost: TSpeedButton
+        AnchorSideLeft.Control = BAmplify
+        AnchorSideTop.Control = BAmplify
+        AnchorSideTop.Side = asrBottom
+        AnchorSideBottom.Side = asrBottom
+        Cursor = crHandPoint
+        Left = 11
+        Height = 25
+        Top = 116
+        Width = 90
+        AutoSize = True
+        BorderSpacing.Top = 15
+        Constraints.MaxHeight = 25
+        Caption = 'BASS BOOST x'
+        Font.Color = clBlack
+        Font.Height = 12
+        Images = DataModule1.ImageList1
+        ImageIndex = 14
+        OnClick = BBassBoostClick
+        ShowHint = True
+        ParentFont = False
+        ParentShowHint = False
+      end
+      object FSEBassBoost: TFloatSpinEdit
+        AnchorSideLeft.Control = BBassBoost
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = BBassBoost
+        AnchorSideBottom.Control = BBassBoost
+        AnchorSideBottom.Side = asrBottom
+        Left = 106
+        Height = 23
+        Hint = 'C''est l''amplification qui sera appliquée sur les fréquences basses (graves) des voix'#13#10'si le BASS BOOST est activé.'
+        Top = 116
+        Width = 60
+        BorderSpacing.Left = 5
+        Constraints.MaxHeight = 25
+        DecimalPlaces = 1
+        Increment = 0.5
+        MaxValue = 7
+        MinValue = 1
+        OnChange = BBassBoostClick
+        ParentFont = False
+        ParentShowHint = False
+        ShowHint = True
+        TabOrder = 0
+        Value = 2
+      end
+      object BAmplify: TSpeedButton
+        AnchorSideLeft.Control = BCompressor
+        AnchorSideTop.Control = BCompressor
+        AnchorSideTop.Side = asrBottom
+        AnchorSideBottom.Side = asrBottom
+        Cursor = crHandPoint
+        Left = 11
+        Height = 25
+        Hint = 'Active/désactive l''amplification globale des voix.'#13#10'Si vous constatez que le COMPRESSEUR n''est pas suffissant pour rendre votre voix suffisamment audible,'#13#10'activez l''amplification.'
+        Top = 76
+        Width = 95
+        AutoSize = True
+        BorderSpacing.Top = 15
+        Constraints.MaxHeight = 25
+        Caption = 'AMPLIFICATION'
+        Font.Color = clBlack
+        Font.Height = 12
+        Images = DataModule1.ImageList1
+        ImageIndex = 14
+        OnClick = BBassBoostClick
+        ShowHint = True
+        ParentFont = False
+        ParentShowHint = False
+      end
+      object CBAmplify: TComboBox
+        AnchorSideLeft.Control = BAmplify
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = BAmplify
+        AnchorSideTop.Side = asrCenter
+        Left = 111
+        Height = 23
+        Hint = 'C''est l''amplification qui sera appliquée sur les voix.'
+        Top = 77
+        Width = 60
+        BorderSpacing.Left = 5
+        Constraints.MaxHeight = 25
+        ItemHeight = 15
+        Items.Strings = (
+          'x2'
+          'x3'
+          'x4'
+          'x5'
+          'x6'
+          'x7'
+          'x8'
+        )
+        OnSelect = BBassBoostClick
+        ParentFont = False
+        ParentShowHint = False
+        ShowHint = True
+        Style = csDropDownList
+        TabOrder = 1
+      end
+      object Label16: TLabel
+        AnchorSideLeft.Control = PanelAudioEffect
+        AnchorSideTop.Control = PanelAudioEffect
+        AnchorSideRight.Control = BHelpMixerEffect
+        Left = 6
+        Height = 15
+        Top = 11
+        Width = 226
+        Anchors = [akTop, akLeft, akRight]
+        BorderSpacing.Left = 5
+        BorderSpacing.Top = 10
+        BorderSpacing.Right = 5
+        Caption = 'EFFETS APPLIQUÉS SUR LES VOIX'
+        Font.Color = 3124978
+        Font.Height = 15
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+        WordWrap = True
+      end
+      object BHelpMixerEffect: TSpeedButton
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = Label16
+        AnchorSideTop.Side = asrCenter
+        AnchorSideRight.Control = PanelAudioEffect
+        AnchorSideRight.Side = asrBottom
+        Cursor = crHelp
+        Left = 237
+        Height = 24
+        Top = 6
+        Width = 24
+        Anchors = [akTop, akRight]
+        BorderSpacing.Right = 2
+        Flat = True
+        Images = DataModule1.ImageList1
+        ImageIndex = 45
+        OnClick = BPlayClick
+        ShowHint = True
+        ParentShowHint = False
+      end
+    end
+    object Panel4: TPanel
+      AnchorSideTop.Control = PanelTop
+      AnchorSideRight.Control = PanelTop
+      AnchorSideRight.Side = asrBottom
+      AnchorSideBottom.Control = PanelTop
+      AnchorSideBottom.Side = asrBottom
+      Left = 1024
+      Height = 176
+      Top = 0
+      Width = 140
+      Anchors = [akTop, akRight, akBottom]
+      BevelColor = 33023
+      ClientHeight = 176
+      ClientWidth = 140
+      Constraints.MaxWidth = 140
+      TabOrder = 2
+      object BMix: TSpeedButton
+        AnchorSideLeft.Control = Panel4
+        AnchorSideTop.Control = Panel4
+        AnchorSideRight.Control = Panel4
+        AnchorSideRight.Side = asrBottom
+        AnchorSideBottom.Control = Panel4
+        AnchorSideBottom.Side = asrBottom
+        Cursor = crHandPoint
+        Left = 11
+        Height = 134
+        Hint = 'lance le mixage'
+        Top = 21
+        Width = 118
+        Anchors = [akTop, akLeft, akRight, akBottom]
+        BorderSpacing.Left = 10
+        BorderSpacing.Top = 20
+        BorderSpacing.Right = 10
+        BorderSpacing.Bottom = 20
+        Caption = 'MIXER'
+        Flat = True
+        Font.Color = clBlack
+        Images = DataModule1.ImageList1
+        ImageIndex = 27
+        Transparent = False
+        OnClick = BMixClick
+        ShowHint = True
+        ParentFont = False
+        ParentShowHint = False
+      end
+    end
+  end
+  object Panel3: TPanel
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = PanelTop
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = Panel1
+    Left = 0
+    Height = 495
+    Top = 176
+    Width = 1164
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    BevelColor = 33023
+    Color = 1973790
+    Font.Color = 8487297
+    Font.Height = 18
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 1
+  end
+  object PanelStatus: TPanel
+    AnchorSideLeft.Control = Owner
+    AnchorSideLeft.Side = asrCenter
+    AnchorSideTop.Control = Owner
+    AnchorSideTop.Side = asrCenter
+    Left = 369
+    Height = 153
+    Top = 272
+    Width = 426
+    ClientHeight = 153
+    ClientWidth = 426
+    TabOrder = 2
+    Visible = False
+    object Notebook1: TNotebook
+      Left = 1
+      Height = 151
+      Top = 1
+      Width = 424
+      PageIndex = 0
+      Align = alClient
+      TabOrder = 0
+      object PageMixingProgress: TPage
+        object Label3: TLabel
+          AnchorSideLeft.Control = PageMixingProgress
+          AnchorSideLeft.Side = asrCenter
+          AnchorSideBottom.Control = Panel5
+          Left = 93
+          Height = 20
+          Top = 41
+          Width = 238
+          Anchors = [akLeft, akBottom]
+          BorderSpacing.Bottom = 5
+          Caption = 'Mixage en cours, veuillez patienter...'
+          Font.Color = 14342874
+          Font.Height = 20
+          ParentColor = False
+          ParentFont = False
+          WordWrap = True
+        end
+        object BCancelMix: TSpeedButton
+          AnchorSideLeft.Control = PageMixingProgress
+          AnchorSideLeft.Side = asrCenter
+          AnchorSideBottom.Control = PageMixingProgress
+          AnchorSideBottom.Side = asrBottom
+          Cursor = crHandPoint
+          Left = 151
+          Height = 30
+          Top = 111
+          Width = 122
+          Anchors = [akLeft, akBottom]
+          BorderSpacing.Bottom = 10
+          Caption = 'Annuler'
+          Images = DataModule1.ImageList1
+          ImageIndex = 15
+          OnClick = BMixClick
+        end
+        object Panel5: TPanel
+          AnchorSideLeft.Control = PageMixingProgress
+          AnchorSideTop.Control = PageMixingProgress
+          AnchorSideTop.Side = asrCenter
+          AnchorSideRight.Control = PageMixingProgress
+          AnchorSideRight.Side = asrBottom
+          Left = 20
+          Height = 18
+          Top = 66
+          Width = 384
+          Anchors = [akTop, akLeft, akRight]
+          BorderSpacing.Left = 20
+          BorderSpacing.Right = 20
+          Color = 11184810
+          ParentColor = False
+          TabOrder = 0
+        end
+      end
+      object PageActionAfter: TPage
+        object BKeepMix: TSpeedButton
+          AnchorSideLeft.Control = PageActionAfter
+          AnchorSideLeft.Side = asrCenter
+          AnchorSideRight.Control = PageActionAfter
+          AnchorSideRight.Side = asrBottom
+          AnchorSideBottom.Control = PageActionAfter
+          AnchorSideBottom.Side = asrBottom
+          Cursor = crHandPoint
+          Left = 280
+          Height = 28
+          Hint = 'Place le fichier dans le dossier MP3 du projet et ferme la fenêtre de mixage'
+          Top = 113
+          Width = 114
+          Anchors = [akRight, akBottom]
+          BorderSpacing.Right = 30
+          BorderSpacing.Bottom = 10
+          Caption = 'Garder'
+          Images = DataModule1.ImageList1
+          ImageIndex = 14
+          OnClick = BMixClick
+          ShowHint = True
+          ParentShowHint = False
+        end
+        object Label4: TLabel
+          AnchorSideLeft.Control = PageActionAfter
+          AnchorSideLeft.Side = asrCenter
+          AnchorSideTop.Control = PageActionAfter
+          Left = 77
+          Height = 20
+          Top = 7
+          Width = 271
+          BorderSpacing.Top = 7
+          BorderSpacing.Bottom = 20
+          Caption = 'Mixage terminé ! Que voulez-vous faire ?'
+          Font.Color = 14342874
+          Font.Height = 20
+          ParentColor = False
+          ParentFont = False
+          WordWrap = True
+        end
+        object BStayHere: TSpeedButton
+          AnchorSideLeft.Control = PageActionAfter
+          AnchorSideRight.Side = asrBottom
+          AnchorSideBottom.Control = PageActionAfter
+          AnchorSideBottom.Side = asrBottom
+          Cursor = crHandPoint
+          Left = 30
+          Height = 28
+          Hint = 'Revient à la fenêtre de mixage'
+          Top = 113
+          Width = 156
+          Anchors = [akLeft, akBottom]
+          AutoSize = True
+          BorderSpacing.Left = 30
+          BorderSpacing.Bottom = 10
+          Caption = 'Changer les paramètres'
+          Images = DataModule1.ImageList1
+          ImageIndex = 25
+          OnClick = BMixClick
+          ShowHint = True
+          ParentShowHint = False
+        end
+        object BListenMix: TSpeedButton
+          AnchorSideBottom.Control = Panel2
+          Cursor = crHandPoint
+          Left = 14
+          Height = 28
+          Hint = 'Lecture'
+          Top = 37
+          Width = 80
+          Anchors = [akLeft, akBottom]
+          AutoSize = True
+          BorderSpacing.Bottom = 1
+          Caption = 'ÉCOUTER'
+          Color = 1973790
+          Flat = True
+          Font.Color = 14342874
+          Font.Height = 13
+          Font.Style = [fsBold]
+          Images = DataModule1.ImageList1
+          ImageIndex = 6
+          Transparent = False
+          OnClick = BMixClick
+          ShowHint = True
+          ParentFont = False
+          ParentShowHint = False
+        end
+        object Panel2: TPanel
+          AnchorSideLeft.Control = PageActionAfter
+          AnchorSideTop.Control = PageActionAfter
+          AnchorSideTop.Side = asrCenter
+          AnchorSideRight.Control = PageActionAfter
+          AnchorSideRight.Side = asrBottom
+          Left = 20
+          Height = 18
+          Top = 66
+          Width = 384
+          Anchors = [akTop, akLeft, akRight]
+          BorderSpacing.Left = 20
+          BorderSpacing.Right = 20
+          Color = 11184810
+          ParentColor = False
+          TabOrder = 0
+        end
+      end
+      object PageApplyMP3Gain: TPage
+        object Label1: TLabel
+          AnchorSideLeft.Control = PageApplyMP3Gain
+          AnchorSideTop.Control = PageApplyMP3Gain
+          AnchorSideTop.Side = asrCenter
+          AnchorSideRight.Control = PageApplyMP3Gain
+          AnchorSideRight.Side = asrBottom
+          Left = 10
+          Height = 20
+          Top = 65
+          Width = 404
+          Alignment = taCenter
+          Anchors = [akTop, akLeft, akRight]
+          BorderSpacing.Left = 10
+          BorderSpacing.Right = 10
+          Caption = 'Label'
+          Font.Color = 15395562
+          Font.Height = 20
+          ParentColor = False
+          ParentFont = False
+          WordWrap = True
+        end
+      end
+      object PagePrepareFile: TPage
+        object Label2: TLabel
+          AnchorSideLeft.Control = PagePrepareFile
+          AnchorSideTop.Control = PagePrepareFile
+          AnchorSideTop.Side = asrCenter
+          AnchorSideRight.Control = PagePrepareFile
+          AnchorSideRight.Side = asrBottom
+          Left = 10
+          Height = 40
+          Top = 55
+          Width = 404
+          Alignment = taCenter
+          Anchors = [akTop, akLeft, akRight]
+          BorderSpacing.Left = 10
+          BorderSpacing.Right = 10
+          Caption = 'Préparation des fichiers'#13#10'Patientez svp'
+          Font.Color = 15395562
+          Font.Height = 20
+          ParentColor = False
+          ParentFont = False
+          WordWrap = True
+        end
+      end
+    end
+  end
+  object Panel1: TPanel
+    AnchorSideLeft.Control = Owner
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = Owner
+    AnchorSideBottom.Side = asrBottom
+    Left = 0
+    Height = 25
+    Top = 671
+    Width = 1164
+    Anchors = [akLeft, akRight, akBottom]
+    BevelColor = 33023
+    ClientHeight = 25
+    ClientWidth = 1164
+    TabOrder = 3
+    object LabelHelp: TLabel
+      AnchorSideLeft.Control = Panel1
+      AnchorSideLeft.Side = asrCenter
+      AnchorSideTop.Control = Panel1
+      AnchorSideTop.Side = asrCenter
+      Left = 568
+      Height = 15
+      Top = 5
+      Width = 28
+      Caption = 'Label'
+      Font.Color = 14342874
+      ParentColor = False
+      ParentFont = False
+    end
+  end
+  object Timer2: TTimer
+    Enabled = False
+    Interval = 100
+    OnTimer = Timer2Timer
+    Left = 752
+    Top = 288
+  end
+end

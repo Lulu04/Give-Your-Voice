@@ -1,0 +1,270 @@
+object FormOptions: TFormOptions
+  Left = 321
+  Height = 316
+  Top = 27
+  Width = 748
+  BorderIcons = [biSystemMenu]
+  Caption = 'Options du programme'
+  ClientHeight = 316
+  ClientWidth = 748
+  Color = 4802889
+  Font.Color = 14342874
+  KeyPreview = True
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  OnKeyDown = FormKeyDown
+  OnShow = FormShow
+  Position = poMainFormCenter
+  LCLVersion = '2.2.4.0'
+  object Shape1: TShape
+    Left = 0
+    Height = 316
+    Top = 0
+    Width = 748
+    Align = alClient
+    Brush.Style = bsClear
+    Pen.Color = 33023
+  end
+  object DividerBevel1: TDividerBevel
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = CBLanguage
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    Left = 10
+    Height = 15
+    Top = 93
+    Width = 728
+    Caption = 'PÉRIPHÉRIQUES AUDIO'
+    Anchors = [akTop, akLeft, akRight]
+    BorderSpacing.Left = 10
+    BorderSpacing.Top = 30
+    BorderSpacing.Right = 10
+    Font.Color = 14342874
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object CBCapture: TComboBox
+    AnchorSideLeft.Control = Label2
+    AnchorSideTop.Control = Label2
+    AnchorSideTop.Side = asrBottom
+    AnchorSideBottom.Control = Label2
+    AnchorSideBottom.Side = asrBottom
+    Left = 20
+    Height = 23
+    Top = 128
+    Width = 658
+    Anchors = [akTop, akLeft, akRight]
+    BorderSpacing.Top = 5
+    BorderSpacing.Right = 5
+    ItemHeight = 15
+    OnSelect = CBPlaybackSelect
+    Style = csDropDownList
+    TabOrder = 0
+  end
+  object CBPlayback: TComboBox
+    AnchorSideLeft.Control = Label3
+    AnchorSideTop.Control = Label3
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = BTestPlaybackDevice
+    Left = 20
+    Height = 23
+    Top = 200
+    Width = 658
+    Anchors = [akTop, akLeft, akRight]
+    BorderSpacing.Right = 5
+    ItemHeight = 15
+    OnSelect = CBPlaybackSelect
+    Style = csDropDownList
+    TabOrder = 1
+  end
+  object CheckBox1: TCheckBox
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = CBCapture
+    AnchorSideTop.Side = asrBottom
+    Left = 30
+    Height = 19
+    Top = 156
+    Width = 20
+    BorderSpacing.Left = 30
+    BorderSpacing.Top = 5
+    OnChange = CBPlaybackSelect
+    TabOrder = 2
+  end
+  object Label1: TLabel
+    AnchorSideLeft.Control = CheckBox1
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideTop.Control = CheckBox1
+    AnchorSideTop.Side = asrCenter
+    AnchorSideRight.Side = asrBottom
+    Left = 50
+    Height = 15
+    Top = 158
+    Width = 369
+    Caption = 'Supprimer automatiquement le bruit de fond lors des enregistrements'
+    ParentColor = False
+    WordWrap = True
+  end
+  object Label2: TLabel
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = DividerBevel1
+    AnchorSideTop.Side = asrBottom
+    AnchorSideBottom.Control = CBCapture
+    AnchorSideBottom.Side = asrBottom
+    Left = 20
+    Height = 15
+    Top = 108
+    Width = 84
+    BorderSpacing.Left = 20
+    Caption = 'Enregistrer avec'
+    Font.Color = 14342874
+    Font.Style = [fsItalic]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label3: TLabel
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = CheckBox1
+    AnchorSideTop.Side = asrBottom
+    Left = 20
+    Height = 15
+    Top = 185
+    Width = 66
+    BorderSpacing.Left = 20
+    BorderSpacing.Top = 10
+    Caption = 'Écouter avec'
+    Font.Color = 14342874
+    Font.Style = [fsItalic]
+    ParentColor = False
+    ParentFont = False
+  end
+  object BCancel: TSpeedButton
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = Owner
+    AnchorSideBottom.Side = asrBottom
+    Cursor = crHandPoint
+    Left = 638
+    Height = 28
+    Top = 278
+    Width = 90
+    Anchors = [akRight, akBottom]
+    AutoSize = True
+    BorderSpacing.Right = 20
+    BorderSpacing.Bottom = 10
+    Constraints.MinWidth = 90
+    Caption = 'Annuler'
+    Font.Color = clBlack
+    Images = DataModule1.ImageList1
+    ImageIndex = 15
+    OnClick = BCancelClick
+    ParentFont = False
+  end
+  object BOk: TSpeedButton
+    AnchorSideRight.Control = BCancel
+    AnchorSideBottom.Control = Owner
+    AnchorSideBottom.Side = asrBottom
+    Cursor = crHandPoint
+    Left = 448
+    Height = 28
+    Top = 278
+    Width = 90
+    Anchors = [akRight, akBottom]
+    AutoSize = True
+    BorderSpacing.Right = 100
+    BorderSpacing.Bottom = 10
+    Constraints.MinWidth = 90
+    Caption = 'Ok'
+    Enabled = False
+    Font.Color = clBlack
+    Images = DataModule1.ImageList1
+    ImageIndex = 14
+    OnClick = BCancelClick
+    ParentFont = False
+  end
+  object BTestPlaybackDevice: TSpeedButton
+    AnchorSideTop.Control = CBPlayback
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = CBPlayback
+    AnchorSideBottom.Side = asrBottom
+    Cursor = crHandPoint
+    Left = 683
+    Height = 23
+    Top = 200
+    Width = 55
+    Anchors = [akTop, akRight, akBottom]
+    BorderSpacing.Right = 10
+    Caption = 'Label'
+    Font.Color = clBlack
+    Font.Height = 12
+    OnClick = BTestPlaybackDeviceClick
+    ParentFont = False
+  end
+  object DividerBevel6: TDividerBevel
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = Owner
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    Left = 10
+    Height = 15
+    Top = 10
+    Width = 728
+    Caption = 'LANGUE'
+    Anchors = [akTop, akLeft, akRight]
+    BorderSpacing.Left = 10
+    BorderSpacing.Top = 10
+    BorderSpacing.Right = 10
+    Font.Color = 14342874
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object CBLanguage: TComboBox
+    AnchorSideLeft.Control = Label14
+    AnchorSideTop.Control = Label14
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = CBCapture
+    AnchorSideRight.Side = asrCenter
+    Left = 20
+    Height = 23
+    Top = 40
+    Width = 348
+    ItemHeight = 15
+    OnSelect = CBLanguageSelect
+    Style = csDropDownList
+    TabOrder = 3
+  end
+  object Panel1: TPanel
+    AnchorSideTop.Control = DividerBevel1
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = CBCapture
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = CBCapture
+    Left = 395
+    Height = 15
+    Top = 108
+    Width = 283
+    Anchors = [akTop, akRight, akBottom]
+    BorderSpacing.Bottom = 3
+    BevelOuter = bvNone
+    Color = 1973790
+    ParentColor = False
+    TabOrder = 4
+  end
+  object Label14: TLabel
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = DividerBevel6
+    AnchorSideTop.Side = asrBottom
+    Left = 20
+    Height = 15
+    Top = 25
+    Width = 133
+    BorderSpacing.Left = 20
+    Caption = 'Sélectionnez votre langue'
+    Font.Color = 14342874
+    Font.Style = [fsItalic]
+    ParentColor = False
+    ParentFont = False
+  end
+end

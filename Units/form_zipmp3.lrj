@@ -1,0 +1,13 @@
+{"version":1,"strings":[
+{"hash":51740080,"name":"tformzipmp3.caption","sourcebytes":[77,80,51,32,45,62,32,90,73,80],"value":"MP3 -> ZIP"},
+{"hash":53717328,"name":"tformzipmp3.label1.caption","sourcebytes":[67,111,109,112,114,101,115,115,101,32,112,108,117,115,105,101,117,114,115,32,102,105,99,104,105,101,114,115,32,77,80,51,32,100,97,110,115,32,117,110,32,102,105,99,104,105,101,114,32,90,73,80],"value":"Compresse plusieurs fichiers MP3 dans un fichier ZIP"},
+{"hash":54286981,"name":"tformzipmp3.label2.caption","sourcebytes":[67,111,99,104,101,122,32,108,101,115,32,102,105,99,104,105,101,114,115,32,195,160,32,105,110,99,108,117,114,101],"value":"Cochez les fichiers \u00E0 inclure"},
+{"hash":234705328,"name":"tformzipmp3.label3.caption","sourcebytes":[78,111,109,32,100,117,32,102,105,99,104,105,101,114,32,90,73,80],"value":"Nom du fichier ZIP"},
+{"hash":5404860,"name":"tformzipmp3.label4.caption","sourcebytes":[76,97,98,101,108],"value":"Label"},
+{"hash":32227349,"name":"tformzipmp3.label5.caption","sourcebytes":[65,112,101,114,195,167,117,32,100,117,32,110,111,109,32,100,101,32,102,105,99,104,105,101,114,32,97,112,114,195,168,115,32,102,111,114,109,97,116,97,103,101],"value":"Aper\u00E7u du nom de fichier apr\u00E8s formatage"},
+{"hash":5404860,"name":"tformzipmp3.label6.caption","sourcebytes":[76,97,98,101,108],"value":"Label"},
+{"hash":231383776,"name":"tformzipmp3.bzipfiles.caption","sourcebytes":[67,114,195,169,101,114,32,108,101,32,90,73,80],"value":"Cr\u00E9er le ZIP"},
+{"hash":5404860,"name":"tformzipmp3.buncheckall.caption","sourcebytes":[76,97,98,101,108],"value":"Label"},
+{"hash":5404860,"name":"tformzipmp3.bcheckall.caption","sourcebytes":[76,97,98,101,108],"value":"Label"},
+{"hash":5404860,"name":"tformzipmp3.label7.caption","sourcebytes":[76,97,98,101,108],"value":"Label"}
+]}

@@ -1,0 +1,5 @@
+{"version":1,"strings":[
+{"hash":30811,"name":"tformuserconfirmation.bok.caption","sourcebytes":[115,79,107],"value":"sOk"},
+{"hash":127420876,"name":"tformuserconfirmation.bcancel.caption","sourcebytes":[115,67,97,110,99,101,108],"value":"sCancel"},
+{"hash":5404860,"name":"tformuserconfirmation.label1.caption","sourcebytes":[76,97,98,101,108],"value":"Label"}
+]}

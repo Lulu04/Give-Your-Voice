@@ -1,0 +1,94 @@
+object FormUserMessage: TFormUserMessage
+  Left = 565
+  Height = 130
+  Top = 452
+  Width = 480
+  BorderIcons = []
+  BorderStyle = bsNone
+  ClientHeight = 130
+  ClientWidth = 480
+  Color = 1710618
+  Font.Color = 13948116
+  KeyPreview = True
+  OnKeyUp = FormKeyUp
+  OnShow = FormShow
+  Position = poWorkAreaCenter
+  LCLVersion = '2.2.4.0'
+  object Shape1: TShape
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = Owner
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = Owner
+    AnchorSideBottom.Side = asrBottom
+    Left = 0
+    Height = 130
+    Top = 0
+    Width = 480
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    Brush.Style = bsClear
+    Pen.Color = 33023
+    Pen.Width = 2
+  end
+  object BOk: TSpeedButton
+    AnchorSideLeft.Control = Owner
+    AnchorSideLeft.Side = asrCenter
+    AnchorSideBottom.Control = Owner
+    AnchorSideBottom.Side = asrBottom
+    Cursor = crHandPoint
+    Left = 190
+    Height = 28
+    Top = 92
+    Width = 100
+    Anchors = [akLeft, akBottom]
+    AutoSize = True
+    BorderSpacing.Left = 10
+    BorderSpacing.Bottom = 10
+    Constraints.MinHeight = 20
+    Constraints.MinWidth = 100
+    Caption = 'sOk'
+    Flat = True
+    Font.Color = clBlack
+    Images = DataModule1.ImageList1
+    ImageIndex = 14
+    Transparent = False
+    OnClick = BOkClick
+    ParentFont = False
+  end
+  object Label1: TLabel
+    AnchorSideLeft.Control = PaintBox1
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideTop.Control = Owner
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    Left = 52
+    Height = 48
+    Top = 10
+    Width = 380
+    Alignment = taCenter
+    Anchors = [akTop, akLeft, akRight]
+    BorderSpacing.Left = 10
+    BorderSpacing.Top = 10
+    BorderSpacing.Right = 52
+    Caption = 'Label'
+    Constraints.MinHeight = 48
+    Constraints.MinWidth = 380
+    Font.Color = 15395562
+    Font.Height = 17
+    ParentColor = False
+    ParentFont = False
+    WordWrap = True
+    OnResize = Label1Resize
+  end
+  object PaintBox1: TPaintBox
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = Owner
+    Left = 10
+    Height = 32
+    Top = 10
+    Width = 32
+    BorderSpacing.Left = 10
+    BorderSpacing.Top = 10
+    OnPaint = PaintBox1Paint
+  end
+end

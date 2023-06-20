@@ -1,0 +1,33 @@
+object FormHelp: TFormHelp
+  Left = 425
+  Height = 197
+  Top = 415
+  Width = 455
+  BorderIcons = [biSystemMenu]
+  Caption = 'Aide'
+  ClientHeight = 197
+  ClientWidth = 455
+  Color = 11468799
+  FormStyle = fsStayOnTop
+  KeyPreview = True
+  OnClose = FormClose
+  OnDeactivate = FormDeactivate
+  OnKeyUp = FormKeyUp
+  OnShow = FormShow
+  LCLVersion = '2.2.4.0'
+  object Memo1: TMemo
+    Left = 0
+    Height = 197
+    Top = 0
+    Width = 455
+    Align = alClient
+    Color = 11468799
+    Font.Color = 1907997
+    Font.Height = 20
+    ParentBidiMode = False
+    ParentFont = False
+    ReadOnly = True
+    ScrollBars = ssAutoVertical
+    TabOrder = 0
+  end
+end

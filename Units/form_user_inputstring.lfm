@@ -1,0 +1,131 @@
+object FormUserInput: TFormUserInput
+  Left = 414
+  Height = 114
+  Top = 380
+  Width = 521
+  BorderIcons = []
+  BorderStyle = bsNone
+  ClientHeight = 114
+  ClientWidth = 521
+  Color = 1710618
+  Font.Color = 13948116
+  KeyPreview = True
+  OnCreate = FormCreate
+  OnKeyUp = FormKeyUp
+  OnShow = FormShow
+  Position = poWorkAreaCenter
+  LCLVersion = '2.2.4.0'
+  object Shape2: TShape
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = Owner
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = Owner
+    AnchorSideBottom.Side = asrBottom
+    Left = 0
+    Height = 114
+    Top = 0
+    Width = 521
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    Brush.Style = bsClear
+    Pen.Color = 33023
+    Pen.Width = 2
+  end
+  object Shape1: TShape
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = Owner
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = Owner
+    Left = 0
+    Height = 0
+    Top = 0
+    Width = 521
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    BorderSpacing.Bottom = 10
+    Brush.Style = bsClear
+    Pen.Color = 33023
+    Pen.Width = 2
+  end
+  object SpeedButton1: TSpeedButton
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = SpeedButton2
+    AnchorSideBottom.Control = Owner
+    AnchorSideBottom.Side = asrBottom
+    Cursor = crHandPoint
+    Left = 311
+    Height = 28
+    Top = 76
+    Width = 80
+    Anchors = [akRight, akBottom]
+    AutoSize = True
+    BorderSpacing.Left = 20
+    BorderSpacing.Right = 30
+    BorderSpacing.Bottom = 10
+    Constraints.MinHeight = 20
+    Constraints.MinWidth = 80
+    Caption = 'sOk'
+    Flat = True
+    Font.Color = clBlack
+    Images = DataModule1.ImageList1
+    ImageIndex = 14
+    Transparent = False
+    OnClick = SpeedButton1Click
+    ParentFont = False
+  end
+  object SpeedButton2: TSpeedButton
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = Owner
+    AnchorSideBottom.Side = asrBottom
+    Cursor = crHandPoint
+    Left = 421
+    Height = 28
+    Top = 76
+    Width = 80
+    Anchors = [akRight, akBottom]
+    AutoSize = True
+    BorderSpacing.Bottom = 10
+    Constraints.MinHeight = 20
+    Constraints.MinWidth = 80
+    Caption = 'sCancel'
+    Flat = True
+    Font.Color = clBlack
+    Images = DataModule1.ImageList1
+    ImageIndex = 15
+    Transparent = False
+    OnClick = SpeedButton2Click
+    ParentFont = False
+  end
+  object Panel1: TPanel
+    AnchorSideLeft.Control = PaintBox1
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideTop.Control = Owner
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = SpeedButton1
+    Left = 52
+    Height = 64
+    Top = 2
+    Width = 449
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    BorderSpacing.Left = 10
+    BorderSpacing.Top = 2
+    BorderSpacing.Right = 20
+    BorderSpacing.Bottom = 10
+    BevelOuter = bvNone
+    Constraints.MinHeight = 62
+    TabOrder = 0
+  end
+  object PaintBox1: TPaintBox
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = Owner
+    Left = 10
+    Height = 32
+    Top = 10
+    Width = 32
+    BorderSpacing.Left = 10
+    BorderSpacing.Top = 10
+    OnPaint = PaintBox1Paint
+  end
+end

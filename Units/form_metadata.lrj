@@ -1,0 +1,12 @@
+{"version":1,"strings":[
+{"hash":141769361,"name":"tformmetadata.caption","sourcebytes":[70,111,114,109,77,101,116,97,68,97,116,97],"value":"FormMetaData"},
+{"hash":44605219,"name":"tformmetadata.label17.caption","sourcebytes":[86,195,169,114,105,102,105,99,97,116,105,111,110,32,100,101,115,32,109,195,169,116,97,100,111,110,110,195,169,101,115],"value":"V\u00E9rification des m\u00E9tadonn\u00E9es"},
+{"hash":5404860,"name":"tformmetadata.label23.caption","sourcebytes":[76,97,98,101,108],"value":"Label"},
+{"hash":5404860,"name":"tformmetadata.label24.caption","sourcebytes":[76,97,98,101,108],"value":"Label"},
+{"hash":5404860,"name":"tformmetadata.label25.caption","sourcebytes":[76,97,98,101,108],"value":"Label"},
+{"hash":5404860,"name":"tformmetadata.label26.caption","sourcebytes":[76,97,98,101,108],"value":"Label"},
+{"hash":5404860,"name":"tformmetadata.label27.caption","sourcebytes":[76,97,98,101,108],"value":"Label"},
+{"hash":5404860,"name":"tformmetadata.label29.caption","sourcebytes":[76,97,98,101,108],"value":"Label"},
+{"hash":62375717,"name":"tformmetadata.bmix.hint","sourcebytes":[108,97,110,99,101,32,108,101,32,109,105,120,97,103,101],"value":"lance le mixage"},
+{"hash":5368994,"name":"tformmetadata.bmix.caption","sourcebytes":[77,73,88,69,82],"value":"MIXER"}
+]}

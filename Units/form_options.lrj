@@ -1,0 +1,12 @@
+{"version":1,"strings":[
+{"hash":82802165,"name":"tformoptions.caption","sourcebytes":[79,112,116,105,111,110,115,32,100,117,32,112,114,111,103,114,97,109,109,101],"value":"Options du programme"},
+{"hash":88529279,"name":"tformoptions.dividerbevel1.caption","sourcebytes":[80,195,137,82,73,80,72,195,137,82,73,81,85,69,83,32,65,85,68,73,79],"value":"P\u00C9RIPH\u00C9RIQUES AUDIO"},
+{"hash":153994051,"name":"tformoptions.label1.caption","sourcebytes":[83,117,112,112,114,105,109,101,114,32,97,117,116,111,109,97,116,105,113,117,101,109,101,110,116,32,108,101,32,98,114,117,105,116,32,100,101,32,102,111,110,100,32,108,111,114,115,32,100,101,115,32,101,110,114,101,103,105,115,116,114,101,109,101,110,116,115],"value":"Supprimer automatiquement le bruit de fond lors des enregistrements"},
+{"hash":128115379,"name":"tformoptions.label2.caption","sourcebytes":[69,110,114,101,103,105,115,116,114,101,114,32,97,118,101,99],"value":"Enregistrer avec"},
+{"hash":129818835,"name":"tformoptions.label3.caption","sourcebytes":[195,137,99,111,117,116,101,114,32,97,118,101,99],"value":"\u00C9couter avec"},
+{"hash":139838082,"name":"tformoptions.bcancel.caption","sourcebytes":[65,110,110,117,108,101,114],"value":"Annuler"},
+{"hash":1371,"name":"tformoptions.bok.caption","sourcebytes":[79,107],"value":"Ok"},
+{"hash":5404860,"name":"tformoptions.btestplaybackdevice.caption","sourcebytes":[76,97,98,101,108],"value":"Label"},
+{"hash":84290709,"name":"tformoptions.dividerbevel6.caption","sourcebytes":[76,65,78,71,85,69],"value":"LANGUE"},
+{"hash":77006165,"name":"tformoptions.label14.caption","sourcebytes":[83,195,169,108,101,99,116,105,111,110,110,101,122,32,118,111,116,114,101,32,108,97,110,103,117,101],"value":"S\u00E9lectionnez votre langue"}
+]}

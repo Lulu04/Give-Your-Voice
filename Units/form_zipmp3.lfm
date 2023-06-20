@@ -1,0 +1,321 @@
+object FormZipMP3: TFormZipMP3
+  Left = 340
+  Height = 516
+  Top = 179
+  Width = 698
+  BorderIcons = [biSystemMenu]
+  Caption = 'MP3 -> ZIP'
+  ClientHeight = 516
+  ClientWidth = 698
+  Color = 3355443
+  Font.Color = 14342874
+  Font.Height = 20
+  KeyPreview = True
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  OnKeyUp = FormKeyUp
+  OnShow = FormShow
+  Position = poMainFormCenter
+  LCLVersion = '2.2.4.0'
+  object Shape1: TShape
+    Left = 0
+    Height = 516
+    Top = 0
+    Width = 698
+    Align = alClient
+    Brush.Style = bsClear
+    Pen.Color = 33023
+    Pen.Width = 2
+  end
+  object Label1: TLabel
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = Owner
+    Left = 5
+    Height = 15
+    Top = 2
+    Width = 290
+    BorderSpacing.Left = 5
+    BorderSpacing.Top = 2
+    Caption = 'Compresse plusieurs fichiers MP3 dans un fichier ZIP'
+    Font.Color = 3124978
+    Font.Height = 15
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label2: TLabel
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = Label1
+    AnchorSideTop.Side = asrBottom
+    Left = 10
+    Height = 20
+    Top = 27
+    Width = 181
+    BorderSpacing.Left = 10
+    BorderSpacing.Top = 10
+    Caption = 'Cochez les fichiers à inclure'
+    ParentColor = False
+  end
+  object Label3: TLabel
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Side = asrBottom
+    AnchorSideBottom.Control = Edit1
+    Left = 10
+    Height = 20
+    Top = 365
+    Width = 124
+    Anchors = [akLeft, akBottom]
+    BorderSpacing.Left = 10
+    Caption = 'Nom du fichier ZIP'
+    ParentColor = False
+  end
+  object Edit1: TEdit
+    AnchorSideLeft.Control = Label3
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = Label5
+    Left = 10
+    Height = 28
+    Top = 385
+    Width = 478
+    Anchors = [akLeft, akBottom]
+    BorderSpacing.Right = 10
+    BorderSpacing.Bottom = 10
+    Color = 1973790
+    OnChange = Edit1Change
+    TabOrder = 0
+  end
+  object Label4: TLabel
+    AnchorSideLeft.Control = Label3
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = Edit1
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = Label3
+    AnchorSideBottom.Side = asrBottom
+    Left = 144
+    Height = 13
+    Top = 372
+    Width = 344
+    Anchors = [akLeft, akRight, akBottom]
+    BorderSpacing.Left = 10
+    Caption = 'Label'
+    Font.Color = 10853885
+    Font.Height = 13
+    ParentColor = False
+    ParentFont = False
+    Visible = False
+  end
+  object Label5: TLabel
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Side = asrBottom
+    AnchorSideBottom.Control = Label6
+    Left = 10
+    Height = 20
+    Top = 423
+    Width = 267
+    Anchors = [akLeft, akBottom]
+    BorderSpacing.Left = 10
+    Caption = 'Aperçu du nom de fichier après formatage'
+    Font.Color = 14342874
+    Font.Height = 20
+    Font.Style = [fsItalic]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label6: TLabel
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Side = asrBottom
+    AnchorSideBottom.Control = BZipFiles
+    Left = 10
+    Height = 20
+    Top = 443
+    Width = 36
+    Anchors = [akLeft, akBottom]
+    BorderSpacing.Left = 10
+    BorderSpacing.Bottom = 10
+    Caption = 'Label'
+    Font.Color = 8978431
+    Font.Height = 20
+    ParentColor = False
+    ParentFont = False
+  end
+  object Panel2: TPanel
+    AnchorSideLeft.Control = Label2
+    AnchorSideTop.Control = Label2
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = BCheckFileForLitAudio
+    Left = 10
+    Height = 271
+    Top = 47
+    Width = 678
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    BorderSpacing.Right = 10
+    BorderSpacing.Bottom = 5
+    BevelColor = 33023
+    ClientHeight = 271
+    ClientWidth = 678
+    TabOrder = 2
+    object TV: TTreeView
+      Left = 1
+      Height = 269
+      Top = 1
+      Width = 676
+      Align = alClient
+      Anchors = [akTop, akLeft, akRight]
+      BackgroundColor = 2631720
+      BorderStyle = bsNone
+      Color = 2631720
+      ExpandSignColor = 14342874
+      ExpandSignSize = 0
+      ExpandSignType = tvestArrowFill
+      Font.Color = 14342874
+      Font.Height = 20
+      HotTrack = True
+      Images = DataModule1.ImageList1
+      Indent = 30
+      ParentFont = False
+      ReadOnly = True
+      ScrollBars = ssAutoBoth
+      SelectionColor = 2631720
+      SelectionFontColor = 14342874
+      TabOrder = 0
+      ToolTips = False
+      OnMouseDown = TVMouseDown
+      Options = [tvoAutoItemHeight, tvoHideSelection, tvoHotTrack, tvoKeepCollapsedNodes, tvoReadOnly, tvoShowButtons, tvoShowLines, tvoShowRoot]
+      TreeLineColor = 14342874
+      TreeLinePenStyle = psSolid
+    end
+  end
+  object BZipFiles: TSpeedButton
+    AnchorSideLeft.Control = Owner
+    AnchorSideLeft.Side = asrCenter
+    AnchorSideTop.Side = asrCenter
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = Owner
+    AnchorSideBottom.Side = asrBottom
+    Cursor = crHandPoint
+    Left = 274
+    Height = 28
+    Top = 473
+    Width = 150
+    Anchors = [akLeft, akBottom]
+    AutoSize = True
+    BorderSpacing.Right = 5
+    BorderSpacing.Bottom = 15
+    Constraints.MinWidth = 150
+    Caption = 'Créer le ZIP'
+    Flat = True
+    Font.Color = clBlack
+    Font.Height = 20
+    Images = DataModule1.ImageList1
+    ImageIndex = 50
+    Transparent = False
+    OnClick = BZipFilesClick
+    ParentFont = False
+  end
+  object BUncheckAll: TSpeedButton
+    AnchorSideLeft.Control = BCheckAll
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideBottom.Control = Label2
+    AnchorSideBottom.Side = asrBottom
+    Cursor = crHandPoint
+    Left = 306
+    Height = 24
+    Top = 23
+    Width = 55
+    Anchors = [akLeft, akBottom]
+    AutoSize = True
+    BorderSpacing.Left = 30
+    Caption = 'Label'
+    Font.Color = clBlack
+    Font.Height = 14
+    Images = DataModule1.ImageList1
+    ImageIndex = 5
+    ImageWidth = 20
+    OnClick = BZipFilesClick
+    ParentFont = False
+  end
+  object PanelZipProgress: TPanel
+    AnchorSideLeft.Control = Owner
+    AnchorSideLeft.Side = asrCenter
+    AnchorSideTop.Control = Panel2
+    AnchorSideTop.Side = asrCenter
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    Left = 121
+    Height = 150
+    Top = 107
+    Width = 456
+    BorderSpacing.Left = 10
+    BorderSpacing.Top = 1
+    BevelColor = 33023
+    TabOrder = 1
+    Visible = False
+  end
+  object BCheckAll: TSpeedButton
+    AnchorSideLeft.Control = Label2
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideBottom.Control = Label2
+    AnchorSideBottom.Side = asrBottom
+    Cursor = crHandPoint
+    Left = 221
+    Height = 24
+    Top = 23
+    Width = 55
+    Anchors = [akLeft, akBottom]
+    AutoSize = True
+    BorderSpacing.Left = 30
+    Caption = 'Label'
+    Font.Color = clBlack
+    Font.Height = 14
+    Images = DataModule1.ImageList1
+    ImageIndex = 51
+    ImageWidth = 20
+    OnClick = BZipFilesClick
+    ParentFont = False
+  end
+  object BCheckFileForLitAudio: TSpeedButton
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Side = asrCenter
+    AnchorSideBottom.Control = Label3
+    Cursor = crHandPoint
+    Left = 10
+    Height = 32
+    Top = 323
+    Width = 32
+    Anchors = [akLeft, akBottom]
+    BorderSpacing.Left = 10
+    BorderSpacing.Bottom = 10
+    Color = 1973790
+    Flat = True
+    Images = DataModule1.ImageList1
+    ImageIndex = 49
+    OnClick = Label7Click
+    ShowHint = True
+    ParentShowHint = False
+  end
+  object Label7: TLabel
+    AnchorSideLeft.Control = BCheckFileForLitAudio
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideTop.Control = BCheckFileForLitAudio
+    AnchorSideTop.Side = asrCenter
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    Cursor = crHandPoint
+    Left = 42
+    Height = 20
+    Top = 329
+    Width = 646
+    Anchors = [akTop, akLeft, akRight]
+    BorderSpacing.Right = 10
+    Caption = 'Label'
+    ParentColor = False
+    WordWrap = True
+    OnClick = Label7Click
+  end
+end

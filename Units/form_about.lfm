@@ -1,0 +1,274 @@
+object FormAbout: TFormAbout
+  Left = 379
+  Height = 440
+  Top = 148
+  Width = 530
+  BorderIcons = [biSystemMenu]
+  Caption = 'à propos de Give Your Voice'
+  ClientHeight = 440
+  ClientWidth = 530
+  Color = 3355443
+  Constraints.MaxWidth = 530
+  Constraints.MinWidth = 530
+  Font.Color = 14342874
+  KeyPreview = True
+  OnDestroy = FormDestroy
+  OnKeyUp = FormKeyUp
+  OnShow = FormShow
+  Position = poMainFormCenter
+  LCLVersion = '2.2.4.0'
+  object Shape1: TShape
+    Left = 0
+    Height = 440
+    Top = 0
+    Width = 530
+    Align = alClient
+    Brush.Style = bsClear
+    Pen.Color = 33023
+    Pen.Width = 4
+  end
+  object BDonate: TSpeedButton
+    AnchorSideLeft.Control = Owner
+    AnchorSideBottom.Control = Owner
+    AnchorSideBottom.Side = asrBottom
+    Cursor = crHandPoint
+    Left = 40
+    Height = 28
+    Top = 397
+    Width = 113
+    Anchors = [akLeft, akBottom]
+    AutoSize = True
+    BorderSpacing.Left = 40
+    BorderSpacing.Bottom = 15
+    Caption = 'Faire un don'
+    Font.Color = clBlack
+    Font.Height = 20
+    Images = DataModule1.ImageList1
+    ImageIndex = 44
+    OnClick = BDonateClick
+    ParentFont = False
+  end
+  object Label1: TLabel
+    AnchorSideLeft.Control = Owner
+    AnchorSideLeft.Side = asrCenter
+    AnchorSideTop.Control = Owner
+    Left = 247
+    Height = 20
+    Top = 15
+    Width = 37
+    BorderSpacing.Top = 15
+    Caption = 'Label'
+    Font.Color = 14342874
+    Font.Height = 20
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Memo1: TMemo
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = Label10
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = BDonate
+    Left = 20
+    Height = 180
+    Top = 197
+    Width = 490
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    BorderSpacing.Left = 20
+    BorderSpacing.Top = 5
+    BorderSpacing.Right = 20
+    BorderSpacing.Bottom = 20
+    Color = 3355443
+    Font.Color = 14342874
+    Font.Height = 18
+    ParentFont = False
+    ReadOnly = True
+    ScrollBars = ssAutoVertical
+    TabOrder = 0
+  end
+  object Label2: TLabel
+    AnchorSideLeft.Control = Owner
+    AnchorSideLeft.Side = asrCenter
+    AnchorSideTop.Control = Label1
+    AnchorSideTop.Side = asrBottom
+    Left = 247
+    Height = 20
+    Top = 35
+    Width = 36
+    Caption = 'Label'
+    Font.Color = 14342874
+    Font.Height = 20
+    ParentColor = False
+    ParentFont = False
+  end
+  object BClose: TSpeedButton
+    AnchorSideLeft.Control = Owner
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = Owner
+    AnchorSideBottom.Side = asrBottom
+    Cursor = crHandPoint
+    Left = 422
+    Height = 28
+    Top = 397
+    Width = 68
+    Anchors = [akRight, akBottom]
+    AutoSize = True
+    BorderSpacing.Right = 40
+    BorderSpacing.Bottom = 15
+    Caption = 'Label'
+    Font.Color = clBlack
+    Font.Height = 20
+    Images = DataModule1.ImageList1
+    ImageIndex = 14
+    OnClick = BCloseClick
+    ParentFont = False
+  end
+  object PaintBox1: TPaintBox
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = Owner
+    Left = 20
+    Height = 60
+    Top = 20
+    Width = 60
+    BorderSpacing.Left = 20
+    BorderSpacing.Top = 20
+    OnPaint = PaintBox1Paint
+  end
+  object Label3: TLabel
+    AnchorSideLeft.Control = Memo1
+    AnchorSideTop.Control = Label9
+    AnchorSideTop.Side = asrBottom
+    Left = 20
+    Height = 20
+    Top = 115
+    Width = 51
+    BorderSpacing.Top = 10
+    Caption = 'License:'
+    Font.Color = 14342874
+    Font.Height = 20
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label4: TLabel
+    AnchorSideLeft.Control = Memo1
+    AnchorSideTop.Control = Label3
+    AnchorSideTop.Side = asrBottom
+    Left = 20
+    Height = 20
+    Top = 135
+    Width = 47
+    Caption = 'Auteur:'
+    Font.Color = 14342874
+    Font.Height = 20
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label5: TLabel
+    AnchorSideLeft.Control = Memo1
+    AnchorSideTop.Control = Label4
+    AnchorSideTop.Side = asrBottom
+    Left = 20
+    Height = 20
+    Top = 155
+    Width = 85
+    Caption = 'Code source:'
+    Font.Color = 14342874
+    Font.Height = 20
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label6: TLabel
+    AnchorSideLeft.Control = Label3
+    AnchorSideTop.Control = Label3
+    AnchorSideTop.Side = asrCenter
+    Left = 150
+    Height = 20
+    Top = 115
+    Width = 120
+    BorderSpacing.Left = 130
+    BorderSpacing.Top = 5
+    Caption = 'code libre (GPLv3)'
+    Font.Color = 14342874
+    Font.Height = 20
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label7: TLabel
+    AnchorSideLeft.Control = Label4
+    AnchorSideTop.Control = Label4
+    AnchorSideTop.Side = asrCenter
+    Left = 150
+    Height = 20
+    Top = 135
+    Width = 27
+    BorderSpacing.Left = 130
+    BorderSpacing.Top = 5
+    Caption = 'Lulu'
+    Font.Color = 14342874
+    Font.Height = 20
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label8: TLabel
+    AnchorSideLeft.Control = Label5
+    AnchorSideTop.Control = Label5
+    AnchorSideTop.Side = asrCenter
+    Cursor = crHandPoint
+    Left = 150
+    Height = 20
+    Top = 155
+    Width = 36
+    BorderSpacing.Left = 130
+    BorderSpacing.Top = 5
+    Caption = 'Label'
+    Font.Color = 8978431
+    Font.Height = 20
+    ParentColor = False
+    ParentFont = False
+    OnClick = Label8Click
+  end
+  object Label9: TLabel
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = PaintBox1
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    Left = 20
+    Height = 20
+    Top = 85
+    Width = 490
+    Alignment = taCenter
+    Anchors = [akTop, akLeft, akRight]
+    BorderSpacing.Left = 20
+    BorderSpacing.Top = 5
+    BorderSpacing.Right = 20
+    Caption = 'Logiciel d''aide à l''enregistrement de livres audio'
+    Font.Color = 14342874
+    Font.Height = 20
+    ParentColor = False
+    ParentFont = False
+    WordWrap = True
+  end
+  object Label10: TLabel
+    AnchorSideLeft.Control = Memo1
+    AnchorSideTop.Control = Label5
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = Memo1
+    AnchorSideRight.Side = asrBottom
+    Cursor = crHandPoint
+    Left = 418
+    Height = 17
+    Top = 175
+    Width = 92
+    Anchors = [akTop, akRight]
+    Caption = 'Signaler un bug'
+    Font.Color = 8978431
+    Font.Height = 18
+    ParentColor = False
+    ParentFont = False
+    OnClick = Label8Click
+  end
+end
