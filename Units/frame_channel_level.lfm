@@ -1,0 +1,71 @@
+object FrameChannelsLevel: TFrameChannelsLevel
+  Left = 0
+  Height = 46
+  Top = 0
+  Width = 269
+  ClientHeight = 46
+  ClientWidth = 269
+  OnResize = FrameResize
+  TabOrder = 0
+  DesignLeft = 701
+  DesignTop = 291
+  object PB: TPaintBox
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = Owner
+    AnchorSideRight.Control = Shape1
+    AnchorSideBottom.Control = Owner
+    AnchorSideBottom.Side = asrBottom
+    Left = 0
+    Height = 46
+    Top = 0
+    Width = 245
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    BorderSpacing.Right = 2
+    PopupMenu = PopupMenu1
+    OnPaint = PBPaint
+    OnResize = PBResize
+  end
+  object Shape1: TShape
+    AnchorSideTop.Control = Owner
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = Owner
+    AnchorSideBottom.Side = asrBottom
+    Left = 247
+    Height = 42
+    Top = 2
+    Width = 20
+    Anchors = [akTop, akRight, akBottom]
+    BorderSpacing.Top = 2
+    BorderSpacing.Right = 2
+    BorderSpacing.Bottom = 2
+    Brush.Color = clRed
+    Constraints.MinWidth = 10
+    Pen.Style = psClear
+  end
+  object Timer1: TTimer
+    Enabled = False
+    Interval = 250
+    OnTimer = Timer1Timer
+    Left = 8
+  end
+  object PopupMenu1: TPopupMenu
+    Left = 80
+    object MIPercent: TMenuItem
+      Caption = 'Pourcentage'
+      RadioItem = True
+      OnClick = MIPercentClick
+    end
+    object MIDecibel: TMenuItem
+      Caption = 'Decibel'
+      Checked = True
+      RadioItem = True
+      OnClick = MIPercentClick
+    end
+    object MIShowCaption: TMenuItem
+      Caption = 'Afficher la valeur'
+      Checked = True
+      OnClick = MIPercentClick
+    end
+  end
+end

@@ -1,0 +1,358 @@
+object FrameViewProjectFiles: TFrameViewProjectFiles
+  Left = 0
+  Height = 240
+  Top = 0
+  Width = 640
+  ClientHeight = 240
+  ClientWidth = 640
+  TabOrder = 0
+  DesignLeft = 421
+  DesignTop = 172
+  object TV: TTreeView
+    Left = 0
+    Height = 240
+    Top = 0
+    Width = 640
+    Align = alClient
+    BackgroundColor = 2631720
+    BorderStyle = bsNone
+    Color = 2631720
+    ExpandSignColor = 14342874
+    ExpandSignType = tvestArrowFill
+    Font.Color = 14342874
+    Font.Height = 20
+    HotTrack = True
+    Images = DataModule1.ImageList1
+    Indent = 30
+    ParentFont = False
+    ReadOnly = True
+    RightClickSelect = True
+    ScrollBars = ssAutoBoth
+    TabOrder = 0
+    ToolTips = False
+    OnAdvancedCustomDrawItem = TVAdvancedCustomDrawItem
+    OnChanging = TVChanging
+    OnDblClick = TVDblClick
+    OnMouseDown = TVMouseDown
+    OnMouseUp = TVMouseUp
+    OnMouseWheel = TVMouseWheel
+    OnResize = TVResize
+    OnSelectionChanged = TVSelectionChanged
+    Options = [tvoAutoItemHeight, tvoHideSelection, tvoHotTrack, tvoKeepCollapsedNodes, tvoReadOnly, tvoRightClickSelect, tvoShowButtons, tvoShowLines, tvoShowRoot]
+    TreeLineColor = 14342874
+    TreeLinePenStyle = psSolid
+  end
+  object Panel1: TPanel
+    Left = 16
+    Height = 27
+    Top = 152
+    Width = 336
+    BevelColor = 3618615
+    ClientHeight = 27
+    ClientWidth = 336
+    Color = 2631720
+    ParentColor = False
+    TabOrder = 1
+    Visible = False
+    object BPlayAudioFile: TSpeedButton
+      AnchorSideLeft.Control = Panel1
+      AnchorSideTop.Control = Panel1
+      AnchorSideBottom.Control = Panel1
+      AnchorSideBottom.Side = asrBottom
+      Cursor = crHandPoint
+      Left = 1
+      Height = 25
+      Hint = 'Écouter'
+      Top = 1
+      Width = 25
+      Anchors = [akTop, akLeft, akBottom]
+      Color = 1973790
+      Flat = True
+      Images = DataModule1.ImageList1
+      ImageIndex = 6
+      Transparent = False
+      OnClick = BAddRecordClick
+      ShowHint = True
+      ParentShowHint = False
+    end
+    object BStopAudioFile: TSpeedButton
+      AnchorSideLeft.Control = BPlayAudioFile
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = Panel1
+      AnchorSideBottom.Control = Panel1
+      AnchorSideBottom.Side = asrBottom
+      Cursor = crHandPoint
+      Left = 28
+      Height = 25
+      Hint = 'Stopper'
+      Top = 1
+      Width = 25
+      Anchors = [akTop, akLeft, akBottom]
+      BorderSpacing.Left = 2
+      Color = 1973790
+      Flat = True
+      Images = DataModule1.ImageList1
+      ImageIndex = 7
+      Transparent = False
+      OnClick = BAddRecordClick
+      ShowHint = True
+      ParentShowHint = False
+    end
+    object BEditFile: TSpeedButton
+      AnchorSideLeft.Control = BStopAudioFile
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = Panel1
+      AnchorSideBottom.Control = Panel1
+      AnchorSideBottom.Side = asrBottom
+      Cursor = crHandPoint
+      Left = 55
+      Height = 25
+      Hint = 'Modifier cet enregistrement'#13#10'(ou double clic sur la ligne)'
+      Top = 1
+      Width = 25
+      Anchors = [akTop, akLeft, akBottom]
+      BorderSpacing.Left = 2
+      Color = 1973790
+      Flat = True
+      Images = DataModule1.ImageList1
+      ImageIndex = 16
+      Transparent = False
+      OnClick = BAddRecordClick
+      ShowHint = True
+      ParentShowHint = False
+    end
+    object Panel4: TPanel
+      AnchorSideLeft.Control = BEditFile
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = Panel1
+      AnchorSideBottom.Control = Panel1
+      AnchorSideBottom.Side = asrBottom
+      Left = 82
+      Height = 21
+      Top = 3
+      Width = 246
+      Anchors = [akTop, akLeft, akBottom]
+      BorderSpacing.Left = 2
+      BorderSpacing.Top = 2
+      BorderSpacing.Bottom = 2
+      BevelOuter = bvNone
+      Color = 11184810
+      ParentColor = False
+      TabOrder = 0
+    end
+  end
+  object Panel2: TPanel
+    Left = 16
+    Height = 27
+    Top = 104
+    Width = 128
+    BevelColor = 3618615
+    ClientHeight = 27
+    ClientWidth = 128
+    Color = 2631720
+    ParentColor = False
+    TabOrder = 2
+    Visible = False
+    object BAddRecord: TSpeedButton
+      AnchorSideLeft.Control = Panel2
+      AnchorSideTop.Control = Panel2
+      AnchorSideBottom.Control = Panel2
+      AnchorSideBottom.Side = asrBottom
+      Cursor = crHandPoint
+      Left = 1
+      Height = 25
+      Hint = 'Ajoute un nouvel enregistrement à cette section'
+      Top = 1
+      Width = 25
+      Anchors = [akTop, akLeft, akBottom]
+      Color = 1973790
+      Flat = True
+      Images = DataModule1.ImageList1
+      ImageIndex = 21
+      Transparent = False
+      OnClick = BAddRecordClick
+      ShowHint = True
+      ParentShowHint = False
+    end
+    object BMixSection: TSpeedButton
+      AnchorSideLeft.Control = BAddRecord
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = Panel2
+      AnchorSideBottom.Control = Panel2
+      AnchorSideBottom.Side = asrBottom
+      Cursor = crHandPoint
+      Left = 46
+      Height = 25
+      Hint = 'Mixe cette section et produit un fichier MP3'
+      Top = 1
+      Width = 76
+      Anchors = [akTop, akLeft, akBottom]
+      BorderSpacing.Left = 20
+      Caption = 'MIXER'
+      Color = 1973790
+      Flat = True
+      Font.Color = 13553358
+      Images = DataModule1.ImageList1
+      ImageIndex = 27
+      Transparent = False
+      OnClick = BAddRecordClick
+      ShowHint = True
+      ParentFont = False
+      ParentShowHint = False
+    end
+  end
+  object Panel3: TPanel
+    Left = 16
+    Height = 27
+    Top = 60
+    Width = 27
+    BevelColor = 3618615
+    ClientHeight = 27
+    ClientWidth = 27
+    Color = 2631720
+    ParentColor = False
+    TabOrder = 3
+    Visible = False
+    object BAddSection: TSpeedButton
+      AnchorSideLeft.Control = Panel3
+      AnchorSideTop.Control = Panel3
+      AnchorSideBottom.Control = Panel3
+      AnchorSideBottom.Side = asrBottom
+      Cursor = crHandPoint
+      Left = 1
+      Height = 25
+      Hint = 'Ajoute une nouvelle section au projet'
+      Top = 1
+      Width = 25
+      Anchors = [akTop, akLeft, akBottom]
+      Color = 1973790
+      Flat = True
+      Images = DataModule1.ImageList1
+      ImageIndex = 20
+      Transparent = False
+      OnClick = BAddRecordClick
+      ShowHint = True
+      ParentShowHint = False
+    end
+  end
+  object Timer1: TTimer
+    Enabled = False
+    Interval = 100
+    OnTimer = Timer1Timer
+    Left = 296
+    Top = 24
+  end
+  object PopupSection: TPopupMenu
+    Images = DataModule1.ImageList1
+    OnPopup = PopupSectionPopup
+    Left = 384
+    Top = 88
+    object MIInsertSection: TMenuItem
+      Caption = 'Insérer une section ici...'
+      ImageIndex = 20
+      OnClick = BAddRecordClick
+    end
+    object MIRenameSection: TMenuItem
+      Caption = 'Renommer...'
+      ImageIndex = 16
+      OnClick = BAddRecordClick
+    end
+    object MIImportAudioInSection: TMenuItem
+      Caption = 'Importer des fichiers audio dans la section...'
+      ImageIndex = 55
+      OnClick = BAddRecordClick
+    end
+    object Separator1: TMenuItem
+      Caption = '-'
+    end
+    object MIDeleteSection: TMenuItem
+      Caption = 'Supprimer'
+      ImageIndex = 22
+      OnClick = BAddRecordClick
+    end
+  end
+  object PopupRecording: TPopupMenu
+    Images = DataModule1.ImageList1
+    OnPopup = PopupRecordingPopup
+    Left = 472
+    Top = 88
+    object MIRenameFile: TMenuItem
+      Caption = 'Renommer...'
+      ImageIndex = 16
+      OnClick = BAddRecordClick
+    end
+    object Separator4: TMenuItem
+      Caption = '-'
+    end
+    object MIInsertFile: TMenuItem
+      Caption = 'Insérer un nouvel enregistrement ici...'
+      ImageIndex = 21
+      OnClick = BAddRecordClick
+    end
+    object MIImportAudioAndInsertHere: TMenuItem
+      Caption = 'Importer un enregistrement et l''insérer ici...'
+      ImageIndex = 55
+      OnClick = BAddRecordClick
+    end
+    object Separator2: TMenuItem
+      Caption = '-'
+    end
+    object MIDeleteFile: TMenuItem
+      Caption = 'Supprimer'
+      ImageIndex = 22
+      OnClick = BAddRecordClick
+    end
+  end
+  object PopupEmpty: TPopupMenu
+    Images = DataModule1.ImageList1
+    OnPopup = PopupEmptyPopup
+    Left = 560
+    Top = 88
+    object MIAddFolder: TMenuItem
+      Caption = 'Ajouter'
+      ImageIndex = 20
+      OnClick = BAddRecordClick
+    end
+    object Separator3: TMenuItem
+      Caption = '-'
+    end
+    object MIRefresh: TMenuItem
+      Caption = 'Rafraîchir l''arborescence'
+      OnClick = BAddRecordClick
+    end
+  end
+  object PopupMP3Folder: TPopupMenu
+    Images = DataModule1.ImageList1
+    OnPopup = PopupMP3FolderPopup
+    Left = 432
+    Top = 24
+    object MIZipMP3Folder: TMenuItem
+      Caption = 'MP3 -> ZIP'
+      ImageIndex = 50
+      OnClick = BAddRecordClick
+    end
+    object Separator5: TMenuItem
+      Caption = '-'
+    end
+    object MIClearMP3Folder: TMenuItem
+      Caption = 'Vider'
+      ImageIndex = 5
+      OnClick = BAddRecordClick
+    end
+  end
+  object PopupZIPFolder: TPopupMenu
+    Images = DataModule1.ImageList1
+    Left = 552
+    Top = 24
+    object MIDeleteZIPFolder: TMenuItem
+      Caption = 'Supprimer'
+      ImageIndex = 22
+      OnClick = BAddRecordClick
+    end
+  end
+  object OD1: TOpenDialog
+    Options = [ofAllowMultiSelect, ofPathMustExist, ofFileMustExist, ofEnableSizing, ofViewDetail, ofAutoPreview]
+    Left = 352
+    Top = 24
+  end
+end

@@ -1,0 +1,76 @@
+object FrameEditString: TFrameEditString
+  Left = 0
+  Height = 74
+  Top = 0
+  Width = 305
+  ClientHeight = 74
+  ClientWidth = 305
+  Color = 1710618
+  ParentBackground = False
+  ParentColor = False
+  TabOrder = 0
+  DesignLeft = 520
+  DesignTop = 378
+  object Panel1: TPanel
+    Left = 0
+    Height = 74
+    Top = 0
+    Width = 305
+    Align = alClient
+    BevelOuter = bvNone
+    ClientHeight = 74
+    ClientWidth = 305
+    TabOrder = 0
+    object Label1: TLabel
+      AnchorSideLeft.Control = Panel1
+      AnchorSideTop.Control = Panel1
+      Left = 0
+      Height = 17
+      Top = 0
+      Width = 31
+      Caption = 'Label'
+      Font.Color = 15395562
+      Font.Height = -13
+      ParentColor = False
+      ParentFont = False
+    end
+    object Edit1: TEdit
+      AnchorSideLeft.Control = Panel1
+      AnchorSideTop.Control = Label1
+      AnchorSideTop.Side = asrBottom
+      AnchorSideRight.Control = Panel1
+      AnchorSideRight.Side = asrBottom
+      Left = 0
+      Height = 28
+      Top = 17
+      Width = 305
+      Anchors = [akTop, akLeft, akRight]
+      Color = 1644825
+      Font.Color = 15395562
+      Font.Height = 20
+      Font.Style = [fsBold]
+      OnChange = Edit1Change
+      OnKeyUp = Edit1KeyUp
+      ParentFont = False
+      TabStop = False
+      TabOrder = 0
+    end
+    object Label2: TLabel
+      AnchorSideLeft.Control = Edit1
+      AnchorSideTop.Control = Edit1
+      AnchorSideTop.Side = asrBottom
+      Left = 5
+      Height = 13
+      Top = 45
+      Width = 27
+      BorderSpacing.Left = 5
+      Caption = 'Label'
+      Color = 1644825
+      Font.Color = 10853885
+      Font.Height = 13
+      ParentColor = False
+      ParentFont = False
+      Transparent = False
+    end
+  end
+end

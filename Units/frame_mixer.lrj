@@ -1,0 +1,12 @@
+{"version":1,"strings":[
+{"hash":97926197,"name":"tframemixer.label3.caption","sourcebytes":[86,111,108,117,109,101],"value":"Volume"},
+{"hash":347076,"name":"tframemixer.bmute.caption","sourcebytes":[77,117,101,116],"value":"Muet"},
+{"hash":139791246,"name":"tframemixer.miaddmusic.caption","sourcebytes":[65,106,111,117,116,101,114,32,117,110,101,32,109,117,115,105,113,117,101,46,46,46],"value":"Ajouter une musique..."},
+{"hash":191805102,"name":"tframemixer.misetvolumemusic.caption","sourcebytes":[65,106,117,115,116,101,114,32,108,101,32,118,111,108,117,109,101,46,46,46],"value":"Ajuster le volume..."},
+{"hash":5404860,"name":"tframemixer.miinvertmutemusic.caption","sourcebytes":[76,97,98,101,108],"value":"Label"},
+{"hash":96250933,"name":"tframemixer.mideletemusic.caption","sourcebytes":[83,117,112,112,114,105,109,101,114,32,99,101,116,116,101,32,109,117,115,105,113,117,101],"value":"Supprimer cette musique"},
+{"hash":113000430,"name":"tframemixer.miaddsound.caption","sourcebytes":[65,106,111,117,116,101,114,32,117,110,32,98,114,117,105,116,97,103,101,46,46,46],"value":"Ajouter un bruitage..."},
+{"hash":191805102,"name":"tframemixer.misetvolumesound.caption","sourcebytes":[65,106,117,115,116,101,114,32,108,101,32,118,111,108,117,109,101,46,46,46],"value":"Ajuster le volume..."},
+{"hash":5404860,"name":"tframemixer.miinvertmutesound.caption","sourcebytes":[76,97,98,101,108],"value":"Label"},
+{"hash":179398725,"name":"tframemixer.mideletesound.caption","sourcebytes":[83,117,112,112,114,105,109,101,114,32,99,101,32,98,114,117,105,116,97,103,101],"value":"Supprimer ce bruitage"}
+]}

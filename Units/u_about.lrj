@@ -1,0 +1,14 @@
+{"version":1,"strings":[
+{"hash":152425333,"name":"tformabout.caption","sourcebytes":[195,160,32,112,114,111,112,111,115,32,100,101,32,71,105,118,101,32,89,111,117,114,32,86,111,105,99,101],"value":"\u00E0 propos de Give Your Voice"},
+{"hash":59269934,"name":"tformabout.bdonate.caption","sourcebytes":[70,97,105,114,101,32,117,110,32,100,111,110],"value":"Faire un don"},
+{"hash":5404860,"name":"tformabout.label1.caption","sourcebytes":[76,97,98,101,108],"value":"Label"},
+{"hash":5404860,"name":"tformabout.label2.caption","sourcebytes":[76,97,98,101,108],"value":"Label"},
+{"hash":5404860,"name":"tformabout.bclose.caption","sourcebytes":[76,97,98,101,108],"value":"Label"},
+{"hash":261905578,"name":"tformabout.label3.caption","sourcebytes":[76,105,99,101,110,115,101,58],"value":"License:"},
+{"hash":147508250,"name":"tformabout.label4.caption","sourcebytes":[65,117,116,101,117,114,58],"value":"Auteur:"},
+{"hash":5900938,"name":"tformabout.label5.caption","sourcebytes":[83,105,116,101,58],"value":"Site:"},
+{"hash":144251145,"name":"tformabout.label6.caption","sourcebytes":[99,111,100,101,32,108,105,98,114,101,32,40,71,80,76,118,51,41],"value":"code libre (GPLv3)"},
+{"hash":343093,"name":"tformabout.label7.caption","sourcebytes":[76,117,108,117],"value":"Lulu"},
+{"hash":263929215,"name":"tformabout.label8.caption","sourcebytes":[104,116,116,112,58,47,47],"value":"http://"},
+{"hash":190446159,"name":"tformabout.label9.caption","sourcebytes":[76,111,103,105,99,105,101,108,32,100,39,97,105,100,101,32,195,160,32,108,39,101,110,114,101,103,105,115,116,114,101,109,101,110,116,32,100,101,32,108,105,118,114,101,115,32,97,117,100,105,111],"value":"Logiciel d'aide \u00E0 l'enregistrement de livres audio"}
+]}

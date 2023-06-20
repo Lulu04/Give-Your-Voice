@@ -1,0 +1,291 @@
+object FrameMixer: TFrameMixer
+  Left = 0
+  Height = 474
+  Top = 0
+  Width = 751
+  ClientHeight = 474
+  ClientWidth = 751
+  TabOrder = 0
+  DesignLeft = 330
+  DesignTop = 157
+  object PBTime: TPaintBox
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = Owner
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    Left = 0
+    Height = 25
+    Top = 0
+    Width = 751
+    Anchors = [akTop, akLeft, akRight]
+    Constraints.MaxHeight = 25
+    Constraints.MinHeight = 25
+    OnPaint = PBTimePaint
+  end
+  object ScrollBar1: TScrollBar
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = Owner
+    AnchorSideBottom.Side = asrBottom
+    Left = 0
+    Height = 16
+    Top = 458
+    Width = 751
+    Anchors = [akLeft, akRight, akBottom]
+    Constraints.MaxHeight = 16
+    Constraints.MinHeight = 16
+    Max = 1000
+    PageSize = 500
+    TabOrder = 0
+    OnScroll = ScrollBar1Scroll
+  end
+  object PBVoice: TPaintBox
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = PBTime
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = Splitter1
+    Left = 0
+    Height = 183
+    Top = 25
+    Width = 751
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    OnMouseDown = PBVoiceMouseDown
+    OnMouseLeave = PBVoiceMouseLeave
+    OnMouseMove = PBVoiceMouseMove
+    OnMouseUp = PBVoiceMouseUp
+    OnMouseWheel = PBVoiceMouseWheel
+    OnPaint = PBVoicePaint
+    OnResize = PBVoiceResize
+  end
+  object PBSound: TPaintBox
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = Splitter2
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = ScrollBar1
+    Left = 0
+    Height = 117
+    Top = 341
+    Width = 751
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    OnMouseDown = PBVoiceMouseDown
+    OnMouseLeave = PBVoiceMouseLeave
+    OnMouseMove = PBVoiceMouseMove
+    OnMouseUp = PBVoiceMouseUp
+    OnMouseWheel = PBVoiceMouseWheel
+    OnPaint = PBMusicPaint
+    OnResize = PBVoiceResize
+  end
+  object PBMusic: TPaintBox
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = Splitter1
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = Splitter2
+    Left = 0
+    Height = 123
+    Top = 213
+    Width = 751
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    OnMouseDown = PBVoiceMouseDown
+    OnMouseLeave = PBVoiceMouseLeave
+    OnMouseMove = PBVoiceMouseMove
+    OnMouseUp = PBVoiceMouseUp
+    OnMouseWheel = PBVoiceMouseWheel
+    OnPaint = PBMusicPaint
+    OnResize = PBVoiceResize
+  end
+  object Splitter1: TSplitter
+    AnchorSideLeft.Control = Owner
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    Cursor = crVSplit
+    Left = 0
+    Height = 5
+    Top = 208
+    Width = 751
+    Align = alNone
+    Anchors = [akTop, akLeft, akRight]
+    Color = 24251
+    ParentColor = False
+    ResizeAnchor = akBottom
+    ResizeStyle = rsLine
+  end
+  object Splitter2: TSplitter
+    AnchorSideLeft.Control = Owner
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    Cursor = crVSplit
+    Left = 0
+    Height = 5
+    Top = 336
+    Width = 751
+    Align = alNone
+    Anchors = [akTop, akLeft, akRight]
+    Color = 24251
+    ParentColor = False
+    ResizeAnchor = akBottom
+    ResizeStyle = rsLine
+  end
+  object PanelVolume: TPanel
+    Left = 118
+    Height = 238
+    Top = 90
+    Width = 82
+    BevelColor = 33023
+    ClientHeight = 238
+    ClientWidth = 82
+    Color = 1973790
+    ParentColor = False
+    TabOrder = 3
+    Visible = False
+    object Label3: TLabel
+      AnchorSideLeft.Control = Panel1
+      AnchorSideTop.Control = PanelVolume
+      AnchorSideBottom.Control = Panel1
+      Left = 4
+      Height = 17
+      Top = 8
+      Width = 43
+      Anchors = [akLeft, akBottom]
+      Caption = 'Volume'
+      Font.Color = 14342874
+      Font.Height = 18
+      ParentColor = False
+      ParentFont = False
+      WordWrap = True
+    end
+    object Panel1: TPanel
+      AnchorSideLeft.Control = PanelVolume
+      AnchorSideTop.Control = BHideVolumeCursor
+      AnchorSideTop.Side = asrBottom
+      AnchorSideRight.Control = PanelVolume
+      AnchorSideRight.Side = asrBottom
+      AnchorSideBottom.Control = BMute
+      Left = 4
+      Height = 185
+      Top = 27
+      Width = 74
+      Anchors = [akTop, akLeft, akRight, akBottom]
+      BorderSpacing.Left = 3
+      BorderSpacing.Top = 2
+      BorderSpacing.Right = 3
+      BorderSpacing.Bottom = 5
+      BevelOuter = bvNone
+      Color = 986895
+      ParentColor = False
+      TabOrder = 0
+    end
+    object BHideVolumeCursor: TSpeedButton
+      AnchorSideTop.Control = PanelVolume
+      AnchorSideRight.Control = PanelVolume
+      AnchorSideRight.Side = asrBottom
+      Cursor = crHandPoint
+      Left = 57
+      Height = 24
+      Top = 1
+      Width = 24
+      Anchors = [akTop, akRight]
+      Images = DataModule1.ImageList1
+      ImageIndex = 15
+      OnClick = BHideVolumeCursorClick
+    end
+    object BMute: TSpeedButton
+      AnchorSideLeft.Control = PanelVolume
+      AnchorSideRight.Control = PanelVolume
+      AnchorSideRight.Side = asrBottom
+      AnchorSideBottom.Control = PanelVolume
+      AnchorSideBottom.Side = asrBottom
+      Cursor = crHandPoint
+      Left = 4
+      Height = 17
+      Top = 217
+      Width = 74
+      Anchors = [akLeft, akRight, akBottom]
+      BorderSpacing.Left = 3
+      BorderSpacing.Right = 3
+      BorderSpacing.Bottom = 3
+      Caption = 'Muet'
+      Images = DataModule1.ImageList1
+      ImageIndex = 14
+      ImageWidth = 15
+      OnClick = BMuteClick
+    end
+  end
+  object PopupMusicEmpty: TPopupMenu
+    Images = DataModule1.ImageList1
+    Left = 312
+    Top = 264
+    object MIAddMusic: TMenuItem
+      Caption = 'Ajouter une musique...'
+      ImageIndex = 4
+      OnClick = MIAddMusicClick
+    end
+  end
+  object OpenDialog1: TOpenDialog
+    Left = 584
+    Top = 80
+  end
+  object PopupMusicObject: TPopupMenu
+    Images = DataModule1.ImageList1
+    OnPopup = PopupMusicObjectPopup
+    Left = 424
+    Top = 264
+    object MISetVolumeMusic: TMenuItem
+      Caption = 'Ajuster le volume...'
+      ImageIndex = 56
+      OnClick = MIAddMusicClick
+    end
+    object MIInvertMuteMusic: TMenuItem
+      Caption = 'Label'
+      OnClick = BMuteClick
+    end
+    object Separator1: TMenuItem
+      Caption = '-'
+    end
+    object MIDeleteMusic: TMenuItem
+      Caption = 'Supprimer cette musique'
+      ImageIndex = 22
+      OnClick = MIAddMusicClick
+    end
+  end
+  object PopupSoundEmpty: TPopupMenu
+    Images = DataModule1.ImageList1
+    Left = 304
+    Top = 384
+    object MIAddSound: TMenuItem
+      Caption = 'Ajouter un bruitage...'
+      ImageIndex = 4
+      OnClick = MIAddMusicClick
+    end
+  end
+  object PopupSoundObject: TPopupMenu
+    Images = DataModule1.ImageList1
+    OnPopup = PopupSoundObjectPopup
+    Left = 440
+    Top = 376
+    object MISetVolumeSound: TMenuItem
+      Caption = 'Ajuster le volume...'
+      ImageIndex = 56
+      OnClick = MIAddMusicClick
+    end
+    object MIInvertMuteSound: TMenuItem
+      Caption = 'Label'
+      OnClick = BMuteClick
+    end
+    object Separator2: TMenuItem
+      Caption = '-'
+    end
+    object MIDeleteSound: TMenuItem
+      Caption = 'Supprimer ce bruitage'
+      ImageIndex = 22
+      OnClick = MIAddMusicClick
+    end
+  end
+end

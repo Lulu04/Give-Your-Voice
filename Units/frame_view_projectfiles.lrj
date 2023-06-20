@@ -1,0 +1,22 @@
+{"version":1,"strings":[
+{"hash":262588018,"name":"tframeviewprojectfiles.bplayaudiofile.hint","sourcebytes":[195,137,99,111,117,116,101,114],"value":"\u00C9couter"},
+{"hash":179730066,"name":"tframeviewprojectfiles.bstopaudiofile.hint","sourcebytes":[83,116,111,112,112,101,114],"value":"Stopper"},
+{"hash":163762761,"name":"tframeviewprojectfiles.beditfile.hint","sourcebytes":[77,111,100,105,102,105,101,114,32,99,101,116,32,101,110,114,101,103,105,115,116,114,101,109,101,110,116,13,10,40,111,117,32,100,111,117,98,108,101,32,99,108,105,99,32,115,117,114,32,108,97,32,108,105,103,110,101,41],"value":"Modifier cet enregistrement\r\n(ou double clic sur la ligne)"},
+{"hash":13250942,"name":"tframeviewprojectfiles.baddrecord.hint","sourcebytes":[65,106,111,117,116,101,32,117,110,32,110,111,117,118,101,108,32,101,110,114,101,103,105,115,116,114,101,109,101,110,116,32,195,160,32,99,101,116,116,101,32,115,101,99,116,105,111,110],"value":"Ajoute un nouvel enregistrement \u00E0 cette section"},
+{"hash":161481235,"name":"tframeviewprojectfiles.bmixsection.hint","sourcebytes":[77,105,120,101,32,99,101,116,116,101,32,115,101,99,116,105,111,110,32,101,116,32,112,114,111,100,117,105,116,32,117,110,32,102,105,99,104,105,101,114,32,77,80,51],"value":"Mixe cette section et produit un fichier MP3"},
+{"hash":5368994,"name":"tframeviewprojectfiles.bmixsection.caption","sourcebytes":[77,73,88,69,82],"value":"MIXER"},
+{"hash":86028980,"name":"tframeviewprojectfiles.baddsection.hint","sourcebytes":[65,106,111,117,116,101,32,117,110,101,32,110,111,117,118,101,108,108,101,32,115,101,99,116,105,111,110,32,97,117,32,112,114,111,106,101,116],"value":"Ajoute une nouvelle section au projet"},
+{"hash":87552142,"name":"tframeviewprojectfiles.miinsertsection.caption","sourcebytes":[73,110,115,195,169,114,101,114,32,117,110,101,32,115,101,99,116,105,111,110,32,105,99,105,46,46,46],"value":"Ins\u00E9rer une section ici..."},
+{"hash":73700974,"name":"tframeviewprojectfiles.mirenamesection.caption","sourcebytes":[82,101,110,111,109,109,101,114,46,46,46],"value":"Renommer..."},
+{"hash":224990846,"name":"tframeviewprojectfiles.miimportaudioinsection.caption","sourcebytes":[73,109,112,111,114,116,101,114,32,100,101,115,32,102,105,99,104,105,101,114,115,32,97,117,100,105,111,32,100,97,110,115,32,108,97,32,115,101,99,116,105,111,110,46,46,46],"value":"Importer des fichiers audio dans la section..."},
+{"hash":125352194,"name":"tframeviewprojectfiles.mideletesection.caption","sourcebytes":[83,117,112,112,114,105,109,101,114],"value":"Supprimer"},
+{"hash":73700974,"name":"tframeviewprojectfiles.mirenamefile.caption","sourcebytes":[82,101,110,111,109,109,101,114,46,46,46],"value":"Renommer..."},
+{"hash":206238670,"name":"tframeviewprojectfiles.miinsertfile.caption","sourcebytes":[73,110,115,195,169,114,101,114,32,117,110,32,110,111,117,118,101,108,32,101,110,114,101,103,105,115,116,114,101,109,101,110,116,32,105,99,105,46,46,46],"value":"Ins\u00E9rer un nouvel enregistrement ici..."},
+{"hash":157316910,"name":"tframeviewprojectfiles.miimportaudioandinserthere.caption","sourcebytes":[73,109,112,111,114,116,101,114,32,117,110,32,101,110,114,101,103,105,115,116,114,101,109,101,110,116,32,101,116,32,108,39,105,110,115,195,169,114,101,114,32,105,99,105,46,46,46],"value":"Importer un enregistrement et l'ins\u00E9rer ici..."},
+{"hash":125352194,"name":"tframeviewprojectfiles.mideletefile.caption","sourcebytes":[83,117,112,112,114,105,109,101,114],"value":"Supprimer"},
+{"hash":135711362,"name":"tframeviewprojectfiles.miaddfolder.caption","sourcebytes":[65,106,111,117,116,101,114],"value":"Ajouter"},
+{"hash":257535285,"name":"tframeviewprojectfiles.mirefresh.caption","sourcebytes":[82,97,102,114,97,195,174,99,104,105,114,32,108,39,97,114,98,111,114,101,115,99,101,110,99,101],"value":"Rafra\u00EEchir l'arborescence"},
+{"hash":51740080,"name":"tframeviewprojectfiles.mizipmp3folder.caption","sourcebytes":[77,80,51,32,45,62,32,90,73,80],"value":"MP3 -> ZIP"},
+{"hash":6093506,"name":"tframeviewprojectfiles.miclearmp3folder.caption","sourcebytes":[86,105,100,101,114],"value":"Vider"},
+{"hash":125352194,"name":"tframeviewprojectfiles.mideletezipfolder.caption","sourcebytes":[83,117,112,112,114,105,109,101,114],"value":"Supprimer"}
+]}

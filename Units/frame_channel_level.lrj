@@ -1,0 +1,5 @@
+{"version":1,"strings":[
+{"hash":166906709,"name":"tframechannelslevel.mipercent.caption","sourcebytes":[80,111,117,114,99,101,110,116,97,103,101],"value":"Pourcentage"},
+{"hash":179960060,"name":"tframechannelslevel.midecibel.caption","sourcebytes":[68,101,99,105,98,101,108],"value":"Decibel"},
+{"hash":226529634,"name":"tframechannelslevel.mishowcaption.caption","sourcebytes":[65,102,102,105,99,104,101,114,32,108,97,32,118,97,108,101,117,114],"value":"Afficher la valeur"}
+]}

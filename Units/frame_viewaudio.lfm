@@ -1,0 +1,62 @@
+object FrameViewAudio: TFrameViewAudio
+  Left = 0
+  Height = 159
+  Top = 0
+  Width = 704
+  ClientHeight = 159
+  ClientWidth = 704
+  TabOrder = 0
+  DesignLeft = 389
+  DesignTop = 413
+  object Panel2: TPanel
+    Left = 0
+    Height = 159
+    Top = 0
+    Width = 704
+    Align = alClient
+    BevelOuter = bvNone
+    ClientHeight = 159
+    ClientWidth = 704
+    TabOrder = 0
+    object PB: TPaintBox
+      Left = 0
+      Height = 119
+      Top = 25
+      Width = 704
+      Align = alClient
+      OnMouseDown = PBMouseDown
+      OnMouseLeave = PBMouseLeave
+      OnMouseMove = PBMouseMove
+      OnMouseUp = PBMouseUp
+      OnMouseWheel = PBMouseWheel
+      OnPaint = PBPaint
+      OnResize = PBResize
+    end
+    object ScrollBar1: TScrollBar
+      Left = 0
+      Height = 15
+      Top = 144
+      Width = 704
+      Align = alBottom
+      Max = 1000
+      PageSize = 100
+      TabOrder = 0
+      OnScroll = ScrollBar1Scroll
+    end
+    object PBTime: TPaintBox
+      Left = 0
+      Height = 25
+      Top = 0
+      Width = 704
+      Align = alTop
+      OnPaint = PBTimePaint
+    end
+  end
+  object Timer1: TTimer
+    Enabled = False
+    Interval = 100
+    OnTimer = Timer1Timer
+    Left = 120
+    Top = 32
+  end
+end

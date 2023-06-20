@@ -1,0 +1,23 @@
+object FrameProgressBar: TFrameProgressBar
+  Left = 0
+  Height = 100
+  Top = 0
+  Width = 333
+  ClientHeight = 100
+  ClientWidth = 333
+  ParentShowHint = False
+  ShowHint = True
+  TabOrder = 0
+  DesignLeft = 442
+  DesignTop = 332
+  object PB: TPaintBox
+    Cursor = crHandPoint
+    Left = 0
+    Height = 100
+    Top = 0
+    Width = 333
+    Align = alClient
+    OnMouseDown = PBMouseDown
+    OnPaint = PBPaint
+  end
+end

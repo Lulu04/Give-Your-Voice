@@ -1,0 +1,12 @@
+{"version":1,"strings":[
+{"hash":214385733,"name":"tformnewproject.caption","sourcebytes":[78,111,117,118,101,97,117,32,112,114,111,106,101,116,32,100,101,32,108,101,99,116,117,114,101],"value":"Nouveau projet de lecture"},
+{"hash":84467490,"name":"tformnewproject.label1.caption","sourcebytes":[80,114,195,169,110,111,109,32,100,101,32,108,39,97,117,116,101,117,114],"value":"Pr\u00E9nom de l'auteur"},
+{"hash":48664434,"name":"tformnewproject.label4.caption","sourcebytes":[78,111,109,32,100,101,32,108,39,97,117,116,101,117,114],"value":"Nom de l'auteur"},
+{"hash":146381924,"name":"tformnewproject.bcreateproject.caption","sourcebytes":[67,114,195,169,101,114,32,108,101,32,112,114,111,106,101,116],"value":"Cr\u00E9er le projet"},
+{"hash":191738085,"name":"tformnewproject.label19.caption","sourcebytes":[84,105,116,114,101,32,100,101,32,108,39,111,101,117,118,114,101],"value":"Titre de l'oeuvre"},
+{"hash":199318693,"name":"tformnewproject.label2.caption","sourcebytes":[73,110,102,111,114,109,97,116,105,111,110,115,32,115,117,114,32,108,39,111,101,117,118,114,101,32,113,117,101,32,118,111,117,115,32,97,108,108,101,122,32,108,105,114,101],"value":"Informations sur l'oeuvre que vous allez lire"},
+{"hash":5404860,"name":"tformnewproject.label11.caption","sourcebytes":[76,97,98,101,108],"value":"Label"},
+{"hash":5404860,"name":"tformnewproject.label23.caption","sourcebytes":[76,97,98,101,108],"value":"Label"},
+{"hash":5404860,"name":"tformnewproject.label24.caption","sourcebytes":[76,97,98,101,108],"value":"Label"},
+{"hash":234883833,"name":"tformnewproject.label28.caption","sourcebytes":[83,39,105,108,32,101,120,105,115,116,101,32,100,195,169,106,195,160,32,117,110,101,32,118,101,114,115,105,111,110,32,101,110,114,101,103,105,115,116,114,195,169,101,32,100,101,32,99,101,116,116,101,32,111,101,117,118,114,101,44,32,97,106,111,117,116,101,122,32,195,160,32,108,97,32,102,105,110,32,100,117,32,116,105,116,114,101,32,108,101,32,110,117,109,195,169,114,111,32,100,101,32,99,101,108,108,101,32,113,117,101,32,118,111,117,115,32,97,108,108,101,122,32,112,114,111,100,117,105,114,101,32,40,101,120,58,32,86,50,41],"value":"S'il existe d\u00E9j\u00E0 une version enregistr\u00E9e de cette oeuvre, ajoutez \u00E0 la fin du titre le num\u00E9ro de celle que vous allez produire (ex: V2)"}
+]}

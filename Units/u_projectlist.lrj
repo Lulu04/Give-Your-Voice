@@ -1,0 +1,13 @@
+{"version":1,"strings":[
+{"hash":218014292,"name":"tformprojectlist.caption","sourcebytes":[71,101,115,116,105,111,110,110,97,105,114,101,32,100,101,32,112,114,111,106,101,116],"value":"Gestionnaire de projet"},
+{"hash":219756435,"name":"tformprojectlist.label1.caption","sourcebytes":[82,195,169,112,101,114,116,111,105,114,101,115,32,114,195,169,99,101,110,116,115],"value":"R\u00E9pertoires r\u00E9cents"},
+{"hash":246849220,"name":"tformprojectlist.label16.caption","sourcebytes":[67,72,65,82,71,69,82,32,85,78,32,80,82,79,74,69,84],"value":"CHARGER UN PROJET"},
+{"hash":248321362,"name":"tformprojectlist.baddfolder.caption","sourcebytes":[82,101,99,104,101,114,99,104,101,114],"value":"Rechercher"},
+{"hash":161678547,"name":"tformprojectlist.label3.caption","sourcebytes":[80,114,111,106,101,116,115,32,116,114,111,117,118,195,169,115],"value":"Projets trouv\u00E9s"},
+{"hash":85601289,"name":"tformprojectlist.bopenproject.hint","sourcebytes":[79,117,118,114,101,32,108,101,32,112,114,111,106,101,116,32,115,195,169,108,101,99,116,105,111,110,110,195,169],"value":"Ouvre le projet s\u00E9lectionn\u00E9"},
+{"hash":88782562,"name":"tformprojectlist.bopenproject.caption","sourcebytes":[79,85,86,82,73,82],"value":"OUVRIR"},
+{"hash":104046818,"name":"tformprojectlist.bcancel.caption","sourcebytes":[65,78,78,85,76,69,82],"value":"ANNULER"},
+{"hash":193937877,"name":"tformprojectlist.bnewproject.hint","sourcebytes":[67,114,195,169,101,114,32,117,110,32,110,111,117,118,101,97,117,32,112,114,111,106,101,116,32,100,101,32,108,101,99,116,117,114,101,32,100,97,110,115,32,99,101,32,114,195,169,112,101,114,116,111,105,114,101],"value":"Cr\u00E9er un nouveau projet de lecture dans ce r\u00E9pertoire"},
+{"hash":55224629,"name":"tformprojectlist.bnewproject.caption","sourcebytes":[78,79,85,86,69,65,85],"value":"NOUVEAU"},
+{"hash":197104483,"name":"tformprojectlist.selectdirectorydialog1.title","sourcebytes":[67,104,111,105,115,105,114,32,108,101,32,114,195,169,112,101,114,116,111,105,114,101,32,100,101,115,32,112,114,111,106,101,116,115],"value":"Choisir le r\u00E9pertoire des projets"}
+]}

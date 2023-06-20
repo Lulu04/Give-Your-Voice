@@ -1,0 +1,23 @@
+object FrameTrackBar: TFrameTrackBar
+  Left = 0
+  Height = 149
+  Top = 0
+  Width = 380
+  ClientHeight = 149
+  ClientWidth = 380
+  TabOrder = 0
+  DesignLeft = 526
+  DesignTop = 395
+  object PB: TPaintBox
+    Left = 0
+    Height = 149
+    Top = 0
+    Width = 380
+    Align = alClient
+    OnMouseDown = PBMouseDown
+    OnMouseMove = PBMouseMove
+    OnMouseUp = PBMouseUp
+    OnPaint = PBPaint
+    OnResize = PBResize
+  end
+end
