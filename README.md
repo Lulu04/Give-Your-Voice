@@ -13,6 +13,7 @@ MacOS: to do
 # Features
 - One directory per section (chapter/text/poem) -> your project is well organized.
 - Allow multiple recording per section -> the software keep the page number where you stopped.
+- Remove background noise on recording files.
 - While recording, use **CONTROL KEY** to mark places where you have made reading errors, making it easy to find and correct them.
 - Audio tools:
     - add silence, cut or silencing part
@@ -37,9 +38,10 @@ MacOS: to do
 # Screenshots
 The main window with the project tree view and the audio edition at the bottom
 ![The main window with the project tree view and the audio edition at the bottom](https://github.com/Lulu04/Give-Your-Voice/blob/main/screenshot/01main.png)
-
-Background noise analysis before recording voice  
+  
+Background noise analisys before recording voice  
 ![Background noise analisys before recording voice](https://github.com/Lulu04/Give-Your-Voice/blob/main/screenshot/02recording.png)
-
+  
 The mixer window where you produce the MP3 files
 ![The mixer window where you produce the MP3 files](https://github.com/Lulu04/Give-Your-Voice/blob/main/screenshot/03mixer.png)  
+  
