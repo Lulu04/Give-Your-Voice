@@ -38,7 +38,7 @@ MacOS: to do
 The main window with the project tree view and the audio edition at the bottom
 ![The main window with the project tree view and the audio edition at the bottom](https://github.com/Lulu04/Give-Your-Voice/blob/main/screenshot/01main.png)
 
-Background noise analisys before recording voice
+Background noise analisys before recording voice  
 ![Background noise analisys before recording voice](https://github.com/Lulu04/Give-Your-Voice/blob/main/screenshot/02recording.png)
 
 The mixer window where you produce the MP3 files
