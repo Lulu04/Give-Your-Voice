@@ -1,0 +1,300 @@
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8"
+
+#: project_util.smodified
+msgid "modified"
+msgstr ""
+
+#: project_util.spromptsave
+msgid "Before, do you want to save the changes you have made ?"
+msgstr ""
+
+#: tformmain.bbackward.hint
+msgid "Place le curseur au début"
+msgstr ""
+
+#: tformmain.bclear.hint
+msgid "Nettoyer"
+msgstr ""
+
+#: tformmain.bcut.hint
+msgid "Couper la sélection"
+msgstr ""
+
+#: tformmain.bdeleteallusermarks.caption
+msgid "Supprimer tous les marqueurs "
+msgstr ""
+
+#: tformmain.bdeleteusermarksinselection.caption
+msgid "Supprimer les marqueurs dans la sélection"
+msgstr ""
+
+#: tformmain.bdiscardrecord.caption
+msgid "Annuler cet enregistrement"
+msgstr ""
+
+#: tformmain.bforward.hint
+msgid "Place le curseur à la fin"
+msgstr ""
+
+#: tformmain.bimprovelistening.caption
+msgid "Améliorer l'écoute"
+msgstr ""
+
+#: tformmain.bimprovelistening.hint
+msgid ""
+"Cochez cette options si vous trouvez que le son n'est pas assez audible lors de la ré-écoute de vos enregistrements.\n"
+"Cette option n'affecte que l'écoute et ne modifie en aucune manière les fichiers audio."
+msgstr ""
+
+#: tformmain.binsertsilence.hint
+msgid "Insère 0.5s de silence au curseur"
+msgstr ""
+
+#: tformmain.bnewproject.caption
+msgid "NOUVEAU"
+msgstr ""
+
+#: tformmain.bnewproject.hint
+msgid "Nouveau projet"
+msgstr ""
+
+#: tformmain.bopenproject.caption
+msgid "OUVRIR"
+msgstr ""
+
+#: tformmain.bopenproject.hint
+msgid "Ouvrir un projet"
+msgstr ""
+
+#: tformmain.boptions.caption
+msgid "OPTIONS"
+msgstr ""
+
+#: tformmain.boptions.hint
+msgid "Options"
+msgstr ""
+
+#: tformmain.bpause.hint
+msgid "Pause/Reprendre la lecture"
+msgstr ""
+
+#: tformmain.bplay.hint
+msgid "Lecture"
+msgstr ""
+
+#: tformmain.bredo.hint
+msgid "Refaire"
+msgstr ""
+
+#: tformmain.bsaverecord.caption
+msgid "Ajouter au projet"
+msgstr ""
+
+#: tformmain.bsilenceonselection.hint
+msgid "Rendre silencieux le passage sélectionné"
+msgstr ""
+
+#: tformmain.bstartrecord.hint
+msgid "Lance l'enregistrement au curseur"
+msgstr ""
+
+#: tformmain.bstop.hint
+msgid "Stop"
+msgstr ""
+
+#: tformmain.bundo.hint
+msgctxt "tformmain.bundo.hint"
+msgid "Annuler"
+msgstr ""
+
+#: tformmain.button1.caption
+msgid "Button1"
+msgstr ""
+
+#: tformmain.bzoomall.hint
+msgid "Tout voir"
+msgstr ""
+
+#: tformmain.bzoomonselection.hint
+msgid "Zoom sur la sélection"
+msgstr ""
+
+#: tformmain.caption
+msgid "Donneur de Voix"
+msgstr ""
+
+#: tformmain.label1.caption
+msgid "aux pages"
+msgstr ""
+
+#: tformmain.label10.caption
+msgid "Erreur de n° de page"
+msgstr ""
+
+#: tformmain.label11.caption
+msgid "Label11"
+msgstr ""
+
+#: tformmain.label12.caption
+msgid "Label12"
+msgstr ""
+
+#: tformmain.label13.caption
+msgid "Label13"
+msgstr ""
+
+#: tformmain.label14.caption
+msgid "Informations complémentaires sur le passage lu (optionnel)"
+msgstr ""
+
+#: tformmain.label15.caption
+msgid "intitulé"
+msgstr ""
+
+#: tformmain.label16.caption
+msgid "PROJET"
+msgstr ""
+
+#: tformmain.label17.caption
+msgid "EDITION AUDIO"
+msgstr ""
+
+#: tformmain.label18.caption
+msgid "PRÉ-AMPLIFICATION"
+msgstr ""
+
+#: tformmain.label19.caption
+msgid "˅"
+msgstr ""
+
+#: tformmain.label2.caption
+msgid "Aperçu du nom de fichier:"
+msgstr ""
+
+#: tformmain.label20.caption
+msgid "Label20"
+msgstr ""
+
+#: tformmain.label3.caption
+msgid "Titre de l'oeuvre"
+msgstr ""
+
+#: tformmain.label4.caption
+msgid "Nom de l'auteur"
+msgstr ""
+
+#: tformmain.label5.caption
+msgid "à"
+msgstr ""
+
+#: tformmain.label6.caption
+msgid "Edition du fichier"
+msgstr ""
+
+#: tformmain.label7.caption
+msgid "Livre"
+msgstr ""
+
+#: tformmain.label8.caption
+msgid "Tome"
+msgstr ""
+
+#: tformmain.label9.caption
+msgid "Version"
+msgstr ""
+
+#: u_resource_string.saddto_space
+msgid "Ajouter à "
+msgstr ""
+
+#: u_resource_string.scancel
+msgctxt "u_resource_string.scancel"
+msgid "Annuler"
+msgstr ""
+
+#: u_resource_string.scancelthisrecord
+msgid "Annuler cet enregistrement ?"
+msgstr ""
+
+#: u_resource_string.sclose
+msgid "Fermer"
+msgstr ""
+
+#: u_resource_string.scontinue
+msgid "Continuer"
+msgstr ""
+
+#: u_resource_string.scutfailed
+msgid "Impossible de couper la sélection..."
+msgstr ""
+
+#: u_resource_string.senterthesilencedurationinsecondtoinsert
+msgid "Entrez la durée en seconde du silence à insérer:"
+msgstr ""
+
+#: u_resource_string.sfailedtostartaudioengine
+msgid "Le programme n'arrive pas à initialiser le moteur audio"
+msgstr ""
+
+#: u_resource_string.sifyoucontinuitwillbelost
+msgid "Si vous continuez, il sera perdu..."
+msgstr ""
+
+#: u_resource_string.sifyouquitnowitwillbelost
+msgid "Si vous quittez maintenant il sera perdu."
+msgstr ""
+
+#: u_resource_string.sinsertnewrecordtothebeginning
+msgid "le nouvel enregistrement sera inséré au début"
+msgstr ""
+
+#: u_resource_string.sinsertsilencefailed
+msgid "La commande 'Insérer silence' a échoué..."
+msgstr ""
+
+#: u_resource_string.sinsertssilenceatcursor
+#, object-pascal-format
+msgid "Insère %0:ss de silence au curseur. Clic droit pour modifier cette durée"
+msgstr ""
+
+#: u_resource_string.snewrecordwillbeaddedtotheend
+msgid "le nouvel enregistrement sera ajouté à la fin"
+msgstr ""
+
+#: u_resource_string.snewrecordwillbeinsertedatcursor
+msgid "le nouvel enregistrement sera inséré au curseur"
+msgstr ""
+
+#: u_resource_string.sno
+msgid "Non"
+msgstr ""
+
+#: u_resource_string.sok
+msgid "Ok"
+msgstr ""
+
+#: u_resource_string.squit
+msgid "Quitter"
+msgstr ""
+
+#: u_resource_string.ssecond
+msgid "seconde"
+msgstr ""
+
+#: u_resource_string.sselectionwillbereplacedbynewrecord
+msgid "la sélection sera remplacée par le nouvel enregistrement"
+msgstr ""
+
+#: u_resource_string.ssilencefailed
+msgid "La commande 'Silence' a échoué..."
+msgstr ""
+
+#: u_resource_string.swarningtoaddrecordtoproject
+msgid "Attention: vous n'avez pas ajouté le dernier enregistrement au projet."
+msgstr ""
+
+#: u_resource_string.syes
+msgid "Oui"
+msgstr ""
+

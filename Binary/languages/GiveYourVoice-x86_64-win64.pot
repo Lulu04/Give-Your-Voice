@@ -1,0 +1,1531 @@
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8"
+
+#: project_util.smodified
+msgid "modifié"
+msgstr ""
+
+#: project_util.spromptsave
+msgid "Avant, voulez-vous sauvegarder les modifications apportées au projet ?"
+msgstr ""
+
+#: tformabout.bdonate.caption
+msgctxt "tformabout.bdonate.caption"
+msgid "Faire un don"
+msgstr ""
+
+#: tformabout.caption
+msgid "à propos de Give Your Voice"
+msgstr ""
+
+#: tformabout.label10.caption
+msgid "Signaler un bug"
+msgstr ""
+
+#: tformabout.label3.caption
+msgid "License:"
+msgstr ""
+
+#: tformabout.label4.caption
+msgid "Auteur:"
+msgstr ""
+
+#: tformabout.label5.caption
+msgid "Code source:"
+msgstr ""
+
+#: tformabout.label6.caption
+msgid "code libre (GPLv3)"
+msgstr ""
+
+#: tformabout.label9.caption
+msgid "Logiciel d'aide à l'enregistrement de livres audio"
+msgstr ""
+
+#: tformasksectionname.bok.caption
+msgid "Créer la section"
+msgstr ""
+
+#: tformasksectionname.label1.caption
+msgid "inclure une entête de numéro de livre, tome ou autre"
+msgstr ""
+
+#: tformasksectionname.label2.caption
+msgid "inclure une entête du type de section"
+msgstr ""
+
+#: tformasksectionname.label5.caption
+msgctxt "tformasksectionname.label5.caption"
+msgid "titre"
+msgstr ""
+
+#: tformasksectionname.label8.caption
+msgid "Aperçu"
+msgstr ""
+
+#: tformfirstrun.label1.caption
+msgid "Give your Voice !"
+msgstr ""
+
+#: tformfirstrun.label2.caption
+msgid "Bienvenu(e) dans l'assistant de démarrage"
+msgstr ""
+
+#: tformfirstrun.label3.caption
+msgid "SVP, choisissez votre langue"
+msgstr ""
+
+#: tformfirstrun.label4.caption
+msgid ""
+"Nous allons vous demander quelques informations pour configurer le logiciel.\n"
+"Ceci n'est à faire qu'une seule fois. Vous pourrez modifier les paramètres ultérieurement dans la fenêtre d'options du programme."
+msgstr ""
+
+#: tformfirstrun.label5.caption
+msgid ""
+"C'est tout !\n"
+"Nous allons maintenant ouvrir le gestionnaire de projet, vous pourrez en créer ou en charger un."
+msgstr ""
+
+#: tformfirstrun.label6.caption
+msgid "Sélectionnez le périphérique à utiliser pour enregistrer votre voix"
+msgstr ""
+
+#: tformfirstrun.label7.caption
+msgid "Sélectionnez le périphérique à utiliser pour écouter le son"
+msgstr ""
+
+#: tformfirstrun.label8.caption
+msgid "Note: pour qu'il soit détecté, un périphérique audio doit être connecté à l'ordinateur avant de lancer le logiciel."
+msgstr ""
+
+#: tformfirstrun.speedbutton2.caption
+msgid "Cliquez pour fermer cet assistant"
+msgstr ""
+
+#: tformhelp.caption
+msgid "Aide"
+msgstr ""
+
+#: tformmain.babout.hint
+msgid "À propos de Give Your Voice..."
+msgstr ""
+
+#: tformmain.bactivateimprovedlistening.caption
+msgid "Activer"
+msgstr ""
+
+#: tformmain.bactivateimprovedlistening.hint
+msgid ""
+"Activez cette option si le son n'est pas assez audible lors de la ré-écoute de vos enregistrements.\n"
+"Cette option n'affecte que l'écoute et ne modifie en aucune manière les fichiers audio.\n"
+"Elle n'est pas appliquée sur les fichiers mixés du dossier MP3."
+msgstr ""
+
+#: tformmain.baddusermark.hint
+msgctxt "tformmain.baddusermark.hint"
+msgid "Ajouter un marqueur au curseur"
+msgstr ""
+
+#: tformmain.bbackward.hint
+msgctxt "tformmain.bbackward.hint"
+msgid "Place le curseur au début"
+msgstr ""
+
+#: tformmain.bcut.hint
+msgid "Supprimer la sélection (SUPPR)"
+msgstr ""
+
+#: tformmain.bdeleteallusermarks.hint
+msgctxt "tformmain.bdeleteallusermarks.hint"
+msgid "Supprimer tous les marqueurs"
+msgstr ""
+
+#: tformmain.bdeleteusermarksinselection.hint
+msgid "Supprimer seulement les marqueurs dans la sélection"
+msgstr ""
+
+#: tformmain.bforward.hint
+msgctxt "tformmain.bforward.hint"
+msgid "Place le curseur à la fin"
+msgstr ""
+
+#: tformmain.bimprovelistening.hint
+msgid "Options d'amélioration de l'écoute"
+msgstr ""
+
+#: tformmain.bopenprojectmanager.hint
+msgid "Ouvre le gestionnaire de projets"
+msgstr ""
+
+#: tformmain.boptions.hint
+msgid "Ouvre la fenêtre d'options"
+msgstr ""
+
+#: tformmain.bpause.hint
+msgid "Pause/Reprendre la lecture"
+msgstr ""
+
+#: tformmain.bplay.hint
+msgid "Lecture (ESPACE)"
+msgstr ""
+
+#: tformmain.bredo.hint
+msgctxt "tformmain.bredo.hint"
+msgid "Refaire"
+msgstr ""
+
+#: tformmain.bsilenceonselection.hint
+msgid ""
+"Silence sur la sélection\n"
+"(touche S)"
+msgstr ""
+
+#: tformmain.bstartrecordaddition.hint
+msgid "Démarre l'enregistrement audio"
+msgstr ""
+
+#: tformmain.bstop.hint
+msgid "Stop (ESPACE)"
+msgstr ""
+
+#: tformmain.bundo.hint
+msgctxt "tformmain.bundo.hint"
+msgid "Annuler"
+msgstr ""
+
+#: tformmain.buserguide.hint
+msgid ""
+"Affiche le guide d'utilisation du programme\n"
+"(touche F1)"
+msgstr ""
+
+#: tformmain.bweblinks.hint
+msgid "Quelques liens internet utiles"
+msgstr ""
+
+#: tformmain.bzoomall.hint
+msgid "Tout voir (Alt A)"
+msgstr ""
+
+#: tformmain.bzoomonselection.hint
+msgid "Zoom sur la sélection"
+msgstr ""
+
+#: tformmain.caption
+msgid "Donneur de Voix"
+msgstr ""
+
+#: tformmain.label10.caption
+msgid "Compresser le son"
+msgstr ""
+
+#: tformmain.label11.caption
+msgid "Amplifier les basses"
+msgstr ""
+
+#: tformmain.label14.caption
+msgid "Augmenter le volume"
+msgstr ""
+
+#: tformmain.label15.caption
+msgid "Liens internet pour"
+msgstr ""
+
+#: tformmain.label16.caption
+msgid "PROJET"
+msgstr ""
+
+#: tformmain.label17.caption
+msgid "ÉDITION AUDIO"
+msgstr ""
+
+#: tformmain.label35.caption
+msgid ""
+"Ouvrir le LibriVox uploader pour envoyer votre enregistrement.\n"
+"(username: librivox password: upload2lv)"
+msgstr ""
+
+#: tformmain.label6.caption
+msgid "Edition du fichier"
+msgstr ""
+
+#: tformmain.label7.caption
+msgctxt "tformmain.label7.caption"
+msgid "Niveau du micro"
+msgstr ""
+
+#: tformmixer.bamplify.caption
+msgid "AMPLIFICATION"
+msgstr ""
+
+#: tformmixer.bamplify.hint
+msgid ""
+"Active/désactive l'amplification globale des voix.\n"
+"Si vous constatez que le COMPRESSEUR n'est pas suffissant pour rendre votre voix suffisamment audible,\n"
+"activez l'amplification."
+msgstr ""
+
+#: tformmixer.bbackward.hint
+msgctxt "tformmixer.bbackward.hint"
+msgid "Place le curseur au début"
+msgstr ""
+
+#: tformmixer.bbassboost.caption
+msgid "BASS BOOST x"
+msgstr ""
+
+#: tformmixer.bcancelmix.caption
+msgctxt "tformmixer.bcancelmix.caption"
+msgid "Annuler"
+msgstr ""
+
+#: tformmixer.bcompressor.caption
+msgid "COMPRESSER"
+msgstr ""
+
+#: tformmixer.bforward.hint
+msgctxt "tformmixer.bforward.hint"
+msgid "Place le curseur à la fin"
+msgstr ""
+
+#: tformmixer.bkeepmix.caption
+msgid "Garder"
+msgstr ""
+
+#: tformmixer.bkeepmix.hint
+msgid "Place le fichier dans le dossier MP3 du projet et ferme la fenêtre de mixage"
+msgstr ""
+
+#: tformmixer.blistenmix.caption
+msgid "ÉCOUTER"
+msgstr ""
+
+#: tformmixer.blistenmix.hint
+msgid "Lecture"
+msgstr ""
+
+#: tformmixer.bmix.caption
+msgctxt "tformmixer.bmix.caption"
+msgid "MIXER"
+msgstr ""
+
+#: tformmixer.bmix.hint
+msgctxt "tformmixer.bmix.hint"
+msgid "lance le mixage"
+msgstr ""
+
+#: tformmixer.bplay.hint
+msgid "Pré-écoute"
+msgstr ""
+
+#: tformmixer.bredo.hint
+msgctxt "tformmixer.bredo.hint"
+msgid "Refaire"
+msgstr ""
+
+#: tformmixer.bshowvolumeenvelope.hint
+msgid "Montre/cache les enveloppes de volume"
+msgstr ""
+
+#: tformmixer.bstayhere.caption
+msgid "Changer les paramètres"
+msgstr ""
+
+#: tformmixer.bstayhere.hint
+msgid "Revient à la fenêtre de mixage"
+msgstr ""
+
+#: tformmixer.bstop.hint
+msgid "Stop"
+msgstr ""
+
+#: tformmixer.bundo.hint
+msgctxt "tformmixer.bundo.hint"
+msgid "Annuler"
+msgstr ""
+
+#: tformmixer.bzoomall.hint
+msgid "Tout voir (Alt + A)"
+msgstr ""
+
+#: tformmixer.caption
+msgid "Mixer"
+msgstr ""
+
+#: tformmixer.cbamplify.hint
+msgid "C'est l'amplification qui sera appliquée sur les voix."
+msgstr ""
+
+#: tformmixer.fsebassboost.hint
+msgid ""
+"C'est l'amplification qui sera appliquée sur les fréquences basses (graves) des voix\n"
+"si le BASS BOOST est activé."
+msgstr ""
+
+#: tformmixer.label10.caption
+msgid "normaliser le fichier à"
+msgstr ""
+
+#: tformmixer.label16.caption
+msgid "EFFETS APPLIQUÉS SUR LES VOIX"
+msgstr ""
+
+#: tformmixer.label2.caption
+msgid ""
+"Préparation des fichiers\n"
+"Patientez svp"
+msgstr ""
+
+#: tformmixer.label3.caption
+msgid "Mixage en cours, veuillez patienter..."
+msgstr ""
+
+#: tformmixer.label4.caption
+msgid "Mixage terminé ! Que voulez-vous faire ?"
+msgstr ""
+
+#: tformmixer.label5.caption
+msgid "Mixage de "
+msgstr ""
+
+#: tformmixer.label8.hint
+msgid "Cliquez pour modifier"
+msgstr ""
+
+#: tformmixer.label9.caption
+msgid "Respecter le format de fichier de"
+msgstr ""
+
+#: tformmixermetadata.bmix.caption
+msgctxt "tformmixermetadata.bmix.caption"
+msgid "MIXER"
+msgstr ""
+
+#: tformmixermetadata.bmix.hint
+msgctxt "tformmixermetadata.bmix.hint"
+msgid "lance le mixage"
+msgstr ""
+
+#: tformmixermetadata.caption
+msgid "Vérification des métadonnées"
+msgstr ""
+
+#: tformmixermetadata.label17.caption
+msgid "Vérifiez svp les métadonnées à inclure au MP3"
+msgstr ""
+
+#: tformmixermetadata.label23.caption
+msgid "Titre"
+msgstr ""
+
+#: tformmixermetadata.label24.caption
+msgid "Artiste"
+msgstr ""
+
+#: tformmixermetadata.label25.caption
+msgid "Album"
+msgstr ""
+
+#: tformmixermetadata.label26.caption
+msgid "Genre"
+msgstr ""
+
+#: tformmixermetadata.label27.caption
+msgid "Date"
+msgstr ""
+
+#: tformmixermetadata.label28.caption
+msgid "Piste"
+msgstr ""
+
+#: tformmixermetadata.label29.caption
+msgid "Commentaire"
+msgstr ""
+
+#: tformmixermetadata.label30.caption
+msgid "vous pouvez saisir ici votre nom ou pseudo (ex: texte lu par Rosie)"
+msgstr ""
+
+#: tformnewproject.bcreateproject.caption
+msgid "Créer le projet"
+msgstr ""
+
+#: tformnewproject.caption
+msgid "Nouveau projet de lecture"
+msgstr ""
+
+#: tformnewproject.label1.caption
+msgid "Prénom de l'auteur"
+msgstr ""
+
+#: tformnewproject.label19.caption
+msgid "Titre de l'oeuvre"
+msgstr ""
+
+#: tformnewproject.label2.caption
+msgid "Informations sur l'oeuvre que vous allez lire"
+msgstr ""
+
+#: tformnewproject.label28.caption
+msgid "S'il existe déjà une version enregistrée de cette oeuvre, ajoutez à la fin du titre le numéro de celle que vous allez produire (ex: V2)"
+msgstr ""
+
+#: tformnewproject.label4.caption
+msgid "Nom de l'auteur"
+msgstr ""
+
+#: tformoptions.bcancel.caption
+msgctxt "tformoptions.bcancel.caption"
+msgid "Annuler"
+msgstr ""
+
+#: tformoptions.bok.caption
+msgctxt "tformoptions.bok.caption"
+msgid "Ok"
+msgstr ""
+
+#: tformoptions.caption
+msgid "Options du programme"
+msgstr ""
+
+#: tformoptions.dividerbevel1.caption
+msgid "PÉRIPHÉRIQUES AUDIO"
+msgstr ""
+
+#: tformoptions.dividerbevel6.caption
+msgid "LANGUE"
+msgstr ""
+
+#: tformoptions.label1.caption
+msgid "Supprimer automatiquement le bruit de fond lors des enregistrements"
+msgstr ""
+
+#: tformoptions.label14.caption
+msgid "Sélectionnez votre langue"
+msgstr ""
+
+#: tformoptions.label2.caption
+msgid "Enregistrer avec"
+msgstr ""
+
+#: tformoptions.label3.caption
+msgid "Écouter avec"
+msgstr ""
+
+#: tformprojectmanager.bdeleteproject.caption
+msgctxt "tformprojectmanager.bdeleteproject.caption"
+msgid "Supprimer"
+msgstr ""
+
+#: tformprojectmanager.bdeleteproject.hint
+msgid "Pour supprimer un projet du disque"
+msgstr ""
+
+#: tformprojectmanager.bnewproject.caption
+msgid "Nouveau"
+msgstr ""
+
+#: tformprojectmanager.bnewproject.hint
+msgid "Créer un nouveau projet de lecture dans ce répertoire"
+msgstr ""
+
+#: tformprojectmanager.bopenproject.caption
+msgid "Ouvrir"
+msgstr ""
+
+#: tformprojectmanager.bopenproject.hint
+msgid "Ouvre le projet sélectionné"
+msgstr ""
+
+#: tformprojectmanager.bsearchfolder.caption
+msgid "Rechercher"
+msgstr ""
+
+#: tformprojectmanager.bsearchfolder.hint
+msgid "Ajoute un nouveau répertoire de travail à la liste"
+msgstr ""
+
+#: tformprojectmanager.bunzipproject.caption
+msgid "Dézipper"
+msgstr ""
+
+#: tformprojectmanager.bunzipproject.hint
+msgid "Pour décompresser un projet précédemment zippé"
+msgstr ""
+
+#: tformprojectmanager.bzipproject.caption
+msgid "Zipper"
+msgstr ""
+
+#: tformprojectmanager.bzipproject.hint
+msgid ""
+"Lorsqu'un projet est terminé, vous pouvez compresser son contenu au format ZIP\n"
+"afin de gagner de la place sur votre disque."
+msgstr ""
+
+#: tformprojectmanager.caption
+msgid "Gestionnaire de projets"
+msgstr ""
+
+#: tformprojectmanager.label1.caption
+msgid "Répertoires de travail"
+msgstr ""
+
+#: tformprojectmanager.label3.caption
+msgid "Projets trouvés"
+msgstr ""
+
+#: tformprojectmanager.selectdirectorydialog1.title
+msgid "Choisir le répertoire des projets"
+msgstr ""
+
+#: tformrecord.baddusermark.hint
+msgid ""
+"Insère un marqueur sur la courbe audio, afin de vous rappeler\n"
+"qu'à cet endroit vous devez effectuer une correction."
+msgstr ""
+
+#: tformrecord.bsave.caption
+msgid "Ajouter au projet"
+msgstr ""
+
+#: tformrecord.bsave.hint
+msgid "Sauvegarde l'enregistrement dans le dossier sélectionné"
+msgstr ""
+
+#: tformrecord.caption
+msgid "Enregistrement"
+msgstr ""
+
+#: tformrecord.checkbox1.hint
+msgid "Inclure les numéro de page au nom du fichier"
+msgstr ""
+
+#: tformrecord.checkbox3.hint
+msgid ""
+"Cochez cette option si vous lisez un texte à partir du même écran que Give Your Voice.\n"
+"La fenêtre principale sera cachée et vous pourrez alors placer la petite fenêtre d'enregistrement où vous le désirez\n"
+"afin qu'elle ne gêne pas votre lecture."
+msgstr ""
+
+#: tformrecord.label1.caption
+msgid "Enregistrement en cours..."
+msgstr ""
+
+#: tformrecord.label10.caption
+msgid "Erreur de n° de page"
+msgstr ""
+
+#: tformrecord.label11.caption
+msgid "Aperçu du nom du fichier:"
+msgstr ""
+
+#: tformrecord.label13.caption
+msgid "Cacher la fenêtre principale"
+msgstr ""
+
+#: tformrecord.label14.caption
+msgid "Informations complémentaires sur le passage lu (optionnel)"
+msgstr ""
+
+#: tformrecord.label15.caption
+msgid "intitulé"
+msgstr ""
+
+#: tformrecord.label3.caption
+msgid "EN PAUSE"
+msgstr ""
+
+#: tformrecord.label4.caption
+msgid ""
+"RESTEZ SILENCIEUX(SE)\n"
+"analyse du bruit de fond..."
+msgstr ""
+
+#: tformrecord.label7.caption
+msgid "Lecture à partir de la page (optionnel)"
+msgstr ""
+
+#: tformrecord.label8.caption
+msgid "page"
+msgstr ""
+
+#: tformrecord.label9.caption
+msgid "à"
+msgstr ""
+
+#: tformrecord.labelusermarkadded.caption
+msgid "Marqueur ajouté"
+msgstr ""
+
+#: tformrecord.panelbuttonpause.hint
+msgid "Suspend/Reprend l'enregistrement (touche P)"
+msgstr ""
+
+#: tformrecord.panelbuttonstop.hint
+msgid "Termine l'enregistrement (touche ESPACE)"
+msgstr ""
+
+#: tformremembertodonate.bclose.caption
+msgid "Non merci !"
+msgstr ""
+
+#: tformremembertodonate.bdonate.caption
+msgctxt "tformremembertodonate.bdonate.caption"
+msgid "Faire un don"
+msgstr ""
+
+#: tformremembertodonate.label1.caption
+msgid ""
+"Ce logiciel est gratuit et le restera !\n"
+"\n"
+"Cependant, le développer et le maintenir à jour a un coût\n"
+"(matériel informatique, forfait internet, électricité...)\n"
+"\n"
+"Vous pouvez nous aider en faisant un don."
+msgstr ""
+
+#: tformzipmp3.bzipfiles.caption
+msgid "Créer le ZIP"
+msgstr ""
+
+#: tformzipmp3.label1.caption
+msgid "Compresse plusieurs fichiers MP3 dans un fichier ZIP"
+msgstr ""
+
+#: tformzipmp3.label2.caption
+msgid "Cochez les fichiers à inclure"
+msgstr ""
+
+#: tformzipmp3.label3.caption
+msgid "Nom du fichier ZIP"
+msgstr ""
+
+#: tformzipmp3.label5.caption
+msgid "Aperçu du nom de fichier après formatage"
+msgstr ""
+
+#: tframechannelslevel.midecibel.caption
+msgid "Decibel"
+msgstr ""
+
+#: tframechannelslevel.mipercent.caption
+msgid "Pourcentage"
+msgstr ""
+
+#: tframechannelslevel.mishowcaption.caption
+msgid "Afficher la valeur"
+msgstr ""
+
+#: tframemixer.bmute.caption
+msgid "Muet"
+msgstr ""
+
+#: tframemixer.label3.caption
+msgid "Volume"
+msgstr ""
+
+#: tframemixer.miaddmusic.caption
+msgid "Ajouter une musique..."
+msgstr ""
+
+#: tframemixer.miaddsound.caption
+msgid "Ajouter un bruitage..."
+msgstr ""
+
+#: tframemixer.mideletemusic.caption
+msgid "Supprimer cette musique"
+msgstr ""
+
+#: tframemixer.mideletesound.caption
+msgid "Supprimer ce bruitage"
+msgstr ""
+
+#: tframemixer.misetvolumemusic.caption
+msgctxt "tframemixer.misetvolumemusic.caption"
+msgid "Ajuster le volume..."
+msgstr ""
+
+#: tframemixer.misetvolumesound.caption
+msgctxt "tframemixer.misetvolumesound.caption"
+msgid "Ajuster le volume..."
+msgstr ""
+
+#: tframeviewprojectfiles.baddrecord.hint
+msgid "Ajoute un nouvel enregistrement à cette section"
+msgstr ""
+
+#: tframeviewprojectfiles.baddsection.hint
+msgid "Ajoute une nouvelle section au projet"
+msgstr ""
+
+#: tframeviewprojectfiles.beditfile.hint
+msgid ""
+"Modifier cet enregistrement\n"
+"(ou double clic sur la ligne)"
+msgstr ""
+
+#: tframeviewprojectfiles.bmixsection.caption
+msgctxt "tframeviewprojectfiles.bmixsection.caption"
+msgid "MIXER"
+msgstr ""
+
+#: tframeviewprojectfiles.bmixsection.hint
+msgid "Mixe cette section et produit un fichier MP3"
+msgstr ""
+
+#: tframeviewprojectfiles.bplayaudiofile.hint
+msgid "Écouter"
+msgstr ""
+
+#: tframeviewprojectfiles.bstopaudiofile.hint
+msgid "Stopper"
+msgstr ""
+
+#: tframeviewprojectfiles.miaddfolder.caption
+msgid "Ajouter"
+msgstr ""
+
+#: tframeviewprojectfiles.miclearmp3folder.caption
+msgid "Vider"
+msgstr ""
+
+#: tframeviewprojectfiles.mideletefile.caption
+msgctxt "tframeviewprojectfiles.mideletefile.caption"
+msgid "Supprimer"
+msgstr ""
+
+#: tframeviewprojectfiles.mideletesection.caption
+msgctxt "tframeviewprojectfiles.mideletesection.caption"
+msgid "Supprimer"
+msgstr ""
+
+#: tframeviewprojectfiles.mideletezipfolder.caption
+msgctxt "tframeviewprojectfiles.mideletezipfolder.caption"
+msgid "Supprimer"
+msgstr ""
+
+#: tframeviewprojectfiles.miimportaudioandinserthere.caption
+msgid "Importer un enregistrement et l'insérer ici..."
+msgstr ""
+
+#: tframeviewprojectfiles.miimportaudioinsection.caption
+msgid "Importer des fichiers audio dans la section..."
+msgstr ""
+
+#: tframeviewprojectfiles.miinsertfile.caption
+msgid "Insérer un nouvel enregistrement ici..."
+msgstr ""
+
+#: tframeviewprojectfiles.miinsertsection.caption
+msgid "Insérer une section ici..."
+msgstr ""
+
+#: tframeviewprojectfiles.mirefresh.caption
+msgid "Rafraîchir l'arborescence"
+msgstr ""
+
+#: tframeviewprojectfiles.mirenamefile.caption
+msgctxt "tframeviewprojectfiles.mirenamefile.caption"
+msgid "Renommer..."
+msgstr ""
+
+#: tframeviewprojectfiles.mirenamesection.caption
+msgctxt "tframeviewprojectfiles.mirenamesection.caption"
+msgid "Renommer..."
+msgstr ""
+
+#: u_resource_string.bamplifyvoicebuttonhint
+msgid ""
+"Active/désactive l'amplification des voix.\n"
+"Activez la pour rendre votre voix plus audible"
+msgstr ""
+
+#: u_resource_string.bbassboostbuttonhint
+msgid ""
+"Active/désactive l'amplification des graves sur les voix.\n"
+"Amplifier les graves adouci et arrondi la voix, la rend plus 'chaude'.\n"
+"Cet effet n'est pas très efficace sur des voix féminines."
+msgstr ""
+
+#: u_resource_string.bcompressorbuttonhint
+msgid ""
+"Active/désactive le compresseur sur les voix\n"
+"C'est un effet qui réhausse le niveau sonore des passages moins audibles\n"
+"comme les fins de phrases où la voix a tendance à baisser. Recommandé !"
+msgstr ""
+
+#: u_resource_string.sadditionto
+#, object-pascal-format
+msgid "Rajout à %0:s"
+msgstr ""
+
+#: u_resource_string.saddmarkeratcursor
+msgctxt "u_resource_string.saddmarkeratcursor"
+msgid "Ajouter un marqueur au curseur"
+msgstr ""
+
+#: u_resource_string.saddnewrecordintoprojectfailed
+msgid "L'ajout du nouvel enregistrement au projet a échoué !"
+msgstr ""
+
+#: u_resource_string.sall
+msgctxt "u_resource_string.sall"
+msgid "tous"
+msgstr ""
+
+#: u_resource_string.sallfile
+msgctxt "u_resource_string.sallfile"
+msgid "tous"
+msgstr ""
+
+#: u_resource_string.saskbeforeclearmp3folder
+msgid "Vider le répertoire MP3 ?"
+msgstr ""
+
+#: u_resource_string.saskbeforedeletezipfolder
+msgid "Supprimer le répertoire ZIP et tout son contenu ?"
+msgstr ""
+
+#: u_resource_string.saskconfirmdeletefile
+msgid "Supprimer ce fichier ?"
+msgstr ""
+
+#: u_resource_string.saskconfirmdeletefolder
+#, object-pascal-format
+msgid "Supprimer %0:s ?%1:s"
+msgstr ""
+
+#: u_resource_string.saskforopenurlfornewappversion
+#, object-pascal-format
+msgid ""
+"Give Your Voice version %0:s est maintenant disponible !\n"
+"votre version actuelle est %1:s\n"
+"\n"
+"Voulez-vous fermer le programme et vous rendre sur le site internet pour la télécharger ?"
+msgstr ""
+
+#: u_resource_string.sasktoerasemp3filesbeforezip
+msgid ""
+"Avant de compresser ce projet, voulez-vous effacer les fichiers de son dossier MP3 ?\n"
+"Cela réduira la taille du zip."
+msgstr ""
+
+#: u_resource_string.sasktoerasezipfolderbeforezip
+msgid "Avant de compresser ce projet, voulez-vous supprimer son dossier ZIP ?"
+msgstr ""
+
+#: u_resource_string.saskusertomixfilewithusermarks
+msgid ""
+"Un ou plusieurs enregistrement(s) de cette section comporte(nt) des marqueurs indiquant que vous avez encore des corrections à y faire.\n"
+"Voulez-vous quand même la mixer ?"
+msgstr ""
+
+#: u_resource_string.saudiobook
+msgid "Livre audio"
+msgstr ""
+
+#: u_resource_string.saudiofile
+msgid "fichier audio"
+msgstr ""
+
+#: u_resource_string.saudiofileimport
+msgid "Importation de fichier audio"
+msgstr ""
+
+#: u_resource_string.sbassboostdontwork
+msgid "l'effet \"Bass Boost\" ne fonctionne pas"
+msgstr ""
+
+#: u_resource_string.scancel
+msgctxt "u_resource_string.scancel"
+msgid "Annuler"
+msgstr ""
+
+#: u_resource_string.scancelthisrecord
+msgid "Annuler cet enregistrement ?"
+msgstr ""
+
+#: u_resource_string.schaineffectdontworkwell
+msgid ""
+"Erreur lors de la création de la chaîne d'effets,\n"
+"les effets ne fonctionneront pas bien..."
+msgstr ""
+
+#: u_resource_string.schapter
+msgid "Chap"
+msgstr ""
+
+#: u_resource_string.sclicktonavigate
+msgid "Cliquez pour naviguer dans l'audio"
+msgstr ""
+
+#: u_resource_string.sclose
+msgid "Fermer"
+msgstr ""
+
+#: u_resource_string.scompressordontwork
+msgid "L'effet \"compresseur\" ne fonctionne pas"
+msgstr ""
+
+#: u_resource_string.scontinue
+msgid "Continuer"
+msgstr ""
+
+#: u_resource_string.scredits
+msgid "Crédits"
+msgstr ""
+
+#: u_resource_string.sctrlleftclickformove
+msgid "CTRL+CLIC GAUCHE=glisser pour déplacer l'audio"
+msgstr ""
+
+#: u_resource_string.scutfailed
+msgid "Impossible de couper la sélection..."
+msgstr ""
+
+#: u_resource_string.scuttheselection
+msgid "Couper la sélection"
+msgstr ""
+
+#: u_resource_string.sdelete
+msgctxt "u_resource_string.sdelete"
+msgid "Supprimer"
+msgstr ""
+
+#: u_resource_string.sdeleteallmarkers
+msgctxt "u_resource_string.sdeleteallmarkers"
+msgid "Supprimer tous les marqueurs"
+msgstr ""
+
+#: u_resource_string.sdeletemarkeronselection
+msgid "Supprimer les marqueurs sur la sélection"
+msgstr ""
+
+#: u_resource_string.sdeletethismusic
+msgid "Supprimer cette musique ?"
+msgstr ""
+
+#: u_resource_string.sdeletethissound
+msgid "Supprimer ce bruitage ?"
+msgstr ""
+
+#: u_resource_string.senterdurationofsilencetoinsert
+msgid "Entrez la durée du silence à insérer:"
+msgstr ""
+
+#: u_resource_string.serrorwhenpreparingrecordingfile
+msgid "Erreur lors de la préparation du fichier d'enregistrement"
+msgstr ""
+
+#: u_resource_string.serrorwhenpreparingrecordingfilefornoise
+msgid "Erreur lors de la préparation du fichier pour l'analyse du bruit de fond"
+msgstr ""
+
+#: u_resource_string.serrorwhileopeningaudiofile
+msgid "Erreur lors de l'ouverture du fichier audio"
+msgstr ""
+
+#: u_resource_string.serrorwhileopeningloopbackdevice
+msgid "Le programme n'arrive pas à ouvrir un périphérique de mixage(loopback)..."
+msgstr ""
+
+#: u_resource_string.serrorwhilepreparingoutputmixfile
+msgid "Erreur lors de la préparation du fichier de sorti pour le mixage"
+msgstr ""
+
+#: u_resource_string.sfailedtocreatefolder
+msgid "Erreur lors de la création du répertoire"
+msgstr ""
+
+#: u_resource_string.sfailedtocreatemp3projectfolder
+msgid "Impossible de créer le répertoire pour les fichiers mixés (MP3)"
+msgstr ""
+
+#: u_resource_string.sfailedtocreateprojectfolder
+msgid "Impossible de créer le répertoire du projet"
+msgstr ""
+
+#: u_resource_string.sfailedtocreateprojectzipfolder
+msgid "Erreur lors de la création du répertoire ZIP"
+msgstr ""
+
+#: u_resource_string.sfailedtodeleteproject
+msgid "Erreur lors de la suppression du projet"
+msgstr ""
+
+#: u_resource_string.sfailedtoimportaudiofile
+msgid "Le programme n'a pas pu importer le fichier"
+msgstr ""
+
+#: u_resource_string.sfailedtoopencapturedevice
+msgid "Erreur d'ouverture du périphérique d'enregistrement audio"
+msgstr ""
+
+#: u_resource_string.sfailedtoopenplaybackdevice
+msgid "Erreur d'ouverture du périphérique de lecture audio"
+msgstr ""
+
+#: u_resource_string.sfailedtorecord
+msgid "Échec de l'enregistrement"
+msgstr ""
+
+#: u_resource_string.sfailedtorecordnoise
+msgid "Erreur lors de l'enregistrement du bruit de fond"
+msgstr ""
+
+#: u_resource_string.sfailedtorename
+msgid "Échec lors de la modification du nom"
+msgstr ""
+
+#: u_resource_string.sfailedtosavenewproject
+msgid "Une erreur est apparue lors de la sauvegarde du nouveau projet..."
+msgstr ""
+
+#: u_resource_string.sfailedtosetcompressionlevel
+msgid "Échec du réglage du débit du MP3..."
+msgstr ""
+
+#: u_resource_string.sfailedtosetmp3bitratetoconstant
+msgid "Échec du réglage du bitrate du MP3 sur 'constant'"
+msgstr ""
+
+#: u_resource_string.sfailedtostartaudioengine
+msgid "Le programme n'arrive pas à initialiser le moteur audio"
+msgstr ""
+
+#: u_resource_string.sfailedtowritemetadatatomp3file
+msgid "Échec de l'écriture des métadonnées dans le fichier MP3"
+msgstr ""
+
+#: u_resource_string.sfailtocopyaudio
+msgid ""
+"Le programme n'arrive pas à copier l'audio\n"
+"Vous ne pourrez donc pas annuler l'action...\n"
+"Voulez-vous quand même continuer ?"
+msgstr ""
+
+#: u_resource_string.sfailtodeletefile
+msgid "Le programme n'arrive pas à supprimer ce fichier"
+msgstr ""
+
+#: u_resource_string.sfailtodeletethisfolder
+msgid "Le programme n'arrive pas à supprimer cette section"
+msgstr ""
+
+#: u_resource_string.sfailtoopenurl
+msgid "Échec de l'ouverture du site dans votre navigateur"
+msgstr ""
+
+#: u_resource_string.sfolderwithsamenamealreadyexists
+msgid "Une section portant ce nom existe déjà !"
+msgstr ""
+
+#: u_resource_string.sgainanalysiserror
+#, object-pascal-format
+msgid ""
+"Une erreur est survenue lors de l'analyse du fichier.\n"
+"Il ne sera pas normalisé à %0:sdB"
+msgstr ""
+
+#: u_resource_string.sgeneratingthemp3
+msgid ""
+"Génération du MP3\n"
+"Patientez svp"
+msgstr ""
+
+#: u_resource_string.shardwareerrorwhilecapturing
+msgid ""
+"Nous sommes désolé, une erreur relative au périphérique audio\n"
+"est survenue lors de l'enregistrement..."
+msgstr ""
+
+#: u_resource_string.shelpmixereffect
+msgid ""
+"< EFFETS APPLIQUÉS SUR LES VOIX >\n"
+"\n"
+"Vous pouvez choisir ici quels effets seront appliqués sur les voix lors du mixage afin de les rendre plus audible.\n"
+"Pour cela, lancez la lecture audio en appuyant sur ESPACE et jouez avec les réglages jusqu'à trouver le niveau qui vous convienne.\n"
+"\n"
+"Soyez vigilant(e) sur les points suivants:\n"
+"   + il est conseillé d'activer le compresseur, sauf si votre micro est connecté à une table de mixage qui en possède déjà un\n"
+"   + n'abusez pas de l'amplification sinon vos voix vont saturer\n"
+"   + garder à peu près les mêmes réglages entre un chapitre et un autre afin de préserver une homogénéité dans vos fichiers finaux."
+msgstr ""
+
+#: u_resource_string.shelpprojectmanager
+msgid ""
+"< Gestionnaire de projets >\n"
+"\n"
+"Dans la partie haute, se trouve la liste des répertoires de travail. Choisissez-en un, en cliquant dessus.\n"
+"\"Rechercher\": cliquez dessus pour ajouter un nouveau répertoire de travail comme par exemple, un disque dur externe. Une fenêtre va alors s'ouvrir vous permettant d'indiquer son chemin.\n"
+"\n"
+"Dans la partie basse, le logiciel affiche la liste des projets trouvés dans le répertoire de travail sélectionné.\n"
+"\"Nouveau\": démarre un nouveau projet de lecture. un assistant nouveau projet va s'ouvrir.\n"
+"\"Ouvrir\": Ouvre le projet sélectionné.\n"
+"\"Zipper\": Lorsqu'un projet est terminé, vous pouvez l'archiver en le compressant au format ZIP. Ceci libèrera de la place sur le disque.\n"
+"\"Dézipper\": Décompresse un projet précédemment compressé.\n"
+"\"Supprimer\": Pour supprimer un projet du disque. Attention, vous perdrez tout ce qu'il contient."
+msgstr ""
+
+#: u_resource_string.siconappby
+#, object-pascal-format
+msgid ""
+"Icone du programme par %0:s\n"
+"Image du micro de %1:s sur %2:s"
+msgstr ""
+
+#: u_resource_string.sinsertionofnewrecordintoprojectfailed
+msgid "L'insertion du nouvel enregistrement dans le projet a échoué !"
+msgstr ""
+
+#: u_resource_string.sinsertnewrecordtothebeginning
+msgid "le nouvel enregistrement sera inséré au début"
+msgstr ""
+
+#: u_resource_string.sinsertrecordatcursor
+msgid "Insérer un enregistrement au curseur"
+msgstr ""
+
+#: u_resource_string.sinsertrecordtothebeginning
+msgid "Insérer un enregistrement au début"
+msgstr ""
+
+#: u_resource_string.sinsertrecordtotheend
+msgid "Insérer un enregistrement à la fin"
+msgstr ""
+
+#: u_resource_string.sinsertsilence
+msgid "Insérer silence"
+msgstr ""
+
+#: u_resource_string.sinsertsilencefailed
+msgid "La commande 'Insérer silence' a échoué..."
+msgstr ""
+
+#: u_resource_string.sinsertssilenceatcursor
+#, object-pascal-format
+msgid ""
+"Insère %0:ss de silence au curseur\n"
+"(touche I)\n"
+"Clic droit pour modifier cette durée"
+msgstr ""
+
+#: u_resource_string.sinvalidname
+msgid "Nom non valide"
+msgstr ""
+
+#: u_resource_string.sleftclickandmovetotrimaudio
+msgid "CLIC GAUCHE=glisser pour rogner l'audio"
+msgstr ""
+
+#: u_resource_string.sleftclicktoaddpoint
+msgid "CLIC GAUCHE=ajouter un point sur la courbe de volume"
+msgstr ""
+
+#: u_resource_string.sleftclicktodragordeletepoint
+msgid "CLIC GAUCHE=glisser pour déplacer le point. Déplacer loin vers le haut ou le bas pour le supprimer"
+msgstr ""
+
+#: u_resource_string.sleftclicktoselect
+msgid "CLIC GAUCHE=sélectionner l'audio"
+msgstr ""
+
+#: u_resource_string.smarktouchuptobedone
+msgid ""
+"Marquer une retouche à faire\n"
+"(touche Ctrl)"
+msgstr ""
+
+#: u_resource_string.smiclevel
+msgctxt "u_resource_string.smiclevel"
+msgid "Niveau du micro"
+msgstr ""
+
+#: u_resource_string.smixingerror
+msgid "Erreur lors du mixage"
+msgstr ""
+
+#: u_resource_string.smouserightclickcontextualmenu
+msgid "CLIC DROIT=menu contextuel"
+msgstr ""
+
+#: u_resource_string.smousewheelforzoom
+msgid "MOLETTE souris=zoomer"
+msgstr ""
+
+#: u_resource_string.smp3tozipincludefile
+#, object-pascal-format
+msgid "Inclure le fichier %0:s"
+msgstr ""
+
+#: u_resource_string.smusics
+msgid "musiques"
+msgstr ""
+
+#: u_resource_string.snameofthesectiontoadd
+msgid "Nom de la section à ajouter"
+msgstr ""
+
+#: u_resource_string.snameofthesectiontoinsert
+msgid "Nom de la section à insérer"
+msgstr ""
+
+#: u_resource_string.snewname
+msgid "Nouveau nom:"
+msgstr ""
+
+#: u_resource_string.snewrecordfor
+#, object-pascal-format
+msgid "Nouvel enregistrement pour %0:s"
+msgstr ""
+
+#: u_resource_string.snewrecordwillbeaddedtotheend
+msgid "le nouvel enregistrement sera ajouté à la fin"
+msgstr ""
+
+#: u_resource_string.snewrecordwillbeinsertedatcursor
+msgid "le nouvel enregistrement sera inséré au curseur"
+msgstr ""
+
+#: u_resource_string.snext
+msgid "Suivant"
+msgstr ""
+
+#: u_resource_string.sno
+msgid "Non"
+msgstr ""
+
+#: u_resource_string.snoiseremovalfailed
+msgid "Échec lors de la suppression du bruit de fond"
+msgstr ""
+
+#: u_resource_string.snoiseremovalinprogress
+msgid "Suppression du bruit de fond..."
+msgstr ""
+
+#: u_resource_string.snone
+msgid "aucun"
+msgstr ""
+
+#: u_resource_string.snotargetplatform
+msgid "aucune plateforme"
+msgstr ""
+
+#: u_resource_string.snumber
+msgid "numéro"
+msgstr ""
+
+#: u_resource_string.sok
+msgctxt "u_resource_string.sok"
+msgid "Ok"
+msgstr ""
+
+#: u_resource_string.sopeninbrowser
+msgid "Ouvrir dans votre navigateur internet"
+msgstr ""
+
+#: u_resource_string.soutputfilename
+msgid "Fichier de sortie:"
+msgstr ""
+
+#: u_resource_string.spage
+msgid "Page"
+msgstr ""
+
+#: u_resource_string.spart
+msgid "Partie"
+msgstr ""
+
+#: u_resource_string.spause
+msgid "PAUSE"
+msgstr ""
+
+#: u_resource_string.spleasenospecialcharacters
+msgid "svp pas de caractères spéciaux"
+msgstr ""
+
+#: u_resource_string.spleasewait
+msgid "Veuillez patienter svp"
+msgstr ""
+
+#: u_resource_string.spoem
+msgid "Poème"
+msgstr ""
+
+#: u_resource_string.sprefix
+msgid "préfixe"
+msgstr ""
+
+#: u_resource_string.sproject
+msgid "Projet"
+msgstr ""
+
+#: u_resource_string.sprojectcontent
+msgid "Contenu du projet"
+msgstr ""
+
+#: u_resource_string.sprojectisnotforthisapplication
+msgid "Le fichier que vous essayez de charger n'est pas un projet Give Your Voice"
+msgstr ""
+
+#: u_resource_string.sprojectwithsamenameexist
+msgid "Un projet avec le même nom existe déjà !"
+msgstr ""
+
+#: u_resource_string.squit
+msgid "Quitter"
+msgstr ""
+
+#: u_resource_string.srecordingfiledontrespectnamesrules
+msgid ""
+"Impossible d'exécuter cette action car cet enregistrement ne respecte pas les règles de nommage du logiciel:\n"
+"<nombre à 3 chiffres> + <espace> + <titre optionnel>"
+msgstr ""
+
+#: u_resource_string.sredocaption
+#, object-pascal-format
+msgid "Refaire %0:s (Ctrl Y)"
+msgstr ""
+
+#: u_resource_string.sredocommandfailed
+#, object-pascal-format
+msgid "La commande <Refaire %0:s> a échoué..."
+msgstr ""
+
+#: u_resource_string.sreplacementfailed
+msgid "Le remplacement a échoué..."
+msgstr ""
+
+#: u_resource_string.sreplaceselectionbyrecord
+msgid "Remplacer la sélection par l'enregistrement"
+msgstr ""
+
+#: u_resource_string.srightclicktoaddmusic
+msgid "Click droit pour ajouter une musique"
+msgstr ""
+
+#: u_resource_string.srightclicktoaddsound
+msgid "Click droit pour ajouter un bruitage"
+msgstr ""
+
+#: u_resource_string.sroyaltyfreemusics
+msgid "Musiques libre de droit"
+msgstr ""
+
+#: u_resource_string.ssecond
+msgid "seconde"
+msgstr ""
+
+#: u_resource_string.ssection
+msgid "Section"
+msgstr ""
+
+#: u_resource_string.sselectionwillbereplacedbynewrecord
+msgid "la sélection sera remplacée par le nouvel enregistrement"
+msgstr ""
+
+#: u_resource_string.ssettingfor
+msgid "réglages pour"
+msgstr ""
+
+#: u_resource_string.ssilencefailed
+msgid "La commande 'Silence' a échoué..."
+msgstr ""
+
+#: u_resource_string.ssilenceonselection
+msgid "Silence sur la sélection"
+msgstr ""
+
+#: u_resource_string.ssomeicons
+msgid "Quelques icones"
+msgstr ""
+
+#: u_resource_string.ssounds
+msgid "bruitages"
+msgstr ""
+
+#: u_resource_string.sspaceforlistenstop
+msgid "ESPACE=écouter/stopper"
+msgstr ""
+
+#: u_resource_string.sstartrecording
+msgid ""
+"Commencer\n"
+"l'enregistrement"
+msgstr ""
+
+#: u_resource_string.sstay
+msgid "Rester"
+msgstr ""
+
+#: u_resource_string.sstop
+msgid "STOP"
+msgstr ""
+
+#: u_resource_string.stest
+msgid "TESTER"
+msgstr ""
+
+#: u_resource_string.stext
+msgid "Texte"
+msgstr ""
+
+#: u_resource_string.stheinsertionatcursorfailed
+msgid "L'insertion au curseur a échoué..."
+msgstr ""
+
+#: u_resource_string.stheinsertionatthebeginningfailed
+msgid "L'insertion au début a échoué..."
+msgstr ""
+
+#: u_resource_string.stheinsertionattheendfailed
+msgid "L'insertion à la fin a échoué..."
+msgstr ""
+
+#: u_resource_string.stitle
+msgctxt "u_resource_string.stitle"
+msgid "titre"
+msgstr ""
+
+#: u_resource_string.stogglemute
+msgid "Inverser muet"
+msgstr ""
+
+#: u_resource_string.sundocaption
+#, object-pascal-format
+msgid "Annuler %0:s (Ctrl Z)"
+msgstr ""
+
+#: u_resource_string.sundocommandfailed
+#, object-pascal-format
+msgid "La commande <Annuler %0:s> a échoué..."
+msgstr ""
+
+#: u_resource_string.sunzipprojectfailed
+msgid "une erreur est apparue lors de la décompression du fichier zip..."
+msgstr ""
+
+#: u_resource_string.sversion
+msgid "version"
+msgstr ""
+
+#: u_resource_string.swarningbeforedeletingproject
+msgid ""
+"Attention, supprimer un projet du disque est définitif.\n"
+"Pour confirmer la suppression, tapez le mot 'supprimer'"
+msgstr ""
+
+#: u_resource_string.syes
+msgid "Oui"
+msgstr ""
+
+#: u_resource_string.szipcreationfailed
+msgid "La création du ZIP a échoué"
+msgstr ""
+
+#: u_resource_string.szipprojectfailed
+msgid "une erreur est apparue lors de la compression du projet..."
+msgstr ""
+
