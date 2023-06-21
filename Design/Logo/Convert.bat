@@ -1,0 +1,1 @@
+"C:\Program Files\ImageMagick-7.1.1-Q8\convert.exe" logo-final16.png logo-final20.png logo-final24.png logo-final32.png logo-final40.png logo-final48.png logo-final64.png logo-final96.png logo-final128.png logo-final256.png -colors 256 GiveYourVoice.ico
