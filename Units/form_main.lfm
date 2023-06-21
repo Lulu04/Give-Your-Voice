@@ -114,7 +114,7 @@ object FormMain: TFormMain
         Height = 323
         Top = 41
         Width = 250
-        PageIndex = 1
+        PageIndex = 0
         Anchors = [akTop, akLeft, akRight, akBottom]
         BorderSpacing.Bottom = 10
         Color = 2631720
