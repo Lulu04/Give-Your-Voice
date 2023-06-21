@@ -2,6 +2,7 @@
 A free voice recording software to ease the production of audio books.  
 License: GPLv3  
 Author: Lulu  
+![icon](https://github.com/Lulu04/Give-Your-Voice/blob/main/Design/Logo/logo-final256.png)
 
 > You can support the development by [donating](https://www.paypal.com/donate/?hosted_button_id=GZAR296S5LYBG)
 
