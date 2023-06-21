@@ -1,0 +1,86 @@
+object FormRememberToDonate: TFormRememberToDonate
+  Left = 490
+  Height = 215
+  Top = 272
+  Width = 464
+  BorderIcons = []
+  BorderStyle = bsNone
+  ClientHeight = 215
+  ClientWidth = 464
+  Color = 3355443
+  Font.Color = 14342874
+  Font.Height = 20
+  OnShow = FormShow
+  Position = poOwnerFormCenter
+  LCLVersion = '2.2.4.0'
+  object Shape1: TShape
+    Left = 0
+    Height = 215
+    Top = 0
+    Width = 464
+    Align = alClient
+    Brush.Style = bsClear
+    Pen.Color = 33023
+    Pen.Width = 4
+  end
+  object BDonate: TSpeedButton
+    AnchorSideLeft.Control = Owner
+    AnchorSideBottom.Control = Owner
+    AnchorSideBottom.Side = asrBottom
+    Cursor = crHandPoint
+    Left = 40
+    Height = 28
+    Top = 172
+    Width = 113
+    Anchors = [akLeft, akBottom]
+    AutoSize = True
+    BorderSpacing.Left = 40
+    BorderSpacing.Bottom = 15
+    Caption = 'Faire un don'
+    Font.Color = clBlack
+    Font.Height = 20
+    Images = DataModule1.ImageList1
+    ImageIndex = 44
+    OnClick = BDonateClick
+    ParentFont = False
+  end
+  object BClose: TSpeedButton
+    AnchorSideLeft.Control = Owner
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = Owner
+    AnchorSideBottom.Side = asrBottom
+    Cursor = crHandPoint
+    Left = 315
+    Height = 28
+    Top = 172
+    Width = 109
+    Anchors = [akRight, akBottom]
+    AutoSize = True
+    BorderSpacing.Right = 40
+    BorderSpacing.Bottom = 15
+    Caption = 'Non merci !'
+    Font.Color = clBlack
+    Font.Height = 20
+    Images = DataModule1.ImageList1
+    ImageIndex = 15
+    OnClick = BCloseClick
+    ParentFont = False
+  end
+  object Label1: TLabel
+    AnchorSideLeft.Control = Owner
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    Left = 10
+    Height = 120
+    Top = 17
+    Width = 444
+    Alignment = taCenter
+    Anchors = [akTop, akLeft, akRight]
+    BorderSpacing.Left = 10
+    BorderSpacing.Right = 10
+    Caption = 'Ce logiciel est gratuit et le restera !'#13#10#13#10'Cependant, le développer et le maintenir à jour a un coût'#13#10'(matériel informatique, forfait internet, électricité...)'#13#10#13#10'Vous pouvez nous aider en faisant un don.'
+    ParentColor = False
+    WordWrap = True
+  end
+end
