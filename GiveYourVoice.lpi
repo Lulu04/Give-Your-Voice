@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectOptions>
+    <Version Value="12"/>
+    <PathDelim Value="\"/>
+    <General>
+      <SessionStorage Value="InProjectDir"/>
+      <Title Value="GiveYourVoice"/>
+      <Scaled Value="True"/>
+      <ResourceType Value="res"/>
+      <UseXPManifest Value="True"/>
+      <XPManifest>
+        <DpiAware Value="True"/>
+      </XPManifest>
+      <Icon Value="0"/>
+    </General>
+    <i18n>
+      <EnableI18N Value="True"/>
+      <OutDir Value="Binary\languages"/>
+      <ExcludedIdentifiers Count="10">
+        <Item1 Value="TFormMain.Label8.Caption"/>
+        <Item2 Value="TFormMain.Label19.Caption"/>
+        <Item3 Value="TFormMain.Label20.Caption"/>
+        <Item4 Value="TFormMain.Label20.Hint"/>
+        <Item5 Value="TFormMain.Label21.Caption"/>
+        <Item6 Value="TFormMain.Label22.Caption"/>
+        <Item7 Value="TFormMain.Label34.Caption"/>
+        <Item8 Value="TFormMain.Label9.Caption"/>
+        <Item9 Value="TFormMain.CBBassGain.Text"/>
+        <Item10 Value="TFormMain.CBVolumeGain.Text"/>
+      </ExcludedIdentifiers>
+      <ExcludedOriginals Count="9">
+        <Item1 Value="Label"/>
+        <Item2 Value="0:00"/>
+        <Item3 Value="sOk"/>
+        <Item4 Value="sCancel"/>
+        <Item5 Value="sStop"/>
+        <Item6 Value="+"/>
+        <Item7 Value="MP3 -> ZIP"/>
+        <Item8 Value="Lulu"/>
+        <Item9 Value="dB"/>
+      </ExcludedOriginals>
+    </i18n>
+    <VersionInfo>
+      <UseVersionInfo Value="True"/>
+      <MajorVersionNr Value="1"/>
+      <Language Value="040C"/>
+      <StringTable FileDescription="Give Your Voice"/>
+    </VersionInfo>
+    <BuildModes>
+      <Item Name="Debug" Default="True"/>
+      <Item Name="Release">
+        <CompilerOptions>
+          <Version Value="11"/>
+          <PathDelim Value="\"/>
+          <Target>
+            <Filename Value="Binary\GiveYourVoice-$(TargetCPU)-$(TargetOS)"/>
+          </Target>
+          <SearchPaths>
+            <IncludeFiles Value="$(ProjOutDir)"/>
+            <OtherUnitFiles Value="Units;..\UnitsCommon;..\ALSound\source"/>
+            <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
+          </SearchPaths>
+          <CodeGeneration>
+            <SmartLinkUnit Value="True"/>
+            <Optimizations>
+              <OptimizationLevel Value="3"/>
+            </Optimizations>
+          </CodeGeneration>
+          <Linking>
+            <Debugging>
+              <GenerateDebugInfo Value="False"/>
+              <DebugInfoType Value="dsDwarf2Set"/>
+            </Debugging>
+            <LinkSmart Value="True"/>
+            <Options>
+              <Win32>
+                <GraphicApplication Value="True"/>
+              </Win32>
+            </Options>
+          </Linking>
+        </CompilerOptions>
+      </Item>
+    </BuildModes>
+    <PublishOptions>
+      <Version Value="2"/>
+      <UseFileFilters Value="True"/>
+    </PublishOptions>
+    <RunParams>
+      <FormatVersion Value="2"/>
+    </RunParams>
+    <RequiredPackages>
+      <Item>
+        <PackageName Value="BGRABitmapPack"/>
+      </Item>
+      <Item>
+        <PackageName Value="LazControls"/>
+      </Item>
+      <Item>
+        <PackageName Value="LCL"/>
+      </Item>
+    </RequiredPackages>
+    <Units>
+      <Unit>
+        <Filename Value="GiveYourVoice.lpr"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Units\form_main.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormMain"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Units\frame_channel_level.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FrameChannelsLevel"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Frame"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Units\u_project.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Units\u_common.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Units\u_audio_utils.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Units\form_options.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormOptions"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Units\frame_viewaudio.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FrameViewAudio"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Frame"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Units\form_new_project.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormNewProject"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Units\u_datamodule.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DataModule1"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Units\u_utils.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Units\frame_view_projectfiles.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FrameViewProjectFiles"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Frame"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Units\dsp_noiseremoval.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Units\form_audiorecording.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormRecord"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Units\u_program_options.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Units\frame_editstring.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FrameEditString"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Frame"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Units\form_user_askconfirmation.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormUserConfirmation"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Units\form_user_inputstring.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormUserInput"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Units\form_user_showmessage.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormUserMessage"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Units\u_userdialogs.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Units\frame_trackbar.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FrameTrackBar"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Frame"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Units\form_mixer.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormMixer"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Units\u_main_undoredo.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Units\frame_mixer.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FrameMixer"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Frame"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Units\u_mixer_undoredo.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\UNITE COMMUNE\propertyutils.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="PropertyUtils"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\UNITE COMMUNE\utilitaire_fichier.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\UNITE COMMUNE\lcl_utils.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="LCL_utils"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Units\project_util.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\UNITE COMMUNE\u_logfile.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Units\form_user_asknumber.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormUserAskNumber"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Units\u_resource_string.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Units\form_firsttimewizard.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormFirstRun"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Units\frame_progressbar.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FrameProgressBar"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Frame"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Units\u_mp3gain.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Units\form_about.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormAbout"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Units\u_crossplatform.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Units\form_project_manager.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormProjectManager"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Units\form_ask_sectionname.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormAskSectionName"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Units\form_help.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormHelp"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Units\form_zipmp3.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormZipMP3"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Units\frame_zipfiles.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FrameZipFiles"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Frame"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Units\form_mixermetadata.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormMixerMetaData"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Units\u_web.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Units\form_remembertodonate.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormRememberToDonate"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit>
+    </Units>
+  </ProjectOptions>
+  <CompilerOptions>
+    <Version Value="11"/>
+    <PathDelim Value="\"/>
+    <Target>
+      <Filename Value="Binary\GiveYourVoice-$(TargetCPU)-$(TargetOS)"/>
+    </Target>
+    <SearchPaths>
+      <IncludeFiles Value="$(ProjOutDir)"/>
+      <OtherUnitFiles Value="Units;..\UnitsCommon;..\ALSound\source"/>
+      <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
+    </SearchPaths>
+    <Parsing>
+      <SyntaxOptions>
+        <IncludeAssertionCode Value="True"/>
+      </SyntaxOptions>
+    </Parsing>
+    <CodeGeneration>
+      <Checks>
+        <IOChecks Value="True"/>
+        <RangeChecks Value="True"/>
+        <OverflowChecks Value="True"/>
+        <StackChecks Value="True"/>
+      </Checks>
+      <VerifyObjMethodCallValidity Value="True"/>
+    </CodeGeneration>
+    <Linking>
+      <Debugging>
+        <DebugInfoType Value="dsDwarf2"/>
+        <UseHeaptrc Value="True"/>
+        <TrashVariables Value="True"/>
+        <UseExternalDbgSyms Value="True"/>
+      </Debugging>
+      <Options>
+        <Win32>
+          <GraphicApplication Value="True"/>
+        </Win32>
+      </Options>
+    </Linking>
+  </CompilerOptions>
+  <Debugging>
+    <Exceptions>
+      <Item>
+        <Name Value="EAbort"/>
+      </Item>
+      <Item>
+        <Name Value="ECodetoolError"/>
+      </Item>
+      <Item>
+        <Name Value="EFOpenError"/>
+      </Item>
+    </Exceptions>
+  </Debugging>
+</CONFIG>
