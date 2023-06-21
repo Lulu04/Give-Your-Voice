@@ -46,8 +46,18 @@ The mixer window where you produce the MP3 files
 ![The mixer window where you produce the MP3 files](https://github.com/Lulu04/Give-Your-Voice/blob/main/screenshot/03mixer.png)  
   
 # How to compile
+> At this time, the software works only for Windows 64b and Linux 64b.
+
 You must have Lazarus IDE installed on your system.
-- Create a directory on your disk and download this repository there.
-- In the same directory, download the repository as ZIP [UnitsCommon](https://github.com/Lulu04/UnitsCommon), unzip it and rename the obtained directory to UnitsCommon
-- Download [ALSound library](https://github.com/Lulu04/ALSound) in the sub-folder UnitsCommon\ALSound
-- You can now open the GiveYourVoice.lpi project in the Lazarus IDE and compile it.
+- create a directory named GYV on your disk
+- in 'GYV' directory clone this repository. You can also download the zip.
+- again in 'GYV' directory, clone the repository [UnitsCommon](https://github.com/Lulu04/UnitsCommon). If you choose to download the zip, unzip the file and rename the obtained directory to "UnitsCommon".
+- and again, in the 'GYV' directory, clone the repository [ALSound library](https://github.com/Lulu04/ALSound). If you choose to download the zip, unzip the file and rename the obtained directory to "ALSound".
+
+The directory tree should be like:  
+**\.GYV**  
+**\.\.\. ALSound**  
+**\.\.\. Give-Your-Voice**  
+**\.\.\. UnitsCommon**  
+
+Now, you are able to open the Lazarus project in the directory "Give-Your-Voice".  
