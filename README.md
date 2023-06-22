@@ -49,7 +49,7 @@ The mixer window where you produce the MP3 files
 # How to compile
 > At this time, the software works only for Windows 64b and Linux 64b.
 
-You must have Lazarus IDE installed on your system.
+You must have Lazarus IDE installed on your system and package BGRABitmap.  
 - create a directory named GYV on your disk
 - in 'GYV' directory clone this repository. You can also download the zip.
 - again in 'GYV' directory, clone the repository [UnitsCommon](https://github.com/Lulu04/UnitsCommon). If you choose to download the zip, unzip the file and rename the obtained directory to "UnitsCommon".
