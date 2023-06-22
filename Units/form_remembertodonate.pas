@@ -33,7 +33,7 @@ var
 
 implementation
 
-uses u_utils;
+uses u_utils{$ifdef Linux},u_common{$endif};
 
 procedure ShowWindowRemberUserToDonate;
 begin
