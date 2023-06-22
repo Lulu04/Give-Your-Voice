@@ -167,6 +167,12 @@ uses u_project, u_common, form_options, u_audio_utils, utilitaire_fichier,
 
 procedure TFormMain.FormCreate(Sender: TObject);
 begin
+ {$ifdef LINUX}
+  FDesignFontHeight := ScaleDesignToForm(15);
+  FDesignSmallFontHeight := ScaleDesignToForm(11);
+ {$endif}
+
+
   FrameChannelsLevel1 := TFrameChannelsLevel.Create(Self);
   FrameChannelsLevel1.Parent := Panel2;
   FrameChannelsLevel1.Align := alClient;
