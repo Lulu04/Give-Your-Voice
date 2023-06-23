@@ -7,6 +7,9 @@
 #define MyAppAssocName MyAppName + " File"
 #define MyAppAssocExt ".gyv"
 #define MyAppAssocKey StringChange(MyAppAssocName, " ", "") + MyAppAssocExt
+#define MyAppPublisher "Lulu"
+#define MyAppURL "https://github.com/Lulu04/Give-Your-Voice"
+
 
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application. Do not use the same AppId value in installers for other applications.
@@ -14,15 +17,19 @@
 AppId={{4C5D2451-6B47-40BD-BB2E-424E5B4E14FF}
 AppName={#MyAppName}
 AppVersion={#MyAppVersion}
+AppPublisher={#MyAppPublisher}
+AppPublisherURL={#MyAppURL}
+AppSupportURL={#MyAppURL}
+AppUpdatesURL={#MyAppURL}
 ;AppVerName={#MyAppName} {#MyAppVersion}
 DefaultDirName={autopf}\{#MyAppName}
 ChangesAssociations=yes
 DisableProgramGroupPage=yes
 ; Uncomment the following line to run in non administrative install mode (install for current user only.)
 ;PrivilegesRequired=lowest
-OutputDir=C:\Pascal\GiveYourVoice\InnoSetup
+OutputDir=C:\Pascal\Give-Your-Voice\ReleaseTools
 OutputBaseFilename=GiveYourVoice_v{#MyAppVersion}_Win64_setup
-SetupIconFile=C:\Pascal\GiveYourVoice\GiveYourVoice.ico
+SetupIconFile=C:\Pascal\Give-Your-Voice\GiveYourVoice.ico
 Compression=lzma
 SolidCompression=yes
 WizardStyle=modern
@@ -59,10 +66,10 @@ Name: "ukrainian"; MessagesFile: "compiler:Languages\Ukrainian.isl"
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: "C:\Pascal\GiveYourVoice\Binary\GiveYourVoice-x86_64-win64.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Pascal\GiveYourVoice\Binary\Data\*"; DestDir: "{app}\Data"; Flags: ignoreversion
-Source: "C:\Pascal\GiveYourVoice\Binary\languages\*"; DestDir: "{app}\languages"; Flags: ignoreversion
-Source: "C:\Pascal\GiveYourVoice\Binary\x86_64-win64\*"; DestDir: "{app}\x86_64-win64"; Flags: ignoreversion
+Source: "C:\Pascal\Give-Your-Voice\Binary\GiveYourVoice.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Pascal\Give-Your-Voice\Binary\Data\*"; DestDir: "{app}\Data"; Flags: ignoreversion
+Source: "C:\Pascal\Give-Your-Voice\Binary\languages\*"; DestDir: "{app}\languages"; Flags: ignoreversion
+Source: "C:\Pascal\Give-Your-Voice\Binary\x86_64-win64\*"; DestDir: "{app}\x86_64-win64"; Flags: ignoreversion
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Registry]

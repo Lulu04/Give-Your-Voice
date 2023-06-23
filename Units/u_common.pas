@@ -76,8 +76,8 @@ var
   FFirstTimeProgramIsRunning: boolean = FALSE;
 
 {$ifdef LINUX}
-  const FDesignFontHeight = 15;
-        FDesignSmallFontHeight = 11;
+  FDesignFontHeight: integer;
+  FDesignSmallFontHeight: integer;
 {$endif}
 
 

@@ -49,13 +49,13 @@ The mixer window where you produce the MP3 files
 # How to compile
 > At this time, the software works only for Windows 64b and Linux 64b.
 
-You must have Lazarus IDE installed on your system and package BGRABitmap.  
+You must have Lazarus IDE installed on your system with BGRABitmap package.  
 - create a directory named GYV on your disk
 - in 'GYV' directory clone this repository. You can also download the zip.
 - again in 'GYV' directory, clone the repository [UnitsCommon](https://github.com/Lulu04/UnitsCommon). If you choose to download the zip, unzip the file and rename the obtained directory to "UnitsCommon".
 - and again, in the 'GYV' directory, clone the repository [ALSound library](https://github.com/Lulu04/ALSound). If you choose to download the zip, unzip the file and rename the obtained directory to "ALSound".
 
-The directory tree should be like:  
+The directory structure should be like:  
 **\.GYV**  
 **\.\.\. ALSound**  
 **\.\.\. Give-Your-Voice**  

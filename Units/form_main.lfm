@@ -16,7 +16,7 @@ object FormMain: TFormMain
   OnKeyDown = FormKeyDown
   OnShow = FormShow
   Position = poWorkAreaCenter
-  LCLVersion = '2.2.4.0'
+  LCLVersion = '2.2.2.0'
   WindowState = wsMaximized
   object Panel3: TPanel
     Left = 0
@@ -34,8 +34,8 @@ object FormMain: TFormMain
       AnchorSideTop.Side = asrBottom
       AnchorSideBottom.Side = asrBottom
       Left = 6
-      Height = 35
-      Top = 46
+      Height = 40
+      Top = 52
       Width = 697
       Alignment = taCenter
       Anchors = [akTop, akLeft, akRight]
@@ -54,8 +54,8 @@ object FormMain: TFormMain
       AnchorSideTop.Side = asrBottom
       AnchorSideBottom.Control = LabelTitle
       Left = 6
-      Height = 30
-      Top = 16
+      Height = 34
+      Top = 18
       Width = 697
       Alignment = taCenter
       Anchors = [akTop, akLeft, akRight]
@@ -76,8 +76,8 @@ object FormMain: TFormMain
       AnchorSideBottom.Control = Panel3
       AnchorSideBottom.Side = asrBottom
       Left = 1
-      Height = 329
-      Top = 91
+      Height = 318
+      Top = 102
       Width = 843
       Anchors = [akTop, akLeft, akRight, akBottom]
       BorderSpacing.Top = 10
@@ -111,7 +111,7 @@ object FormMain: TFormMain
         AnchorSideRight.Side = asrBottom
         AnchorSideBottom.Control = Label7
         Left = 1
-        Height = 323
+        Height = 321
         Top = 41
         Width = 250
         PageIndex = 0
@@ -122,14 +122,14 @@ object FormMain: TFormMain
         object PageImproveListening: TPage
           object ScrollBox3: TScrollBox
             Left = 0
-            Height = 323
+            Height = 321
             Top = 0
             Width = 250
-            HorzScrollBar.Page = 195
+            HorzScrollBar.Page = 249
             VertScrollBar.Page = 232
             Align = alClient
             BorderStyle = bsNone
-            ClientHeight = 323
+            ClientHeight = 321
             ClientWidth = 250
             TabOrder = 0
             object BActivateImprovedListening: TSpeedButton
@@ -141,7 +141,7 @@ object FormMain: TFormMain
               Height = 28
               Hint = 'Activez cette option si le son n''est pas assez audible lors de la ré-écoute de vos enregistrements.'#13#10'Cette option n''affecte que l''écoute et ne modifie en aucune manière les fichiers audio.'#13#10'Elle n''est pas appliquée sur les fichiers mixés du dossier MP3.'
               Top = 30
-              Width = 78
+              Width = 96
               AutoSize = True
               BorderSpacing.Left = 10
               BorderSpacing.Top = 30
@@ -177,9 +177,9 @@ object FormMain: TFormMain
                 AnchorSideTop.Control = Panel4
                 Cursor = crHandPoint
                 Left = 6
-                Height = 19
+                Height = 23
                 Top = 11
-                Width = 20
+                Width = 23
                 BorderSpacing.Left = 5
                 BorderSpacing.Top = 10
                 OnChange = BActivateImprovedListeningClick
@@ -193,10 +193,10 @@ object FormMain: TFormMain
                 AnchorSideTop.Control = CheckBox2
                 AnchorSideRight.Control = Panel4
                 AnchorSideRight.Side = asrBottom
-                Left = 26
-                Height = 20
+                Left = 29
+                Height = 23
                 Top = 11
-                Width = 198
+                Width = 195
                 Anchors = [akTop, akLeft, akRight]
                 BorderSpacing.Right = 5
                 Caption = 'Compresser le son'
@@ -211,9 +211,9 @@ object FormMain: TFormMain
                 AnchorSideTop.Side = asrBottom
                 Cursor = crHandPoint
                 Left = 6
-                Height = 19
-                Top = 46
-                Width = 20
+                Height = 23
+                Top = 49
+                Width = 23
                 BorderSpacing.Left = 5
                 BorderSpacing.Top = 15
                 OnChange = BActivateImprovedListeningClick
@@ -227,10 +227,10 @@ object FormMain: TFormMain
                 AnchorSideTop.Control = CheckBox4
                 AnchorSideRight.Control = Panel4
                 AnchorSideRight.Side = asrBottom
-                Left = 26
-                Height = 20
-                Top = 46
-                Width = 198
+                Left = 29
+                Height = 23
+                Top = 49
+                Width = 195
                 Anchors = [akTop, akLeft, akRight]
                 BorderSpacing.Right = 5
                 Caption = 'Augmenter le volume'
@@ -244,10 +244,10 @@ object FormMain: TFormMain
                 AnchorSideTop.Control = Label14
                 AnchorSideTop.Side = asrBottom
                 Left = 81
-                Height = 28
-                Top = 66
+                Height = 35
+                Top = 72
                 Width = 69
-                ItemHeight = 20
+                ItemHeight = 0
                 ItemIndex = 0
                 Items.Strings = (
                   'x1.5'
@@ -272,9 +272,9 @@ object FormMain: TFormMain
                 AnchorSideTop.Side = asrBottom
                 Cursor = crHandPoint
                 Left = 6
-                Height = 19
-                Top = 109
-                Width = 20
+                Height = 23
+                Top = 122
+                Width = 23
                 BorderSpacing.Left = 5
                 BorderSpacing.Top = 15
                 OnChange = BActivateImprovedListeningClick
@@ -288,10 +288,10 @@ object FormMain: TFormMain
                 AnchorSideTop.Control = CheckBox3
                 AnchorSideRight.Control = Panel4
                 AnchorSideRight.Side = asrBottom
-                Left = 26
-                Height = 20
-                Top = 109
-                Width = 198
+                Left = 29
+                Height = 23
+                Top = 122
+                Width = 195
                 Anchors = [akTop, akLeft, akRight]
                 BorderSpacing.Right = 5
                 Caption = 'Amplifier les basses'
@@ -306,10 +306,10 @@ object FormMain: TFormMain
                 AnchorSideTop.Control = Label11
                 AnchorSideTop.Side = asrBottom
                 Left = 81
-                Height = 28
-                Top = 129
+                Height = 35
+                Top = 145
                 Width = 69
-                ItemHeight = 20
+                ItemHeight = 0
                 ItemIndex = 0
                 Items.Strings = (
                   'x1.5'
@@ -622,9 +622,9 @@ object FormMain: TFormMain
       object Label7: TLabel
         AnchorSideBottom.Control = Panel2
         Left = 3
-        Height = 15
-        Top = 374
-        Width = 86
+        Height = 17
+        Top = 372
+        Width = 103
         Anchors = [akLeft, akBottom]
         BorderSpacing.Left = 5
         Caption = 'Niveau du micro'
@@ -805,9 +805,9 @@ object FormMain: TFormMain
       AnchorSideLeft.Control = Panel3
       AnchorSideTop.Control = Panel3
       Left = 6
-      Height = 15
+      Height = 17
       Top = 1
-      Width = 42
+      Width = 58
       BorderSpacing.Left = 5
       Caption = 'PROJET'
       Font.Color = 3124978
@@ -979,10 +979,10 @@ object FormMain: TFormMain
     object Label12: TLabel
       AnchorSideLeft.Side = asrCenter
       AnchorSideBottom.Control = Label19
-      Left = 45
-      Height = 15
-      Top = 24
-      Width = 28
+      Left = 41
+      Height = 17
+      Top = 19
+      Width = 37
       Alignment = taCenter
       Anchors = [akBottom]
       Caption = 'Label'
@@ -1008,9 +1008,9 @@ object FormMain: TFormMain
           AnchorSideLeft.Control = PageModifyRecord
           AnchorSideBottom.Control = Label13
           Left = 5
-          Height = 15
-          Top = 54
-          Width = 89
+          Height = 17
+          Top = 50
+          Width = 109
           Anchors = [akLeft, akBottom]
           BorderSpacing.Left = 5
           BorderSpacing.Top = 20
@@ -1026,9 +1026,9 @@ object FormMain: TFormMain
           AnchorSideBottom.Control = PageModifyRecord
           AnchorSideBottom.Side = asrBottom
           Left = 5
-          Height = 15
-          Top = 69
-          Width = 28
+          Height = 17
+          Top = 67
+          Width = 37
           Anchors = [akLeft, akBottom]
           BorderSpacing.Bottom = 3
           Caption = 'Label'
@@ -1044,9 +1044,9 @@ object FormMain: TFormMain
       AnchorSideLeft.Control = Panel5
       AnchorSideTop.Control = Panel5
       Left = 6
-      Height = 15
+      Height = 17
       Top = 1
-      Width = 90
+      Width = 116
       BorderSpacing.Left = 5
       Caption = 'ÉDITION AUDIO'
       Font.Color = 3124978
@@ -1060,8 +1060,8 @@ object FormMain: TFormMain
       AnchorSideLeft.Side = asrCenter
       AnchorSideBottom.Control = BStartRecordAddition
       Left = 44
-      Height = 15
-      Top = 39
+      Height = 18
+      Top = 36
       Width = 7
       Alignment = taCenter
       Anchors = [akLeft, akBottom]
