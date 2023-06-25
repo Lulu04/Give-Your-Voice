@@ -3,3 +3,4 @@ Binary/GiveYourVoice.exe
 Binary/GiveYourVoice
 lib/
 backup/
+*.sh~
