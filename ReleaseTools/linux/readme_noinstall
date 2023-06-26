@@ -1,0 +1,23 @@
+Give Your Voice is a free and open source voice recording software to ease the production of audio books.
+
+
+This archive contains all the necessary files to run the software without installation.
+Simply decompress it somewhere in your user space, enter in the obtained directory and run giveyourvoice.
+
+
+User guide in PDF format: /Data/GYV_UserGuide.pdf
+
+
+If you want a link with an icon on your desktop:
+     - open the file "giveyourvoice.desktop" in a text editor
+     - line 5, 6, 7 replace "PathToDecompressedDirectory" by the path of the "giveyourvoice" executable.
+     - save and close the text editor.
+     - then copy or move the file "giveyourvoice.desktop" to ~/Desktop
+
+
+Bugs reports: https://github.com/Lulu04/Give-Your-Voice/issues
+Code: https://github.com/Lulu04/Give-Your-Voice
+
+
+Enjoy your reading !
+Lulu

@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Encoding=UTF-8
+Type=Application
+Icon=PathToDecompressedDirectory/giveyourvoice.png
+Path=PathToDecompressedDirectory/
+Exec=PathToDecompressedDirectory/giveyourvoice
+Name=Give Your Voice 1.0
+GenericName=Lazarus IDE with Free Pascal Compiler
+Categories=Application;Audio;
+Keywords=audio;recording;editor;book;
