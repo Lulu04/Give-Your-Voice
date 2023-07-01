@@ -9,7 +9,7 @@ uses
 
 const
   APP_NAME = 'Give Your Voice';
-  APP_VERSION = '0.0';
+  APP_VERSION = '1.0';
 
   URL_FOR_VERSION_ON_GITHUB = 'https://github.com/Lulu04/Give-Your-Voice/raw/main/version';
 
