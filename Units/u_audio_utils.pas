@@ -119,7 +119,7 @@ type
   end;
 
 
-  // the libsndfile format used by the project to save audio data (wav+int16)
+  // the libsndfile format used by the project to save audio data (wav PCM16)
   function GetRecordAudioFileFormat: TALSFileFormat;
   function GetTempFilenameForRecord: string;
 
