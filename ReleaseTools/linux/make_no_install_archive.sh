@@ -51,7 +51,7 @@ create_no_install_archive(){
 
   # compress the temporary directory
   pushd ${STAGING_DIR}
-  tar -czf "../${NO_INSTALL_ARCHIVE_NAME}" *
+  tar -czf "../../${NO_INSTALL_ARCHIVE_NAME}" *
   popd
 
   # delete the staging directory
