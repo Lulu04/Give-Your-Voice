@@ -5,3 +5,4 @@ lib/
 backup/
 *.sh~
 ReleaseTools/GiveYourVoice_v1.0_Win64_setup.exe
+ReleaseTools/giveyourvoice_linux64_gtk2_no_install.tar.gz
