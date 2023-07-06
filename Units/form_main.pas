@@ -530,7 +530,7 @@ begin
 
       CBURLType.ItemIndex := EnsureRange(ProgramOptions.CBPlatformURLIndex, 0, CBURLType.Items.Count-1);
       CBURLTypeSelect(CBURLType);
-      FLoadingProgramOption := False;
+    FLoadingProgramOption := False;
 
     UpdateButtonHint_InsertSilence;
   end;
