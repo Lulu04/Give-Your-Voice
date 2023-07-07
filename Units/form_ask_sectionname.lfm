@@ -420,26 +420,6 @@ object FormAskSectionName: TFormAskSectionName
     ParentColor = False
     ParentFont = False
   end
-  object BHelp: TSpeedButton
-    AnchorSideTop.Control = Owner
-    AnchorSideRight.Control = Owner
-    AnchorSideRight.Side = asrBottom
-    Cursor = crHelp
-    Left = 498
-    Height = 28
-    Top = 2
-    Width = 28
-    Anchors = [akTop, akRight]
-    AutoSize = True
-    BorderSpacing.Top = 2
-    BorderSpacing.Right = 2
-    Flat = True
-    Images = DataModule1.ImageList1
-    ImageIndex = 45
-    Visible = False
-    ShowHint = True
-    ParentShowHint = False
-  end
   object Label10: TLabel
     AnchorSideLeft.Control = Owner
     AnchorSideTop.Control = Label8
