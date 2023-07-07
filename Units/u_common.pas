@@ -47,7 +47,8 @@ const
                                        '>');
 
 
-  FILE_USER_GUIDE = 'GYV_UserGuide.pdf';
+  USER_GUIDE_FILE_BASE = 'GYV_UserGuide_';
+  USER_GUIDE_FILE_EXT = '.pdf';
 
   NUMBER_OF_DAYS_TO_LOOK_FOR_UPDATE = 7; // every weeks
   NUMBER_OF_DAYS_TO_REMEMBER_USER_TO_DONATE = 30*4; // every 4 months
