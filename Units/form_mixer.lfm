@@ -3,6 +3,7 @@ object FormMixer: TFormMixer
   Height = 696
   Top = 72
   Width = 1164
+  BorderIcons = [biSystemMenu]
   Caption = 'Mixer'
   ClientHeight = 696
   ClientWidth = 1164
