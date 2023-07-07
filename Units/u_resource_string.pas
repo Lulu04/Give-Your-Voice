@@ -219,7 +219,7 @@ SMP3ToZipIncludeFile='Inclure le fichier %0:s';
 
 {SHelpMetadata='< Métadonnées >'+LineEnding+LineEnding+
   'Les métadonnées sont des informations rajoutées à l''intérieur des fichiers audio.'+LineEnding+
-  'Ces informations décrivent par exemple, l''auteur de l''enregistrement, le titre, son genre...'; }
+  'Ces informations décrivent par exemple, l''auteur de l''enregistrement, le titre, son genre...';
 
 // help for Project manager
 SHelpProjectManager='< Gestionnaire de projets >'+LineEnding+LineEnding+
@@ -233,7 +233,7 @@ SHelpProjectManager='< Gestionnaire de projets >'+LineEnding+LineEnding+
   '"Dézipper": Décompresse un projet précédemment compressé.'+LineEnding+
   '"Supprimer": Pour supprimer un projet du disque. Attention, vous perdrez tout ce qu''il contient.';
 
-{// help main form
+// help main form
 SHelpImproveListening='< Amélioration de l''écoute >'+LineEnding+LineEnding+
   'Lorsque vous écoutez vos enregistrements, il se peut que leur niveaux soit trop faible pour travailler correctement. '+
   'Si c''est le cas, activez cette option et jouez avec les réglages jusqu''à ce que le niveau audio vous convienne.'+LineEnding+
