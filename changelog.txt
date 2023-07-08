@@ -1,8 +1,10 @@
 giveyourvoice (1.0.1) unstable; urgency=low
 
   * added english version of user guide
-  * fix some bugs
-  * program icon finalized
+  * fix a memory leak in custom message dialogs
+  * fix a bug in mixing window: to not reload the mixing session when user re-activate the window
+  * fix some minor bugs
+  * program icon improved
   * added script to generate Windows and Linux release
   * rewrite the code to check for a new version online
 
