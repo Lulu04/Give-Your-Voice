@@ -1,0 +1,10 @@
+This file is a memento for the developper.
+
+For each RELEASE published on GitHub, increase the version doing the following:
+1) local.dev: change version in a) in project options in Lazarus IDE
+                                b) in u_common.pas
+                                c) in ReleaseTools\win\innosetup script 64 and 32
+                                d) in file "version"
+2) local.dev: execute ReleaseTools/scripts to produce the binaries release for each supported platform.
+3) local.dev: commit, push and publish the change to Github master branch.
+5) GitHub: create a new release with the new tag (version).

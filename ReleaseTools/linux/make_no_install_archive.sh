@@ -12,41 +12,35 @@ create_no_install_archive(){
   mkdir "${STAGING_DIR}"
 
   # copy the source binary to lower case name in the staging directory
-  echo "copy executable"
   cp -p ${PROJECT_EXECUTABLE} "${STAGING_EXECUTABLE}"
   # set executable mode
 #  chmod 0755 "${STAGING_EXECUTABLE}"
   
-  #copy the version file
-  echo "copy version"
-  cp "${PROJECT_DIR}/version" "${STAGING_DIR}/"
+  #create the version file
+  echo ${VERSION} > "${STAGING_DIR}/version"
+  
+  # copy the logfile
+  cp "${PROJECT_DIR}/changelog.txt" "${STAGING_DIR}/changelog"
   
   # copy the license file
-  echo "copy license"
   cp "${PROJECT_DIR}/LICENSE" "${STAGING_DIR}/"
   
   # copy readme file
-  echo "copy readme"
   cp readme_noinstall "${STAGING_DIR}/readme"
   
   #copy the icon file
-  echo "copy icon image"
   cp "${PROJECT_DIR}/Design/Logo/logo-final128.png" "${STAGING_DIR}/giveyourvoice.png"
   
   #copy the .desktop file
-  echo "copy .desktop file"
   cp "giveyourvoice.desktop" "${STAGING_DIR}/giveyourvoice.desktop"
 
   # copy the right lib directory
-  echo "copy lib"
   cp -r "${PROJECT_BINARY_DIR}/${LIB_DIR}" "${STAGING_DIR}/${LIB_DIR}"
 
   # copy directory languages
-  echo "copy languages"
   cp -r "${PROJECT_BINARY_DIR}/languages" "${STAGING_DIR}/languages"
 
   # copy directory Data
-  echo "copy datda"
   cp -r "${PROJECT_BINARY_DIR}/Data" "${STAGING_DIR}/Data"
 
   # compress the temporary directory
@@ -59,6 +53,10 @@ create_no_install_archive(){
 
   echo "ARCHIVE GENERATED"
 }
+
+# begin
+
+VERSION=$(cat "../../version")
 
 TARGET_ARCHITECTURE="$(dpkg --print-architecture)"
 if [ ${TARGET_ARCHITECTURE} = "amd64" ]; then
@@ -84,7 +82,7 @@ PROJECT_EXECUTABLE="${PROJECT_BINARY_DIR}/GiveYourVoice"
 LAZARUS_PROJECT="${PROJECT_DIR}/GiveYourVoice.lpi"
 STAGING_DIR=./staging
 STAGING_EXECUTABLE="${STAGING_DIR}/giveyourvoice"
-NO_INSTALL_ARCHIVE_NAME="giveyourvoice_${OS_NAME}_${WIDGETSET}_no_install.tar.gz"
+NO_INSTALL_ARCHIVE_NAME="giveyourvoice_${VERSION}_${OS_NAME}_${WIDGETSET}_no_install.tar.gz"
 LAZBUILD_DIR="/home/lulu/fpcupdeluxe/fpcupdeluxe/lazarus"
 
 # delete the old project binary file
@@ -93,7 +91,7 @@ if [ -f "${PROJECT_EXECUTABLE}" ]; then
 fi
 
 # compile project
-echo "compiling Lazarus project..."
+echo "compiling Lazarus project ${VERSION}..."
 # going to the directory where is lazbuild
 pushd "${LAZBUILD_DIR}"
 # compile and redirect output to /dev/null because we don't want to see the huge amount of message
@@ -110,4 +108,7 @@ fi
 echo "Compilation terminated"
 
 create_no_install_archive
+
+read -p "Press enter to exit"
+
 

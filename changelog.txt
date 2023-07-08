@@ -1,0 +1,16 @@
+giveyourvoice (1.0.1) unstable; urgency=low
+
+  * added english version of user guide
+  * fix some bugs
+  * program icon finalized
+  * added script to generate Windows and Linux release
+  * rewrite the code to check for a new version online
+
+ -- Lulu04 <lulutech@gmx.fr>  Sat, 8 Jul 2023 13:01:00 +0100
+
+giveyourvoice (1.0.0) unstable; urgency=low
+
+  * first release
+  * compatible with litteratureaudio.com and librivox.org
+
+ -- Lulu04 <lulutech@gmx.fr>  Fri, 7 Jun 2023 20:00:00 +0100

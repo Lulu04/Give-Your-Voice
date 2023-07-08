@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "Give Your Voice"
-#define MyAppVersion "1.0"
+#define MyAppVersion "1.0.1"
 #define MyAppExeName "GiveYourVoice.exe"
 #define MyAppAssocName MyAppName + " File"
 #define MyAppAssocExt ".gyv"
@@ -28,7 +28,7 @@ DisableProgramGroupPage=yes
 ; Uncomment the following line to run in non administrative install mode (install for current user only.)
 ;PrivilegesRequired=lowest
 OutputDir=C:\Pascal\Give-Your-Voice\ReleaseTools
-OutputBaseFilename=GiveYourVoice_v{#MyAppVersion}_Win64_setup
+OutputBaseFilename=GiveYourVoice_{#MyAppVersion}_Win64_setup
 SetupIconFile=C:\Pascal\Give-Your-Voice\GiveYourVoice.ico
 Compression=lzma
 SolidCompression=yes
