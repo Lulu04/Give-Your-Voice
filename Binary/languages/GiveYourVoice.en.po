@@ -442,7 +442,7 @@ msgstr "Click to edit"
 
 #: tformmixer.label9.caption
 msgid "Respecter le format de fichier de"
-msgstr "Respect the file format of"
+msgstr "Respect the file format for"
 
 #: tformmixermetadata.bmix.caption
 msgctxt "tformmixermetadata.bmix.caption"
@@ -522,7 +522,7 @@ msgstr "Title of the work"
 
 #: tformnewproject.label2.caption
 msgid "Informations sur l'oeuvre que vous allez lire"
-msgstr "Information about the work you are about to read"
+msgstr "Information on the work you are about to read"
 
 #: tformnewproject.label28.caption
 msgid "S'il existe déjà une version enregistrée de cette oeuvre, ajoutez à la fin du titre le numéro de celle que vous allez produire (ex: V2)"
@@ -560,9 +560,7 @@ msgstr "Automatically suppress background noise when recording"
 
 #: tformoptions.label14.caption
 msgid "Sélectionnez votre langue"
-msgstr ""
-"Select your\n"
-"language"
+msgstr "Select your language"
 
 #: tformoptions.label2.caption
 msgctxt "tformoptions.label2.caption"
@@ -1284,41 +1282,15 @@ msgid ""
 "   + n'abusez pas de l'amplification sinon vos voix vont saturer\n"
 "   + garder à peu près les mêmes réglages entre un chapitre et un autre afin de préserver une homogénéité dans vos fichiers finaux."
 msgstr ""
-"< EFFECTS APPLIED TO VOICES >\n"
+"< VOICES EFFECTS >\n"
 "\n"
-"Here you can choose which effects will be applied to the vocals during mixing to make them more audible.\n"
-"To do this, start audio playback by pressing SPACE and play with the settings until you find the level that suits you best.\n"
+"Here you can choose the effects to apply on the voice while mixing, to make them more audible.\n"
+"Start the playback by pressing SPACE and play with the settings until you find the level that suits you best.\n"
 "\n"
 "Please note the following points:\n"
 "   + it is advisable to activate the compressor, unless your microphone is connected to a mixer that already has one.\n"
 "   + don't over-amplify, or your vocals will saturate\n"
-"   + keep the settings more or less the same from one chapter to the next, to preserve the homogeneity of your final files."
-
-#: u_resource_string.shelpprojectmanager
-msgid ""
-"< Gestionnaire de projets >\n"
-"\n"
-"Dans la partie haute, se trouve la liste des répertoires de travail. Choisissez-en un, en cliquant dessus.\n"
-"\"Rechercher\": cliquez dessus pour ajouter un nouveau répertoire de travail comme par exemple, un disque dur externe. Une fenêtre va alors s'ouvrir vous permettant d'indiquer son chemin.\n"
-"\n"
-"Dans la partie basse, le logiciel affiche la liste des projets trouvés dans le répertoire de travail sélectionné.\n"
-"\"Nouveau\": démarre un nouveau projet de lecture. un assistant nouveau projet va s'ouvrir.\n"
-"\"Ouvrir\": Ouvre le projet sélectionné.\n"
-"\"Zipper\": Lorsqu'un projet est terminé, vous pouvez l'archiver en le compressant au format ZIP. Ceci libèrera de la place sur le disque.\n"
-"\"Dézipper\": Décompresse un projet précédemment compressé.\n"
-"\"Supprimer\": Pour supprimer un projet du disque. Attention, vous perdrez tout ce qu'il contient."
-msgstr ""
-"< Projects manager >\n"
-"\n"
-"At the top, you'll find a list of working directories. Choose one by clicking on it.\n"
-"\"Search\": click this button to add a new working directory like, for example, an external hard drive. A window will then open, allowing you to enter its path.\n"
-"\n"
-"In the lower section, the software displays the list of projects found in the selected working directory.\n"
-"\"New\": start a new reading project. A new project wizard will open to assist you.\n"
-"'Open': Open the selected project.\n"
-"\"Zip\": When a project is finished, you can compressing it to ZIP format. This will free up disk space.\n"
-"\"Unzip\": Uncompresses a previously compressed project.\n"
-"\"Delete\": Delete the selected project from disk. Warning, you will lost all its content."
+"   + keep the settings more or less the same from one chapter to the next, to preserve the homogeneity in your project."
 
 #: u_resource_string.siconappby
 #, object-pascal-format
@@ -1441,7 +1413,7 @@ msgstr "New recording for %0:s"
 
 #: u_resource_string.snewrecordwillbeaddedtotheend
 msgid "le nouvel enregistrement sera ajouté à la fin"
-msgstr "the new record will be Added to the end"
+msgstr "the new record will be added to the end"
 
 #: u_resource_string.snewrecordwillbeinsertedatcursor
 msgid "le nouvel enregistrement sera inséré au curseur"

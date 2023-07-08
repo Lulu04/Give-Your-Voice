@@ -1208,21 +1208,6 @@ msgid ""
 "   + garder à peu près les mêmes réglages entre un chapitre et un autre afin de préserver une homogénéité dans vos fichiers finaux."
 msgstr ""
 
-#: u_resource_string.shelpprojectmanager
-msgid ""
-"< Gestionnaire de projets >\n"
-"\n"
-"Dans la partie haute, se trouve la liste des répertoires de travail. Choisissez-en un, en cliquant dessus.\n"
-"\"Rechercher\": cliquez dessus pour ajouter un nouveau répertoire de travail comme par exemple, un disque dur externe. Une fenêtre va alors s'ouvrir vous permettant d'indiquer son chemin.\n"
-"\n"
-"Dans la partie basse, le logiciel affiche la liste des projets trouvés dans le répertoire de travail sélectionné.\n"
-"\"Nouveau\": démarre un nouveau projet de lecture. un assistant nouveau projet va s'ouvrir.\n"
-"\"Ouvrir\": Ouvre le projet sélectionné.\n"
-"\"Zipper\": Lorsqu'un projet est terminé, vous pouvez l'archiver en le compressant au format ZIP. Ceci libèrera de la place sur le disque.\n"
-"\"Dézipper\": Décompresse un projet précédemment compressé.\n"
-"\"Supprimer\": Pour supprimer un projet du disque. Attention, vous perdrez tout ce qu'il contient."
-msgstr ""
-
 #: u_resource_string.siconappby
 #, object-pascal-format
 msgid ""

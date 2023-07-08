@@ -88,6 +88,8 @@ begin
   Application.ProcessMessages;
   {$endif}
   Result:=ShowModal;
+  FImage.Free;
+  FImage := NIL;
 end;
 
 end.

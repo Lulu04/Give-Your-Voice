@@ -829,9 +829,18 @@ begin
 end;
 
 procedure ShowGYVUserGuide;
+  function TryOpen(const aFile: string): boolean;
+  begin
+    Result := OpenDocument(GetAppDataFolder+aFile);
+    if not Result then
+      Result := OpenURL(GetAppDataFolder+aFile);
+  end;
 begin
-  if not OpenDocument(GetAppDataFolder+FILE_USER_GUIDE)
-    then OpenURL(GetAppDataFolder+FILE_USER_GUIDE);
+  // try to load the user guide in the current language used by app
+  // if it fail, try to open the english version
+  if not TryOpen(USER_GUIDE_FILE_BASE+ProgramOptions.Language+USER_GUIDE_FILE_EXT) then begin
+    TryOpen(USER_GUIDE_FILE_BASE+'en'+USER_GUIDE_FILE_EXT);
+  end;
 end;
 
 procedure OpenURLToDonate;

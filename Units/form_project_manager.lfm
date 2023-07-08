@@ -291,25 +291,6 @@ object FormProjectManager: TFormProjectManager
       ParentShowHint = False
     end
   end
-  object BHelp: TSpeedButton
-    AnchorSideTop.Control = Owner
-    AnchorSideRight.Control = Owner
-    AnchorSideRight.Side = asrBottom
-    Cursor = crHelp
-    Left = 819
-    Height = 24
-    Top = 7
-    Width = 24
-    Anchors = [akTop, akRight]
-    BorderSpacing.Top = 7
-    BorderSpacing.Right = 7
-    Flat = True
-    Images = DataModule1.ImageList1
-    ImageIndex = 45
-    OnClick = BHelpClick
-    ShowHint = True
-    ParentShowHint = False
-  end
   object Panel3: TPanel
     AnchorSideLeft.Control = Label1
     AnchorSideTop.Control = Label1

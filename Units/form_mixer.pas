@@ -294,21 +294,24 @@ end;
 
 procedure TFormMixer.FormActivate(Sender: TObject);
 begin
-  Notebook1.PageIndex := Notebook1.IndexOf(PagePrepareFile);
-  PanelStatus.Visible := True;
-  PanelTop.Enabled := False;
-  Application.ProcessMessages;
+  if FFirstShow then begin
+    Notebook1.PageIndex := Notebook1.IndexOf(PagePrepareFile);
+    PanelStatus.Visible := True;
+    PanelTop.Enabled := False;
+    Application.ProcessMessages;
 
-  FFilesToMix := FormMain.FrameViewProjectFiles1.GetFilesToMix;
+    FFilesToMix := FormMain.FrameViewProjectFiles1.GetFilesToMix;
 
-  Screen.BeginWaitCursor;
-  FrameMixer1.AdjustTrackHeight;
-  FrameMixer1.InitFromViewProjectFiles(FFilesToMix);
-  UpdateToolsWidgets;
-  Screen.EndWaitCursor;
+    Screen.BeginWaitCursor;
+    FrameMixer1.AdjustTrackHeight;
+    FrameMixer1.InitFromViewProjectFiles(FFilesToMix);
+    UpdateToolsWidgets;
+    Screen.EndWaitCursor;
 
-  HidePanel;
-  PanelTop.Enabled := True;
+    HidePanel;
+    PanelTop.Enabled := True;
+    FFirstShow := False;
+  end;
 end;
 
 procedure TFormMixer.FormClose(Sender: TObject; var CloseAction: TCloseAction);
@@ -379,8 +382,6 @@ begin
 
     FrameMixer1.MIInvertMuteMusic.Caption := SToggleMute;
     FrameMixer1.MIInvertMuteSound.Caption := SToggleMute;
-
-    FFirstShow := False;
   end;
 end;
 

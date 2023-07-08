@@ -17,7 +17,6 @@ type
   TFormProjectManager = class(TForm)
     BCancel: TSpeedButton;
     BCancelZipper: TSpeedButton;
-    BHelp: TSpeedButton;
     BNewProject: TSpeedButton;
     BDeleteProject: TSpeedButton;
     BZipProject: TSpeedButton;
@@ -41,7 +40,6 @@ type
     BOpenProject: TSpeedButton;
     TVProjects: TTreeView;
     TVPaths: TTreeView;
-    procedure BHelpClick(Sender: TObject);
     procedure BOpenProjectClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
@@ -149,11 +147,6 @@ begin
   if Sender = BDeleteProject then begin
     DoDeleteProject;
   end;
-end;
-
-procedure TFormProjectManager.BHelpClick(Sender: TObject);
-begin
-  _ShowHelp(SHelpProjectManager, BHelp);
 end;
 
 procedure TFormProjectManager.FormCreate(Sender: TObject);

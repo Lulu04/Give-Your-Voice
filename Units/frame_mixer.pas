@@ -483,6 +483,7 @@ begin
     SelectedObject := NIL;
     IndexGainPointUnderMouse := -1;
     MouseOverState := mmoNothing;
+    PB.Hint := '';
   end;
 end;
 

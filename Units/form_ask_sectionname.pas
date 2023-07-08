@@ -14,7 +14,6 @@ type
 
   TFormAskSectionName = class(TForm)
     BCancel: TSpeedButton;
-    BHelp: TSpeedButton;
     BOk: TSpeedButton;
     CheckBox1: TCheckBox;
     CheckBox2: TCheckBox;
