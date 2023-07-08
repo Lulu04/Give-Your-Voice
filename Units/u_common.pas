@@ -9,9 +9,11 @@ uses
 
 const
   APP_NAME = 'Give Your Voice';
-  APP_VERSION = '1.0';
+  APP_VERSION = '1.0.0';
 
-  URL_FOR_VERSION_ON_GITHUB = 'https://github.com/Lulu04/Give-Your-Voice/raw/main/version';
+  // GitHub
+  URL_FOR_VERSION_ON_GITHUB = 'https://raw.githubusercontent.com/Lulu04/Give-Your-Voice/main/version';
+  URL_FOR_LATEST_RELEASE_ON_GITHUB = 'https://github.com/Lulu04/Give-Your-Voice/releases/latest';
 
   PROGRAM_OPTIONS_FILENAME = 'GiveYourVoice.cfg';
   PROGRAM_LOG_FILENAME = 'GiveYourVoice.log';
@@ -92,7 +94,7 @@ type
                              ptpLitteratureAudio,
                              ptpLibriVox);
 
-// DISCLAMER FOR LIBRIVOX
+{// DISCLAMER FOR LIBRIVOX
 const
   LIBRIVOX_DISCLAMER = '<Titre> de <Auteur>. Ceci est un enregistrement LibriVox. '+
                        'Tous nos enregistrement appartiennent au domaine public. '+
@@ -102,7 +104,7 @@ const
                        'Chapitre xxx <titre du chapitre>';
 
   LIBRIVOX_DISCLAMER_POEM_BEGIN = '<Titre> de <Auteur>. Lu pour LibriVox par <votre nom>.';
-  LIBRIVOX_DISCLAMER_POEM_END = 'Fin du poème. Cet enregistrement est dans le domaine public.';
+  LIBRIVOX_DISCLAMER_POEM_END = 'Fin du poème. Cet enregistrement est dans le domaine public.'; }
 
 implementation
 
