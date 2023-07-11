@@ -9,6 +9,8 @@ uses
   Classes, SysUtils, ctypes,
   ALSound, libsndfile;
 
+procedure ProcessLogMessageFromOpenALSoft(aUserPtr: pointer; aLevel: char; aMessage: PChar; aMessageLength: cint);
+
 type
 
   { TPlaybackContext }
@@ -221,11 +223,31 @@ type
     property Error: boolean read FError;
   end;
 
+ { TAudioRecordToFile = record
+  private
+    writer: TAudioFileWriter;
+  public
+    Buf: TALSCaptureFrameBuffer;
 
+    function OpenDevice(const aCaptureDeviceName: string; aFrequency: longword;
+      aFormat: TALSCaptureFormat; aBufferTimeSize: double): boolean;
+    function CloseDevice: boolean;
+
+    function CreateFile(const aFileName: string; aFormat: TALSFileFormat): boolean;
+    function WriteBufferToFile: boolean;
+    function CloseFile: boolean;
+
+    function StartCapture: boolean;
+    // Fill Buf with captured samples. Buf.FrameCount contain the number of obtained samples
+    // return True if there samples available in Buf
+    function GetCapturedSamples: boolean;
+    function StopCapture: boolean;
+
+  end; }
 
 implementation
 
-uses u_project, u_common, Math, utilitaire_fichier,
+uses u_project, u_common, Math, utilitaire_fichier, u_logfile,
   dsp_noiseremoval, u_program_options, form_mixer, als_dsp_utils, u_mp3gain,
   Forms;
 
@@ -886,6 +908,18 @@ begin
   reader.Close;
   buf.FreeMemory;
   analyzer.Free;
+end;
+
+procedure ProcessLogMessageFromOpenALSoft(aUserPtr: pointer; aLevel: char;
+  aMessage: PChar; aMessageLength: cint);
+const aprefix='alsoft: ';
+begin
+  case aLevel of
+    'I': Log.Info(aprefix+StrPas(aMessage));
+    'W': Log.Warning(aprefix+StrPas(aMessage));
+    'E': Log.Error(aprefix+StrPas(aMessage));
+    else Log.Warning(aprefix+StrPas(aMessage));
+  end;
 end;
 
 function GetRecordAudioFileFormat: TALSFileFormat;

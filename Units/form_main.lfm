@@ -4,8 +4,8 @@ object FormMain: TFormMain
   Top = 102
   Width = 1097
   Caption = 'Donneur de Voix'
-  ClientHeight = 688
-  ClientWidth = 1097
+  ClientHeight = 0
+  ClientWidth = 0
   Color = 3355443
   Font.Color = 14342874
   Font.Height = 20
@@ -22,21 +22,21 @@ object FormMain: TFormMain
     Left = 0
     Height = 421
     Top = 0
-    Width = 1097
+    Width = 0
     Align = alTop
     BevelColor = 33023
     ClientHeight = 421
-    ClientWidth = 1097
+    ClientWidth = 0
     TabOrder = 0
     object LabelTitle: TLabel
       AnchorSideLeft.Control = Panel3
       AnchorSideTop.Control = LabelAuthor
       AnchorSideTop.Side = asrBottom
       AnchorSideBottom.Side = asrBottom
-      Left = 6
-      Height = 35
-      Top = 46
-      Width = 697
+      Left = 5
+      Height = 10000
+      Top = 10016
+      Width = 0
       Alignment = taCenter
       Anchors = [akTop, akLeft, akRight]
       BorderSpacing.Left = 5
@@ -53,10 +53,10 @@ object FormMain: TFormMain
       AnchorSideTop.Control = Label16
       AnchorSideTop.Side = asrBottom
       AnchorSideBottom.Control = LabelTitle
-      Left = 6
-      Height = 30
+      Left = 5
+      Height = 10000
       Top = 16
-      Width = 697
+      Width = 0
       Alignment = taCenter
       Anchors = [akTop, akLeft, akRight]
       BorderSpacing.Left = 5
@@ -75,10 +75,10 @@ object FormMain: TFormMain
       AnchorSideRight.Control = Panel8
       AnchorSideBottom.Control = Panel3
       AnchorSideBottom.Side = asrBottom
-      Left = 1
-      Height = 329
-      Top = 91
-      Width = 843
+      Left = 0
+      Height = 0
+      Top = 20026
+      Width = 0
       Anchors = [akTop, akLeft, akRight, akBottom]
       BorderSpacing.Top = 10
       BevelColor = 33023
@@ -92,7 +92,7 @@ object FormMain: TFormMain
       AnchorSideRight.Side = asrBottom
       AnchorSideBottom.Control = Panel3
       AnchorSideBottom.Side = asrBottom
-      Left = 844
+      Left = -252
       Height = 419
       Top = 1
       Width = 252
@@ -804,7 +804,7 @@ object FormMain: TFormMain
     object Label16: TLabel
       AnchorSideLeft.Control = Panel3
       AnchorSideTop.Control = Panel3
-      Left = 6
+      Left = 5
       Height = 15
       Top = 1
       Width = 42
@@ -818,27 +818,27 @@ object FormMain: TFormMain
     end
   end
   object Panel5: TPanel
-    Left = 5
-    Height = 262
-    Top = 426
-    Width = 1087
+    Left = 0
+    Height = 0
+    Top = 0
+    Width = 0
     Align = alClient
     Anchors = [akTop, akLeft, akRight]
     BorderSpacing.Left = 5
     BorderSpacing.Right = 5
     BevelColor = 33023
-    ClientHeight = 262
-    ClientWidth = 1087
+    ClientHeight = 0
+    ClientWidth = 0
     Enabled = False
     Font.Color = 14342874
     Font.Height = 20
     ParentFont = False
     TabOrder = 1
     object Panel7: TPanel
-      Left = 1
-      Height = 173
-      Top = 88
-      Width = 1085
+      Left = 0
+      Height = 0
+      Top = 0
+      Width = 0
       Align = alBottom
       Anchors = [akTop, akLeft, akRight, akBottom]
       BevelColor = 33023
@@ -855,10 +855,10 @@ object FormMain: TFormMain
       AnchorSideLeft.Side = asrBottom
       AnchorSideTop.Control = BStartRecordAddition
       Cursor = crHandPoint
-      Left = 194
+      Left = 193
       Height = 32
       Hint = 'Place le curseur au début'
-      Top = 54
+      Top = -34
       Width = 32
       BorderSpacing.Left = 20
       BorderSpacing.Bottom = 1
@@ -876,10 +876,10 @@ object FormMain: TFormMain
       AnchorSideLeft.Side = asrBottom
       AnchorSideTop.Control = BStartRecordAddition
       Cursor = crHandPoint
-      Left = 231
+      Left = 230
       Height = 32
       Hint = 'Place le curseur à la fin'
-      Top = 54
+      Top = -34
       Width = 32
       BorderSpacing.Left = 5
       BorderSpacing.Bottom = 1
@@ -897,10 +897,10 @@ object FormMain: TFormMain
       AnchorSideLeft.Side = asrBottom
       AnchorSideTop.Control = BStartRecordAddition
       Cursor = crHandPoint
-      Left = 68
+      Left = 67
       Height = 32
       Hint = 'Lecture (ESPACE)'
-      Top = 54
+      Top = -34
       Width = 32
       BorderSpacing.Left = 5
       BorderSpacing.Bottom = 1
@@ -918,10 +918,10 @@ object FormMain: TFormMain
       AnchorSideLeft.Side = asrBottom
       AnchorSideTop.Control = BStartRecordAddition
       Cursor = crHandPoint
-      Left = 105
+      Left = 104
       Height = 32
       Hint = 'Stop (ESPACE)'
-      Top = 54
+      Top = -34
       Width = 32
       BorderSpacing.Left = 5
       BorderSpacing.Bottom = 1
@@ -939,10 +939,10 @@ object FormMain: TFormMain
       AnchorSideLeft.Side = asrBottom
       AnchorSideTop.Control = BStartRecordAddition
       Cursor = crHandPoint
-      Left = 142
+      Left = 141
       Height = 32
       Hint = 'Pause/Reprendre la lecture'
-      Top = 54
+      Top = -34
       Width = 32
       BorderSpacing.Left = 5
       BorderSpacing.Bottom = 1
@@ -959,10 +959,10 @@ object FormMain: TFormMain
       AnchorSideLeft.Control = Panel5
       AnchorSideBottom.Control = Panel7
       Cursor = crHandPoint
-      Left = 31
+      Left = 30
       Height = 32
       Hint = 'Démarre l''enregistrement audio'
-      Top = 54
+      Top = -34
       Width = 32
       Anchors = [akLeft, akBottom]
       BorderSpacing.Left = 30
@@ -979,9 +979,9 @@ object FormMain: TFormMain
     object Label12: TLabel
       AnchorSideLeft.Side = asrCenter
       AnchorSideBottom.Control = Label19
-      Left = 45
+      Left = -14
       Height = 15
-      Top = 24
+      Top = -64
       Width = 28
       Alignment = taCenter
       Anchors = [akBottom]
@@ -997,9 +997,9 @@ object FormMain: TFormMain
       AnchorSideRight.Side = asrBottom
       AnchorSideBottom.Control = Panel7
       Left = 680
-      Height = 87
-      Top = 1
-      Width = 406
+      Height = 0
+      Top = 0
+      Width = 0
       PageIndex = 0
       Anchors = [akTop, akLeft, akRight, akBottom]
       TabOrder = 1
@@ -1009,7 +1009,7 @@ object FormMain: TFormMain
           AnchorSideBottom.Control = Label13
           Left = 5
           Height = 15
-          Top = 54
+          Top = -33
           Width = 89
           Anchors = [akLeft, akBottom]
           BorderSpacing.Left = 5
@@ -1027,7 +1027,7 @@ object FormMain: TFormMain
           AnchorSideBottom.Side = asrBottom
           Left = 5
           Height = 15
-          Top = 69
+          Top = -18
           Width = 28
           Anchors = [akLeft, akBottom]
           BorderSpacing.Bottom = 3
@@ -1043,9 +1043,9 @@ object FormMain: TFormMain
     object Label17: TLabel
       AnchorSideLeft.Control = Panel5
       AnchorSideTop.Control = Panel5
-      Left = 6
+      Left = 5
       Height = 15
-      Top = 1
+      Top = 0
       Width = 90
       BorderSpacing.Left = 5
       Caption = 'ÉDITION AUDIO'
@@ -1059,9 +1059,9 @@ object FormMain: TFormMain
       AnchorSideLeft.Control = BStartRecordAddition
       AnchorSideLeft.Side = asrCenter
       AnchorSideBottom.Control = BStartRecordAddition
-      Left = 44
+      Left = 43
       Height = 15
-      Top = 39
+      Top = -49
       Width = 7
       Alignment = taCenter
       Anchors = [akLeft, akBottom]
@@ -1076,7 +1076,7 @@ object FormMain: TFormMain
       AnchorSideRight.Control = Notebook1
       Left = 541
       Height = 34
-      Top = 3
+      Top = 2
       Width = 109
       Anchors = [akTop, akRight]
       BorderSpacing.Top = 2
@@ -1149,7 +1149,7 @@ object FormMain: TFormMain
       AnchorSideBottom.Control = Panel7
       Left = 515
       Height = 34
-      Top = 52
+      Top = -36
       Width = 71
       Anchors = [akRight, akBottom]
       BorderSpacing.Right = 30
@@ -1204,7 +1204,7 @@ object FormMain: TFormMain
       AnchorSideBottom.Control = Panel7
       Left = 414
       Height = 34
-      Top = 3
+      Top = 2
       Width = 71
       Anchors = [akTop, akRight]
       BorderSpacing.Top = 2
@@ -1260,7 +1260,7 @@ object FormMain: TFormMain
       AnchorSideBottom.Control = Panel7
       Left = 616
       Height = 34
-      Top = 52
+      Top = -36
       Width = 34
       Anchors = [akRight, akBottom]
       BorderSpacing.Right = 30
@@ -1294,7 +1294,7 @@ object FormMain: TFormMain
       AnchorSideBottom.Control = Panel7
       Left = 313
       Height = 34
-      Top = 52
+      Top = -36
       Width = 71
       Anchors = [akRight, akBottom]
       BorderSpacing.Right = 30
@@ -1347,8 +1347,8 @@ object FormMain: TFormMain
     Cursor = crVSplit
     Left = 0
     Height = 5
-    Top = 421
-    Width = 1097
+    Top = 0
+    Width = 0
     Align = alTop
     Color = 24251
     ParentColor = False

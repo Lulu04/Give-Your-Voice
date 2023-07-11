@@ -216,6 +216,7 @@ begin
   MainUndoRedoManager.OnChange := @ProcessUndoRedoChange;
 
   InitALSManagerLibrariesSubFolder;
+  ALSManager.SetOpenALSoftLogCallback(@u_audio_utils.ProcessLogMessageFromOpenALSoft, NIL);
   ALSManager.LoadLibraries;
 
   FFirstShow := True;
