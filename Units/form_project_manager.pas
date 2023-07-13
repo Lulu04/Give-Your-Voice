@@ -91,7 +91,7 @@ implementation
 
 uses u_program_options, u_crossplatform, u_common, u_project, u_utils,
   utilitaire_fichier, LCLType, form_main, u_userdialogs, u_resource_string,
-  FileUtil, form_help, Math;
+  FileUtil, Math;
 
 {$R *.lfm}
 
