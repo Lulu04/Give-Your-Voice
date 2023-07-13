@@ -9,7 +9,7 @@ uses
   Classes, SysUtils, ctypes,
   ALSound, libsndfile;
 
-procedure ProcessLogMessageFromOpenALSoft(aUserPtr: pointer; aLevel: char; aMessage: PChar; aMessageLength: cint);
+procedure ProcessLogMessageFromOpenALSoft({%H-}aUserPtr: pointer; aLevel: char; aMessage: PChar; {%H-}aMessageLength: cint);
 
 type
 
@@ -1410,6 +1410,11 @@ procedure TCaptureContext.Create(aDeviceIndex: integer);
 begin
   FCaptureContext := ALSManager.CreateCaptureContext(aDeviceIndex, 44100,
       ALS_CAPTUREFORMAT_MONO_FLOAT32, 0.100);
+
+  if FCaptureContext.Error then begin
+    Log.Error('alsound: failed to create capture context');
+    Log.Error('with device index = '+aDeviceIndex.ToString, 1);
+  end;
 end;
 
 procedure TCaptureContext.Free;
@@ -1450,6 +1455,17 @@ begin
   FCompressor.Mute := not ProgramOptions.ListeningImprovedUseCompressor;
   FBassBoostEqualizer.Mute := not (ProgramOptions.ListeningImprovedActivated and
                      (ProgramOptions.ListeningImprovedBassGainValue <> 1.0));
+
+  if FPlaybackContext.Error then begin
+    Log.Error('alsound: failed to create playback context');
+    Log.Error(FPlaybackContext.StrError, 1);
+  end;
+  if not FCompressor.Ready then
+    Log.Error('alsound: failed to create compressor effect for playback context');
+  if not FBassBoostEqualizer.Ready then
+    Log.Error('alsound: failed to create bass boost equalizer for playback context');
+  if FErrorOnChainEffect then
+    Log.Error('alsound: failed to chain audio effects for playback context');
 end;
 
 procedure TPlaybackContext.Free;
@@ -1476,6 +1492,17 @@ begin
   FBassBoostEqualizer := FLoopbackContext.CreateEffect(AL_EFFECT_EQUALIZER, FBassBoostEqualizerProp);
 
   FErrorOnChainEffect := not FCompressor.ChainWith(FBassBoostEqualizer);
+
+  if FLoopbackContext.Error then begin
+    Log.Error('alsound: failed to create loopback context');
+    Log.Error(FLoopbackContext.StrError, 1);
+  end;
+  if not FCompressor.Ready then
+    Log.Error('alsound: failed to create compressor effect for loopback context');
+  if not FBassBoostEqualizer.Ready then
+    Log.Error('alsound: failed to create bass boost equalizer for loopback context');
+  if FErrorOnChainEffect then
+    Log.Error('alsound: failed to chain audio effects for loopback context');
 end;
 
 procedure TPlaybackContext.FreeLoopback;

@@ -156,9 +156,10 @@ var
 
 implementation
 uses u_project, u_common, form_options, u_audio_utils, utilitaire_fichier,
-  u_program_options, u_userdialogs, u_resource_string,
-  form_firsttimewizard, u_utils, form_about, u_crossplatform, form_project_manager,
-  u_web, form_remembertodonate, LCLType, LCLIntf, Clipbrd, Math
+  u_logfile, u_program_options, u_userdialogs, u_resource_string,
+  form_firsttimewizard, u_utils, form_about, u_crossplatform,
+  form_project_manager, u_web, form_remembertodonate, LCLType, LCLIntf, Clipbrd,
+  Math
   {$ifdef LINUX},u_datamodule{$endif};
 
 {$R *.lfm}
@@ -218,6 +219,8 @@ begin
   InitALSManagerLibrariesSubFolder;
   ALSManager.SetOpenALSoftLogCallback(@u_audio_utils.ProcessLogMessageFromOpenALSoft, NIL);
   ALSManager.LoadLibraries;
+  if not ALSManager.ALSoftLogCallbackIsActive then
+    Log.Error('alsound: failed to set the callback for OpenAL-Soft log messages');
 
   FFirstShow := True;
 
@@ -539,6 +542,8 @@ begin
   if not FAudioEngineStarted then begin
     FAudioEngineStarted := True;
     StartAudioDevice;
+    Log.Info('alsound: working with LibSndFile '+ALSManager.LibSndFileVersion+'  -  '+
+             'OpenAL-Soft '+ALSManager.OpenAlSoftVersion);
   end;
 
   // open the project manager if there isn't a project loaded
