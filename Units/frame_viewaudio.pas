@@ -194,7 +194,7 @@ type
 implementation
 uses als_dsp_utils, u_audio_utils, u_program_options, form_main,
   u_main_undoredo, u_userdialogs, form_audiorecording, u_resource_string,
-  u_crossplatform, Graphics, Dialogs, Math, utilitaire_fichier;
+  u_crossplatform, Graphics, Dialogs, Math, utilitaire_fichier, u_logfile;
 
 {$R *.lfm}
 
@@ -1176,7 +1176,18 @@ begin
 end;
 
 procedure TFrameViewAudio.LoadSound(const aFilename: string);
+var reader: TAudioFileReader;
 begin
+  // write log message
+  if reader.OpenRead(aFilename) then begin
+    Log.Info('gyv: try to edit audio file '+aFilename);
+    Log.Info('samplerate:'+reader.SampleRate.ToString+
+             ' frames:'+reader.Frames.ToString+
+             ' chan:'+reader.Channels.ToString+
+             ' format:'+IntToHex(reader.Format, 4), 2);
+    reader.Close;
+  end else log.Error('gyv: audio edition failed to retrieve file info '+aFilename);
+
   FFilename := aFilename;
   FLevels := NIL;
   FUserMarks.Clear;
