@@ -1,3 +1,10 @@
+giveyourvoice (1.0.2) unstable; urgency=low
+
+  * corrected some wrong links in user guide
+  * log file to help with debugging purpose
+
+ -- Lulu04 <lulutech@gmx.fr>  Sat, 8 Jul 2023 13:01:00 +0100
+
 giveyourvoice (1.0.1) unstable; urgency=low
 
   * added english version of user guide
