@@ -9,7 +9,7 @@ interface
 uses
   Classes, SysUtils, Forms, Controls, ExtCtrls, StdCtrls, Graphics, Buttons,
   ComCtrls, Menus, Dialogs, BGRABitmap, BGRABitmapTypes, u_common, ALSound,
-  Types, u_utils, frame_trackbar, u_mixer_undoredo, LCL_utils, u_audio_utils;
+  Types, u_utils, frame_trackbar, {u_mixer_undoredo,} LCL_utils, u_audio_utils;
 
 const
   SLICE_TIME_MS = 10;
@@ -1314,6 +1314,7 @@ var pb: TPaintBox;
   fontColor: TColor;
   pm: PMixerView;
 begin
+  sEmpty := '';
   pm := PaintBoxToMixerView(Sender);
 
   if Length(pm^.Objects) > 0 then begin
@@ -1323,15 +1324,12 @@ begin
   pb := Sender as TPaintBox;
   back := RGBToColor(15,15,15);
 
-  if pb = PBMusic then with PBMusic.Canvas do begin
-    fontColor := RGBToColor(200,200,200);
+  fontColor := RGBToColor(200,200,200);
+  if pb = PBMusic then with PBMusic.Canvas do
     sEmpty := SRightClickToAddMusic;
-  end;
 
-  if pb = PBSound then with PBSound.Canvas do begin
-    fontColor := RGBToColor(200,200,200);
+  if pb = PBSound then with PBSound.Canvas do
     sEmpty := SRightClickToAddSound;
-  end;
 
   with pb.Canvas do begin
     Brush.Style := bsSolid;
@@ -1767,7 +1765,7 @@ procedure TFrameMixer.RedrawTempImage(p: PMixerView);
 var i, j, yy, yy1, lastXDrawn, lastYDrawn, newX: integer;
   xx: single;
   yyy, deltaY: single;
-  cLow, cHigh, cBack: TBGRAPixel;
+  cLow, cBack: TBGRAPixel;
   procedure DrawTrapeze(ax1, ay1, ax2, ay2: integer);
   begin
     yyy := ay1;
@@ -1786,18 +1784,8 @@ begin
   lastXDrawn := -1;
   lastYDrawn := p^.TempImage.Height;
 
-{  if Parent <> NIL then
-    cBack := ColorToBGRA(Parent.Color)
-  else
-    cBack := BGRA(15,15,15);
-  cLow := BGRA(60,75,45);
-  cHigh := BGRA(90,150,90);   }
-
-//  if p = @FVoiceView then begin
-    cBack := BGRABlack;
-    cLow := BGRAWhite;
-    cHigh := BGRAWhite;
-//  end;
+  cBack := BGRABlack;
+  cLow := BGRAWhite;
 
   with p^ do begin
     // background
@@ -1816,11 +1804,11 @@ begin
         if Muted then begin
           cBack := BGRABlack;
           cLow := BGRA(45,45,45);
-          cHigh := BGRA(45,45,45);
+          //cHigh := BGRA(45,45,45);
         end else begin
           cBack := BGRABlack;
           cLow := BGRAWhite;
-          cHigh := BGRAWhite;
+          //cHigh := BGRAWhite;
         end;
 
         // render audio
@@ -2300,6 +2288,8 @@ var
     end;
   end;
 begin
+  Result := False;
+
   for i:=0 to High(FVoiceView.Objects) do begin
     FVoiceView.Objects[i].ApplyFadeAtBeginAndEnd := True;
 //    FVoiceView.Objects[i].MaxGainValue := VOICE_MAX_GAIN_VALUE;
@@ -2541,7 +2531,7 @@ Log.Info('frames='+aBuffer.FrameCount.ToString+
   samplesIn50MS := Round(0.050*p^.Sound.SampleRate);
   sampleIndex := 0;
 
-  while not EndOfBuf do begin
+  while not {%H-}EndOfBuf do begin
 
     if p^.SamplesToDo > 0 then
       ApplyGainOnBuf;
