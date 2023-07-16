@@ -29,7 +29,8 @@ begin
   Application.Scaled:=True;
   Application.Initialize;
 
-  Log := TLog.Create(CreateAppFolder(FOLDER_FOR_PROJECT)+PROGRAM_LOG_FILENAME);
+  CreateDefaultProjectFolder;
+  Log := TLog.Create(GetAppDefaultProjectFolder+PROGRAM_LOG_FILENAME);
   Log.DeleteLogFile;
   Log.Info('gyv: starting app', 0, True);
   Log.AddEmptyLine();
