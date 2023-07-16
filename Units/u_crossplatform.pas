@@ -16,6 +16,7 @@ function GetAppDataFolder: string;
 //        or UserDir/GiveYourVoice/
 // Mac: not yet implemented
 function GetAppDefaultProjectFolder: string;
+procedure CreateDefaultProjectFolder;
 
 // initialize the subfolder where openalsoft and libsndfile are located, in a cross platform way
 procedure InitALSManagerLibrariesSubFolder;
@@ -52,6 +53,12 @@ begin
  {$else}
    {$error You can not compile this program on this platform, sorry !}
  {$endif}
+end;
+
+procedure CreateDefaultProjectFolder;
+begin
+ if not RepertoireExistant(GetAppDefaultProjectFolder) then
+   CreerRepertoire(GetAppDefaultProjectFolder);
 end;
 
 procedure InitALSManagerLibrariesSubFolder;

@@ -262,8 +262,7 @@ procedure TProject.CheckSaveFolders;
 begin
   FTempFolder := '';
 
-  if not RepertoireExistant(GetAppDefaultProjectFolder) then
-    CreerRepertoire(GetAppDefaultProjectFolder);
+  CreateDefaultProjectFolder;
 
   FTempFolder := IncludeTrailingPathDelimiter(ProjectsFolder+FOLDER_FOR_TEMP);
   TempFolderExists;
