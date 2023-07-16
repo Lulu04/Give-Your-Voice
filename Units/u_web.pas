@@ -13,7 +13,7 @@ uses
 function CheckForNewVersionOnGitHub(out newVersion: string): boolean;
 
 implementation
-uses u_common, fphttpclient, opensslsockets;
+uses u_common, fphttpclient, opensslsockets, u_logfile;
 
 function CheckForNewVersionOnGitHub(out newVersion: string): boolean;
 var Client: TFpHttpClient;
@@ -33,6 +33,7 @@ begin
       Client.Free;
     end;
   except
+    Log.Warning('gyv: check for new version fail');
   end;
 end;
 
