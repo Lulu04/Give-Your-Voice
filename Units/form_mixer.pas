@@ -485,9 +485,8 @@ end;
 
 function TFormMixer.GetAmplifyGain: single;
 begin
-  if not ToggleSpeedButtonManager1.Checked[BAmplify] then
-    Result := 1.0
-  else
+  Result := 1.0;
+  if ToggleSpeedButtonManager1.Checked[BAmplify] then
     case CBAmplify.ItemIndex of
       -1: Result := 1.0;
       0..6: Result := single(CBAmplify.ItemIndex+2);
