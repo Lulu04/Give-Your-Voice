@@ -301,9 +301,15 @@ begin
      ModalResult := mrCancel;
 
     end;
-    VK_SPACE: BStopClick(NIL);
-    VK_P: BPauseClick(NIL);
+
+    VK_SPACE: if NoteBook1.PageIndex = NoteBook1.IndexOf(PageRecording) then
+      BStopClick(NIL);
+
+    VK_P: if NoteBook1.PageIndex = NoteBook1.IndexOf(PageRecording) then
+      BPauseClick(NIL);
+
     VK_F1: ShowGYVUserGuide;
+
     else if ssCtrl in Shift then AddUserMarkAtCurrentRecordingTime;
   end;
 end;
