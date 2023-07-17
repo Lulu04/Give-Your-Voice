@@ -2,6 +2,12 @@ giveyourvoice (1.0.2) unstable; urgency=low
 
   * corrected some wrong links in user guide
   * log file to help with debugging purpose
+  * recompiled openAL-Soft library for win64 and linux64 with support of callback for log messages
+  * redirected OpenAL-Soft log messages to the app log file
+  * application generate more log messages to be more informative and to help to debug
+  * fixed a bug on linux (gtk2) in recording window: some check are done before triggering action from key 'SPACE' and 'P'
+  * added a config file for OpenAL-Soft to force it to use Alsa backend and to set update period to 12
+  * audio edition show the samples count of the edited file
 
  -- Lulu04 <lulutech@gmx.fr>  Sat, 8 Jul 2023 13:01:00 +0100
 
