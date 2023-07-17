@@ -68,7 +68,8 @@ var
   ProgramOptions: TProgramOptions;
 
 implementation
-uses PropertyUtils, u_project, u_crossplatform, utilitaire_fichier, Math, DateUtils;
+uses PropertyUtils, u_project, u_crossplatform, utilitaire_fichier, u_logfile,
+  Math, DateUtils;
 
 { TProgramOptions }
 
@@ -287,9 +288,12 @@ begin
       if (k > -1) and (k < t.Count-1) then
         UserWorkingDirectoryList.LoadFromString(t.Strings[k+1], '|');
 
+      Log.Info('gyv: program options loaded');
     end else begin
       // option file not found -> this is the first time the program is run
       FFirstTimeProgramIsRunning := True;
+      Log.Warning('gyv: program options not found');
+      Log.Warning(f, 1);
     end;
   finally
     t.Free;

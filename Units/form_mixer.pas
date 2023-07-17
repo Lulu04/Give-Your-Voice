@@ -368,7 +368,8 @@ begin
     ComboBox1.Items.Add('www.litteratureaudio.com');
     ComboBox1.Items.Add('LibriVox.org');
     // just in case...
-    if Ord(ProgramOptions.MixedFileTargetPlatform) > ComboBox1.Items.Count-1 then begin
+    if (Ord(ProgramOptions.MixedFileTargetPlatform) > ComboBox1.Items.Count-1) or
+        (Ord(ProgramOptions.MixedFileTargetPlatform) < 0) then begin
       ProgramOptions.MixedFileTargetPlatform := ptpNone;
       ProgramOptions.Save;
     end;
@@ -485,9 +486,8 @@ end;
 
 function TFormMixer.GetAmplifyGain: single;
 begin
-  if not ToggleSpeedButtonManager1.Checked[BAmplify] then
-    Result := 1.0
-  else
+  Result := 1.0;
+  if ToggleSpeedButtonManager1.Checked[BAmplify] then
     case CBAmplify.ItemIndex of
       -1: Result := 1.0;
       0..6: Result := single(CBAmplify.ItemIndex+2);

@@ -9,6 +9,8 @@ uses
   Classes, SysUtils, ctypes,
   ALSound, libsndfile;
 
+procedure ProcessLogMessageFromOpenALSoft({%H-}aUserPtr: pointer; aLevel: char; aMessage: PChar; {%H-}aMessageLength: cint);
+
 type
 
   { TPlaybackContext }
@@ -61,6 +63,10 @@ type
     function TimeToFrameIndex(aTimePos: double): int64;
     // return a duration in seconds from a number of frames
     function FrameToTime(aFrameCount: int64): double;
+  private // debug purpose
+    FileName: string;
+    procedure LogLibSndFileErrorMessage(const aMess: string);
+    function GetLibSndFileErrMess: string;
   end;
 
   { TAudioFileReader }
@@ -73,7 +79,6 @@ type
     function Read(const aBuf: TALSPlaybackBuffer; aCount: longword): longword;
     function Close: boolean;
     function MoveToFrame(aFrameIndex: int64): boolean;
-    function MoveToPosition(aTimePos: single): boolean;
     function TotalDuration: double;
   end;
 
@@ -94,8 +99,6 @@ type
   public
     // copy whole audio
     function CopyAll(const aSrcReader: TAudioFileReader): boolean;
-    // copy part of audio by time
-    function CopyPart(const aSrcReader: TAudioFileReader; aFromTimePos, aToTimePos: single): boolean;
     // copy part of audio by frames
     function CopyPart(const aSrcReader: TAudioFileReader; aFromFrameIndex, aToFrameIndex: int64): boolean;
 
@@ -221,11 +224,31 @@ type
     property Error: boolean read FError;
   end;
 
+ { TAudioRecordToFile = record
+  private
+    writer: TAudioFileWriter;
+  public
+    Buf: TALSCaptureFrameBuffer;
 
+    function OpenDevice(const aCaptureDeviceName: string; aFrequency: longword;
+      aFormat: TALSCaptureFormat; aBufferTimeSize: double): boolean;
+    function CloseDevice: boolean;
+
+    function CreateFile(const aFileName: string; aFormat: TALSFileFormat): boolean;
+    function WriteBufferToFile: boolean;
+    function CloseFile: boolean;
+
+    function StartCapture: boolean;
+    // Fill Buf with captured samples. Buf.FrameCount contain the number of obtained samples
+    // return True if there samples available in Buf
+    function GetCapturedSamples: boolean;
+    function StopCapture: boolean;
+
+  end; }
 
 implementation
 
-uses u_project, u_common, Math, utilitaire_fichier,
+uses u_project, u_common, Math, utilitaire_fichier, u_logfile,
   dsp_noiseremoval, u_program_options, form_mixer, als_dsp_utils, u_mp3gain,
   Forms;
 
@@ -888,6 +911,18 @@ begin
   analyzer.Free;
 end;
 
+procedure ProcessLogMessageFromOpenALSoft(aUserPtr: pointer; aLevel: char;
+  aMessage: PChar; aMessageLength: cint);
+const aprefix='alsoft: ';
+begin
+  case aLevel of
+    'I': Log.Info(aprefix+StrPas(aMessage));
+    'W': Log.Warning(aprefix+StrPas(aMessage));
+    'E': Log.Error(aprefix+StrPas(aMessage));
+    else Log.Warning(aprefix+StrPas(aMessage));
+  end;
+end;
+
 function GetRecordAudioFileFormat: TALSFileFormat;
 begin
   Result := ALSMakeFileFormat(ALSound.SF_FORMAT_WAV, ALSound.SF_FORMAT_PCM_16);
@@ -1376,6 +1411,11 @@ procedure TCaptureContext.Create(aDeviceIndex: integer);
 begin
   FCaptureContext := ALSManager.CreateCaptureContext(aDeviceIndex, 44100,
       ALS_CAPTUREFORMAT_MONO_FLOAT32, 0.100);
+
+  if FCaptureContext.Error then begin
+    Log.Error('alsound: failed to create capture context');
+    Log.Error('with device index = '+aDeviceIndex.ToString, 1);
+  end;
 end;
 
 procedure TCaptureContext.Free;
@@ -1416,6 +1456,17 @@ begin
   FCompressor.Mute := not ProgramOptions.ListeningImprovedUseCompressor;
   FBassBoostEqualizer.Mute := not (ProgramOptions.ListeningImprovedActivated and
                      (ProgramOptions.ListeningImprovedBassGainValue <> 1.0));
+
+  if FPlaybackContext.Error then begin
+    Log.Error('alsound: failed to create playback context');
+    Log.Error(FPlaybackContext.StrError, 1);
+  end;
+  if not FCompressor.Ready then
+    Log.Error('alsound: failed to create compressor effect for playback context');
+  if not FBassBoostEqualizer.Ready then
+    Log.Error('alsound: failed to create bass boost equalizer for playback context');
+  if FErrorOnChainEffect then
+    Log.Error('alsound: failed to chain audio effects for playback context');
 end;
 
 procedure TPlaybackContext.Free;
@@ -1442,6 +1493,17 @@ begin
   FBassBoostEqualizer := FLoopbackContext.CreateEffect(AL_EFFECT_EQUALIZER, FBassBoostEqualizerProp);
 
   FErrorOnChainEffect := not FCompressor.ChainWith(FBassBoostEqualizer);
+
+  if FLoopbackContext.Error then begin
+    Log.Error('alsound: failed to create loopback context');
+    Log.Error(FLoopbackContext.StrError, 1);
+  end;
+  if not FCompressor.Ready then
+    Log.Error('alsound: failed to create compressor effect for loopback context');
+  if not FBassBoostEqualizer.Ready then
+    Log.Error('alsound: failed to create bass boost equalizer for loopback context');
+  if FErrorOnChainEffect then
+    Log.Error('alsound: failed to chain audio effects for loopback context');
 end;
 
 procedure TPlaybackContext.FreeLoopback;
@@ -1460,6 +1522,35 @@ end;
 function TBaseAudioFile.FrameToTime(aFrameCount: int64): double;
 begin
   Result := aFrameCount/SampleRate;
+end;
+
+procedure TBaseAudioFile.LogLibSndFileErrorMessage(const aMess: string);
+begin
+  Log.Error('gyv: '+aMess);
+  Log.Error('on file "'+FileName+'"', 1);
+  Log.Error(GetLibSndFileErrMess);
+  Log.AddEmptyLine;
+end;
+
+function TBaseAudioFile.GetLibSndFileErrMess: string;
+var i: integer;
+  errmsg: string;
+begin
+  if Handle = NIL then begin
+    Result := 'Handle = NIL';
+    exit;
+  end;
+
+  Result := '';
+
+  errmsg := '';
+  SetLength(errmsg, 2048);
+  sf_command(Handle, SFC_GET_LOG_INFO, @errmsg[1], Length(errmsg));
+
+  i := 1;
+  while (errmsg[i] <> #0) and (i < Length(errmsg)) do
+    inc(i);
+  Result := Copy(errmsg, 1, i);
 end;
 
 { TMonoNoiseRemoval }
@@ -1645,6 +1736,13 @@ begin
     then FCopyBuffer.Init(Channels, ALS_SAMPLE_FLOAT32)
     else FCopyBuffer.Init(Channels, ALS_SAMPLE_INT16);
   FCopyBuffer.FrameCapacity := aFramesCapacity;
+
+  if FCopyBuffer.OutOfMemory then begin
+    Log.Error('gyv: TAudioFileWriter.InitCopyBuffer out of memory when setting FrameCapacity to '+
+              aFramesCapacity.ToString);
+    Log.Error('on file "'+FileName+'"', 1);
+    Log.AddEmptyLine;
+  end;
 end;
 
 function TAudioFileWriter.OpenWrite(const aFileName: string;
@@ -1660,6 +1758,13 @@ begin
   sfinfo.SampleRate := cint(aSampleRate);
   Handle := ALSOpenAudioFile(aFileName, SFM_WRITE, @sfinfo);
   Result := Handle <> NIL;
+
+  FileName := aFileName;
+
+  if not Result then begin
+    Log.Error('gyv: TAudioFileWriter.OpenWrite fail');
+    Log.Error('on file "'+FileName+'"', 1);
+  end;
 end;
 
 function TAudioFileWriter.SampleAreFloat: boolean;
@@ -1675,31 +1780,48 @@ begin
     Result := sf_close(Handle) = 0;
   end;
   Handle := NIL;
+
+  if not Result then
+    LogLibSndFileErrorMessage('TAudioFileWriter.Close fail');
 end;
 
 function TAudioFileWriter.WriteShort(p: Pointer; aCount: longword): longword;
 begin
-  if Handle <> NIL then
-    Result := sf_writef_short(Handle, pcshort(p), aCount)
-  else Result := 0;
+  if Handle <> NIL then begin
+    Result := sf_writef_short(Handle, pcshort(p), aCount);
+
+    if Result <> aCount then
+      LogLibSndFileErrorMessage('TAudioFileWriter.WriteShort only write '+
+                                Result.ToString+'/'+aCount.ToString+' frames');
+  end else Result := 0;
 end;
 
 function TAudioFileWriter.WriteFloat(p: Pointer; aCount: longword): longword;
 begin
-  if Handle <> NIL then
-    Result := sf_writef_float(Handle, pcfloat(p), aCount)
-  else Result := 0;
+  if Handle <> NIL then begin
+    Result := sf_writef_float(Handle, pcfloat(p), aCount);
+
+    if Result <> aCount then
+      LogLibSndFileErrorMessage('TAudioFileWriter.WriteFloat only write '+
+                                Result.ToString+'/'+aCount.ToString+' frames');
+  end else Result := 0;
 end;
 
 function TAudioFileWriter.WriteDouble(p: PDouble; aCount: longword): longword;
 begin
-  if Handle <> NIL then
-    Result := sf_writef_double(Handle, pcdouble(p), aCount)
-  else Result := 0;
+  if Handle <> NIL then begin
+    Result := sf_writef_double(Handle, pcdouble(p), aCount);
+
+    if Result <> aCount then
+      LogLibSndFileErrorMessage('TAudioFileWriter.WriteDouble only write '+
+                                Result.ToString+'/'+aCount.ToString+' frames');
+  end else Result := 0;
 end;
 
 function TAudioFileWriter.Write(const aBuf: TALSPlaybackBuffer): longword;
 begin
+  Result := 0;
+
   if aBuf.ChannelCount <> Channels then
     ExceptionChannelsCount;
 
@@ -1710,6 +1832,10 @@ begin
       Result := sf_writef_float(Handle, pcfloat(aBuf.Data), aBuf.FrameCount)
     else
       Result := sf_writef_short(Handle, pcshort(aBuf.Data), aBuf.FrameCount);
+
+    if Result <> aBuf.FrameCount then
+      LogLibSndFileErrorMessage('TAudioFileWriter.Write only write '+
+                                Result.ToString+'/'+aBuf.FrameCount.ToString+' frames');
   end;
 end;
 
@@ -1723,10 +1849,14 @@ begin
   end;
 
   Result := aSrcReader.MoveToFrame(0);
-  if not Result then exit;
+  if not Result then begin
+    Log.Error('gyv: TAudioFileWriter.CopyAll failed >> aSrcReader.MoveToFrame(0) failed');
+    exit;
+  end;
 
   InitCopyBuffer(Min(32768, frameToRead));
   if FCopyBuffer.OutOfMemory then begin
+    Log.Error('gyv: TAudioFileWriter.CopyAll failed >> FCopyBuffer state is out of memory');
     Result := False;
     exit;
   end;
@@ -1739,49 +1869,6 @@ begin
   Result := Result and (frameToRead = 0);
 
   FCopyBuffer.FreeMemory;
-end;
-
-function TAudioFileWriter.CopyPart(const aSrcReader: TAudioFileReader;
-  aFromTimePos, aToTimePos: single): boolean;
-var firstFrame, lastFrame, frameToRead: int64;
-begin
-  if aSrcReader.Frames = 0 then begin
-    Result := True;
-    exit;
-  end;
-
-  if (aFromTimePos <= 0) and (aToTimePos >= aSrcReader.TotalDuration) then begin
-    Result := CopyAll(aSrcReader);
-    exit;
-  end;
-
-  Result := False;
-  if aFromTimePos > aToTimePos then exit;
-
-  firstFrame := EnsureRange(aSrcReader.TimeToFrameIndex(aFromTimePos), 0, aSrcReader.Frames-1);
-  lastFrame := EnsureRange(aSrcReader.TimeToFrameIndex(aToTimePos), 0, aSrcReader.Frames-1);
-  frameToRead := lastFrame-firstFrame;
-
-  Result := aSrcReader.MoveToFrame(firstFrame);
-  if not Result then exit;
-
-  if frameToRead > 0 then begin
-    InitCopyBuffer(Min(32768, frameToRead));
-    if FCopyBuffer.OutOfMemory then begin
-      Result := False;
-      exit;
-    end;
-
-    FCopyBuffer.FrameCount := 1;
-    while (frameToRead > 0) and (FCopyBuffer.FrameCount > 0) and Result do begin
-      aSrcReader.Read(FCopyBuffer, Min(FCopyBuffer.FrameCapacity, frameToRead));
-      Result := Result and (Write(FCopyBuffer) = FCopyBuffer.FrameCount);
-      frameToRead := frameToRead - FCopyBuffer.FrameCount;
-    end;
-    Result := Result and (frameToRead = 0);
-
-    FCopyBuffer.FreeMemory;
-  end;
 end;
 
 function TAudioFileWriter.CopyPart(const aSrcReader: TAudioFileReader;
@@ -1804,13 +1891,18 @@ begin
   end;
 
   Result := aSrcReader.MoveToFrame(aFromFrameIndex);
-  if not Result then exit;
+  if not Result then begin
+    Log.Error('gyv: TAudioFileWriter.CopyPart failed >> aSrcReader.MoveToFrame'+
+              aFromFrameIndex.ToString+') failed');
+    exit;
+  end;
 
   frameToRead := aToFrameIndex-aFromFrameIndex+1;
 
   if frameToRead > 0 then begin
     InitCopyBuffer(Min(32768, frameToRead));
     if FCopyBuffer.OutOfMemory then begin
+      Log.Error('gyv: TAudioFileWriter.CopyPart failed >> FCopyBuffer state is out of memory');
       Result := False;
       exit;
     end;
@@ -1878,6 +1970,13 @@ begin
   Frames := sfinfo.Frames;
   SampleRate := sfinfo.SampleRate;
   Result := Handle <> NIL;
+
+  FileName := aFileName;
+
+  if not Result then begin
+    Log.Error('gyv: TAudioFileReader.OpenRead fail');
+    Log.Error('on file "'+FileName+'"', 1);
+  end;
 end;
 
 function TAudioFileReader.Close: boolean;
@@ -1886,26 +1985,28 @@ begin
   if Handle <> NIL then
     Result := sf_close(Handle) = 0;
   Handle := NIL;
+
+  if not Result then
+    LogLibSndFileErrorMessage('TAudioFileReader.Close fail');
 end;
 
 function TAudioFileReader.MoveToFrame(aFrameIndex: int64): boolean;
 begin
   Result := sf_seek(Handle, aFrameIndex, SF_SEEK_SET) <> -1;
-end;
 
-function TAudioFileReader.MoveToPosition(aTimePos: single): boolean;
-var fIndex: int64;
-begin
-  Result := False;
-  if Frames > 0 then begin
-    fIndex := EnsureRange(TimeToFrameIndex(aTimePos), 0, Frames-1);
-    Result := sf_seek(Handle, fIndex, SF_SEEK_SET) <> -1;
-  end;
+  if not Result then
+    LogLibSndFileErrorMessage('TAudioFileReader.MoveToFrame fail to move to frame '+
+              aFrameIndex.ToString+'/'+Frames.ToString);
 end;
 
 function TAudioFileReader.TotalDuration: double;
 begin
-  Result := Frames/SampleRate;
+  if SampleRate <> 0 then
+    Result := Frames/SampleRate
+  else begin
+    Result := 0;
+    LogLibSndFileErrorMessage('TAudioFileReader.TotalDuration fail because SampleRate=0');
+  end;
 end;
 
 function TAudioFileReader.ReadShort(p: Pointer; aCount: longword): longword;

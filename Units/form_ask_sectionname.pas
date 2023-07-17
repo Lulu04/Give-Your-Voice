@@ -240,6 +240,7 @@ procedure TFormAskSectionName.Edit1Change(Sender: TObject);
 var editToCheck: TEdit;
   labelError: TLabel;
 begin
+  labelError := NIL;
   editToCheck := Sender as TEdit;
   if Sender = Edit1 then labelError := label11;
   if Sender = Edit2 then labelError := label12;

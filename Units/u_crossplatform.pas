@@ -16,6 +16,7 @@ function GetAppDataFolder: string;
 //        or UserDir/GiveYourVoice/
 // Mac: not yet implemented
 function GetAppDefaultProjectFolder: string;
+procedure CreateDefaultProjectFolder;
 
 // initialize the subfolder where openalsoft and libsndfile are located, in a cross platform way
 procedure InitALSManagerLibrariesSubFolder;
@@ -54,16 +55,22 @@ begin
  {$endif}
 end;
 
+procedure CreateDefaultProjectFolder;
+begin
+ if not RepertoireExistant(GetAppDefaultProjectFolder) then
+   CreerRepertoire(GetAppDefaultProjectFolder);
+end;
+
 procedure InitALSManagerLibrariesSubFolder;
 begin
   {$if defined(Windows) and defined(cpu386)}
-      ALSManager.LibrariesSubFolder := 'i386-win32\';
+      ALSManager.SetLibrariesSubFolder('i386-win32\');
   {$elseif defined(Windows) and defined(cpux86_64)}
-      ALSManager.LibrariesSubFolder := 'x86_64-win64\';
+      ALSManager.SetLibrariesSubFolder('x86_64-win64\');
   {$elseif defined(Linux) and defined(cpu386)}
-      ALSManager.LibrariesSubFolder := 'i386-linux/';
+      ALSManager.SetLibrariesSubFolder('i386-linux/');
   {$elseif defined(Linux) and defined(cpux86_64)}
-      ALSManager.LibrariesSubFolder := 'x86_64-linux/';
+      ALSManager.SetLibrariesSubFolder('x86_64-linux/');
   {$elseif defined(Darwin)}
     Raise Exception.Create('InitALSManagerLibrariesSubFolder: not yet implemented on MAC');
   {$else}

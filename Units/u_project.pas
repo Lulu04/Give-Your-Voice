@@ -116,7 +116,7 @@ var
   Project: TProject;
 
 implementation
-uses form_main, PropertyUtils, utilitaire_fichier, form_new_project,
+uses form_main, PropertyUtils, utilitaire_fichier, u_logfile, form_new_project,
   Controls, u_utils, u_program_options, u_userdialogs, u_main_undoredo,
   u_audio_utils, u_crossplatform, Dialogs;
 
@@ -262,8 +262,7 @@ procedure TProject.CheckSaveFolders;
 begin
   FTempFolder := '';
 
-  if not RepertoireExistant(GetAppDefaultProjectFolder) then
-    CreerRepertoire(GetAppDefaultProjectFolder);
+  CreateDefaultProjectFolder;
 
   FTempFolder := IncludeTrailingPathDelimiter(ProjectsFolder+FOLDER_FOR_TEMP);
   TempFolderExists;
@@ -413,18 +412,22 @@ var t: TStringList;
   k: integer;
   projFolder: String;
 begin
+  Log.AddEmptyLine;
+  Log.Info('gyv: try to load project "'+aFilename+'"');
   Result := False;
   t := TStringList.Create;
   try
     try
       t.LoadFromFile(aFilename);
     except
+      Log.Error('gyv: fail to load project', 1);
       exit;
     end;
 
     // check if the file is an application project
     if not ApplicationHeaderIsValid(t) then begin
       ShowMess(SProjectIsNotForThisApplication, SClose, mtError);
+      Log.Error('gyv: project header is not valid', 1);
       exit;
     end;
 
@@ -440,9 +443,13 @@ begin
     projFolder := IncludeTrailingPathDelimiter(ExtractFilePath(aFilename));
     projFolder := IncludeTrailingPathDelimiter(ConcatPaths([projFolder, PROJECT_OUTPUT_FOLDER_MP3]));
     if not RepertoireExistant(projFolder) then
-      if not CreerRepertoire(projFolder) then
+      if not CreerRepertoire(projFolder) then begin
         ShowMess(SFailedToCreateMP3ProjectFolder+LineEnding+projFolder, SClose, mtError);
+        Log.Error('gyv: failed to create project MP3 folder', 1);
+      end;
     Result := True;
+    Log.Info('gyv: project loaded');
+    Log.AddEmptyLine;
   finally
     t.Free;
   end;

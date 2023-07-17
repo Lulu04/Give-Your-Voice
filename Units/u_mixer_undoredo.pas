@@ -54,12 +54,13 @@ uses u_resource_string;
 
 procedure TMixerUndoRedoManager.DoUndoRedo(ItsUndo: boolean);
 begin
-
+  if ItsUndo then;
 end;
 
 procedure TMixerUndoRedoManager.DestroyItem(constref aItem: TMixerUndoRedoItem);
 begin
   { TODO : MixerUndoRedo: destroy item when stack is full }
+  if aItem.Caption='' then;
 end;
 
 function TMixerUndoRedoManager.CurrentUndoCaption: string;

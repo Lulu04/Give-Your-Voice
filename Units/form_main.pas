@@ -136,6 +136,7 @@ type
     FrameViewProjectFiles1: TFrameViewProjectFiles;
 
     procedure UpdateToolsWidgets;
+    procedure ShowInfoAboutFileInAudioEdition;
     procedure ProcessCapturedBuffer(Sender: TALSCaptureContext; const aBuffer: TALSCaptureFrameBuffer);
 
     procedure StartAudioDevice(aStartCapture: boolean=True; aStartPlayback: boolean=True);
@@ -156,9 +157,10 @@ var
 
 implementation
 uses u_project, u_common, form_options, u_audio_utils, utilitaire_fichier,
-  u_program_options, u_userdialogs, u_resource_string,
-  form_firsttimewizard, u_utils, form_about, u_crossplatform, form_project_manager,
-  u_web, form_remembertodonate, LCLType, LCLIntf, Clipbrd, Math
+  u_logfile, u_program_options, u_userdialogs, u_resource_string,
+  form_firsttimewizard, u_utils, form_about, u_crossplatform,
+  form_project_manager, u_web, form_remembertodonate, LCLType, LCLIntf, Clipbrd,
+  Math
   {$ifdef LINUX},u_datamodule{$endif};
 
 {$R *.lfm}
@@ -216,7 +218,10 @@ begin
   MainUndoRedoManager.OnChange := @ProcessUndoRedoChange;
 
   InitALSManagerLibrariesSubFolder;
+  ALSManager.SetOpenALSoftLogCallback(@u_audio_utils.ProcessLogMessageFromOpenALSoft, NIL);
   ALSManager.LoadLibraries;
+  if not ALSManager.ALSoftLogCallbackIsActive then
+    Log.Error('alsound: failed to set the callback for OpenAL-Soft log messages');
 
   FFirstShow := True;
 
@@ -538,6 +543,8 @@ begin
   if not FAudioEngineStarted then begin
     FAudioEngineStarted := True;
     StartAudioDevice;
+    Log.Info('alsound: working with LibSndFile '+ALSManager.LibSndFileVersion+'  -  '+
+             'OpenAL-Soft '+ALSManager.OpenAlSoftVersion);
   end;
 
   // open the project manager if there isn't a project loaded
@@ -599,7 +606,6 @@ begin
 end;
 
 procedure TFormMain.ProcessUserActionOnFile(Sender: TObject; aAction: TUserAction);
-var s: string;
 begin
   case aAction of
 
@@ -611,8 +617,6 @@ begin
 
     faEdit: begin
      Notebook1.PageIndex := Notebook1.IndexOf(PageModifyRecord);
-     s := NomDuDernierSousRepertoire(FrameViewProjectFiles1.SelectedFilename);
-     Label13.Caption := s+ExtractFileName(FrameViewProjectFiles1.SelectedFilename);
      Screen.BeginWaitCursor;
      try
        FrameViewAudio1.Clear;
@@ -726,6 +730,22 @@ begin
     Label12.Left := Label19.Left+Label19.Width div 2 - Label12.Width div 2;
     if Label12.Left < 3 then Label12.Left := 3;
   end;
+
+  ShowInfoAboutFileInAudioEdition;
+end;
+
+procedure TFormMain.ShowInfoAboutFileInAudioEdition;
+var f, s: string;
+begin
+  f := FrameViewProjectFiles1.SelectedFilename;
+
+  if IsFile(f) then
+    s := NomDuDernierSousRepertoire(f)+
+         ExtractFileName(f)+LineEnding+
+         GetAudioFileFramesCount(f).ToString+' samples'
+  else s := '';
+
+  Label13.Caption := s;
 end;
 
 procedure TFormMain.UpdateButtonHint_InsertSilence;
