@@ -136,6 +136,7 @@ type
     FrameViewProjectFiles1: TFrameViewProjectFiles;
 
     procedure UpdateToolsWidgets;
+    procedure ShowInfoAboutFileInAudioEdition;
     procedure ProcessCapturedBuffer(Sender: TALSCaptureContext; const aBuffer: TALSCaptureFrameBuffer);
 
     procedure StartAudioDevice(aStartCapture: boolean=True; aStartPlayback: boolean=True);
@@ -605,7 +606,6 @@ begin
 end;
 
 procedure TFormMain.ProcessUserActionOnFile(Sender: TObject; aAction: TUserAction);
-var s: string;
 begin
   case aAction of
 
@@ -617,8 +617,6 @@ begin
 
     faEdit: begin
      Notebook1.PageIndex := Notebook1.IndexOf(PageModifyRecord);
-     s := NomDuDernierSousRepertoire(FrameViewProjectFiles1.SelectedFilename);
-     Label13.Caption := s+ExtractFileName(FrameViewProjectFiles1.SelectedFilename);
      Screen.BeginWaitCursor;
      try
        FrameViewAudio1.Clear;
@@ -732,6 +730,22 @@ begin
     Label12.Left := Label19.Left+Label19.Width div 2 - Label12.Width div 2;
     if Label12.Left < 3 then Label12.Left := 3;
   end;
+
+  ShowInfoAboutFileInAudioEdition;
+end;
+
+procedure TFormMain.ShowInfoAboutFileInAudioEdition;
+var f, s: string;
+begin
+  f := FrameViewProjectFiles1.SelectedFilename;
+
+  if IsFile(f) then
+    s := NomDuDernierSousRepertoire(f)+
+         ExtractFileName(f)+LineEnding+
+         GetAudioFileFramesCount(f).ToString+' samples'
+  else s := '';
+
+  Label13.Caption := s;
 end;
 
 procedure TFormMain.UpdateButtonHint_InsertSilence;
