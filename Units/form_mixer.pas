@@ -368,7 +368,8 @@ begin
     ComboBox1.Items.Add('www.litteratureaudio.com');
     ComboBox1.Items.Add('LibriVox.org');
     // just in case...
-    if Ord(ProgramOptions.MixedFileTargetPlatform) > ComboBox1.Items.Count-1 then begin
+    if (Ord(ProgramOptions.MixedFileTargetPlatform) > ComboBox1.Items.Count-1) or
+        (Ord(ProgramOptions.MixedFileTargetPlatform) < 0) then begin
       ProgramOptions.MixedFileTargetPlatform := ptpNone;
       ProgramOptions.Save;
     end;
