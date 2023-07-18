@@ -114,12 +114,11 @@ type
     function CursorIsAtBegin: boolean;
     function CursorIsAtEnd: boolean;
 
-    // load audio file in view and try to load its user marks file
-    procedure LoadSound(const aFilename: string);
+    // load audio file in view. Return True if success
+    function LoadSound(const aFilename: string): boolean;
     procedure ReloadSound;
-    procedure ReloadPart(aFrameIndexBegin, aFrameIndexEnd: int64);
-    procedure ReloadPartFromFrameToEnd(aFrameIndex: int64);
-
+    function ReloadPart(aFrameIndexBegin, aFrameIndexEnd: int64): boolean;
+    function ReloadPartFromFrameToEnd(aFrameIndex: int64): boolean;
 
     // Empty the view and delete the actual temp record file
     procedure Clear;
@@ -169,7 +168,7 @@ type
     procedure Play;
     procedure Pause;
     procedure Stop;
-//    function Capture(aPrefixNumber: integer; aInsertMode: boolean): boolean;
+
     // capture audio for an addition
     function CaptureAddition: boolean;
     procedure SetPlaybackVolume(aVolume: single);
@@ -960,78 +959,99 @@ begin
   buf.FreeMemory;
 end;
 
-procedure TFrameViewAudio.ReloadPart(aFrameIndexBegin, aFrameIndexEnd: int64);
+function TFrameViewAudio.ReloadPart(aFrameIndexBegin, aFrameIndexEnd: int64): boolean;
 var reader: TAudioFileReader;
   buf: TALSPlaybackBuffer;
   i, iBegin, iEnd: integer;
 begin
-  if not reader.OpenRead(Filename) then exit;
+  Result := False;
+  try
+    if not reader.OpenRead(Filename) then exit;
 
-  if not reader.MoveToFrame(aFrameIndexBegin) then begin
+    if not reader.MoveToFrame(aFrameIndexBegin) then begin
+      reader.Close;
+      exit;
+    end;
+
+    buf.Init(reader.Channels, ALS_SAMPLE_INT16);
+    buf.FrameCapacity := FFrameCountInSlice;
+
+    iBegin := Max(0, Floor(aFrameIndexBegin / FFrameCountInSlice));
+    iEnd := Min(High(FLevels), Ceil(aFrameIndexEnd / FFrameCountInSlice));
+
+    for i:=iBegin to iEnd do begin
+      if reader.Read(buf, buf.FrameCapacity) > 0 then
+        FLevels[i] := ComputeLevelFromAudioBuffer(buf)
+      else
+        break;
+    end;
+
     reader.Close;
-    exit;
+    buf.FreeMemory;
+
+    RecomputeFirstLastIndexView;
+    RecomputeVisibleUserMarksIndexes;
+    RedrawTempImage;
+    Result := True;
+  except
+    on E: Exception do begin
+      Log.Error('TFrameViewAudio.ReloadPart('+aFrameIndexBegin.ToString+','+aFrameIndexEnd.ToString+')'+LineEnding+
+                '    raise exception: '+E.Message+LineEnding+
+                '    on file "'+Filename);
+    end;
   end;
-
-  buf.Init(reader.Channels, ALS_SAMPLE_INT16);
-  buf.FrameCapacity := FFrameCountInSlice;
-
-  iBegin := Max(0, Floor(aFrameIndexBegin / FFrameCountInSlice));
-  iEnd := Min(High(FLevels), Ceil(aFrameIndexEnd / FFrameCountInSlice));
-
-  for i:=iBegin to iEnd do begin
-    if reader.Read(buf, buf.FrameCapacity) > 0 then
-      FLevels[i] := ComputeLevelFromAudioBuffer(buf)
-    else
-      break;
-  end;
-
-  reader.Close;
-  buf.FreeMemory;
-
-  RecomputeFirstLastIndexView;
-  RecomputeVisibleUserMarksIndexes;
-  RedrawTempImage;
 end;
 
-procedure TFrameViewAudio.ReloadPartFromFrameToEnd(aFrameIndex: int64);
+function TFrameViewAudio.ReloadPartFromFrameToEnd(aFrameIndex: int64): boolean;
 var reader: TAudioFileReader;
   buf: TALSPlaybackBuffer;
   i, newSize: integer;
 begin
-  // open file
-  if not reader.OpenRead(Filename) then exit;
+  Result := False;
+  try
+    // open file
+    if not reader.OpenRead(Filename) then exit;
 
-  FSampleRate := reader.SampleRate;
-  FFrameCountInSlice := reader.TimeToFrameIndex(SLICE_TIME);
+    FSampleRate := reader.SampleRate;
+    FFrameCountInSlice := reader.TimeToFrameIndex(SLICE_TIME);
 
-  // seek to the right frame index
-  if not reader.MoveToFrame(aFrameIndex) then begin
+    // seek to the right frame index
+    if not reader.MoveToFrame(aFrameIndex) then begin
+      reader.Close;
+      exit;
+    end;
+
+    // adjust the size of Levels array
+    newSize := Ceil(reader.Frames/FFrameCountInSlice);
+    if Length(FLevels) <> newSize then
+      SetLength(FLevels, newSize);
+
+    buf.Init(reader.Channels, ALS_SAMPLE_INT16);
+    buf.FrameCapacity := FFrameCountInSlice;
+
+    i := Max(0, Floor(aFrameIndex / FFrameCountInSlice));
+
+    while reader.Read(buf, buf.FrameCapacity) > 0 do begin
+      FLevels[i] := ComputeLevelFromAudioBuffer(buf);
+      inc(i);
+    end;
+
     reader.Close;
-    exit;
+    buf.FreeMemory;
+
+    RecomputeFirstLastIndexView;
+    RecomputeVisibleUserMarksIndexes;
+    RedrawTempImage;
+    UpdateScrollBar;
+    Result := True;
+  except
+    on E: Exception do begin
+      Log.Error('TFrameViewAudio.ReloadPartFromFrameToEnd('+aFrameIndex.ToString+')'+LineEnding+
+                '    raise exception: '+E.Message+LineEnding+
+                '    on file "'+Filename);
+    end;
   end;
 
-  // adjust the size of Levels array
-  newSize := Ceil(reader.Frames/FFrameCountInSlice);
-  if Length(FLevels) <> newSize then
-    SetLength(FLevels, newSize);
-
-  buf.Init(reader.Channels, ALS_SAMPLE_INT16);
-  buf.FrameCapacity := FFrameCountInSlice;
-
-  i := Max(0, Floor(aFrameIndex / FFrameCountInSlice));
-
-  while reader.Read(buf, buf.FrameCapacity) > 0 do begin
-    FLevels[i] := ComputeLevelFromAudioBuffer(buf);
-    inc(i);
-  end;
-
-  reader.Close;
-  buf.FreeMemory;
-
-  RecomputeFirstLastIndexView;
-  RecomputeVisibleUserMarksIndexes;
-  RedrawTempImage;
-  UpdateScrollBar;
 end;
 
 function TFrameViewAudio.ComputeLevelFromAudioBuffer(const aBuf: TALSPlaybackBuffer): single;
@@ -1175,34 +1195,36 @@ begin
   Result := FSelectedIndexes.First = High(FLevels)+1;
 end;
 
-procedure TFrameViewAudio.LoadSound(const aFilename: string);
-var reader: TAudioFileReader;
+function TFrameViewAudio.LoadSound(const aFilename: string): boolean;
 begin
-  // write log message
-  if reader.OpenRead(aFilename) then begin
-    Log.Info('gyv: try to edit audio file '+aFilename);
-    Log.Info('samplerate:'+reader.SampleRate.ToString+
-             ' frames:'+reader.Frames.ToString+
-             ' chan:'+reader.Channels.ToString+
-             ' format:'+IntToHex(reader.Format, 4), 2);
-    reader.Close;
-  end else log.Error('gyv: audio edition failed to retrieve file info '+aFilename);
+  Result := False;
+
+  Log.Info('gyv: TFrameViewAudio.LoadSound('+aFilename+')');
 
   FFilename := aFilename;
   FLevels := NIL;
   FUserMarks.Clear;
   MainUndoRedoManager.Clear;
 
-  ReloadPartFromFrameToEnd(0);
+  Result := ReloadPartFromFrameToEnd(0);
 
-  ViewAll;
-  SetCursorToBegin;
+  if Result then begin
+    ViewAll;
+    SetCursorToBegin;
+  end else begin
+    // loading fail: log error message
+    Log.Error('loading failed   '+GetFileInfoForLogMessage(FileName), 1);
+  end;
 end;
 
 procedure TFrameViewAudio.ReloadSound;
 begin
-  ReloadPartFromFrameToEnd(0);
-  Redraw;
+  if ReloadPartFromFrameToEnd(0) then
+    Redraw
+  else
+    Log.Error('gyv: TFrameViewAudio.ReloadSound fail'+LineEnding+
+              '    on file "'+FileName+'"'+
+              '    '+GetFileInfoForLogMessage(FileName));
 end;
 
 procedure TFrameViewAudio.DeleteUserMarksInSelection(aDoSaveForUndo: boolean);
@@ -1529,17 +1551,21 @@ begin
   Screen.BeginWaitCursor;
 
   try
+    Log.Info('gyv: TFrameViewAudio.SilenceOnSelection');
+
     frameBegin := LevelIndexToFrameIndex(FSelectedIndexes.First);
     frameEnd := Min(LevelIndexToFrameIndex(FSelectedIndexes.Last)-1, FramesCount-1);
 
     // sauve la sélection dans un fichier UndoRedoxxx
     f := MainUndoRedoManager.SaveAudioDataFrom(Filename, frameBegin, frameEnd);
-    if f = '' then
+    if f = '' then begin
       if AskConfirmation(SFailToCopyAudio,
                       SContinue, SCancel, mtWarning) <> mrOk then begin
         res := True;
+        Log.AddEmptyLine;
         exit;
       end;
+    end;
 
     res := DoSilenceOnPart(frameBegin, frameEnd);
 
@@ -1553,8 +1579,10 @@ begin
     Screen.EndWaitCursor;
   end;
 
-  if not res then
+  if not res then begin
+    Log.AddEmptyLine;
     ShowMess(SSilenceFailed, SOk, mtError);
+  end;
   FormMain.UpdateToolsWidgets;
 end;
 
@@ -1565,33 +1593,43 @@ begin
   if ProgramOptions.InsertedSilenceDurationMS <= 0 then exit;
   if HaveSelection then exit;
 
+  res := False;
   Stop;
   Screen.BeginWaitCursor;
   try
+    Log.Info('gyv: TFrameViewAudio.InsertSilenceAtCursorPos');
+    // check the frame index
     if (FSelectedIndexes.First < 0) or
-       (FSelectedIndexes.First > High(FLevels)+1) then exit;
+       (FSelectedIndexes.First > High(FLevels)+1) then begin
+      Log.Error('    bad index='+FSelectedIndexes.First.ToString+LineEnding+
+                '    file "'+FileName+'"'+LineEnding+
+                '    '+GetFileInfoForLogMessage(Filename));
+    end else begin
+      frameBegin := LevelIndexToFrameIndex(FSelectedIndexes.First);
 
-    frameBegin := LevelIndexToFrameIndex(FSelectedIndexes.First);
+      res := DoInsertSilence(frameBegin);
 
-    res := DoInsertSilence(frameBegin);
+      if res then begin
+        frameEnd := frameBegin + ProgramOptionsSilenceToSliceCount*FFrameCountInSlice - 1;
 
-    if res then begin
-      frameEnd := frameBegin + ProgramOptionsSilenceToSliceCount*FFrameCountInSlice - 1;
+        MainUndoRedoManager.PushToUndo_InsertRecord(SInsertSilence, frameBegin, frameEnd, FUserMarks);
 
-      MainUndoRedoManager.PushToUndo_InsertRecord(SInsertSilence, frameBegin, frameEnd, FUserMarks);
-
-      FUserMarks.AddOffsetToValuesFromTimePos(frameBegin/FSampleRate,
-                                              ProgramOptionsSilenceToSliceCount*SLICE_TIME);
-      FUserMarks.SaveToFile(FFilename);
-      RecomputeVisibleUserMarksIndexes;
-      Redraw;
+        FUserMarks.AddOffsetToValuesFromTimePos(frameBegin/FSampleRate,
+                                                ProgramOptionsSilenceToSliceCount*SLICE_TIME);
+        FUserMarks.SaveToFile(FFilename);
+        RecomputeVisibleUserMarksIndexes;
+        Redraw;
+      end;
     end;
   finally
     Screen.EndWaitCursor;
   end;
 
-  if not res then
+  if not res then begin
+    Log.Error('gyv: audio edition InsertSilenceAtCursorPos failed');
+    Log.AddEmptyLine;
     ShowMess(SInsertSilenceFailed, SClose);
+  end;
   FormMain.UpdateToolsWidgets;
 end;
 
@@ -1606,6 +1644,7 @@ begin
   Screen.BeginWaitCursor;
 
   try
+    Log.Info('gyv: TFrameViewAudio.CutSelection');
     // compute the last frame index to copy
     frameEnd := Min(LevelIndexToFrameIndex(FSelectedIndexes.Last)-1, FramesCount-1);
 
@@ -1614,8 +1653,12 @@ begin
                                                LevelIndexToFrameIndex(FSelectedIndexes.First),
                                                frameEnd);
     // if selected audio is not saved for undo, ask to the user if he want to continue
-    if f = '' then
-      if AskConfirmation(SFailToCopyAudio, SContinue, SCancel, mtWarning) <> mrOk then exit;
+    if f = '' then begin
+      if AskConfirmation(SFailToCopyAudio, SContinue, SCancel, mtWarning) <> mrOk then begin
+        Log.AddEmptyLine;
+        exit;
+      end;
+    end;
 
     // save all userMarks for undo
     MainUndoRedoManager.SaveUserMarksValues(FUserMarks, 0, Length(FUserMarks));
@@ -1638,6 +1681,10 @@ begin
       end;
     end
     else begin // audio cut failed
+        Log.Error('    DoCutPart('+FSelectedIndexes.First.ToString+', '+
+                                   FSelectedIndexes.Last.ToString+') failed'+LineEnding+
+                  '    file "'+Filename+'"'+LineEnding+
+                  '    '+GetFileInfoForLogMessage(Filename));
       if f <> '' then SupprimeFichier(f); // delete the audio saved for undo (in temp)
       FUserMarks.LoadFromFile(FFilename); // reload the user marks
       RecomputeVisibleUserMarksIndexes;
@@ -1647,8 +1694,10 @@ begin
     Screen.EndWaitCursor;
   end;
 
-  if not res then
+  if not res then begin
+    Log.AddEmptyLine;
     ShowMessage(SCutFailed);
+  end;
   FormMain.UpdateToolsWidgets;
 end;
 
@@ -1657,6 +1706,7 @@ begin
   Stop;
   Screen.BeginWaitCursor;
   try
+    Log.Info('gyv: TFrameViewAudio.Undo');
     MainUndoRedoManager.Undo;
   finally
     Screen.EndWaitCursor;
@@ -1669,6 +1719,7 @@ begin
   Stop;
   Screen.BeginWaitCursor;
   try
+    Log.Info('gyv: TFrameViewAudio.Redo');
     MainUndoRedoManager.Redo;
   finally
     Screen.EndWaitCursor;
@@ -1729,72 +1780,6 @@ begin
   Redraw;
 end;
 
-{function TFrameViewAudio.Capture(aPrefixNumber: integer; aInsertMode: boolean): boolean;
-var F: TFormRecord;
-  capturedFile, copyFileForUndo: string;
-  p: TPoint;
-  frameBegin, frameEnd: int64;
-  rff: TRecordingFileFormater;
-begin
-  Clear;
-
-  Result := False;
-  if u_audio_utils.Capture.FCaptureContext.Error then exit;
-
-  capturedFile := GetTempFilenameForRecord;
-
-  F := TFormRecord.Create(NIL);
-
-  // centers the recording window on the file's view
-  p.x := (FormMain.Panel6.Width - F.Width) div 2;
-  p.y := (FormMain.Panel6.Height - F.Height) div 2;
-  p := FormMain.Panel6.ClientToScreen(p);
-
-  F.Left := p.x;
-  F.Top := p.y;
-  F.Filename := capturedFile;
-  F.RecordTimeOrigin := LevelIndexToTime(FSelectedIndexes.First);
-  F.AskPage := Filename = '';
-  F.AllowUserToAddUserMark := True;
-  if F.ShowModal = mrCancel then begin
-    // user have canceled the recording -> we delete its file
-    SupprimeFichier(capturedFile);
-    dec(FRecordFilenameSuffix);
-    F.Free;
-    exit;
-  end;
-
-  rff.Init(aPrefixNumber, F.TitleOfTheRecordingFile, '.wav');
-  if aInsertMode then
-    Filename := IncludeTrailingPathDelimiter(FormMain.FrameViewProjectFiles1.SelectedParentFolder)
-  else
-    Filename := IncludeTrailingPathDelimiter(FormMain.FrameViewProjectFiles1.SelectedFilename);
-  Filename := Filename + rff.FileName;
-
-  // copy the temp recording file to its final filename in the project
-  if not CopieFichier(capturedFile, Filename, True) then begin
-    if aInsertMode
-      then ShowMess(SInsertionOfNewRecordIntoProjectFailed, SClose, mtError)
-      else ShowMess(SAddNewRecordIntoProjectFailed, SClose, mtError);
-    Result := False;
-    Filename := '';
-  end else begin
-    // delete the temp file
-    SupprimeFichier(capturedFile);
-    // save the user marks
-    F.UserMarks.SaveToFile(Filename);
-    // load the last capture and no undo
-    LoadSound(Filename);
-    FUserMarks.Create(F.UserMarks);
-    RecomputeVisibleUserMarksIndexes;
-    SetSelection(0, High(FLevels)+1);
-    Redraw;
-    Result := True;
-  end;
-
-  F.Free;
-end;   }
-
 function TFrameViewAudio.CaptureAddition: boolean;
 var F: TFormRecord;
   capturedFile, copyFileForUndo: string;
@@ -1805,6 +1790,8 @@ var F: TFormRecord;
   capturedFileFramesCount, fileInViewFramesCount,
   frameBegin, frameEnd: int64;
 begin
+  Log.Info('gyv: TFrameViewAudio.CaptureAddition');
+
   fileInViewFramesCount := GetAudioFileFramesCount(FFilename);
 
   Result := False;
@@ -1974,6 +1961,8 @@ begin
   end;
 
   F.Free;
+
+  if not Result then Log.AddEmptyLine;
 end;
 
 procedure TFrameViewAudio.SetPlaybackVolume(aVolume: single);

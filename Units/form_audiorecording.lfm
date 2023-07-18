@@ -37,7 +37,7 @@ object FormRecord: TFormRecord
     Height = 201
     Top = 2
     Width = 307
-    PageIndex = 0
+    PageIndex = 1
     Anchors = [akTop, akLeft, akRight]
     BorderSpacing.Left = 2
     BorderSpacing.Top = 2

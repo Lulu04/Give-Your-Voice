@@ -92,7 +92,7 @@ var
 
 implementation
 uses u_audio_utils, u_project, form_main, u_userdialogs,
-  frame_viewaudio, u_resource_string, utilitaire_fichier, Dialogs;
+  frame_viewaudio, u_resource_string, utilitaire_fichier, u_logfile, Dialogs;
 
 { TMainUndoRedoItem }
 
@@ -346,6 +346,7 @@ end;
 
 procedure TMainUndoRedoManager.DestroyItem(constref aItem: TMainUndoRedoItem);
 begin
+  Log.Info('gyv: TMainUndoRedoManager.DestroyItem');
   // delete the undo/redo file
   if FichierExistant(aItem.AudioFile) then
     SupprimeFichier(aItem.AudioFile);
@@ -363,6 +364,11 @@ begin
   if not CopyPartOfAudioFile(aFilename, f, aFirstFrameIndex, aLastFrameIndex) then begin
     dec(FFileSuffix);
     if FichierExistant(f) then SupprimeFichier(f);
+    Log.Error('    TMainUndoRedoManager.SaveAudioDataFrom: CopyPartOfAudioFile(...) fail'+LineEnding+
+              '    src file "'+aFilename+'"'+LineEnding+
+              '    '+GetFileInfoForLogMessage(aFilename)+LineEnding+
+              '    dst file "'+f+'"'+LineEnding+
+              '    frames indexes '+aFirstFrameIndex.ToString+' to '+aLastFrameIndex.ToString);
     exit;
   end;
 

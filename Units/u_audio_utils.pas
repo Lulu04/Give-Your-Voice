@@ -72,7 +72,7 @@ type
   { TAudioFileReader }
 
   TAudioFileReader = object(TBaseAudioFile)
-    function OpenRead(const aFileName: string): boolean;
+    function OpenRead(const aFileName: string; aPostLogMessage: boolean=True): boolean;
     function ReadShort(p: Pointer; aCount: longword): longword;
     function ReadFloat(p: Pointer; aCount: longword): longword;
     function ReadDouble(p: PDouble; aCount: longword): longword;
@@ -89,7 +89,11 @@ type
     FCopyBuffer: TALSPlaybackBuffer; // used by copy routines
     procedure InitCopyBuffer(aFramesCapacity: longword);
   public
-    function OpenWrite(const aFileName: string; aFormat: TALSFileFormat; aChannels, aSampleRate: integer): boolean;
+    function OpenWrite(const aFileName: string;
+                       aFormat: TALSFileFormat;
+                       aChannels,
+                       aSampleRate: integer;
+                       aPostLogMessage: boolean=True): boolean;
     function SampleAreFloat: boolean;
     function Close: boolean;
     function WriteShort(p: Pointer; aCount: longword): longword;
@@ -129,6 +133,9 @@ type
 
   function GetAudioFileDuration(const aFilename: string): single;
   function GetAudioFileFramesCount(const aFilename: string): int64;
+  // if succed, return 'samplerate:xxx frames:xxx chan:xx format:xxxx'
+  // if fail, return 'LibSndFile can not open the file to retrieve info'
+  function GetFileInfoForLogMessage(const aFilename: string): string;
 
   // from 'path/filename.ext'  return 'tempPath/filename_Suffix.ext'
   function GetTemporaryFilename(const aSourceFilename, aSuffix: string): string;
@@ -957,6 +964,19 @@ begin
   end;
 end;
 
+function GetFileInfoForLogMessage(const aFilename: string): string;
+var reader: TAudioFileReader;
+begin
+  Result := '';
+  if reader.OpenRead(aFilename, False) then begin
+    Result := 'samplerate:'+reader.SampleRate.ToString+
+              ' frames:'+reader.Frames.ToString+
+              ' chan:'+reader.Channels.ToString+
+              ' format:'+IntToHex(reader.Format, 4);
+    reader.Close;
+  end else Result := 'LibSndFile can not open the file to retrieve info';
+end;
+
 function GetTemporaryFilename(const aSourceFilename, aSuffix: string): string;
 begin
   Result := Project.TempFolder+
@@ -1746,7 +1766,8 @@ begin
 end;
 
 function TAudioFileWriter.OpenWrite(const aFileName: string;
-  aFormat: TALSFileFormat; aChannels, aSampleRate: integer): boolean;
+  aFormat: TALSFileFormat; aChannels, aSampleRate: integer;
+  aPostLogMessage: boolean): boolean;
 var sfinfo: TSF_INFO;
 begin
   Format := aFormat;
@@ -1761,7 +1782,7 @@ begin
 
   FileName := aFileName;
 
-  if not Result then begin
+  if not Result and aPostLogMessage then begin
     Log.Error('gyv: TAudioFileWriter.OpenWrite fail');
     Log.Error('on file "'+FileName+'"', 1);
   end;
@@ -1960,20 +1981,23 @@ end;
 
 { TAudioFileReader }
 
-function TAudioFileReader.OpenRead(const aFileName: string): boolean;
+function TAudioFileReader.OpenRead(const aFileName: string; aPostLogMessage: boolean): boolean;
 var sfinfo: TSF_INFO;
 begin
   sfinfo.Format := 0;
   Handle := ALSOpenAudioFile(aFileName, SFM_READ, @sfinfo);
-  Format := sfinfo.Format;
-  Channels := sfinfo.Channels;
-  Frames := sfinfo.Frames;
-  SampleRate := sfinfo.SampleRate;
+
   Result := Handle <> NIL;
+  if Result then begin
+    Format := sfinfo.Format;
+    Channels := sfinfo.Channels;
+    Frames := sfinfo.Frames;
+    SampleRate := sfinfo.SampleRate;
+  end;
 
   FileName := aFileName;
 
-  if not Result then begin
+  if not Result and aPostLogMessage then begin
     Log.Error('gyv: TAudioFileReader.OpenRead fail');
     Log.Error('on file "'+FileName+'"', 1);
   end;
