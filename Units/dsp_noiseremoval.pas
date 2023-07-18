@@ -1030,6 +1030,8 @@ begin
 end;
 
 initialization
+  FFTArray[0] := NIL;     // avoid compilation hint
+  FFTLockCount[0] := 0;
   FillChar(FFTArray, SizeOf(FFTArray), 0);
   FillChar(FFTLockCount, SizeOf(FFTLockCount), 0);
 
