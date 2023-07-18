@@ -620,9 +620,14 @@ begin
      Screen.BeginWaitCursor;
      try
        FrameViewAudio1.Clear;
-       FrameViewAudio1.LoadSound(FrameViewProjectFiles1.SelectedFilename);
-       FrameViewAudio1.LoadUserMarksFromFile(FrameViewProjectFiles1.SelectedFilename);
-       FrameViewAudio1.Redraw;
+       if not FrameViewAudio1.LoadSound(FrameViewProjectFiles1.SelectedFilename) then begin
+         // loading fail
+         FrameViewAudio1.Clear;
+       end else begin
+        // loading succed
+         FrameViewAudio1.LoadUserMarksFromFile(FrameViewProjectFiles1.SelectedFilename);
+         FrameViewAudio1.Redraw;
+       end;
      finally
        Screen.EndWaitCursor;
      end;

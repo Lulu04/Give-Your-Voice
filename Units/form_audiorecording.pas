@@ -122,7 +122,7 @@ var
 
 implementation
 uses u_project, u_audio_utils, u_program_options, form_main, u_utils,
-  u_resource_string, u_userdialogs, LCLType, utilitaire_fichier;
+  u_resource_string, u_userdialogs, LCLType, utilitaire_fichier, u_logfile;
 
 {$R *.lfm}
 
@@ -196,9 +196,12 @@ begin
   FCaptureContext.StopCapture;
   FCaptureContext.RemoveDCBias := False; // stop removing DCBias
 
+  Log.Info('    captured '+ TimeToString(FRecordTimeDuration, 3));
+
   Timer1.Enabled := False;
 
   if FCaptureContext.CaptureError then begin
+    Log.Error('    capture context error: '+FCaptureContext.StrCaptureError);
     ShowMess(SFailedToRecord+LineEnding+FCaptureContext.StrCaptureError, SClose, mtError);
     ModalResult := mrCancel;
   end
@@ -209,13 +212,17 @@ begin
      Label6.Caption := SNoiseRemovalInProgress+LineEnding+SPleaseWait;
      Application.ProcessMessages;
      Screen.BeginWaitCursor;
+     Notebook1.Enabled := False;
      try
-       if not RemoveNoiseOnFile(FFileForNoise, FFilename, -24) then
+       if not RemoveNoiseOnFile(FFileForNoise, FFilename, -24) then begin
+         Log.Error('    Fail to remove noise');
          ShowMess(SNoiseRemovalFailed, SClose, mtWarning);
+       end;
        // delete noise file
        SupprimeFichier(FFileForNoise);
      finally
        Screen.EndWaitCursor;
+       Notebook1.Enabled := True;
      end;
    end;
    if not FAskPage then begin
@@ -403,6 +410,7 @@ end;
 procedure TFormRecord.DoRecording;
 begin
   if ProgramOptions.RemoveNoiseWhenRecording then begin
+    Log.Info('    start recording noise to file');
     NoteBook1.PageIndex := NoteBook1.IndexOf(PageNoiseProfile);
     FCount := 3;
     Label5.Caption := FCount.ToString;
@@ -412,6 +420,7 @@ begin
     FFileForNoise := GetTemporaryFileForNoise;
     if not FCaptureContext.PrepareSavingToFile(FFileForNoise,
                             ALSMakeFileFormat(SF_FORMAT_WAV, SF_FORMAT_FLOAT)) then begin
+      Log.Error('    CaptureContext.PrepareSavingToFile fail while recording noise');
       ShowMess(SErrorWhenPreparingRecordingFileForNoise, SClose, mtError);
       ModalResult := mrCancel;
       exit;
@@ -429,6 +438,8 @@ begin
 
     Application.ProcessMessages;
     if FCaptureContext.CaptureError and not (ModalResult = mrCancel) then begin
+      Log.Error('    CaptureContext error while recording noise'+LineEnding+
+                '    '+FCaptureContext.StrCaptureError);
       FCaptureContext.RemoveDCBias := False;  // stop removing DCBias
       ShowMess(SFailedToRecordNoise+LineEnding+FCaptureContext.StrCaptureError,
                SClose, mtError);
@@ -448,6 +459,7 @@ begin
     exit;
   end;
 
+  Log.Info('    start recording voice to "'+FFilename+'"');
   FRecordTimeDuration := 0;
   FTimerMode := tmShowRecordingTime;
   Timer1.Interval := 100;
