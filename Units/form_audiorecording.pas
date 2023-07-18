@@ -212,6 +212,7 @@ begin
      Label6.Caption := SNoiseRemovalInProgress+LineEnding+SPleaseWait;
      Application.ProcessMessages;
      Screen.BeginWaitCursor;
+     Notebook1.Enabled := False;
      try
        if not RemoveNoiseOnFile(FFileForNoise, FFilename, -24) then begin
          Log.Error('    Fail to remove noise');
@@ -221,6 +222,7 @@ begin
        SupprimeFichier(FFileForNoise);
      finally
        Screen.EndWaitCursor;
+       Notebook1.Enabled := True;
      end;
    end;
    if not FAskPage then begin

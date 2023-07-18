@@ -1628,6 +1628,7 @@ var f: string;
   reader: TAudioFileReader;
   buf: TALSPlaybackBuffer;
   frameToDo: int64;
+  counterTime: single;
 begin
   FRemover.Gain := FGain;
   Result := False;
@@ -1651,9 +1652,18 @@ begin
 
   frameToDo := reader.Frames;
   Result := True;
+  counterTime := 0;
   while reader.Read(buf, buf.FrameCapacity) > 0 do begin
     frameToDo := frameToDo-buf.FrameCount;
     Result := Result and FRemover.Process(buf.Data, buf.FrameCount, False, (frameToDo > 0));
+
+    // call application.ProcessMessage every 20ms
+    counterTime := counterTime + buf.FrameCount/reader.SampleRate;
+    if counterTime > 0.020 then begin
+      counterTime := counterTime - 0.020;
+      Application.ProcessMessages;
+    end;
+
   end;
   FRemover.Process(NIL, 0, False, False);
   FRemover.Flush;

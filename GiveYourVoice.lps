@@ -67,8 +67,8 @@
         <Filename Value="Units\u_audio_utils.pas"/>
         <IsPartOfProject Value="True"/>
         <WindowIndex Value="1"/>
-        <TopLine Value="1635"/>
-        <CursorPos X="33" Y="1652"/>
+        <TopLine Value="1643"/>
+        <CursorPos X="50" Y="1660"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
       </Unit>
@@ -161,9 +161,10 @@
         <ComponentName Value="FormRecord"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="5"/>
-        <TopLine Value="209"/>
-        <CursorPos X="46" Y="223"/>
+        <TopLine Value="206"/>
+        <CursorPos X="38" Y="225"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -512,7 +513,7 @@
         <WindowIndex Value="1"/>
         <TopLine Value="11"/>
         <CursorPos X="16" Y="36"/>
-        <UsageCount Value="196"/>
+        <UsageCount Value="197"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -524,7 +525,7 @@
         <EditorIndex Value="16"/>
         <TopLine Value="24"/>
         <CursorPos X="33" Y="36"/>
-        <UsageCount Value="130"/>
+        <UsageCount Value="131"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -889,11 +890,10 @@
       <Unit>
         <Filename Value="..\ALSound\source\alsound.pas"/>
         <UnitName Value="ALSound"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
         <WindowIndex Value="1"/>
         <TopLine Value="1467"/>
-        <CursorPos X="5" Y="1474"/>
+        <CursorPos X="44" Y="1475"/>
         <UsageCount Value="54"/>
         <Loaded Value="True"/>
       </Unit>
@@ -901,8 +901,8 @@
         <Filename Value="..\ALSound\source\als_frame_buffers.inc"/>
         <EditorIndex Value="6"/>
         <WindowIndex Value="1"/>
-        <TopLine Value="107"/>
-        <CursorPos Y="122"/>
+        <TopLine Value="174"/>
+        <CursorPos X="62" Y="196"/>
         <UsageCount Value="23"/>
         <Loaded Value="True"/>
       </Unit>
@@ -954,34 +954,7 @@
         <UsageCount Value="9"/>
       </Unit>
     </Units>
-    <General>
-      <ActiveWindowIndexAtStart Value="1"/>
-    </General>
     <JumpHistory HistoryIndex="29">
-      <Position>
-        <Filename Value="Units\form_audiorecording.pas"/>
-        <Caret Line="183" Column="12" TopLine="177"/>
-      </Position>
-      <Position>
-        <Filename Value="Units\form_audiorecording.pas"/>
-        <Caret Line="93" Column="15" TopLine="81"/>
-      </Position>
-      <Position>
-        <Filename Value="Units\form_audiorecording.pas"/>
-        <Caret Line="435" Column="70" TopLine="420"/>
-      </Position>
-      <Position>
-        <Filename Value="..\ALSound\source\alsound.pas"/>
-        <Caret Line="1158" Column="49" TopLine="1147"/>
-      </Position>
-      <Position>
-        <Filename Value="..\ALSound\source\alsound.pas"/>
-        <Caret Line="1065" Column="14" TopLine="1049"/>
-      </Position>
-      <Position>
-        <Filename Value="Units\form_audiorecording.pas"/>
-        <Caret Line="457" Column="41" TopLine="444"/>
-      </Position>
       <Position>
         <Filename Value="Units\form_audiorecording.pas"/>
         <Caret Line="199" Column="44" TopLine="193"/>
@@ -1077,6 +1050,30 @@
       <Position>
         <Filename Value="..\ALSound\source\als_frame_buffers.inc"/>
         <Caret Line="122" TopLine="107"/>
+      </Position>
+      <Position>
+        <Filename Value="..\ALSound\source\alsound.pas"/>
+        <Caret Line="1475" Column="44" TopLine="1467"/>
+      </Position>
+      <Position>
+        <Filename Value="..\ALSound\source\als_frame_buffers.inc"/>
+        <Caret Line="130" Column="4" TopLine="110"/>
+      </Position>
+      <Position>
+        <Filename Value="..\ALSound\source\als_frame_buffers.inc"/>
+        <Caret Line="140" Column="61" TopLine="120"/>
+      </Position>
+      <Position>
+        <Filename Value="..\ALSound\source\als_frame_buffers.inc"/>
+        <Caret Line="150" Column="61" TopLine="130"/>
+      </Position>
+      <Position>
+        <Filename Value="..\ALSound\source\als_frame_buffers.inc"/>
+        <Caret Line="171" Column="61" TopLine="152"/>
+      </Position>
+      <Position>
+        <Filename Value="..\ALSound\source\als_frame_buffers.inc"/>
+        <Caret Line="184" Column="62" TopLine="162"/>
       </Position>
     </JumpHistory>
     <RunParams>
