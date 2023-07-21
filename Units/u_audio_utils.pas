@@ -922,6 +922,8 @@ procedure ProcessLogMessageFromOpenALSoft(aUserPtr: pointer; aLevel: char;
   aMessage: PChar; aMessageLength: cint);
 const aprefix='alsoft: ';
 begin
+  if Log = NIL then exit;
+
   case aLevel of
     'I': Log.Info(aprefix+StrPas(aMessage));
     'W': Log.Warning(aprefix+StrPas(aMessage));
@@ -1434,7 +1436,10 @@ begin
 
   if FCaptureContext.Error then begin
     Log.Error('alsound: failed to create capture context');
-    Log.Error('with device index = '+aDeviceIndex.ToString, 1);
+    Log.Info('with device index: '+aDeviceIndex.ToString+'   max device index on this system: '+High(ALSManager.ListOfCaptureDeviceName).ToString, 1);
+    if InRange(aDeviceIndex, Low(ALSManager.ListOfCaptureDeviceName), High(ALSManager.ListOfCaptureDeviceName)) then
+      Log.Info('device name: '+ALSManager.ListOfCaptureDeviceName[aDeviceIndex], 1);
+    Log.Info(FCaptureContext.StrError, 1);
   end;
 end;
 
@@ -1463,30 +1468,33 @@ begin
   attribs.ContextUseFloat := True;
 
   FPlaybackContext := ALSManager.CreatePlaybackContext(aDeviceIndex, attribs);
+  if FPlaybackContext.Error then begin
+    Log.Error('alsound: failed to create playback context');
+    Log.Info('device index: '+aDeviceIndex.ToString+'   max device index on this system: '+High(ALSManager.ListOfPlaybackDeviceName).ToString, 1);
+    if InRange(aDeviceIndex, Low(ALSManager.ListOfPlaybackDeviceName), High(ALSManager.ListOfPlaybackDeviceName)) then
+      Log.Info('device name: '+ALSManager.ListOfPlaybackDeviceName[aDeviceIndex], 1);
+    Log.Info(FPlaybackContext.StrError, 1);
+  end;
 
   FCompressorProp.InitDefault;
   FCompressor := FPlaybackContext.CreateEffect(AL_EFFECT_COMPRESSOR, FCompressorProp);
+  if not FCompressor.Ready then
+    Log.Error('alsound: failed to create compressor effect for playback context');
 
   FBassBoostEqualizerProp.InitWithPreset(1); // Bass Boost
   FBassBoostEqualizerProp.LowGain := ProgramOptions.ListeningImprovedBassGainValue;
   FBassBoostEqualizer := FPlaybackContext.CreateEffect(AL_EFFECT_EQUALIZER, FBassBoostEqualizerProp);
+  if not FBassBoostEqualizer.Ready then
+    Log.Error('alsound: failed to create bass boost equalizer for playback context');
 
   FErrorOnChainEffect := not FCompressor.ChainWith(FBassBoostEqualizer);
+  if FErrorOnChainEffect then
+    Log.Error('alsound: failed to chain audio effects for playback context');
 
   FCompressor.Mute := not ProgramOptions.ListeningImprovedUseCompressor;
   FBassBoostEqualizer.Mute := not (ProgramOptions.ListeningImprovedActivated and
                      (ProgramOptions.ListeningImprovedBassGainValue <> 1.0));
 
-  if FPlaybackContext.Error then begin
-    Log.Error('alsound: failed to create playback context');
-    Log.Error(FPlaybackContext.StrError, 1);
-  end;
-  if not FCompressor.Ready then
-    Log.Error('alsound: failed to create compressor effect for playback context');
-  if not FBassBoostEqualizer.Ready then
-    Log.Error('alsound: failed to create bass boost equalizer for playback context');
-  if FErrorOnChainEffect then
-    Log.Error('alsound: failed to chain audio effects for playback context');
 end;
 
 procedure TPlaybackContext.Free;

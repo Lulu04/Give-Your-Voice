@@ -520,7 +520,7 @@ begin
 
     // show error message from ALSManager
     if ALSManager.Error then
-      ShowMessage(SFailedToStartAudioEngine+Lineending+ALSManager.StrError);
+      ShowMess(SFailedToStartAudioEngine+Lineending+ALSManager.StrError, SOk, mtError);
 
     Notebook1.PageIndex := Notebook1.IndexOf(PageEmpty);
     FrameViewProjectFiles1.UpdateColors;
@@ -742,13 +742,15 @@ end;
 procedure TFormMain.ShowInfoAboutFileInAudioEdition;
 var f, s: string;
 begin
-  f := FrameViewProjectFiles1.SelectedFilename;
+  s := '';
+  if not ALSManager.Error then begin
+    f := FrameViewProjectFiles1.SelectedFilename;
 
-  if IsFile(f) then
-    s := NomDuDernierSousRepertoire(f)+
-         ExtractFileName(f)+LineEnding+
-         GetAudioFileFramesCount(f).ToString+' samples'
-  else s := '';
+    if IsFile(f) then
+      s := NomDuDernierSousRepertoire(f)+
+           ExtractFileName(f)+LineEnding+
+           GetAudioFileFramesCount(f).ToString+' samples';
+  end;
 
   Label13.Caption := s;
 end;
@@ -802,14 +804,16 @@ begin
 end;
 
 procedure TFormMain.StartAudioDevice(aStartCapture: boolean; aStartPlayback: boolean);
+var s: string;
 begin
   if aStartCapture then begin
     Capture.Create(ProgramOptions.CaptureDeviceIndex);
     Capture.FCaptureContext.OnCaptureBuffer := @ProcessCapturedBuffer;
     Capture.FCaptureContext.MonitoringEnabled := True;
-    if Capture.FCaptureContext.Error then
-      ShowMess(SFailedToOpenCaptureDevice+LineEnding+
-           Capture.FCaptureContext.StrError, SClose, mtError);
+    if Capture.FCaptureContext.Error then begin
+      s := SFailedToOpenCaptureDevice+LineEnding+Capture.FCaptureContext.StrError;
+      ShowMess(s, SClose, mtError);
+    end;
   end;
 
   if aStartPlayback then begin
