@@ -90,6 +90,11 @@ if [ -f "${PROJECT_EXECUTABLE}" ]; then
   rm "${PROJECT_EXECUTABLE}"
 fi
 
+# before compiling the project, we put the fake libdl.so in the project directory
+# to force the dependency to glibc 2.2.5
+# see https://forum.lazarus.freepascal.org/index.php/topic,58888.msg483544.html?PHPSESSID=f8vtvusgfek6e18kanbaosokk0#msg483544
+cp -p libdl.so ../../libdl.so
+
 # compile project
 echo "compiling Lazarus project ${VERSION}..."
 # going to the directory where is lazbuild
@@ -99,6 +104,10 @@ pushd "${LAZBUILD_DIR}"
 ./lazbuild --build-all --quiet --widgetset=${WIDGETSET} --cpu=${TARGET_CPU} --build-mode=Release \
            --no-write-project ${LAZARUS_PROJECT} 1> /dev/null
 popd
+
+# delete libdl.so from the project directory
+rm ../../libdl.so
+
 # check if binary file was created
 if [ ! -f "${PROJECT_EXECUTABLE}" ]; then
   echo "COMPILATION FAILED..."

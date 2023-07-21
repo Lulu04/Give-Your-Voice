@@ -647,6 +647,8 @@ end;
 
 procedure TFrameViewProjectFiles.StopSound;
 begin
+  if ALSManager.Error then exit;
+
   if FSound <> NIL then begin
     FSound.Kill;
     FSound := NIL;
@@ -659,6 +661,8 @@ procedure TFrameViewProjectFiles.StartSound;
 var
   f: String;
 begin
+  if ALSManager.Error then exit;
+
   f := SelectedFilename;
   if f = '' then exit;
   if IsFolder(f) then exit;
@@ -1229,6 +1233,7 @@ begin
 
   if Sender = BEditFile then begin
     if f = '' then exit;
+    if ALSManager.Error then exit;
     StopSound;
     DoUserActionEvent(faEdit);
   end;
@@ -1238,9 +1243,12 @@ begin
     DoDeleteFile;
   end;
 
-  if (Sender = BAddRecord) and Project.TempFolderExists then DoAddRecord(False);
+  if (Sender = BAddRecord) and
+     Project.TempFolderExists and
+     not ALSManager.Error then DoAddRecord(False);
 
-  if Sender = BMixSection then begin
+  if (Sender = BMixSection) and
+     not ALSManager.Error then begin
     if FolderHaveUserMarksFile(NodeToFilenameOrPath(TV.Selected)) then
       if AskConfirmation(SAskUserToMixFileWithUserMarks, sYes, SCancel, mtConfirmation) = mrCancel then exit;
     DoUserActionEvent(faMixSection);
@@ -1253,18 +1261,22 @@ begin
     Capture.FCaptureContext.MonitoringEnabled := True;
   end;
 
-  if Sender = MIImportAudioInSection then begin
+  if (Sender = MIImportAudioInSection) and
+     not ALSManager.Error then begin
     DoUserActionEvent(faImportAudioInSection);
     DoImportAudioInSection;
   end;
 
-  if Sender = MIImportAudioAndInsertHere then begin
+  if (Sender = MIImportAudioAndInsertHere) and
+     not ALSManager.Error then begin
     StopSound;
     DoUserActionEvent(faImportAudioAndInsertItBeforeRecord);
     DoImportAudioAndInsertItBeforeSelected;
   end;
 
-  if (Sender = MIInsertFile) and Project.TempFolderExists then begin
+  if (Sender = MIInsertFile) and
+     Project.TempFolderExists and
+     not ALSManager.Error then begin
     StopSound;
     DoUserActionEvent(faInsertNewRecord);
     DoAddRecord(True);
