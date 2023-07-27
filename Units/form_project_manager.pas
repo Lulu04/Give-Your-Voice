@@ -240,7 +240,7 @@ begin
     n := TVProjects.Items.GetFirstNode;
 
     // get the content of the selected folder
-    t := ContenuDuRepertoire(SelectedProjectFolder, [PROJECT_FILE_EXT, '.zip'], True, True);
+    t := GetDirectoryContent(SelectedProjectFolder, [PROJECT_FILE_EXT, '.zip'], True, 1);
     t.Sort;
 
     // discard all zip files that are in sub-folder (in project's zip folder)
