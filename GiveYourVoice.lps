@@ -25,8 +25,8 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <EditorIndex Value="10"/>
-        <TopLine Value="533"/>
-        <CursorPos X="43" Y="545"/>
+        <TopLine Value="473"/>
+        <CursorPos X="2" Y="484"/>
         <UsageCount Value="201"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -58,8 +58,8 @@
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="9"/>
         <WindowIndex Value="1"/>
-        <TopLine Value="50"/>
-        <CursorPos X="26" Y="12"/>
+        <TopLine Value="65"/>
+        <CursorPos X="3" Y="81"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
       </Unit>
@@ -243,8 +243,7 @@
         <Filename Value="Units\u_userdialogs.pas"/>
         <IsPartOfProject Value="True"/>
         <WindowIndex Value="2"/>
-        <TopLine Value="36"/>
-        <CursorPos Y="43"/>
+        <CursorPos X="21" Y="12"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
       </Unit>
@@ -366,8 +365,8 @@
         <Filename Value="Units\u_resource_string.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="9"/>
-        <TopLine Value="132"/>
-        <CursorPos Y="145"/>
+        <TopLine Value="6"/>
+        <CursorPos Y="20"/>
         <UsageCount Value="201"/>
         <Loaded Value="True"/>
       </Unit>
@@ -378,8 +377,8 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <EditorIndex Value="18"/>
-        <TopLine Value="169"/>
-        <CursorPos X="50" Y="181"/>
+        <TopLine Value="162"/>
+        <CursorPos X="10" Y="167"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -434,9 +433,10 @@
         <ComponentName Value="FormProjectManager"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="6"/>
-        <TopLine Value="227"/>
-        <CursorPos X="48" Y="241"/>
+        <TopLine Value="143"/>
+        <CursorPos X="32" Y="156"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -526,7 +526,7 @@
         <EditorIndex Value="17"/>
         <TopLine Value="24"/>
         <CursorPos X="33" Y="36"/>
-        <UsageCount Value="162"/>
+        <UsageCount Value="163"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -895,7 +895,7 @@
         <WindowIndex Value="1"/>
         <TopLine Value="2231"/>
         <CursorPos X="40" Y="2244"/>
-        <UsageCount Value="69"/>
+        <UsageCount Value="70"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -904,7 +904,7 @@
         <WindowIndex Value="1"/>
         <TopLine Value="174"/>
         <CursorPos X="62" Y="196"/>
-        <UsageCount Value="38"/>
+        <UsageCount Value="39"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -920,7 +920,7 @@
         <WindowIndex Value="1"/>
         <TopLine Value="181"/>
         <CursorPos X="3" Y="216"/>
-        <UsageCount Value="53"/>
+        <UsageCount Value="54"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -929,7 +929,7 @@
         <WindowIndex Value="1"/>
         <TopLine Value="118"/>
         <CursorPos X="25" Y="131"/>
-        <UsageCount Value="51"/>
+        <UsageCount Value="52"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -937,7 +937,7 @@
         <EditorIndex Value="15"/>
         <TopLine Value="33"/>
         <CursorPos X="14" Y="51"/>
-        <UsageCount Value="50"/>
+        <UsageCount Value="51"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -960,7 +960,7 @@
         <WindowIndex Value="1"/>
         <TopLine Value="39"/>
         <CursorPos X="20" Y="44"/>
-        <UsageCount Value="22"/>
+        <UsageCount Value="23"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -978,76 +978,19 @@
         <WindowIndex Value="1"/>
         <TopLine Value="126"/>
         <CursorPos X="3" Y="131"/>
-        <UsageCount Value="21"/>
+        <UsageCount Value="22"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="..\UnitsCommon\utilitaire_fichier.pas"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="7"/>
         <TopLine Value="49"/>
         <CursorPos X="23" Y="65"/>
-        <UsageCount Value="15"/>
+        <UsageCount Value="16"/>
         <Loaded Value="True"/>
       </Unit>
     </Units>
     <JumpHistory HistoryIndex="29">
-      <Position>
-        <Filename Value="Units\form_project_manager.pas"/>
-        <Caret Line="56" Column="15" TopLine="44"/>
-      </Position>
-      <Position>
-        <Filename Value="Units\form_project_manager.pas"/>
-        <Caret Line="351" Column="24" TopLine="339"/>
-      </Position>
-      <Position>
-        <Filename Value="Units\form_project_manager.pas"/>
-        <Caret Line="56" Column="15" TopLine="44"/>
-      </Position>
-      <Position>
-        <Filename Value="Units\form_project_manager.pas"/>
-        <Caret Line="337" Column="3" TopLine="332"/>
-      </Position>
-      <Position>
-        <Filename Value="Units\form_project_manager.pas"/>
-        <Caret Line="57" Column="15" TopLine="45"/>
-      </Position>
-      <Position>
-        <Filename Value="Units\form_project_manager.pas"/>
-        <Caret Line="243" Column="18" TopLine="227"/>
-      </Position>
-      <Position>
-        <Filename Value="..\UnitsCommon\utilitaire_fichier.pas"/>
-        <Caret Line="55" Column="10" TopLine="43"/>
-      </Position>
-      <Position>
-        <Filename Value="..\UnitsCommon\utilitaire_fichier.pas"/>
-        <Caret Line="211" Column="2" TopLine="162"/>
-      </Position>
-      <Position>
-        <Filename Value="..\UnitsCommon\utilitaire_fichier.pas"/>
-        <Caret Line="60" Column="15" TopLine="44"/>
-      </Position>
-      <Position>
-        <Filename Value="..\UnitsCommon\utilitaire_fichier.pas"/>
-        <Caret Line="251" Column="6" TopLine="241"/>
-      </Position>
-      <Position>
-        <Filename Value="..\UnitsCommon\utilitaire_fichier.pas"/>
-        <Caret Line="65" Column="64" TopLine="48"/>
-      </Position>
-      <Position>
-        <Filename Value="..\UnitsCommon\utilitaire_fichier.pas"/>
-        <Caret Line="224" Column="43" TopLine="218"/>
-      </Position>
-      <Position>
-        <Filename Value="Units\form_firsttimewizard.pas"/>
-        <Caret Line="181" Column="50" TopLine="169"/>
-      </Position>
-      <Position>
-        <Filename Value="..\UnitsCommon\utilitaire_fichier.pas"/>
-        <Caret Line="240" Column="22" TopLine="222"/>
-      </Position>
       <Position>
         <Filename Value="..\UnitsCommon\utilitaire_fichier.pas"/>
         <Caret Line="223" Column="30" TopLine="210"/>
@@ -1111,6 +1054,62 @@
       <Position>
         <Filename Value="..\UnitsCommon\utilitaire_fichier.pas"/>
         <Caret Line="253" Column="29" TopLine="236"/>
+      </Position>
+      <Position>
+        <Filename Value="Units\u_userdialogs.pas"/>
+        <Caret Line="49" Column="37" TopLine="36"/>
+      </Position>
+      <Position>
+        <Filename Value="Units\form_firsttimewizard.pas"/>
+        <Caret Line="181" Column="50" TopLine="169"/>
+      </Position>
+      <Position>
+        <Filename Value="Units\form_project_manager.pas"/>
+        <Caret Line="236" Column="34" TopLine="227"/>
+      </Position>
+      <Position>
+        <Filename Value="Units\form_project_manager.pas"/>
+        <Caret Line="47" Column="18" TopLine="36"/>
+      </Position>
+      <Position>
+        <Filename Value="Units\form_project_manager.pas"/>
+        <Caret Line="182" Column="19" TopLine="180"/>
+      </Position>
+      <Position>
+        <Filename Value="Units\form_firsttimewizard.pas"/>
+        <Caret Line="183" Column="16" TopLine="163"/>
+      </Position>
+      <Position>
+        <Filename Value="Units\form_firsttimewizard.pas"/>
+        <Caret Line="47" Column="15" TopLine="32"/>
+      </Position>
+      <Position>
+        <Filename Value="Units\form_main.pas"/>
+        <Caret Line="489" Column="37" TopLine="469"/>
+      </Position>
+      <Position>
+        <Filename Value="Units\form_project_manager.pas"/>
+        <Caret Line="47" Column="19" TopLine="38"/>
+      </Position>
+      <Position>
+        <Filename Value="Units\form_main.pas"/>
+        <Caret Line="489" TopLine="469"/>
+      </Position>
+      <Position>
+        <Filename Value="Units\form_project_manager.pas"/>
+        <Caret Line="187" Column="9" TopLine="180"/>
+      </Position>
+      <Position>
+        <Filename Value="Units\form_project_manager.pas"/>
+        <Caret Line="47" Column="19" TopLine="35"/>
+      </Position>
+      <Position>
+        <Filename Value="Units\form_project_manager.pas"/>
+        <Caret Line="193" TopLine="185"/>
+      </Position>
+      <Position>
+        <Filename Value="Units\form_project_manager.pas"/>
+        <Caret Line="156" Column="32" TopLine="152"/>
       </Position>
     </JumpHistory>
     <RunParams>

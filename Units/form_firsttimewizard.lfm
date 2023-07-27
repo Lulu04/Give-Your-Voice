@@ -1,7 +1,7 @@
 object FormFirstRun: TFormFirstRun
-  Left = -7
+  Left = 200
   Height = 608
-  Top = 0
+  Top = 57
   Width = 845
   BorderIcons = []
   BorderStyle = bsNone

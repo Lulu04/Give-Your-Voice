@@ -77,6 +77,7 @@ var
   FRecordFilenameSuffix: integer = 0;
 
   FFirstTimeProgramIsRunning: boolean = FALSE;
+  FormProjectManager_FAskUserToShowUserGuide: boolean = FALSE;
 
 {$ifdef LINUX}
   FDesignFontHeight: integer;

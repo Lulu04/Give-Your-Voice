@@ -484,7 +484,8 @@ begin
     FormFirstRun.ShowModal;
     FormFirstRun.Free;
     FFirstTimeProgramIsRunning := False;
-    ShowGYVUserGuide;
+
+    FormProjectManager_FAskUserToShowUserGuide := True;
   end;
 
   if FFirstShow then begin

@@ -1131,6 +1131,10 @@ msgstr "Delete this music ?"
 msgid "Supprimer ce bruitage ?"
 msgstr "Delete this sound ?"
 
+#: u_resource_string.sdoyouwanttoshowuserguide
+msgid "Voulez-vous consulter le manuel utilisateur ?"
+msgstr "Would you like to read the user manual ?"
+
 #: u_resource_string.senterdurationofsilencetoinsert
 msgid "Entrez la durée du silence à insérer:"
 msgstr "Enter the duration of the silence to insert:"
@@ -1670,4 +1674,3 @@ msgstr "Failed to create ZIP file"
 #: u_resource_string.szipprojectfailed
 msgid "une erreur est apparue lors de la compression du projet..."
 msgstr "an error occured while compressing the project..."
-
