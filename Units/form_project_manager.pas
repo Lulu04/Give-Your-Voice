@@ -41,6 +41,7 @@ type
     TVProjects: TTreeView;
     TVPaths: TTreeView;
     procedure BOpenProjectClick(Sender: TObject);
+    procedure FormActivate(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
     procedure FormKeyUp(Sender: TObject; var Key: Word; {%H-}Shift: TShiftState);
@@ -81,7 +82,6 @@ type
 
     procedure AdjustFont;
   public
-
   end;
 
 var
@@ -146,6 +146,17 @@ begin
 
   if Sender = BDeleteProject then begin
     DoDeleteProject;
+  end;
+end;
+
+procedure TFormProjectManager.FormActivate(Sender: TObject);
+begin
+  // ask to user if s/he want to read the user guide
+  if FormProjectManager_FAskUserToShowUserGuide then begin
+    Application.ProcessMessages;
+    if AskConfirmation(SDoYouWantToShowUserGuide, SYes, SNo, mtConfirmation) = mrOk then
+      ShowGYVUserGuide;
+    FormProjectManager_FAskUserToShowUserGuide := False;
   end;
 end;
 

@@ -16,6 +16,7 @@ SFailedToOpenPlaybackDevice='Erreur d''ouverture du périphérique de lecture au
 SAskForOpenURLForNewAPPVersion='Give Your Voice version %0:s est maintenant disponible !'+LineEnding+
                                'votre version actuelle est %1:s'+LineEnding+LineEnding+
                                'Voulez-vous fermer le programme et vous rendre sur le site internet pour la télécharger ?';
+SDoYouWantToShowUserGuide='Voulez-vous consulter le manuel utilisateur ?';
 SVersion='version';
 SCredits='Crédits';
 SIconAppBy='Icone du programme par %0:s'+LineEnding+

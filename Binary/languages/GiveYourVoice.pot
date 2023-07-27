@@ -1065,6 +1065,10 @@ msgstr ""
 msgid "Supprimer ce bruitage ?"
 msgstr ""
 
+#: u_resource_string.sdoyouwanttoshowuserguide
+msgid "Voulez-vous consulter le manuel utilisateur ?"
+msgstr ""
+
 #: u_resource_string.senterdurationofsilencetoinsert
 msgid "Entrez la durée du silence à insérer:"
 msgstr ""
