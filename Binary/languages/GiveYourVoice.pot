@@ -22,6 +22,10 @@ msgstr ""
 msgid "Signaler un bug"
 msgstr ""
 
+#: tformabout.label11.caption
+msgid "Vérifier s'il y a une mise à jour"
+msgstr ""
+
 #: tformabout.label3.caption
 msgid "License:"
 msgstr ""
@@ -929,6 +933,10 @@ msgstr ""
 #: u_resource_string.sallfile
 msgctxt "u_resource_string.sallfile"
 msgid "tous"
+msgstr ""
+
+#: u_resource_string.sappisuptodate
+msgid "Vous avez déjà la dernière version"
 msgstr ""
 
 #: u_resource_string.saskbeforeclearmp3folder

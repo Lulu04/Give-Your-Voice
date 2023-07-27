@@ -33,6 +33,10 @@ msgstr "about Give Your Voice"
 msgid "Signaler un bug"
 msgstr "Report a bug"
 
+#: tformabout.label11.caption
+msgid "Vérifier s'il y a une mise à jour"
+msgstr "Check for updates"
+
 #: tformabout.label3.caption
 msgid "License:"
 msgstr "License:"
@@ -986,6 +990,10 @@ msgstr "all"
 msgctxt "u_resource_string.sallfile"
 msgid "tous"
 msgstr "all"
+
+#: u_resource_string.sappisuptodate
+msgid "Vous avez déjà la dernière version"
+msgstr "You already have the latest version"
 
 #: u_resource_string.saskbeforeclearmp3folder
 msgid "Vider le répertoire MP3 ?"

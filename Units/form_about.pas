@@ -15,6 +15,7 @@ type
   TFormAbout = class(TForm)
     Label1: TLabel;
     Label10: TLabel;
+    Label11: TLabel;
     Label2: TLabel;
     Label3: TLabel;
     Label4: TLabel;
@@ -34,6 +35,8 @@ type
     procedure FormShow(Sender: TObject);
     procedure BDonateClick(Sender: TObject);
     procedure Label8Click(Sender: TObject);
+    procedure Label8MouseEnter(Sender: TObject);
+    procedure Label8MouseLeave(Sender: TObject);
     procedure PaintBox1Paint(Sender: TObject);
   private
     FLogo: TBGRABitmap;
@@ -46,7 +49,8 @@ var
   FormAbout: TFormAbout;
 
 implementation
-uses LCLIntf, u_program_options, u_common, u_resource_string, u_utils, LCLType;
+uses LCLIntf, u_program_options, u_common, u_resource_string, u_utils,
+  u_userdialogs, u_web, form_main, LCLType;
 
 {$R *.lfm}
 
@@ -58,12 +62,42 @@ begin
 end;
 
 procedure TFormAbout.Label8Click(Sender: TObject);
+var newVersion: string;
 begin
   if Sender = Label8 then
     OpenURL('https://github.com/Lulu04/Give-Your-Voice');
 
   if Sender = Label10 then
     OpenURL('https://github.com/Lulu04/Give-Your-Voice/issues');
+
+  if Sender = Label11 then begin
+    // check for an app update
+    Screen.BeginWaitCursor;
+    if CheckForNewVersionOnGitHub(newVersion) then begin
+      Screen.EndWaitCursor;
+      if AskConfirmation(Format(SAskForOpenURLForNewAPPVersion, [newVersion, APP_VERSION]),
+                         SYes, SNo, mtConfirmation)= mrOk then begin
+        // User want to download the new version. We open the url in the browser
+        // and send a message to close the main window
+        OpenURL(URL_FOR_LATEST_RELEASE_ON_GITHUB);
+        FormMain.PostMessageToCloseApp;
+        Close;
+      end;
+    end else begin
+      Screen.EndWaitCursor;
+      ShowMess(SAppIsUpToDate, SOk, mtInformation);
+    end;
+  end;
+end;
+
+procedure TFormAbout.Label8MouseEnter(Sender: TObject);
+begin
+  TLabel(Sender).Font.Style := [fsUnderline];
+end;
+
+procedure TFormAbout.Label8MouseLeave(Sender: TObject);
+begin
+  TLabel(Sender).Font.Style := [];
 end;
 
 procedure TFormAbout.PaintBox1Paint(Sender: TObject);
