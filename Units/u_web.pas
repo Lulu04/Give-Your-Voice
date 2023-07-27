@@ -7,18 +7,24 @@ interface
 uses
   Classes, SysUtils;
 
+type
+  TResultCheckOnlineVersion = (rcovErrorAccessingInternet,
+                               rcovNoNewVersion,
+                               rcovNewVersionAvailable);
+
 // https://forum.lazarus.freepascal.org/index.php/topic,62587.msg473413.html#msg473413
 // return True if a new version of the application exists.
 // If yes, newVersion contain the new version
-function CheckForNewVersionOnGitHub(out newVersion: string): boolean;
+function CheckForNewVersionOnGitHub(out newVersion: string): TResultCheckOnlineVersion;
 
 implementation
 uses u_common, fphttpclient, opensslsockets, u_logfile;
 
-function CheckForNewVersionOnGitHub(out newVersion: string): boolean;
+function CheckForNewVersionOnGitHub(out newVersion: string): TResultCheckOnlineVersion;
 var Client: TFpHttpClient;
 begin
-  Result := False;
+  Result := rcovNoNewVersion;
+  newVersion := '';
   try
     Client := TfpHttpClient.Create(nil);
     try
@@ -28,12 +34,19 @@ begin
       Client.RequestHeaders.Add('User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:12.0) Gecko/20100101 Firefox/12.0');
       newVersion := Client.Get(URL_FOR_VERSION_ON_GITHUB);
       if newVersion = '' then exit;
-      Result := StrComp(PChar(newVersion), PChar(APP_VERSION)) > 0;
+      if StrComp(PChar(newVersion), PChar(APP_VERSION)) > 0 then begin
+        Result := rcovNewVersionAvailable;
+        Log.Info('gyv: found new app version: '+newVersion);
+      end;
     finally
       Client.Free;
     end;
   except
-    Log.Warning('gyv: check for new version fail');
+    on E: Exception do begin
+      Log.Warning('gyv: check for new version fail'+LineEnding+
+                  '    '+E.Message);
+      Result := rcovErrorAccessingInternet;
+    end;
   end;
 end;
 

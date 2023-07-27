@@ -469,6 +469,7 @@ end;
 
 procedure TFormMain.FormShow(Sender: TObject);
 var newVersion: string;
+  res: TResultCheckOnlineVersion;
 begin
   AdjustFont;
   OnLanguageChange;
@@ -493,8 +494,9 @@ begin
     // check for new version
     if ProgramOptions.ItsTimeToLookForAppUpdate then begin
       Screen.BeginWaitCursor;
-      if CheckForNewVersionOnGitHub(newVersion) then begin
-        Screen.EndWaitCursor;
+      res :=  CheckForNewVersionOnGitHub(newVersion);
+      Screen.EndWaitCursor;
+      if res = rcovNewVersionAvailable then begin
         if AskConfirmation(Format(SAskForOpenURLForNewAPPVersion, [newVersion, APP_VERSION]),
                            SYes, SNo, mtConfirmation)= mrOk then begin
           // User want to download the new version. We open the url in the browser
@@ -502,7 +504,7 @@ begin
           OpenURL(URL_FOR_LATEST_RELEASE_ON_GITHUB);
           PostMessageToCloseApp;
         end;
-      end else Screen.EndWaitCursor;
+      end;
     end;
 
     // if there is any, try to open the project specified as parameter in command line
