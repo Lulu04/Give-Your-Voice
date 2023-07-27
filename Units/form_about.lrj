@@ -11,5 +11,6 @@
 {"hash":343093,"name":"tformabout.label7.caption","sourcebytes":[76,117,108,117],"value":"Lulu"},
 {"hash":5404860,"name":"tformabout.label8.caption","sourcebytes":[76,97,98,101,108],"value":"Label"},
 {"hash":190446159,"name":"tformabout.label9.caption","sourcebytes":[76,111,103,105,99,105,101,108,32,100,39,97,105,100,101,32,195,160,32,108,39,101,110,114,101,103,105,115,116,114,101,109,101,110,116,32,100,101,32,108,105,118,114,101,115,32,97,117,100,105,111],"value":"Logiciel d'aide \u00E0 l'enregistrement de livres audio"},
-{"hash":168303623,"name":"tformabout.label10.caption","sourcebytes":[83,105,103,110,97,108,101,114,32,117,110,32,98,117,103],"value":"Signaler un bug"}
+{"hash":168303623,"name":"tformabout.label10.caption","sourcebytes":[83,105,103,110,97,108,101,114,32,117,110,32,98,117,103],"value":"Signaler un bug"},
+{"hash":111420978,"name":"tformabout.label11.caption","sourcebytes":[86,195,169,114,105,102,105,101,114,32,115,39,105,108,32,121,32,97,32,117,110,101,32,109,105,115,101,32,195,160,32,106,111,117,114],"value":"V\u00E9rifier s'il y a une mise \u00E0 jour"}
 ]}

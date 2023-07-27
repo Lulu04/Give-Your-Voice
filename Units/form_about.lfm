@@ -66,14 +66,14 @@ object FormAbout: TFormAbout
   end
   object Memo1: TMemo
     AnchorSideLeft.Control = Owner
-    AnchorSideTop.Control = Label10
+    AnchorSideTop.Control = Label11
     AnchorSideTop.Side = asrBottom
     AnchorSideRight.Control = Owner
     AnchorSideRight.Side = asrBottom
     AnchorSideBottom.Control = BDonate
     Left = 20
-    Height = 180
-    Top = 197
+    Height = 175
+    Top = 202
     Width = 490
     Anchors = [akTop, akLeft, akRight, akBottom]
     BorderSpacing.Left = 20
@@ -229,6 +229,8 @@ object FormAbout: TFormAbout
     ParentColor = False
     ParentFont = False
     OnClick = Label8Click
+    OnMouseEnter = Label8MouseEnter
+    OnMouseLeave = Label8MouseLeave
   end
   object Label9: TLabel
     AnchorSideLeft.Control = Owner
@@ -254,21 +256,47 @@ object FormAbout: TFormAbout
   end
   object Label10: TLabel
     AnchorSideLeft.Control = Memo1
-    AnchorSideTop.Control = Label5
-    AnchorSideTop.Side = asrBottom
+    AnchorSideTop.Control = Label11
     AnchorSideRight.Control = Memo1
     AnchorSideRight.Side = asrBottom
     Cursor = crHandPoint
     Left = 418
     Height = 17
-    Top = 175
+    Top = 180
     Width = 92
     Anchors = [akTop, akRight]
     Caption = 'Signaler un bug'
+    Color = 1973790
     Font.Color = 8978431
     Font.Height = 18
     ParentColor = False
     ParentFont = False
+    Transparent = False
     OnClick = Label8Click
+    OnMouseEnter = Label8MouseEnter
+    OnMouseLeave = Label8MouseLeave
+  end
+  object Label11: TLabel
+    AnchorSideLeft.Control = Memo1
+    AnchorSideTop.Control = Label5
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = Memo1
+    AnchorSideRight.Side = asrBottom
+    Cursor = crHandPoint
+    Left = 20
+    Height = 17
+    Top = 180
+    Width = 175
+    BorderSpacing.Top = 5
+    Caption = 'Vérifier s''il y a une mise à jour'
+    Color = 1973790
+    Font.Color = 8978431
+    Font.Height = 18
+    ParentColor = False
+    ParentFont = False
+    Transparent = False
+    OnClick = Label8Click
+    OnMouseEnter = Label8MouseEnter
+    OnMouseLeave = Label8MouseLeave
   end
 end
