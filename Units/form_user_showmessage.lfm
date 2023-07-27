@@ -1,5 +1,5 @@
 object FormUserMessage: TFormUserMessage
-  Left = 565
+  Left = 543
   Height = 130
   Top = 452
   Width = 480

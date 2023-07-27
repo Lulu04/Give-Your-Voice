@@ -6,8 +6,8 @@ object FrameMixer: TFrameMixer
   ClientHeight = 474
   ClientWidth = 751
   TabOrder = 0
-  DesignLeft = 330
-  DesignTop = 157
+  DesignLeft = 137
+  DesignTop = 158
   object PBTime: TPaintBox
     AnchorSideLeft.Control = Owner
     AnchorSideTop.Control = Owner

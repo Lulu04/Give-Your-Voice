@@ -1,5 +1,5 @@
 object FormOptions: TFormOptions
-  Left = 321
+  Left = 141
   Height = 316
   Top = 27
   Width = 748

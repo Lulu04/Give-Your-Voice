@@ -1,7 +1,7 @@
 object FormAbout: TFormAbout
-  Left = 379
+  Left = 380
   Height = 440
-  Top = 148
+  Top = 149
   Width = 530
   BorderIcons = [biSystemMenu]
   Caption = 'à propos de Give Your Voice'

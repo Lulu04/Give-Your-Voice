@@ -1,7 +1,7 @@
 object FormAskSectionName: TFormAskSectionName
-  Left = 340
+  Left = 341
   Height = 393
-  Top = 262
+  Top = 263
   Width = 528
   BorderIcons = [biSystemMenu]
   BorderStyle = bsNone

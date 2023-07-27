@@ -1,12 +1,12 @@
 object FormFirstRun: TFormFirstRun
-  Left = 223
-  Height = 624
-  Top = 54
-  Width = 959
+  Left = -7
+  Height = 608
+  Top = 0
+  Width = 845
   BorderIcons = []
   BorderStyle = bsNone
-  ClientHeight = 624
-  ClientWidth = 959
+  ClientHeight = 608
+  ClientWidth = 845
   Color = 3355443
   OnCreate = FormCreate
   OnShow = FormShow
@@ -14,9 +14,9 @@ object FormFirstRun: TFormFirstRun
   LCLVersion = '2.2.4.0'
   object Shape1: TShape
     Left = 0
-    Height = 624
+    Height = 608
     Top = 0
-    Width = 959
+    Width = 845
     Align = alClient
     Brush.Style = bsClear
     Pen.Color = 33023
@@ -27,7 +27,7 @@ object FormFirstRun: TFormFirstRun
     AnchorSideLeft.Side = asrCenter
     AnchorSideTop.Control = Label1
     AnchorSideTop.Side = asrBottom
-    Left = 331
+    Left = 274
     Height = 20
     Top = 90
     Width = 297
@@ -44,7 +44,7 @@ object FormFirstRun: TFormFirstRun
     AnchorSideTop.Control = Label4
     AnchorSideTop.Side = asrBottom
     AnchorSideRight.Control = ComboBox1
-    Left = 143
+    Left = 86
     Height = 20
     Top = 198
     Width = 184
@@ -62,7 +62,7 @@ object FormFirstRun: TFormFirstRun
     AnchorSideLeft.Side = asrCenter
     AnchorSideTop.Control = Label3
     AnchorSideTop.Side = asrCenter
-    Left = 337
+    Left = 280
     Height = 28
     Top = 194
     Width = 284
@@ -81,7 +81,7 @@ object FormFirstRun: TFormFirstRun
     AnchorSideLeft.Control = Owner
     AnchorSideLeft.Side = asrCenter
     AnchorSideTop.Control = Owner
-    Left = 314
+    Left = 257
     Height = 50
     Top = 20
     Width = 330
@@ -100,7 +100,7 @@ object FormFirstRun: TFormFirstRun
     AnchorSideTop.Control = ComboBox1
     AnchorSideTop.Side = asrBottom
     Cursor = crHandPoint
-    Left = 449
+    Left = 392
     Height = 28
     Top = 242
     Width = 60
@@ -120,14 +120,14 @@ object FormFirstRun: TFormFirstRun
     Left = 10
     Height = 192
     Top = 272
-    Width = 939
+    Width = 825
     Anchors = [akTop, akLeft, akRight]
     BorderSpacing.Left = 10
     BorderSpacing.Top = 50
     BorderSpacing.Right = 10
     BevelOuter = bvNone
     ClientHeight = 192
-    ClientWidth = 939
+    ClientWidth = 825
     Color = 3355443
     ParentColor = False
     TabOrder = 1
@@ -139,7 +139,7 @@ object FormFirstRun: TFormFirstRun
       Left = 10
       Height = 17
       Top = 0
-      Width = 929
+      Width = 815
       Anchors = [akTop, akLeft, akRight]
       BorderSpacing.Left = 10
       Caption = 'Sélectionnez le périphérique à utiliser pour enregistrer votre voix'
@@ -158,7 +158,7 @@ object FormFirstRun: TFormFirstRun
       Left = 10
       Height = 17
       Top = 90
-      Width = 929
+      Width = 815
       Anchors = [akTop, akLeft, akRight]
       BorderSpacing.Left = 10
       BorderSpacing.Top = 20
@@ -177,7 +177,7 @@ object FormFirstRun: TFormFirstRun
       Left = 10
       Height = 23
       Top = 17
-      Width = 849
+      Width = 735
       Anchors = [akTop, akLeft, akRight]
       BorderSpacing.Left = 10
       BorderSpacing.Right = 5
@@ -194,7 +194,7 @@ object FormFirstRun: TFormFirstRun
       Left = 10
       Height = 23
       Top = 107
-      Width = 849
+      Width = 735
       Anchors = [akTop, akLeft, akRight]
       BorderSpacing.Left = 10
       BorderSpacing.Right = 5
@@ -210,7 +210,7 @@ object FormFirstRun: TFormFirstRun
       AnchorSideBottom.Control = CBPlayback
       AnchorSideBottom.Side = asrBottom
       Cursor = crHandPoint
-      Left = 864
+      Left = 750
       Height = 23
       Top = 107
       Width = 65
@@ -235,7 +235,7 @@ object FormFirstRun: TFormFirstRun
       Left = 10
       Height = 17
       Top = 140
-      Width = 929
+      Width = 815
       Anchors = [akTop, akLeft, akRight]
       BorderSpacing.Left = 10
       BorderSpacing.Top = 10
@@ -253,7 +253,7 @@ object FormFirstRun: TFormFirstRun
       AnchorSideTop.Control = CBCapture
       AnchorSideTop.Side = asrBottom
       AnchorSideRight.Side = asrBottom
-      Left = 246
+      Left = 189
       Height = 20
       Top = 50
       Width = 376
@@ -268,7 +268,7 @@ object FormFirstRun: TFormFirstRun
       AnchorSideRight.Control = Panel3
       AnchorSideBottom.Control = Panel3
       AnchorSideBottom.Side = asrBottom
-      Left = 215
+      Left = 158
       Height = 17
       Top = 53
       Width = 31
@@ -289,7 +289,7 @@ object FormFirstRun: TFormFirstRun
     Left = 0
     Height = 34
     Top = 124
-    Width = 959
+    Width = 845
     Alignment = taCenter
     Anchors = [akTop, akLeft, akRight]
     Caption = 'Nous allons vous demander quelques informations pour configurer le logiciel.'#13#10'Ceci n''est à faire qu''une seule fois. Vous pourrez modifier les paramètres ultérieurement dans la fenêtre d''options du programme.'
@@ -305,7 +305,7 @@ object FormFirstRun: TFormFirstRun
     AnchorSideTop.Control = Panel1
     AnchorSideTop.Side = asrBottom
     Cursor = crHandPoint
-    Left = 449
+    Left = 392
     Height = 28
     Top = 464
     Width = 60
@@ -325,17 +325,17 @@ object FormFirstRun: TFormFirstRun
     AnchorSideBottom.Control = Owner
     AnchorSideBottom.Side = asrBottom
     Left = 10
-    Height = 120
+    Height = 104
     Top = 494
-    Width = 939
+    Width = 825
     Anchors = [akTop, akLeft, akRight, akBottom]
     BorderSpacing.Left = 10
     BorderSpacing.Top = 30
     BorderSpacing.Right = 10
     BorderSpacing.Bottom = 10
     BevelOuter = bvNone
-    ClientHeight = 120
-    ClientWidth = 939
+    ClientHeight = 104
+    ClientWidth = 825
     Color = 3355443
     ParentColor = False
     TabOrder = 2
@@ -345,9 +345,9 @@ object FormFirstRun: TFormFirstRun
       AnchorSideBottom.Control = Panel2
       AnchorSideBottom.Side = asrBottom
       Cursor = crHandPoint
-      Left = 362
+      Left = 305
       Height = 28
-      Top = 82
+      Top = 66
       Width = 215
       Anchors = [akLeft, akBottom]
       AutoSize = True
@@ -367,7 +367,7 @@ object FormFirstRun: TFormFirstRun
       Left = 20
       Height = 40
       Top = 20
-      Width = 899
+      Width = 785
       Alignment = taCenter
       Anchors = [akTop, akLeft, akRight]
       BorderSpacing.Left = 20

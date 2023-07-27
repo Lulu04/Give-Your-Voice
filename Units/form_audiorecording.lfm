@@ -1,7 +1,7 @@
 object FormRecord: TFormRecord
   Left = 663
   Height = 226
-  Top = 265
+  Top = 266
   Width = 311
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
@@ -37,7 +37,7 @@ object FormRecord: TFormRecord
     Height = 201
     Top = 2
     Width = 307
-    PageIndex = 1
+    PageIndex = 0
     Anchors = [akTop, akLeft, akRight]
     BorderSpacing.Left = 2
     BorderSpacing.Top = 2

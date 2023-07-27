@@ -8,7 +8,7 @@ object FrameProgressBar: TFrameProgressBar
   ParentShowHint = False
   ShowHint = True
   TabOrder = 0
-  DesignLeft = 442
+  DesignLeft = 443
   DesignTop = 332
   object PB: TPaintBox
     Cursor = crHandPoint

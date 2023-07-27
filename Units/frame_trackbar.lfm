@@ -6,7 +6,7 @@ object FrameTrackBar: TFrameTrackBar
   ClientHeight = 149
   ClientWidth = 380
   TabOrder = 0
-  DesignLeft = 526
+  DesignLeft = 527
   DesignTop = 395
   object PB: TPaintBox
     Left = 0
