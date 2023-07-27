@@ -21,6 +21,9 @@ procedure CreateDefaultProjectFolder;
 // initialize the subfolder where openalsoft and libsndfile are located, in a cross platform way
 procedure InitALSManagerLibrariesSubFolder;
 
+// return os name
+function OSName: string;
+
 implementation
 uses ALSound, u_common, utilitaire_fichier;
 
@@ -76,6 +79,22 @@ begin
   {$else}
     {$error You can not compile this program on this platform, sorry !}
   {$endif}
+end;
+
+function OSName: string;
+begin
+ Result := '';
+ {$if defined(Windows) and defined(cpu386)}
+    Result := 'i386-win32';
+ {$elseif defined(Windows) and defined(cpux86_64)}
+    Result := 'x86_64-win64';
+ {$elseif defined(Linux) and defined(cpu386)}
+    Result := 'i386-linux';
+ {$elseif defined(Linux) and defined(cpux86_64)}
+    Result := 'x86_64-linux';
+ {$elseif defined(Darwin)}
+    Result := 'MacOS 64';
+ {$endif}
 end;
 
 end.

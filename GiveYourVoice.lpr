@@ -32,7 +32,7 @@ begin
   CreateDefaultProjectFolder;
   Log := TLog.Create(GetAppDefaultProjectFolder+PROGRAM_LOG_FILENAME);
   Log.DeleteLogFile;
-  Log.Info('gyv: starting app', 0, True);
+  Log.Info('gyv: starting app on '+OSName, 0, True);
   Log.AddEmptyLine();
 
   ProgramOptions.Load;
