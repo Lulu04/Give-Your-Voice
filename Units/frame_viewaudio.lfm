@@ -6,7 +6,7 @@ object FrameViewAudio: TFrameViewAudio
   ClientHeight = 159
   ClientWidth = 704
   TabOrder = 0
-  DesignLeft = 389
+  DesignLeft = 207
   DesignTop = 413
   object Panel2: TPanel
     Left = 0

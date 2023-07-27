@@ -6,8 +6,8 @@ object FrameViewProjectFiles: TFrameViewProjectFiles
   ClientHeight = 240
   ClientWidth = 640
   TabOrder = 0
-  DesignLeft = 421
-  DesignTop = 172
+  DesignLeft = 303
+  DesignTop = 173
   object TV: TTreeView
     Left = 0
     Height = 240

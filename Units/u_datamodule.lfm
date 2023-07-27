@@ -1,7 +1,7 @@
 object DataModule1: TDataModule1
   OldCreateOrder = False
   Height = 240
-  HorizontalOffset = 720
+  HorizontalOffset = 605
   VerticalOffset = 357
   Width = 439
   object ImageList1: TImageList

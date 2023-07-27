@@ -1,7 +1,7 @@
 object FormMixerMetaData: TFormMixerMetaData
-  Left = 405
+  Left = 243
   Height = 541
-  Top = 206
+  Top = 101
   Width = 680
   BorderIcons = [biSystemMenu]
   Caption = 'Vérification des métadonnées'

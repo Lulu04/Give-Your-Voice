@@ -1,7 +1,7 @@
 object FormZipMP3: TFormZipMP3
-  Left = 340
+  Left = 216
   Height = 516
-  Top = 179
+  Top = 138
   Width = 698
   BorderIcons = [biSystemMenu]
   Caption = 'MP3 -> ZIP'

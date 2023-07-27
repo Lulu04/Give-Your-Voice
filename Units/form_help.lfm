@@ -1,7 +1,7 @@
 object FormHelp: TFormHelp
   Left = 425
   Height = 197
-  Top = 415
+  Top = 416
   Width = 455
   BorderIcons = [biSystemMenu]
   Caption = 'Aide'

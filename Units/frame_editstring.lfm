@@ -9,7 +9,7 @@ object FrameEditString: TFrameEditString
   ParentBackground = False
   ParentColor = False
   TabOrder = 0
-  DesignLeft = 520
+  DesignLeft = 521
   DesignTop = 378
   object Panel1: TPanel
     Left = 0

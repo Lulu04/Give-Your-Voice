@@ -1,5 +1,5 @@
 object FormUserConfirmation: TFormUserConfirmation
-  Left = 448
+  Left = 449
   Height = 131
   Top = 317
   Width = 477
