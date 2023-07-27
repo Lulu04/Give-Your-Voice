@@ -1081,6 +1081,10 @@ msgstr ""
 msgid "Entrez la durée du silence à insérer:"
 msgstr ""
 
+#: u_resource_string.serroraccessinginternet
+msgid "Impossible d'ouvrir une connexion internet"
+msgstr ""
+
 #: u_resource_string.serrorwhenpreparingrecordingfile
 msgid "Erreur lors de la préparation du fichier d'enregistrement"
 msgstr ""

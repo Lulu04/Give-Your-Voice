@@ -63,6 +63,7 @@ end;
 
 procedure TFormAbout.Label8Click(Sender: TObject);
 var newVersion: string;
+  res: TResultCheckOnlineVersion;
 begin
   if Sender = Label8 then
     OpenURL('https://github.com/Lulu04/Give-Your-Voice');
@@ -73,19 +74,21 @@ begin
   if Sender = Label11 then begin
     // check for an app update
     Screen.BeginWaitCursor;
-    if CheckForNewVersionOnGitHub(newVersion) then begin
-      Screen.EndWaitCursor;
-      if AskConfirmation(Format(SAskForOpenURLForNewAPPVersion, [newVersion, APP_VERSION]),
-                         SYes, SNo, mtConfirmation)= mrOk then begin
-        // User want to download the new version. We open the url in the browser
-        // and send a message to close the main window
-        OpenURL(URL_FOR_LATEST_RELEASE_ON_GITHUB);
-        FormMain.PostMessageToCloseApp;
-        Close;
+    res := CheckForNewVersionOnGitHub(newVersion);
+    Screen.EndWaitCursor;
+    case res of
+      rcovErrorAccessingInternet: ShowMess(SErrorAccessingInternet, SOk, mtInformation);
+      rcovNoNewVersion: ShowMess(SAppIsUpToDate, SOk, mtInformation);
+      rcovNewVersionAvailable: begin
+          if AskConfirmation(Format(SAskForOpenURLForNewAPPVersion, [newVersion, APP_VERSION]),
+                             SYes, SNo, mtConfirmation)= mrOk then begin
+            // User want to download the new version. We open the url in the browser
+            // and send a message to close the main window
+            OpenURL(URL_FOR_LATEST_RELEASE_ON_GITHUB);
+            FormMain.PostMessageToCloseApp;
+            Close;
+          end;
       end;
-    end else begin
-      Screen.EndWaitCursor;
-      ShowMess(SAppIsUpToDate, SOk, mtInformation);
     end;
   end;
 end;

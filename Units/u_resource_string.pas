@@ -17,6 +17,7 @@ SAskForOpenURLForNewAPPVersion='Give Your Voice version %0:s est maintenant disp
                                'votre version actuelle est %1:s'+LineEnding+LineEnding+
                                'Voulez-vous fermer le programme et vous rendre sur le site internet pour la télécharger ?';
 SAppIsUpToDate='Vous avez déjà la dernière version';
+SErrorAccessingInternet='Impossible d''ouvrir une connexion internet';
 SDoYouWantToShowUserGuide='Voulez-vous consulter le manuel utilisateur ?';
 SVersion='version';
 SCredits='Crédits';
