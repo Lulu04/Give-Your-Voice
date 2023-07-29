@@ -1467,6 +1467,9 @@ begin
   attribs.EnableOutputLimiter := True;
   attribs.ContextUseFloat := True;
 
+  if (aDeviceIndex < 0) or (aDeviceIndex >= Length(ALSManager.ListOfPlaybackDeviceName)) then
+    Log.Warning('gyv: TPlaybackContext.Create try to open a playback device with index out of range '+aDeviceIndex.ToString+'/'+(Length(ALSManager.ListOfPlaybackDeviceName)-1).ToString);
+
   FPlaybackContext := ALSManager.CreatePlaybackContext(aDeviceIndex, attribs);
   if FPlaybackContext.Error then begin
     Log.Error('alsound: failed to create playback context');
