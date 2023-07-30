@@ -1686,3 +1686,4 @@ msgstr "Failed to create ZIP file"
 #: u_resource_string.szipprojectfailed
 msgid "une erreur est apparue lors de la compression du projet..."
 msgstr "an error occured while compressing the project..."
+

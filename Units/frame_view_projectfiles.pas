@@ -308,11 +308,8 @@ var flagDeleted: boolean;
   n: TTreeNode;
   i: Integer;
 begin
-  // NO ! we don't shift the next folder prefix because there no issue to have a
-  // gap. If we shifts, there are issues if user take back the folder from the
-  // recycle bin -> we have 2 folders with the same prefix
-
-  flagDeleted := MoveFilesToTrash([SelectedFilename]);
+  //flagDeleted := MoveFilesToTrash([SelectedFilename]);
+  flagDeleted := False;
   if not flagDeleted then
     flagDeleted := SupprimeRepertoire(SelectedFilename);
   if flagDeleted then begin
@@ -469,7 +466,8 @@ begin
   if f = '' then exit;
 
   if AskConfirmation(SAskConfirmDeleteFile, SDelete, SCancel, mtWarning) = mrOk then begin
-    flagDeleted := MoveFilesToTrash([f]);
+    //flagDeleted := MoveFilesToTrash([f]);
+    flagDeleted := False;
     if not flagDeleted then
       flagDeleted := SupprimeFichier(f);
     if flagDeleted then begin
