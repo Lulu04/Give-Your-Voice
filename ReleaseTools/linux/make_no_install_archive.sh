@@ -83,7 +83,7 @@ LAZARUS_PROJECT="${PROJECT_DIR}/GiveYourVoice.lpi"
 STAGING_DIR=./staging
 STAGING_EXECUTABLE="${STAGING_DIR}/giveyourvoice"
 NO_INSTALL_ARCHIVE_NAME="giveyourvoice_${VERSION}_${OS_NAME}_${WIDGETSET}_no_install.tar.gz"
-LAZBUILD_DIR="/home/lulu/fpcupdeluxe/fpcupdeluxe/lazarus"
+LAZBUILD_DIR="/home/lulu/fpcupdeluxe/lazarus"
 
 # delete the old project binary file
 if [ -f "${PROJECT_EXECUTABLE}" ]; then
@@ -93,7 +93,7 @@ fi
 # before compiling the project, we put the fake libdl.so in the project directory
 # to force the dependency to glibc 2.2.5
 # see https://forum.lazarus.freepascal.org/index.php/topic,58888.msg483544.html?PHPSESSID=f8vtvusgfek6e18kanbaosokk0#msg483544
-#cp -p libdl.so ../../libdl.so
+# cp -p libdl.so ../../libdl.so
 
 # compile project
 echo "compiling Lazarus project ${VERSION}..."
@@ -106,7 +106,7 @@ pushd "${LAZBUILD_DIR}"
 popd
 
 # delete libdl.so from the project directory
-#rm ../../libdl.so
+# rm ../../libdl.so
 
 # check if binary file was created
 if [ ! -f "${PROJECT_EXECUTABLE}" ]; then
