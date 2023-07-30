@@ -48,6 +48,10 @@ type
   { TRecordingFileFormater }
 
   TRecordingFileFormater = record
+  private const
+    PrefixNumberCountForAudioFile = 3;  // ex: "001 title"
+    SuffixNumberSeparatorForPage = '-';
+    SuffixNumberCountForPage = 4;   // ex: Page0001-0012
   private
     FPrefixNumber: integer;
     FTitle, FExt: string;
@@ -55,6 +59,8 @@ type
     function GetStrPrefix: string;
     procedure SetStrPrefix(AValue: string);
   public
+    class function FormatPage(aPageBegin, aPageEnd: integer): string; static;
+
     class function FileRespectRecordingPrefixRules(const aFilename: string): boolean; static;
     class function FormatPrefix(aNumber: integer): string; static;
 
@@ -162,8 +168,8 @@ type
 
 
 implementation
-uses LazUTF8, u_project, u_program_options, u_crossplatform, Math,
-  utilitaire_fichier, PropertyUtils, utilitaire_bgrabitmap, LCLIntf,
+uses LazUTF8, u_project, u_program_options, u_crossplatform, u_resource_string,
+  Math, utilitaire_fichier, PropertyUtils, utilitaire_bgrabitmap, LCLIntf,
   {$IFDEF windows}
   //Windows,
   {$ELSE}
@@ -259,6 +265,11 @@ end;
 procedure TRecordingFileFormater.SetStrPrefix(AValue: string);
 begin
   FPrefixNumber := AValue.ToInteger;
+end;
+
+class function TRecordingFileFormater.FormatPage(aPageBegin, aPageEnd: integer): string;
+begin
+  Result := SPage+aPageBegin.ToString+SuffixNumberSeparatorForPage+aPageEnd.ToString;
 end;
 
 class function TRecordingFileFormater.FileRespectRecordingPrefixRules(const aFilename: string): boolean;

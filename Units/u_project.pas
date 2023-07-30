@@ -8,13 +8,6 @@ interface
 uses
   Classes, SysUtils, project_util, LCLTranslator, u_resource_string, u_common;
 
-
-const
-  PrefixNumberCountForAudioFile = 3;  // ex: "001 title"
-
-  SuffixNumberSeparatorForPage = '-';
-  SuffixNumberCountForPage = 4;   // ex: Page0001-0012
-
 type
 
   { TProjectDescriptor }
