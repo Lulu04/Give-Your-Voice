@@ -67,7 +67,6 @@ type
     procedure BStartRecordClick(Sender: TObject);
     procedure BStopClick(Sender: TObject);
     procedure BAddUserMarkClick(Sender: TObject);
-    procedure FormActivate(Sender: TObject);
     procedure FormClose(Sender: TObject; var {%H-}CloseAction: TCloseAction);
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
@@ -165,8 +164,17 @@ begin
 
   BSave.Enabled := not Label10.Visible;
 
-  if Sender = BSave then
+  if Sender = BSave then begin
+    if CheckBox1.Checked then begin
+      // save the greatest page number to project file
+      if Project.Descriptor.CurrentPageNumber < SEEndPage.Value then begin
+        Project.Descriptor.CurrentPageNumber := SEEndPage.Value;
+        Project.Save;
+      end;
+    end;
+
     ModalResult := mrOk;
+  end;
 end;
 
 procedure TFormRecord.BStartRecordClick(Sender: TObject);
@@ -236,12 +244,6 @@ end;
 procedure TFormRecord.BAddUserMarkClick(Sender: TObject);
 begin
   AddUserMarkAtCurrentRecordingTime;
-end;
-
-procedure TFormRecord.FormActivate(Sender: TObject);
-begin
-  //if FAskPage then exit;
-  //DoRecording;
 end;
 
 procedure TFormRecord.FormClose(Sender: TObject; var CloseAction: TCloseAction);
@@ -332,7 +334,8 @@ begin
   NoteBook1.PageIndex := NoteBook1.IndexOf(PageAskPageNumber);
 
   Label7.Visible := FAskPage;
-  SEBeginPage.Visible := FAskPage;
+  SEBeginPage1.Visible := FAskPage;
+  SEBeginPage1.Value := Project.Descriptor.CurrentPageNumber;
 
   if FAskPage then
     Label16.Caption := Format(SNewRecordFor, [ExtractFileName(FormMain.FrameViewProjectFiles1.SelectedFilename)])

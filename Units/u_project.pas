@@ -36,6 +36,9 @@ type
     Comment,
     Genre: string;
 
+  public  // User current page number
+    CurrentPageNumber: integer;
+
     procedure InitDefault;
     procedure SaveTo(t: TStringList);
     procedure LoadFrom(t: TStringList);
@@ -159,6 +162,8 @@ begin
   Album := '';
   Comment := '';
   Genre := SAudioBook;
+
+  CurrentPageNumber := 1;
 end;
 
 function TProjectDescriptor.GetProjectSubFolderName: string;
@@ -208,6 +213,12 @@ begin
   prop.Add('Genre', Genre);
   t.Add('[USER METADATA]');
   t.Add(prop.PackedProperty);
+
+  // reading
+  prop.Init('|');
+  prop.Add('CurrentPageNumber', CurrentPageNumber);
+  t.Add('[READING]');
+  t.Add(prop.PackedProperty);
 end;
 
 procedure TProjectDescriptor.LoadFrom(t: TStringList);
@@ -243,6 +254,13 @@ begin
     prop.StringValueOf('Album', Album, Album);
     prop.StringValueOf('Comment', Comment, Comment);
     prop.StringValueOf('Genre', Genre, Genre);
+  end;
+
+  // reading
+  k := t.IndexOf('[READING]');
+  if (k > -1) and (k < t.Count-1) then begin
+    prop.Split(t.Strings[k+1], '|');
+    prop.IntegerValueOf('CurrentPageNumber', CurrentPageNumber, CurrentPageNumber);
   end;
 end;
 
