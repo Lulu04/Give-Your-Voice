@@ -48,7 +48,8 @@
         <Filename Value="Units\u_project.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="29"/>
-        <CursorPos Y="11"/>
+        <TopLine Value="250"/>
+        <CursorPos X="42" Y="264"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
       </Unit>
@@ -138,8 +139,8 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Frame"/>
         <EditorIndex Value="1"/>
-        <TopLine Value="647"/>
-        <CursorPos X="39" Y="656"/>
+        <TopLine Value="304"/>
+        <CursorPos X="29" Y="312"/>
         <UsageCount Value="203"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -160,10 +161,9 @@
         <ComponentName Value="FormRecord"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="5"/>
-        <TopLine Value="138"/>
-        <CursorPos Y="165"/>
+        <TopLine Value="319"/>
+        <CursorPos X="46" Y="327"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -524,7 +524,7 @@
         <EditorIndex Value="17"/>
         <TopLine Value="24"/>
         <CursorPos X="33" Y="36"/>
-        <UsageCount Value="171"/>
+        <UsageCount Value="175"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -893,7 +893,7 @@
         <WindowIndex Value="1"/>
         <TopLine Value="2576"/>
         <CursorPos X="3" Y="2581"/>
-        <UsageCount Value="73"/>
+        <UsageCount Value="75"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -902,7 +902,7 @@
         <WindowIndex Value="1"/>
         <TopLine Value="174"/>
         <CursorPos X="62" Y="197"/>
-        <UsageCount Value="42"/>
+        <UsageCount Value="44"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -918,7 +918,7 @@
         <WindowIndex Value="1"/>
         <TopLine Value="181"/>
         <CursorPos X="3" Y="216"/>
-        <UsageCount Value="57"/>
+        <UsageCount Value="59"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -927,7 +927,7 @@
         <WindowIndex Value="1"/>
         <TopLine Value="81"/>
         <CursorPos X="9" Y="94"/>
-        <UsageCount Value="55"/>
+        <UsageCount Value="57"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -935,7 +935,7 @@
         <EditorIndex Value="15"/>
         <TopLine Value="33"/>
         <CursorPos X="14" Y="51"/>
-        <UsageCount Value="54"/>
+        <UsageCount Value="56"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -958,7 +958,7 @@
         <WindowIndex Value="1"/>
         <TopLine Value="39"/>
         <CursorPos X="20" Y="44"/>
-        <UsageCount Value="26"/>
+        <UsageCount Value="28"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -976,138 +976,139 @@
         <WindowIndex Value="1"/>
         <TopLine Value="31"/>
         <CursorPos X="31" Y="19"/>
-        <UsageCount Value="25"/>
+        <UsageCount Value="27"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="..\UnitsCommon\utilitaire_fichier.pas"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="7"/>
-        <TopLine Value="49"/>
-        <CursorPos X="23" Y="65"/>
-        <UsageCount Value="19"/>
+        <TopLine Value="13"/>
+        <CursorPos X="19" Y="28"/>
+        <UsageCount Value="21"/>
         <Loaded Value="True"/>
       </Unit>
     </Units>
     <JumpHistory HistoryIndex="29">
       <Position>
-        <Filename Value="..\ALSound\source\openalsoft.pas"/>
-        <Caret Line="377" TopLine="372"/>
+        <Filename Value="Units\frame_view_projectfiles.pas"/>
+        <Caret Line="472" Column="20" TopLine="459"/>
       </Position>
       <Position>
-        <Filename Value="..\ALSound\source\openalsoft.pas"/>
-        <Caret Line="77" Column="10" TopLine="62"/>
+        <Filename Value="Units\frame_view_projectfiles.pas"/>
+        <Caret Line="315" Column="18" TopLine="302"/>
       </Position>
       <Position>
-        <Filename Value="..\ALSound\source\openalsoft.pas"/>
-        <Caret Line="394" TopLine="389"/>
+        <Filename Value="Units\frame_view_projectfiles.pas"/>
+        <Caret Line="482" Column="25" TopLine="466"/>
       </Position>
       <Position>
-        <Filename Value="..\ALSound\source\openalsoft.pas"/>
-        <Caret Line="78" Column="10" TopLine="63"/>
+        <Filename Value="Units\frame_view_projectfiles.pas"/>
+        <Caret Line="102" Column="15" TopLine="91"/>
       </Position>
       <Position>
-        <Filename Value="..\ALSound\source\openalsoft.pas"/>
-        <Caret Line="434" TopLine="429"/>
+        <Filename Value="Units\frame_view_projectfiles.pas"/>
+        <Caret Line="588" Column="3" TopLine="580"/>
       </Position>
       <Position>
-        <Filename Value="..\ALSound\source\openalsoft.pas"/>
-        <Caret Line="79" Column="10" TopLine="64"/>
+        <Filename Value="Units\frame_view_projectfiles.pas"/>
+        <Caret Line="99" Column="21" TopLine="91"/>
       </Position>
       <Position>
-        <Filename Value="..\ALSound\source\openalsoft.pas"/>
-        <Caret Line="462" TopLine="457"/>
+        <Filename Value="Units\u_project.pas"/>
+        <Caret Line="42" Column="18" TopLine="19"/>
       </Position>
       <Position>
-        <Filename Value="..\ALSound\source\openalsoft.pas"/>
-        <Caret Line="80" Column="10" TopLine="65"/>
+        <Filename Value="Units\u_project.pas"/>
+        <Caret Line="166" Column="20" TopLine="145"/>
       </Position>
       <Position>
-        <Filename Value="..\ALSound\source\openalsoft.pas"/>
-        <Caret Line="516" TopLine="511"/>
+        <Filename Value="Units\u_project.pas"/>
+        <Caret Line="43" Column="18" TopLine="29"/>
       </Position>
       <Position>
-        <Filename Value="..\ALSound\source\openalsoft.pas"/>
-        <Caret Line="81" Column="10" TopLine="66"/>
+        <Filename Value="Units\u_project.pas"/>
+        <Caret Line="216" Column="21" TopLine="196"/>
       </Position>
       <Position>
-        <Filename Value="..\ALSound\source\openalsoft.pas"/>
-        <Caret Line="549" TopLine="544"/>
+        <Filename Value="Units\u_project.pas"/>
+        <Caret Line="42" Column="21" TopLine="30"/>
       </Position>
       <Position>
-        <Filename Value="..\ALSound\source\openalsoft.pas"/>
-        <Caret Line="84" Column="10" TopLine="67"/>
+        <Filename Value="Units\u_project.pas"/>
+        <Caret Line="166" Column="20" TopLine="161"/>
       </Position>
       <Position>
-        <Filename Value="..\ALSound\source\openalsoft.pas"/>
-        <Caret Line="633" Column="3" TopLine="629"/>
+        <Filename Value="Units\u_project.pas"/>
+        <Caret Line="43" Column="15" TopLine="29"/>
       </Position>
       <Position>
-        <Filename Value="..\ALSound\source\openalsoft.pas"/>
-        <Caret Line="702" Column="31" TopLine="690"/>
-      </Position>
-      <Position>
-        <Filename Value="..\ALSound\source\openalsoft.pas"/>
-        <Caret Line="93" Column="34" TopLine="79"/>
-      </Position>
-      <Position>
-        <Filename Value="..\ALSound\source\openalsoft.pas"/>
-        <Caret Line="701" Column="32" TopLine="678"/>
-      </Position>
-      <Position>
-        <Filename Value="Units\u_audio_utils.pas"/>
-        <Caret Line="30" Column="17" TopLine="7"/>
-      </Position>
-      <Position>
-        <Filename Value="Units\u_audio_utils.pas"/>
-        <Caret Line="1469" Column="14" TopLine="1454"/>
-      </Position>
-      <Position>
-        <Filename Value="Units\u_audio_utils.pas"/>
-        <Caret Line="46" Column="13" TopLine="24"/>
-      </Position>
-      <Position>
-        <Filename Value="Units\form_options.pas"/>
-        <Caret Line="190" Column="7" TopLine="177"/>
-      </Position>
-      <Position>
-        <Filename Value="Units\u_audio_utils.pas"/>
-        <Caret Line="30" Column="19" TopLine="12"/>
-      </Position>
-      <Position>
-        <Filename Value="Units\u_audio_utils.pas"/>
-        <Caret Line="1478" Column="48" TopLine="1463"/>
-      </Position>
-      <Position>
-        <Filename Value="..\ALSound\source\alsound.pas"/>
-        <Caret Line="1283" Column="14" TopLine="1271"/>
-      </Position>
-      <Position>
-        <Filename Value="Units\u_utils.pas"/>
-        <Caret Line="52" TopLine="42"/>
+        <Filename Value="Units\u_project.pas"/>
+        <Caret Line="257" Column="25" TopLine="250"/>
       </Position>
       <Position>
         <Filename Value="Units\form_audiorecording.pas"/>
-        <Caret Line="151" Column="35" TopLine="139"/>
-      </Position>
-      <Position>
-        <Filename Value="Units\u_utils.pas"/>
-        <Caret Line="62" Column="24" TopLine="45"/>
+        <Caret Line="168" Column="40" TopLine="154"/>
       </Position>
       <Position>
         <Filename Value="Units\form_audiorecording.pas"/>
-        <Caret Line="150" Column="40" TopLine="138"/>
+        <Caret Line="75" Column="19" TopLine="54"/>
       </Position>
       <Position>
-        <Filename Value="Units\u_utils.pas"/>
-        <Caret Line="62" Column="78" TopLine="49"/>
+        <Filename Value="Units\form_audiorecording.pas"/>
+        <Caret Line="344" Column="37" TopLine="326"/>
       </Position>
       <Position>
-        <Filename Value="Units\u_utils.pas"/>
-        <Caret Line="271" Column="10" TopLine="261"/>
+        <Filename Value="Units\form_audiorecording.pas"/>
+        <Caret Line="343" TopLine="326"/>
       </Position>
       <Position>
-        <Filename Value="Units\u_utils.pas"/>
-        <Caret Line="62" Column="25" TopLine="49"/>
+        <Filename Value="Units\form_audiorecording.pas"/>
+        <Caret Line="344" TopLine="326"/>
+      </Position>
+      <Position>
+        <Filename Value="Units\form_audiorecording.pas"/>
+        <Caret Line="345" TopLine="326"/>
+      </Position>
+      <Position>
+        <Filename Value="Units\form_audiorecording.pas"/>
+        <Caret Line="346" Column="24" TopLine="325"/>
+      </Position>
+      <Position>
+        <Filename Value="Units\form_audiorecording.pas"/>
+        <Caret Line="70" Column="19" TopLine="63"/>
+      </Position>
+      <Position>
+        <Filename Value="Units\form_audiorecording.pas"/>
+        <Caret Line="250" TopLine="229"/>
+      </Position>
+      <Position>
+        <Filename Value="Units\form_audiorecording.pas"/>
+        <Caret Line="74" Column="18" TopLine="59"/>
+      </Position>
+      <Position>
+        <Filename Value="Units\frame_view_projectfiles.pas"/>
+        <Caret Line="472" Column="7" TopLine="462"/>
+      </Position>
+      <Position>
+        <Filename Value="Units\frame_view_projectfiles.pas"/>
+        <Caret Line="95" Column="20" TopLine="87"/>
+      </Position>
+      <Position>
+        <Filename Value="Units\frame_view_projectfiles.pas"/>
+        <Caret Line="312" Column="32" TopLine="304"/>
+      </Position>
+      <Position>
+        <Filename Value="Units\frame_view_projectfiles.pas"/>
+        <Caret Line="99" Column="22" TopLine="80"/>
+      </Position>
+      <Position>
+        <Filename Value="Units\frame_view_projectfiles.pas"/>
+        <Caret Line="465" Column="3" TopLine="460"/>
+      </Position>
+      <Position>
+        <Filename Value="Units\frame_view_projectfiles.pas"/>
+        <Caret Line="95" Column="15" TopLine="87"/>
       </Position>
     </JumpHistory>
     <RunParams>
