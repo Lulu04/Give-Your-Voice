@@ -147,11 +147,9 @@ begin
   // construct the title of the filename
   // page
   page := '';
-  if CheckBox1.Checked then begin
-    page := ' '+'%s%.'+SuffixNumberCountForPage.ToString+'d'+
-         SuffixNumberSeparatorForPage+'%.'+SuffixNumberCountForPage.ToString+'d';
-    page := Format(page, [SPage, SEBeginPage.Value, SEEndPage.Value]);
-  end;
+  if CheckBox1.Checked then
+    page := rff.FormatPage(SEBeginPage.Value, SEEndPage.Value);
+
   FTitleOfTheRecordingFile := Trim(Edit6.Text);
   ConcatToString(FTitleOfTheRecordingFile, ' ', page);
 
@@ -164,10 +162,6 @@ begin
   rff.Init(FormMain.FrameViewProjectFiles1.GetNextRecordingPrefixNumberInCurrentSection,
            FTitleOfTheRecordingFile, PROJECT_RECORDING_FILE_EXT);
   Label12.Caption := rff.FileName;
-{  s := TRecordingFileFormater.FormatPrefix();
-  if FTitleOfTheRecordingFile <> ''
-    then Label12.Caption := s+' '+FTitleOfTheRecordingFile
-    else Label12.Caption := s;// ' ';  // avoid anchor issue    }
 
   BSave.Enabled := not Label10.Visible;
 
