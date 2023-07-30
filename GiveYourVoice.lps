@@ -56,10 +56,10 @@
       <Unit>
         <Filename Value="Units\u_common.pas"/>
         <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="9"/>
         <WindowIndex Value="1"/>
-        <TopLine Value="65"/>
-        <CursorPos X="3" Y="81"/>
+        <CursorPos X="23" Y="12"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
       </Unit>
@@ -981,14 +981,16 @@
       </Unit>
       <Unit>
         <Filename Value="..\UnitsCommon\utilitaire_fichier.pas"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="7"/>
         <TopLine Value="13"/>
-        <CursorPos X="19" Y="28"/>
+        <CursorPos X="31" Y="17"/>
         <UsageCount Value="21"/>
         <Loaded Value="True"/>
       </Unit>
     </Units>
+    <General>
+      <ActiveWindowIndexAtStart Value="1"/>
+    </General>
     <JumpHistory HistoryIndex="29">
       <Position>
         <Filename Value="Units\frame_view_projectfiles.pas"/>

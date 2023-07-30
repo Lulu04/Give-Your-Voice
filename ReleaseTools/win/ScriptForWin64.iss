@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "Give Your Voice"
-#define MyAppVersion "1.0.2"
+#define MyAppVersion "1.0.3"
 #define MyAppExeName "GiveYourVoice.exe"
 #define MyAppAssocName MyAppName + " File"
 #define MyAppAssocExt ".gyv"
