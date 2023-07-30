@@ -1,3 +1,20 @@
+giveyourvoice (1.0.3) unstable; urgency=low
+
+  * removed some compilation hint
+  * added log info/error
+  * prevent the OS message "do you want to terminate the app or wait until it finish?" while removing noise on large file
+  * improvement of error handling in case of ALSoft or LibSndFile libraries are not found
+  * corrected some display error
+  * best way to find projects in project manager window
+  * first time app is running: one ask to user if s/he want to read user guide
+  * added a button to allow user to check for an update
+  * enhanced the code to check for a new version online
+  * removed the irrelevant zeros in the page interval for a recording filename
+  * application now retains the largest page number entered by the user
+  * we don't use anymore the system trash when user delete a recording or a section, to avoid file/directory name conflicts
+
+-- Lulu04 <lulutech@gmx.fr>  Mon, 17 Jul 2023 16:01:00 +0100
+
 giveyourvoice (1.0.2) unstable; urgency=low
 
   * corrected some wrong links in user guide
@@ -9,7 +26,7 @@ giveyourvoice (1.0.2) unstable; urgency=low
   * added a config file for OpenAL-Soft to force it to use Alsa backend and to set update period to 12
   * audio edition show the samples count of the edited file
 
- -- Lulu04 <lulutech@gmx.fr>  Sat, 8 Jul 2023 13:01:00 +0100
+ -- Lulu04 <lulutech@gmx.fr>  Mon, 17 Jul 2023 16:01:00 +0100
 
 giveyourvoice (1.0.1) unstable; urgency=low
 

@@ -5,6 +5,6 @@ For each RELEASE published on GitHub, increase the version doing the following:
                                        b) in u_common.pas
                                        c) in ReleaseTools\win\innosetup script 64 and 32
                                        d) in file "version"
-2) local dev branch: execute ReleaseTools/scripts to produce the binaries release for each supported platform.
-3) local dev branch: commit, push and publish the change to Github master branch.
-5) GitHub: create a new release with the new tag (version).
+2) local dev branch: commit, push and publish the change to Github master branch.
+3) local dev branch: execute ReleaseTools/scripts to produce the binaries release for each supported platform.
+4) GitHub: create a new release with the new tag (version) and drag in the binaries release.
