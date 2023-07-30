@@ -11,7 +11,6 @@ object FormRecord: TFormRecord
   Color = 3355443
   FormStyle = fsSystemStayOnTop
   KeyPreview = True
-  OnActivate = FormActivate
   OnClose = FormClose
   OnCreate = FormCreate
   OnDestroy = FormDestroy
@@ -37,7 +36,7 @@ object FormRecord: TFormRecord
     Height = 201
     Top = 2
     Width = 307
-    PageIndex = 4
+    PageIndex = 3
     Anchors = [akTop, akLeft, akRight]
     BorderSpacing.Left = 2
     BorderSpacing.Top = 2
