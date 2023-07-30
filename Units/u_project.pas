@@ -10,10 +10,7 @@ uses
 
 
 const
-
-  PrefixNumberCountForFolder = 3;    // ex: 001-Poème
-
-  PrefixNumberCountForAudioFile = 3;  // ex: Prise001
+  PrefixNumberCountForAudioFile = 3;  // ex: "001 title"
 
   SuffixNumberSeparatorForPage = '-';
   SuffixNumberCountForPage = 4;   // ex: Page0001-0012
