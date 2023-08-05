@@ -12,29 +12,29 @@ Linux 64b (tested on Ubuntu 22.04 LTS)
 MacOS: to do  
 
 # Features
-- One directory per section (chapter/text/poem) -> your project is well organized.
-- Allow multiple recording per section -> the software keep the page number where you stopped.
-- Remove background noise on recording files.
+- One directory per section (chapter/text/poem...) -> your project is well organized.
+- Allows multiple recording per section -> the software keep the page number where you stopped.
+- Removes background noise on recording.
 - During recording, use the **CONTROL** key to mark where you've mispronounced something, making it easy to find and correct mistakes.
 - Audio tools:
     - add silence, cut or silencing part
     - insert new recording at cursor position
     - replace the selected audio by a new recording
+    - undo/redo
 - Mix easily your recording
     - activate compressor, amplify and bass boost effects for voice enhancement
     - add musics and/or sounds effects and keep only the part that interests you
     - graphical volume envelope to easily control the volume (fadein, fadeout)
-    - editable metadata
     - integrated audio limiter to minimize audio clipping
 - Produce MP3 files compatible with the platform [**LibriVox**](https://wiki.librivox.org/index.php?title=Main_Page) and [**Litterature audio.com**](https://www.litteratureaudio.com/)
     - respects of their rules for file name
     - MP3 generated at 44100Hz, mono, constant bitrate mode, 128kbps
     - normalization at 89dB as MP3Gain, (can be modified)
+    - editable metadata
 - Export several MP3 files into a single ZIP file.
-- Compress your terminated projects to free disk space.
-- Full undo/redo system for audio modification.
+- Compress your completed projects to free disk space.
 - Supported language: French, English.
-- This software was made with love, however it may contain some bugs!
+- This software is made with love! :)
 
 # Screenshots
 The main window with the project tree view and the audio edition at the bottom
