@@ -15,14 +15,14 @@ MacOS: to do
 - One directory per section (chapter/text/poem) -> your project is well organized.
 - Allow multiple recording per section -> the software keep the page number where you stopped.
 - Remove background noise on recording files.
-- While recording, use **CONTROL KEY** to mark places where you have made reading errors, making it easy to find and correct them.
+- During recording, use the **CONTROL** key to mark where you've mispronounced something, making it easy to find and correct mistakes.
 - Audio tools:
     - add silence, cut or silencing part
     - insert new recording at cursor position
     - replace the selected audio by a new recording
-- Mix your voices recording in a simplified window
-    - compressor, amplify and bass boost effects for voice enhancement
-    - Add musics and sounds to your reading. Trim the musics/sounds and keep only the part that interests you
+- Mix easily your recording
+    - activate compressor, amplify and bass boost effects for voice enhancement
+    - add musics and/or sounds effects and keep only the part that interests you
     - graphical volume envelope to easily control the volume (fadein, fadeout)
     - editable metadata
     - integrated audio limiter to minimize audio clipping
