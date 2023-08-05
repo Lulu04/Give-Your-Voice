@@ -13,7 +13,7 @@ MacOS: to do
 
 # Features
 - One directory per section (chapter/text/poem...) -> your project is well organized.
-- Allows multiple recording per section -> the software keep the page number where you stopped.
+- Allows multiple recordings per section -> the software keep the page number where you stopped.
 - Removes background noise on recording.
 - During recording, use the **CONTROL** key to mark where you've mispronounced something, making it easy to find and correct mistakes.
 - Audio tools:
