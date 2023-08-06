@@ -44,7 +44,7 @@
     <VersionInfo>
       <UseVersionInfo Value="True"/>
       <MajorVersionNr Value="1"/>
-      <RevisionNr Value="3"/>
+      <RevisionNr Value="4"/>
       <Language Value="040C"/>
       <StringTable FileDescription="Give Your Voice"/>
     </VersionInfo>
