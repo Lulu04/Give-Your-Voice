@@ -15,12 +15,12 @@ uses
   u_utils, frame_view_projectfiles, dsp_noiseremoval, form_audiorecording,
   u_program_options, frame_editstring, form_user_askconfirmation,
   form_user_inputstring, form_user_showmessage, u_userdialogs, frame_trackbar,
-  form_mixer, u_main_undoredo, frame_mixer, u_mixer_undoredo, LCL_utils,
-  PropertyUtils, utilitaire_fichier, u_logfile, project_util,
+  form_mixer, u_main_undoredo, frame_mixer, u_mixer_undoredo, project_util,
   form_user_asknumber, u_resource_string, form_firsttimewizard,
   frame_progressbar, u_mp3gain, form_about, u_crossplatform,
   form_project_manager, form_ask_sectionname, form_help, form_zipmp3,
-  frame_zipfiles, form_mixermetadata, u_web, form_remembertodonate;
+  frame_zipfiles, form_mixermetadata, u_web, form_remembertodonate,
+  utilitaire_fichier, u_logfile, PropertyUtils, LCL_utils, ALSound;
 
 {$R *.res}
 

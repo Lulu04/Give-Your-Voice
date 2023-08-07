@@ -85,6 +85,7 @@
     </BuildModes>
     <PublishOptions>
       <Version Value="2"/>
+      <DestinationDirectory Value="C:\Pascal\TestComboBox"/>
       <UseFileFilters Value="True"/>
     </PublishOptions>
     <RunParams>
@@ -248,25 +249,7 @@
         <IsPartOfProject Value="True"/>
       </Unit>
       <Unit>
-        <Filename Value="..\UNITE COMMUNE\propertyutils.pas"/>
-        <IsPartOfProject Value="True"/>
-        <UnitName Value="PropertyUtils"/>
-      </Unit>
-      <Unit>
-        <Filename Value="..\UNITE COMMUNE\utilitaire_fichier.pas"/>
-        <IsPartOfProject Value="True"/>
-      </Unit>
-      <Unit>
-        <Filename Value="..\UNITE COMMUNE\lcl_utils.pas"/>
-        <IsPartOfProject Value="True"/>
-        <UnitName Value="LCL_utils"/>
-      </Unit>
-      <Unit>
         <Filename Value="Units\project_util.pas"/>
-        <IsPartOfProject Value="True"/>
-      </Unit>
-      <Unit>
-        <Filename Value="..\UNITE COMMUNE\u_logfile.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit>
       <Unit>
@@ -361,6 +344,29 @@
         <ComponentName Value="FormRememberToDonate"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\ALSound\source\alsound.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="ALSound"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\UnitsCommon\u_logfile.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\UnitsCommon\utilitaire_fichier.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\UnitsCommon\propertyutils.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="PropertyUtils"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\UnitsCommon\lcl_utils.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="LCL_utils"/>
       </Unit>
     </Units>
   </ProjectOptions>
