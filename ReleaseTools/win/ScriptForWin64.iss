@@ -67,6 +67,7 @@ Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{
 
 [Files]
 Source: "C:\Pascal\Give-Your-Voice\Binary\GiveYourVoice.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Pascal\Give-Your-Voice\Binary\vcruntime140.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\Pascal\Give-Your-Voice\Binary\Data\*"; DestDir: "{app}\Data"; Flags: ignoreversion
 Source: "C:\Pascal\Give-Your-Voice\Binary\languages\*"; DestDir: "{app}\languages"; Flags: ignoreversion
 Source: "C:\Pascal\Give-Your-Voice\Binary\x86_64-win64\*"; DestDir: "{app}\x86_64-win64"; Flags: ignoreversion
