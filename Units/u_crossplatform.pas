@@ -12,8 +12,8 @@ function GetAppDataFolder: string;
 
 // return the default path of the project folder in a cross platform way
 // Windows: MesDocument\GiveYourVoice\
-// Linux: UserDir/Documents/GiveYourVoice/
-//        or UserDir/GiveYourVoice/
+// Linux:   /home/username/Documents/GiveYourVoice/
+//       or /home/username/GiveYourVoice/
 // Mac: not yet implemented
 function GetAppDefaultProjectFolder: string;
 procedure CreateDefaultProjectFolder;
