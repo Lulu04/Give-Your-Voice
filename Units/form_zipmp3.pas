@@ -68,9 +68,11 @@ uses LazFileutils, LCLType, u_project, u_resource_string, u_utils, u_common,
 procedure TFormZipMP3.FormKeyUp(Sender: TObject; var Key: Word;
   Shift: TShiftState);
 begin
+  if CheckKeyToShowUserGuide(Key, Shift) then
+    ShowGYVUserGuide;
+
   case Key of
     VK_ESCAPE: ModalResult := mrCancel;
-    VK_F1: ShowGYVUserGuide;
   end;
 end;
 

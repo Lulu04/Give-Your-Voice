@@ -41,7 +41,7 @@ var
 
 implementation
 uses u_project, u_program_options, u_resource_string, u_userdialogs,
-  utilitaire_fichier, u_utils, u_common, LCLType;
+  utilitaire_fichier, u_utils, u_common, u_crossplatform, LCLType;
 
 {$R *.lfm}
 
@@ -105,9 +105,11 @@ end;
 procedure TFormNewProject.FormKeyUp(Sender: TObject; var Key: Word;
   Shift: TShiftState);
 begin
+  if CheckKeyToShowUserGuide(Key, Shift) then
+    ShowGYVUserGuide;
+
   case Key of
     VK_ESCAPE: ModalResult := mrCancel;
-    VK_F1: ShowGYVUserGuide;
   end;
 end;
 

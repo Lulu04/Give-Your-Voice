@@ -46,7 +46,7 @@ var
 
 implementation
 uses u_resource_string, form_main, u_program_options, u_utils, LCLType,
-  u_project;
+  u_project, u_crossplatform;
 
 {$R *.lfm}
 
@@ -108,9 +108,11 @@ end;
 procedure TFormMixerMetaData.FormKeyUp(Sender: TObject; var Key: Word;
   Shift: TShiftState);
 begin
+  if CheckKeyToShowUserGuide(Key, Shift) then
+    ShowGYVUserGuide;
+
   case Key of
     VK_ESCAPE: ModalResult := mrCancel;
-    VK_F1: ShowGYVUserGuide;
   end;
 end;
 

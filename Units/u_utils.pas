@@ -168,7 +168,7 @@ type
 
 
 implementation
-uses LazUTF8, u_project, u_program_options, u_crossplatform, u_resource_string,
+uses LazUTF8, u_program_options, u_crossplatform, u_resource_string,
   Math, utilitaire_fichier, PropertyUtils, utilitaire_bgrabitmap, LCLIntf,
   {$IFDEF windows}
   //Windows,

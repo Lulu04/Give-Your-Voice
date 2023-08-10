@@ -183,9 +183,11 @@ end;
 procedure TFormProjectManager.FormKeyUp(Sender: TObject; var Key: Word;
   Shift: TShiftState);
 begin
+  if CheckKeyToShowUserGuide(Key, Shift) then
+    ShowGYVUserGuide;
+
   case Key of
     VK_ESCAPE: ModalResult := mrCancel;
-    VK_F1: ShowGYVUserGuide;
   end;
 end;
 

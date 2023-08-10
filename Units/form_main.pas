@@ -447,22 +447,21 @@ procedure TFormMain.FormKeyDown(Sender: TObject; var Key: Word;
 var
   p: TPoint;
 begin
+  if CheckKeyToShowUserGuide(Key, Shift) then begin
+    ShowGYVUserGuide;
+    exit;
+  end;
+
   if not Project.IsReady then exit;
 
-  case Key of
-    VK_F1: ShowGYVUserGuide;
-
-    else begin
-      p := FrameViewProjectFiles1.ScreenToClient(Mouse.CursorPos);
-      if FrameViewProjectFiles1.ClientRect.Contains(p) then
-        FrameViewProjectFiles1.ProcessKeyDown(Key, Shift)
-      else begin
-        p := Panel5.ScreenToClient(Mouse.CursorPos);
-        if Panel5.ClientRect.Contains(p) then
-          FrameViewAudio1.ProcessKeyDown(Key, Shift);
-      end;
-    end;
-  end;//case
+  p := FrameViewProjectFiles1.ScreenToClient(Mouse.CursorPos);
+  if FrameViewProjectFiles1.ClientRect.Contains(p) then
+    FrameViewProjectFiles1.ProcessKeyDown(Key, Shift)
+  else begin
+    p := Panel5.ScreenToClient(Mouse.CursorPos);
+    if Panel5.ClientRect.Contains(p) then
+      FrameViewAudio1.ProcessKeyDown(Key, Shift);
+  end;
 
   Key := 0;  // avoid some gadget to react with 'space' key
 end;

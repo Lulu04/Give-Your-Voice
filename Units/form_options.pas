@@ -57,7 +57,8 @@ var
   FormOptions: TFormOptions;
 
 implementation
-uses u_program_options, u_audio_utils, u_resource_string, form_main, u_utils
+uses u_program_options, u_audio_utils, u_resource_string, form_main, u_utils,
+  u_crossplatform
   {$ifdef LINUX}, u_common{$endif}, LCLType;
 
 {$R *.lfm}
@@ -226,9 +227,11 @@ end;
 procedure TFormOptions.FormKeyDown(Sender: TObject; var Key: Word;
   Shift: TShiftState);
 begin
+  if CheckKeyToShowUserGuide(Key, Shift) then
+    ShowGYVUserGuide;
+
   case Key of
     VK_ESCAPE: BCancelClick(BCancel);
-    VK_F1: ShowGYVUserGuide;
   end;
 end;
 

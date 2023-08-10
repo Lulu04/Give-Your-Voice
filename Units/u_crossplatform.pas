@@ -24,8 +24,12 @@ procedure InitALSManagerLibrariesSubFolder;
 // return os name
 function OSName: string;
 
+// Return TRUE if Key is F1 (Windows/Linux) or CONTROL+H (MacOS)
+// if it is, Key is redefined to VK_UNKNOWN
+function CheckKeyToShowUserGuide(var Key: Word; Shift: TShiftState): boolean;
+
 implementation
-uses ALSound, u_common, utilitaire_fichier;
+uses ALSound, u_common, utilitaire_fichier, LCLType;
 
 function GetAppDataFolder: string;
 begin
@@ -83,18 +87,30 @@ end;
 
 function OSName: string;
 begin
- Result := '';
- {$if defined(Windows) and defined(cpu386)}
-    Result := 'i386-win32';
- {$elseif defined(Windows) and defined(cpux86_64)}
-    Result := 'x86_64-win64';
- {$elseif defined(Linux) and defined(cpu386)}
-    Result := 'i386-linux';
- {$elseif defined(Linux) and defined(cpux86_64)}
-    Result := 'x86_64-linux';
- {$elseif defined(Darwin)}
-    Result := 'MacOS 64';
- {$endif}
+  Result := '';
+  {$if defined(Windows) and defined(cpu386)}
+     Result := 'i386-win32';
+  {$elseif defined(Windows) and defined(cpux86_64)}
+     Result := 'x86_64-win64';
+  {$elseif defined(Linux) and defined(cpu386)}
+     Result := 'i386-linux';
+  {$elseif defined(Linux) and defined(cpux86_64)}
+     Result := 'x86_64-linux';
+  {$elseif defined(Darwin)}
+     Result := 'MacOS 64';
+  {$endif}
+end;
+
+function CheckKeyToShowUserGuide(var Key: Word; Shift: TShiftState): boolean;
+begin
+  Result := False;
+  {$if defined(Windows) or defined(Linux)}
+  Result := Key = VK_F1;
+  {$elseif defined(Darwin)}
+  Result := (ssCtrl in Shift) and (Key = VK_H);
+  {$endif}
+  if Result then
+    Key := VK_UNKNOWN;
 end;
 
 end.
