@@ -121,7 +121,8 @@ var
 
 implementation
 uses u_project, u_audio_utils, u_program_options, form_main, u_utils,
-  u_resource_string, u_userdialogs, LCLType, utilitaire_fichier, u_logfile;
+  u_resource_string, u_userdialogs, u_crossplatform, LCLType,
+  utilitaire_fichier, u_logfile;
 
 {$R *.lfm}
 
@@ -299,19 +300,17 @@ end;
 procedure TFormRecord.FormKeyDown(Sender: TObject; var Key: Word;
   Shift: TShiftState);
 begin
-  case Key of
-    VK_ESCAPE: begin
-     ModalResult := mrCancel;
+  if CheckKeyToShowUserGuide(Key, Shift) then
+    ShowGYVUserGuide;
 
-    end;
+  case Key of
+    VK_ESCAPE: ModalResult := mrCancel;
 
     VK_SPACE: if NoteBook1.PageIndex = NoteBook1.IndexOf(PageRecording) then
       BStopClick(NIL);
 
     VK_P: if NoteBook1.PageIndex = NoteBook1.IndexOf(PageRecording) then
       BPauseClick(NIL);
-
-    VK_F1: ShowGYVUserGuide;
 
     else if ssCtrl in Shift then AddUserMarkAtCurrentRecordingTime;
   end;

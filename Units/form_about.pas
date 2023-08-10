@@ -50,7 +50,7 @@ var
 
 implementation
 uses LCLIntf, u_program_options, u_common, u_resource_string, u_utils,
-  u_userdialogs, u_web, form_main, LCLType;
+  u_userdialogs, u_web, form_main, u_crossplatform, LCLType;
 
 {$R *.lfm}
 
@@ -166,9 +166,11 @@ end;
 procedure TFormAbout.FormKeyUp(Sender: TObject; var Key: Word;
   Shift: TShiftState);
 begin
+  if CheckKeyToShowUserGuide(Key, Shift) then
+    ShowGYVUserGuide;
+
   case Key of
     VK_ESCAPE: Close;
-    VK_F1: ShowGYVUserGuide;
   end;
 end;
 

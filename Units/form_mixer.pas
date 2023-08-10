@@ -130,7 +130,7 @@ var
 implementation
 uses form_main, u_project, u_userdialogs, u_audio_utils, Math, u_program_options,
   u_resource_string, utilitaire_fichier, u_utils, LCLType,
-  form_help, form_mixermetadata, LibSndFile;
+  form_help, form_mixermetadata, u_crossplatform, LibSndFile;
 
 {$R *.lfm}
 
@@ -334,12 +334,13 @@ end;
 procedure TFormMixer.FormKeyDown(Sender: TObject; var Key: Word;
   Shift: TShiftState);
 begin
-  case Key of
-    VK_F1: ShowGYVUserGuide;
-    else
-      if not PanelStatus.Visible then
-        FrameMixer1.ProcessKeyDown(Key, Shift);
+  if CheckKeyToShowUserGuide(Key, Shift) then begin
+    ShowGYVUserGuide;
+    exit;
   end;
+
+  if not PanelStatus.Visible then
+    FrameMixer1.ProcessKeyDown(Key, Shift);
 end;
 
 procedure TFormMixer.FormShow(Sender: TObject);

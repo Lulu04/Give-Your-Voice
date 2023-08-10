@@ -69,7 +69,8 @@ var
   FormAskSectionName: TFormAskSectionName;
 
 implementation
-uses LCLType, u_resource_string, u_project, u_utils, u_common, Math;
+uses LCLType, u_resource_string, u_project, u_utils, u_common, u_crossplatform,
+  Math;
 
 {$R *.lfm}
 
@@ -78,9 +79,11 @@ uses LCLType, u_resource_string, u_project, u_utils, u_common, Math;
 procedure TFormAskSectionName.FormKeyUp(Sender: TObject; var Key: Word;
   Shift: TShiftState);
 begin
+  if CheckKeyToShowUserGuide(Key, Shift) then
+    ShowGYVUserGuide;
+
   case Key of
     VK_ESCAPE: ModalResult := mrCancel;
-    VK_F1: ShowGYVUserGuide;
   end;
 end;
 
