@@ -1,11 +1,11 @@
 object FormFirstRun: TFormFirstRun
   Left = 200
-  Height = 608
+  Height = 617
   Top = 57
   Width = 845
   BorderIcons = []
   BorderStyle = bsNone
-  ClientHeight = 608
+  ClientHeight = 617
   ClientWidth = 845
   Color = 3355443
   OnCreate = FormCreate
@@ -14,7 +14,7 @@ object FormFirstRun: TFormFirstRun
   LCLVersion = '2.2.4.0'
   object Shape1: TShape
     Left = 0
-    Height = 608
+    Height = 617
     Top = 0
     Width = 845
     Align = alClient
@@ -46,10 +46,10 @@ object FormFirstRun: TFormFirstRun
     AnchorSideRight.Control = ComboBox1
     Left = 86
     Height = 20
-    Top = 198
+    Top = 174
     Width = 184
     Anchors = [akTop, akRight]
-    BorderSpacing.Top = 40
+    BorderSpacing.Top = 30
     BorderSpacing.Right = 10
     Caption = 'SVP, choisissez votre langue'
     Font.Color = 14342874
@@ -64,7 +64,7 @@ object FormFirstRun: TFormFirstRun
     AnchorSideTop.Side = asrCenter
     Left = 280
     Height = 28
-    Top = 194
+    Top = 170
     Width = 284
     Font.Height = 20
     ItemHeight = 20
@@ -102,7 +102,7 @@ object FormFirstRun: TFormFirstRun
     Cursor = crHandPoint
     Left = 392
     Height = 28
-    Top = 242
+    Top = 218
     Width = 60
     AutoSize = True
     BorderSpacing.Top = 20
@@ -119,7 +119,7 @@ object FormFirstRun: TFormFirstRun
     AnchorSideRight.Side = asrBottom
     Left = 10
     Height = 192
-    Top = 272
+    Top = 248
     Width = 825
     Anchors = [akTop, akLeft, akRight]
     BorderSpacing.Left = 10
@@ -284,11 +284,13 @@ object FormFirstRun: TFormFirstRun
   end
   object Label4: TLabel
     AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = Label2
+    AnchorSideTop.Side = asrBottom
     AnchorSideRight.Control = Owner
     AnchorSideRight.Side = asrBottom
     Left = 0
     Height = 34
-    Top = 124
+    Top = 110
     Width = 845
     Alignment = taCenter
     Anchors = [akTop, akLeft, akRight]
@@ -307,7 +309,7 @@ object FormFirstRun: TFormFirstRun
     Cursor = crHandPoint
     Left = 392
     Height = 28
-    Top = 464
+    Top = 440
     Width = 60
     AutoSize = True
     Caption = 'Label'
@@ -325,8 +327,8 @@ object FormFirstRun: TFormFirstRun
     AnchorSideBottom.Control = Owner
     AnchorSideBottom.Side = asrBottom
     Left = 10
-    Height = 104
-    Top = 494
+    Height = 137
+    Top = 470
     Width = 825
     Anchors = [akTop, akLeft, akRight, akBottom]
     BorderSpacing.Left = 10
@@ -334,7 +336,7 @@ object FormFirstRun: TFormFirstRun
     BorderSpacing.Right = 10
     BorderSpacing.Bottom = 10
     BevelOuter = bvNone
-    ClientHeight = 104
+    ClientHeight = 137
     ClientWidth = 825
     Color = 3355443
     ParentColor = False
@@ -347,7 +349,7 @@ object FormFirstRun: TFormFirstRun
       Cursor = crHandPoint
       Left = 305
       Height = 28
-      Top = 66
+      Top = 99
       Width = 215
       Anchors = [akLeft, akBottom]
       AutoSize = True
