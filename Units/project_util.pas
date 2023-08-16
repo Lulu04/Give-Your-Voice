@@ -23,9 +23,12 @@ ResourceString
 function CreateAPPSaveFolder( const CompanyName: string ): string;
 
 
-// create and return a folder where you can save data for your application.
+// creates and return a folder where you can save data for your application.
 // This folder is located according to your OS (see GetAppConfigDirUTF8 documentation)
 // Do nothing if it already exists. No sub-folder in this version.
+//    on Windows: 'C:\ProgramData\aFolderName\'
+//    on Linux: 'users/username/.config/aFolderName/'
+//    on MacOS: '/Users/username/.config/aFolderName/'
 function CreateAppFolder(const aFolderName: string): string;
 
 type
