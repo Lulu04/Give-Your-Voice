@@ -825,6 +825,8 @@ var t: TStringList;
 begin
   Result := False;
   if Length(aFilename) = 0 then exit;
+  if not FileExists(aFilename) then exit;
+  if ExtractFileExt(aFilename) <> PROJECT_FILE_EXT then exit;
 
   t := TStringList.Create;
   try
