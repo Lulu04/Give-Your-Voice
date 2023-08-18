@@ -51,7 +51,6 @@ type
   private const
     PrefixNumberCountForAudioFile = 3;  // ex: "001 title"
     SuffixNumberSeparatorForPage = '-';
-    SuffixNumberCountForPage = 4;   // ex: Page0001-0012
   private
     FPrefixNumber: integer;
     FTitle, FExt: string;

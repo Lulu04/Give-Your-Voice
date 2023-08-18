@@ -45,7 +45,7 @@ var
   FormMixerMetaData: TFormMixerMetaData;
 
 implementation
-uses u_resource_string, form_main, u_program_options, u_utils, LCLType,
+uses u_resource_string, form_main, u_utils, LCLType,
   u_project, u_crossplatform;
 
 {$R *.lfm}
