@@ -203,7 +203,7 @@ end;
 procedure TProgramOptions.SetLanguage(AValue: string);
 begin
   FLanguage := AValue;
-  SetDefaultLang(AValue);
+  SetDefaultLang(AValue, GetAppLanguagesFolder);
   if Project <> NIL then
     Project.OnLanguageChange;
 end;

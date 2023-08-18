@@ -7,14 +7,16 @@ interface
 uses
   Classes, SysUtils, Forms;
 
-// return the path of Application_Location/data folder in a cross platform way
+// return the path of 'Data' folder in a cross platform way
 function GetAppDataFolder: string;
+// return the path of 'languages' folder in a cross platform way
+function GetAppLanguagesFolder: string;
 
 // return the default path of the project folder in a cross platform way
 // Windows: MesDocument\GiveYourVoice\
 // Linux:   /home/username/Documents/GiveYourVoice/
 //       or /home/username/GiveYourVoice/
-// Mac: not yet implemented
+// Mac: /Users/username/GiveYourVoice/
 function GetAppDefaultProjectFolder: string;
 procedure CreateDefaultProjectFolder;
 
@@ -29,7 +31,36 @@ function OSName: string;
 function CheckKeyToShowUserGuide(var Key: Word; Shift: TShiftState): boolean;
 
 implementation
-uses ALSound, u_common, utilitaire_fichier, LCLType;
+uses ALSound, u_common, utilitaire_fichier, LCLType
+  {$ifdef Darwin},LazFileUtils{$endif};
+
+{$ifdef Darwin}
+function APPIsRunningFromIDE: boolean;
+begin
+  Result := False;
+  if ParamCount > 0 then
+    Result := ParamStr(1)='AppIsRunningFromIDE';
+end;
+
+function GetAppBundlePath: string;
+var f, bundleName: string;
+  i: SizeInt;
+begin
+  {$ifdef LCL}
+  f := Application.Location;
+  {$else}
+  f := ExtractFilePath(ParamStr(0));
+  {$endif}
+  bundleName := '/'+ApplicationName+'.app';
+  i := Pos(bundleName, f);
+  if i > 0 then
+    Result := ConcatPaths([copy(f, 1, i-1), bundleName])
+  else
+    Result := f;
+
+  Result := IncludeTrailingPathDelimiter(Result);
+end;
+{$endif}
 
 function GetAppDataFolder: string;
 begin
@@ -38,10 +69,27 @@ begin
   {$elseif defined(Linux)}
     Result := IncludeTrailingPathDelimiter(Application.Location)+'Data/';
   {$elseif defined(Darwin)}
-    Raise Exception.Create('GetAppDataFolder: Not yet implemented on MAC');
+    if APPIsRunningFromIDE then
+      Result := CleanAndExpandDirectory(GetAppBundlePath+'../Data/')
+    else
+      Result := GetAppBundlePath+'Contents/Resources/Data/'
   {$else}
     {$error You can not compile this program on this platform, sorry !}
   {$endif}
+end;
+
+function GetAppLanguagesFolder: string;
+begin
+ {$if defined(Windows)}
+   Result := IncludeTrailingPathDelimiter(Application.Location)+'languages\';
+ {$elseif defined(Linux)}
+   Result := IncludeTrailingPathDelimiter(Application.Location)+'languages/';
+ {$elseif defined(Darwin)}
+   if APPIsRunningFromIDE then
+     Result := CleanAndExpandDirectory(GetAppBundlePath+'../languages/')
+   else
+     Result := GetAppBundlePath+'Contents/Resources/languages/'
+ {$endif}
 end;
 
 function GetAppDefaultProjectFolder: string;
@@ -54,11 +102,10 @@ begin
      Result := IncludeTrailingPathDelimiter(Result+'Documents');
    Result := IncludeTrailingPathDelimiter(Result+FOLDER_FOR_PROJECT);
  {$elseif defined(Darwin)}
-   raise Exception.Create('GetAppDefaultProjectFolder: not yet implemented on MAC');
    Result := IncludeTrailingPathDelimiter(GetUserDir);
    Result := IncludeTrailingPathDelimiter(Result+FOLDER_FOR_PROJECT);
  {$else}
-   {$error You can not compile this program on this platform, sorry !}
+   ALSManager.SetLibrariesSubFolder('x86_64-macos/');
  {$endif}
 end;
 
@@ -78,8 +125,8 @@ begin
       ALSManager.SetLibrariesSubFolder('i386-linux/');
   {$elseif defined(Linux) and defined(cpux86_64)}
       ALSManager.SetLibrariesSubFolder('x86_64-linux/');
-  {$elseif defined(Darwin)}
-    Raise Exception.Create('InitALSManagerLibrariesSubFolder: not yet implemented on MAC');
+  {$elseif defined(Darwin) and defined(cpux86_64)}
+      ALSManager.SetLibrariesSubFolder('x86_64-macos/');
   {$else}
     {$error You can not compile this program on this platform, sorry !}
   {$endif}
