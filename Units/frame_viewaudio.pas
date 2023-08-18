@@ -1132,7 +1132,7 @@ end;
 
 procedure TFrameViewAudio.AdjustFont;
 begin
-{$ifdef LINUX}
+{$if defined(LCLGTK2) or defined(LCLCOCOA)}
   ChangeFontHeight([PBTime], FDesignFontHeight);
 {$endif}
 end;

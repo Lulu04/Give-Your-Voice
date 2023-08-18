@@ -39,7 +39,7 @@ type
 
 
 implementation
-uses LCLType{$ifdef LINUX}, u_common{$endif}, u_utils;
+uses LCLType{$if defined(Linux) or defined(Darwin)}, u_common{$endif}, u_utils;
 
 {$R *.lfm}
 
@@ -92,10 +92,14 @@ end;
 
 procedure TFormUserInput.AdjustFont;
 begin
-{$ifdef LINUX}
+{$if defined(LCLGTK2) or defined(LCLCOCOA)}
   ChangeFontHeightOnFormChilds(Self, FDesignFontHeight);
   ChangeFontHeight([Speedbutton1, Speedbutton2], FDesignFontHeight);
   FrameEditString1.AdjustFont;
+{$endif}
+{$if defined(LCLCOCOA)}
+  Speedbutton1.Flat := False;
+  Speedbutton2.Flat := False;
 {$endif}
 end;
 

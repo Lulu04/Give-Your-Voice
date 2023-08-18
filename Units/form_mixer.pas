@@ -664,10 +664,18 @@ end;
 
 procedure TFormMixer.AdjustFont;
 begin
-{$ifdef LINUX}
+{$if defined(LCLGTK2) or defined(LCLCOCOA)}
   ChangeFontHeightOnFormChilds(Self, FDesignFontHeight);
   ChangeFontHeight([BCompressor, BBassBoost, FSEBassBoost, BAmplify, CBAmplify], FDesignFontHeight-2);
   ChangeFontColor([FSEBassBoost, CBAmplify, ComboBox1, FSE3], clBlack);
+{$endif}
+{$if defined(LCLCOCOA)}
+  BCancelMix.Flat := False;
+  BMix.Flat := False;
+  BCompressor.Flat := False;
+  BAmplify.Flat := False;
+  BBassBoost.Flat := False;
+  ChangeFontColor([BCompressor, BAmplify, BBassBoost, FSEBassBoost, CBAmplify], clDefault);
 {$endif}
 end;
 

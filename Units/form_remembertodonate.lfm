@@ -12,7 +12,7 @@ object FormRememberToDonate: TFormRememberToDonate
   Font.Height = 20
   OnShow = FormShow
   Position = poOwnerFormCenter
-  LCLVersion = '2.2.2.0'
+  LCLVersion = '2.2.4.0'
   object Shape1: TShape
     Left = 0
     Height = 215
@@ -31,7 +31,7 @@ object FormRememberToDonate: TFormRememberToDonate
     Left = 40
     Height = 28
     Top = 172
-    Width = 143
+    Width = 113
     Anchors = [akLeft, akBottom]
     AutoSize = True
     BorderSpacing.Left = 40
@@ -51,10 +51,10 @@ object FormRememberToDonate: TFormRememberToDonate
     AnchorSideBottom.Control = Owner
     AnchorSideBottom.Side = asrBottom
     Cursor = crHandPoint
-    Left = 288
+    Left = 315
     Height = 28
     Top = 172
-    Width = 136
+    Width = 109
     Anchors = [akRight, akBottom]
     AutoSize = True
     BorderSpacing.Right = 40
@@ -72,7 +72,7 @@ object FormRememberToDonate: TFormRememberToDonate
     AnchorSideRight.Control = Owner
     AnchorSideRight.Side = asrBottom
     Left = 10
-    Height = 138
+    Height = 120
     Top = 17
     Width = 444
     Alignment = taCenter

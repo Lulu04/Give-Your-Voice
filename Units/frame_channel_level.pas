@@ -52,7 +52,7 @@ type
   end;
 
 implementation
-uses u_utils, u_program_options {$ifdef LINUX},u_common{$endif};
+uses u_utils, u_program_options {$if defined(Linux) or defined(Darwin)},u_common{$endif};
 
 {$R *.lfm}
 
@@ -166,7 +166,7 @@ end;
 
 procedure TFrameChannelsLevel.AdjustFont;
 begin
-{$ifdef LINUX}
+{$if defined(LCLGTK2) or defined(LCLCOCOA)}
   ChangeFontHeight([Self, PB], FDesignFontHeight);
 {$endif}
 end;

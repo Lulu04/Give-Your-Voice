@@ -2405,8 +2405,11 @@ end;
 
 procedure TFrameMixer.AdjustFont;
 begin
-{$ifdef LINUX}
+{$if defined(LCLGTK2) or defined(LCLCOCOA)}
   ChangeFontHeight([PBTime, PBVoice, PBMusic, PBSound], FDesignFontHeight);
+{$endif}
+{$if defined(LCLCOCOA)}
+  BMute.Flat := False;
 {$endif}
 end;
 

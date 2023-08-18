@@ -58,7 +58,7 @@ var
 implementation
 
 uses u_program_options, u_resource_string, u_audio_utils
-  {$ifdef LINUX}, u_common{$endif}, u_utils;
+  {$if defined(Linux) or defined(Darwin)}, u_common{$endif}, u_utils;
 
 {$R *.lfm}
 
@@ -169,13 +169,20 @@ end;
 
 procedure TFormFirstRun.AdjustFont;
 begin
-{$ifdef LINUX}
+{$if defined(LCLGTK2) or defined(LCLCOCOA)}
   Font.Height := FDesignFontHeight;
   ChangeFontHeight([Label1], 30);
   ChangeFontHeight([Label4, Label6, Label7, Label8, BTestPlaybackDevice], FDesignFontHeight-2);
   ChangeFontHeight([Label2, Label3, ComboBox1, SpeedButton1, CBCapture,
      CBPlayBack, Speedbutton3, Label5, SpeedButton2], FDesignFontHeight);
+  {$if defined(LCLGTK2)}
   ChangeFontColor([ComboBox1, CBCapture, CBPlayback], clBlack);
+  {$endif}
+{$endif}
+{$if defined(LCLCOCOA)}
+  SpeedButton1.Flat := False;
+  SpeedButton2.Flat := False;
+  SpeedButton3.Flat := False;
 {$endif}
 end;
 

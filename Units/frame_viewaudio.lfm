@@ -20,7 +20,7 @@ object FrameViewAudio: TFrameViewAudio
     TabOrder = 0
     object PB: TPaintBox
       Left = 0
-      Height = 119
+      Height = 124
       Top = 25
       Width = 704
       Align = alClient
@@ -34,8 +34,8 @@ object FrameViewAudio: TFrameViewAudio
     end
     object ScrollBar1: TScrollBar
       Left = 0
-      Height = 15
-      Top = 144
+      Height = 10
+      Top = 149
       Width = 704
       Align = alBottom
       Max = 1000

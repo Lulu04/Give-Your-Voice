@@ -79,7 +79,7 @@ var
   FFirstTimeProgramIsRunning: boolean = FALSE;
   FormProjectManager_FAskUserToShowUserGuide: boolean = FALSE;
 
-{$ifdef LINUX}
+{$if defined(LCLGTK2) or defined(LCLCOCOA)}
   FDesignFontHeight: integer;
   FDesignSmallFontHeight: integer;
 {$endif}

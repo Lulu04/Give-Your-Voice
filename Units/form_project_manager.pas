@@ -612,9 +612,21 @@ end;
 
 procedure TFormProjectManager.AdjustFont;
 begin
-{$ifdef LINUX}
+{$if defined(LCLGTK2) or defined(LCLCOCOA)}
   Font.Height := FDesignFontHeight;
   ChangeFontHeightOnFormChilds(Self, FDesignFontHeight);
+{$endif}
+{$if defined(LCLCOCOA)}
+  BSearchFolder.Flat := False;
+  BNewProject.Flat := False;
+  BOpenProject.Flat := False;
+  BZipProject.Flat := False;
+  BUnzipProject.Flat := False;
+  BDeleteProject.Flat := False;
+  BCancel.Flat := False;
+  BCancelZipper.Flat := False;
+  ChangeFontColor([BSearchFolder, BNewProject, BOpenProject, BZipProject,
+                   BUnzipProject, BDeleteProject, BCancel, BCancelZipper], clDefault);
 {$endif}
 end;
 

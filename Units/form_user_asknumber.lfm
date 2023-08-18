@@ -84,7 +84,7 @@ object FormUserAskNumber: TFormUserAskNumber
     AnchorSideRight.Control = Owner
     AnchorSideRight.Side = asrBottom
     Left = 10
-    Height = 24
+    Height = 21
     Top = 10
     Width = 457
     Anchors = [akTop, akLeft, akRight]
@@ -106,8 +106,8 @@ object FormUserAskNumber: TFormUserAskNumber
     AnchorSideTop.Control = Label1
     AnchorSideTop.Side = asrBottom
     Left = 193
-    Height = 41
-    Top = 34
+    Height = 29
+    Top = 31
     Width = 90
     Font.Height = 21
     ParentFont = False
@@ -119,8 +119,8 @@ object FormUserAskNumber: TFormUserAskNumber
     AnchorSideTop.Control = Label1
     AnchorSideTop.Side = asrBottom
     Left = 182
-    Height = 41
-    Top = 34
+    Height = 29
+    Top = 31
     Width = 112
     Font.Height = 21
     Increment = 0.05
@@ -131,10 +131,10 @@ object FormUserAskNumber: TFormUserAskNumber
     AnchorSideRight.Side = asrBottom
     AnchorSideBottom.Control = FloatSpinEdit1
     AnchorSideBottom.Side = asrBottom
-    Left = 356
-    Height = 24
-    Top = 51
-    Width = 52
+    Left = 364
+    Height = 21
+    Top = 39
+    Width = 37
     Anchors = [akBottom]
     Caption = 'Label'
     Font.Color = 15395562

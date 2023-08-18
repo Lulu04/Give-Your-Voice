@@ -30,7 +30,7 @@ procedure _ShowHelp(const aMultiLineTextHelp: string; aHelpButton: TSpeedButton;
 
 
 implementation
-uses form_main, Math, LCLType{$ifdef Linux},u_utils, u_common{$endif};
+uses form_main, Math, LCLType{$if defined(Linux) or defined(Darwin)},u_utils, u_common{$endif};
 
 procedure _ShowHelp(const aMultiLineTextHelp: string; aHelpButton: TSpeedButton;
                     ShowBigWindow: boolean);
@@ -89,9 +89,9 @@ end;
 
 procedure TFormHelp.AdjustFont;
 begin
-  {$ifdef Linux}
-   ChangeFontHeightOnFormChilds(Self, FDesignFontHeight);
-  {$endif}
+{$if defined(LCLGTK2) or defined(LCLCOCOA)}
+  ChangeFontHeightOnFormChilds(Self, FDesignFontHeight);
+{$endif}
 end;
 
 end.

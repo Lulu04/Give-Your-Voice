@@ -161,7 +161,7 @@ uses u_project, u_common, form_options, u_audio_utils, utilitaire_fichier,
   form_firsttimewizard, u_utils, form_about, u_crossplatform,
   form_project_manager, u_web, form_remembertodonate, LCLType, LCLIntf, Clipbrd,
   Math
-  {$ifdef LINUX},u_datamodule{$endif};
+  {$if defined(Linux) or defined(Darwin)},u_datamodule{$endif};
 
 {$R *.lfm}
 
@@ -169,9 +169,9 @@ uses u_project, u_common, form_options, u_audio_utils, utilitaire_fichier,
 
 procedure TFormMain.FormCreate(Sender: TObject);
 begin
- {$ifdef LINUX}
-  FDesignFontHeight := ScaleDesignToForm(15);
-  FDesignSmallFontHeight := ScaleDesignToForm(11);
+ {$if defined(LCLGTK2) or defined(LCLCOCOA)}
+   FDesignFontHeight := ScaleDesignToForm(15);
+   FDesignSmallFontHeight := ScaleDesignToForm(11);
  {$endif}
 
 
@@ -507,7 +507,8 @@ begin
     end;
 
     // if there is any, try to open the project specified as parameter in command line
-    if Application.ParamCount > 0 then begin
+    if (Application.ParamCount > 0) and
+       (Application.Params[1] <> 'AppIsRunningFromIDE') then begin
       if FileIsGYVProject(Application.Params[1]) then
         Project.Load(Application.Params[1]);
     end else begin
@@ -765,7 +766,7 @@ end;
 
 procedure TFormMain.AdjustFont;
 begin
-{$ifdef Linux}
+{$if defined(LCLGTK2) or defined(LCLCOCOA)}
   DataModule1.ApplicationProperties1.HintColor := RGBToColor(10,10,0);
   Font.Height := FDesignFontHeight;
   ChangeFontHeightOnFormChilds(Self, FDesignFontHeight);
@@ -776,6 +777,10 @@ begin
   ChangeFontColor([CBVolumeGain, CBBassGain, CBURLType], clBlack);
 
   //ChangeFontHeight([Label1], 12);
+{$endif}
+{$if defined(LCLCOCOA)}
+  BActivateImprovedListening.Flat := False;
+  ChangeFontColor([BActivateImprovedListening], clDefault);
 {$endif}
 end;
 

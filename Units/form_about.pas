@@ -113,10 +113,15 @@ end;
 
 procedure TFormAbout.AdjustFont;
 begin
-  {$ifdef Linux}
+{$if defined(LCLGTK2) or defined(LCLCOCOA)}
   ChangeFontHeightOnFormChilds(Self, FDesignFontHeight);
-  ChangeFontHeight([Memo1, Label10], FDesignFontHeight-2);
-  {$endif}
+  ChangeFontHeight([Memo1, Label10, Label11], FDesignFontHeight-2);
+{$endif}
+{$if defined(LCLCOCOA)}
+  BDonate.Flat := False;
+  BClose.Flat := False;
+  ChangeFontColor([BDonate, BClose], clDefault);
+{$endif}
 end;
 
 procedure TFormAbout.FormShow(Sender: TObject);

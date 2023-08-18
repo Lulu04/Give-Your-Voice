@@ -32,7 +32,7 @@ type
 
 
 implementation
-uses LCLType, u_utils{$ifdef LINUX}, u_common{$endif};
+uses LCLType, u_utils{$if defined(Linux) or defined(Darwin)}, u_common{$endif};
 
 {$R *.lfm}
 
@@ -71,8 +71,11 @@ end;
 
 procedure TFormUserMessage.AdjustFont;
 begin
-{$ifdef LINUX}
+{$if defined(LCLGTK2) or defined(LCLCOCOA)}
   ChangeFontHeightOnFormChilds(Self, FDesignFontHeight);
+{$endif}
+{$if defined(LCLCOCOA)}
+  BOk.Flat := False;
 {$endif}
 end;
 
