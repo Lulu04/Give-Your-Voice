@@ -675,7 +675,7 @@ begin
   BCompressor.Flat := False;
   BAmplify.Flat := False;
   BBassBoost.Flat := False;
-  ChangeFontColor([BCompressor, BAmplify, BBassBoost, FSEBassBoost, CBAmplify], clDefault);
+  ChangeFontColor([BCompressor, BAmplify, BBassBoost, FSEBassBoost, CBAmplify, FSE3, BMix], clDefault);
 {$endif}
 end;
 
