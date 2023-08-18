@@ -183,6 +183,7 @@ begin
   SpeedButton1.Flat := False;
   SpeedButton2.Flat := False;
   SpeedButton3.Flat := False;
+  ChangeFontColor([BTestPlaybackDevice], clDefault);
 {$endif}
 end;
 
