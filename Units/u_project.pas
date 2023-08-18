@@ -421,7 +421,7 @@ var t: TStringList;
   projFolder: String;
 begin
   Log.AddEmptyLine;
-  Log.Info('gyv: try to load project "'+aFilename+'"');
+  Log.Info('gyv: loading project "'+aFilename+'"');
   Result := False;
   t := TStringList.Create;
   try
@@ -450,11 +450,13 @@ begin
     // check the existence of project's MP3 folder
     projFolder := IncludeTrailingPathDelimiter(ExtractFilePath(aFilename));
     projFolder := IncludeTrailingPathDelimiter(ConcatPaths([projFolder, PROJECT_OUTPUT_FOLDER_MP3]));
-    if not RepertoireExistant(projFolder) then
+    if not RepertoireExistant(projFolder) then begin
+      Log.Warning('gyv: MP3 folder is missing, try to create it');
       if not CreerRepertoire(projFolder) then begin
         ShowMess(SFailedToCreateMP3ProjectFolder+LineEnding+projFolder, SClose, mtError);
-        Log.Error('gyv: failed to create project MP3 folder', 1);
+        Log.Error('failed to create project MP3 folder', 1);
       end;
+    end;
     Result := True;
     Log.Mess('project loaded with success', 1);
     Log.AddEmptyLine;
