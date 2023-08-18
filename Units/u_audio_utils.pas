@@ -1431,6 +1431,9 @@ end;
 
 procedure TCaptureContext.Create(aDeviceIndex: integer);
 begin
+  if Length(ALSManager.ListOfCaptureDeviceName) = 0 then
+    Log.Warning('gyv: OpenAL-Soft return no capture device !');
+
   FCaptureContext := ALSManager.CreateCaptureContext(aDeviceIndex, 44100,
       ALS_CAPTUREFORMAT_MONO_FLOAT32, 0.100);
 
@@ -1463,6 +1466,9 @@ end;
 procedure TPlaybackContext.Create(aDeviceIndex: integer);
 var attribs: TALSContextAttributes;
 begin
+  if Length(ALSManager.ListOfPlaybackDeviceName) = 0 then
+    Log.Warning('gyv: OpenAL-Soft return no playback device !');
+
   attribs.InitDefault;
   attribs.EnableOutputLimiter := True;
   attribs.ContextUseFloat := True;

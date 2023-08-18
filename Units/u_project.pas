@@ -456,7 +456,7 @@ begin
         Log.Error('gyv: failed to create project MP3 folder', 1);
       end;
     Result := True;
-    Log.Info('gyv: project loaded');
+    Log.Mess('project loaded with success', 1);
     Log.AddEmptyLine;
   finally
     t.Free;
