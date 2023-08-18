@@ -736,7 +736,7 @@ end;
 
 procedure TFrameViewProjectFiles.AdjustFont;
 begin
-{$ifdef Linux}
+{$if defined(LCLGTK2) or defined(LCLCOCOA)}
   ChangeFontHeight([Self, TV, BAddSection,
       BPlayAudioFile, BStopAudioFile, BEditFile,
       BAddrecord, BMixSection], FDesignFontHeight);

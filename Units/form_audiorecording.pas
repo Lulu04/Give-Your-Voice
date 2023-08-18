@@ -469,12 +469,15 @@ end;
 
 procedure TFormRecord.AdjustFont;
 begin
-{$ifdef LINUX}
+{$if defined(LCLGTK2) or defined(LCLCOCOA)}
   ChangeFontHeightOnFormChilds(Self, FDesignFontHeight);
 
   ChangeFontHeight([Label19, Label20], FDesignSmallFontHeight);
 
   ChangeFontColor([Edit6, SEBeginPage1, SEBeginPage, SEEndPage], clBlack);
+ {$if defined(LCLCOCOA)}
+  ChangeFontColor([BStartRecord], clDefault);
+ {$endif}
 {$endif}
 end;
 

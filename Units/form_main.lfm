@@ -44,11 +44,12 @@ object FormMain: TFormMain
       AnchorSideLeft.Control = Panel3
       AnchorSideTop.Control = LabelAuthor
       AnchorSideTop.Side = asrBottom
+      AnchorSideRight.Control = Panel8
       AnchorSideBottom.Side = asrBottom
       Left = 6
       Height = 35
       Top = 46
-      Width = 844
+      Width = 581
       Alignment = taCenter
       Anchors = [akTop, akLeft, akRight]
       BorderSpacing.Left = 5
@@ -64,11 +65,12 @@ object FormMain: TFormMain
       AnchorSideLeft.Control = Panel3
       AnchorSideTop.Control = Label16
       AnchorSideTop.Side = asrBottom
+      AnchorSideRight.Control = Panel8
       AnchorSideBottom.Control = LabelTitle
       Left = 6
       Height = 30
       Top = 16
-      Width = 844
+      Width = 581
       Alignment = taCenter
       Anchors = [akTop, akLeft, akRight]
       BorderSpacing.Left = 5

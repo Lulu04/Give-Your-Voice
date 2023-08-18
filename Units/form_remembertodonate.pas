@@ -33,7 +33,7 @@ var
 
 implementation
 
-uses u_utils{$ifdef Linux},u_common{$endif};
+uses u_utils{$if defined(Linux) or defined(Darwin)},u_common{$endif};
 
 procedure ShowWindowRemberUserToDonate;
 begin
@@ -59,9 +59,13 @@ end;
 
 procedure TFormRememberToDonate.AdjustFont;
 begin
- {$ifdef LINUX}
+{$if defined(LCLGTK2) or defined(LCLCOCOA)}
   ChangeFontHeightOnFormChilds(Self, FDesignFontHeight);
- {$endif}
+{$endif}
+{$if defined(LCLCOCOA)}
+  BDonate.Flat := False;
+  BClose.Flat := False;
+{$endif}
 end;
 
 procedure TFormRememberToDonate.BCloseClick(Sender: TObject);

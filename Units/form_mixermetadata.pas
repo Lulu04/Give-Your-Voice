@@ -118,12 +118,18 @@ end;
 
 procedure TFormMixerMetaData.AdjustFont;
 begin
-  {$ifdef LINUX}
-    ChangeFontHeightOnFormChilds(Self, FDesignFontHeight);
-    ChangeFontHeight([Label30], FDesignSmallFontHeight);
-    ChangeFontColor([EditTitle, EditArtist, EditAlbum, EditGenre, EditDate,
-                     EditComment, EditTrack], clBlack);
-  {$endif}
+{$if defined(LCLGTK2) or defined(LCLCOCOA)}
+   ChangeFontHeightOnFormChilds(Self, FDesignFontHeight);
+   ChangeFontHeight([Label30], FDesignSmallFontHeight);
+   {$if defined(LCLGTK2)}
+   ChangeFontColor([EditTitle, EditArtist, EditAlbum, EditGenre, EditDate,
+                    EditComment, EditTrack], clBlack);
+   {$endif}
+{$endif}
+{$if defined(LCLCOCOA)}
+  BMix.Flat := False;
+  ChangeFontColor([BMix], clDefault);
+{$endif}
 end;
 
 end.

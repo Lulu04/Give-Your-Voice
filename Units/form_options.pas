@@ -58,8 +58,8 @@ var
 
 implementation
 uses u_program_options, u_audio_utils, u_resource_string, form_main, u_utils,
-  u_crossplatform
-  {$ifdef LINUX}, u_common{$endif}, LCLType;
+  u_crossplatform, LCLType
+  {$if defined(LINUX) or defined(Darwin)}, u_common{$endif};
 
 {$R *.lfm}
 
@@ -149,10 +149,13 @@ end;
 
 procedure TFormOptions.AdjustFont;
 begin
-{$ifdef LINUX}
+{$if defined(LCLGTK2) or defined(LCLCOCOA)}
   ChangeFontHeightOnFormChilds(Self, FDesignFontHeight);
-  //ChangeFontHeight([BTestPlayBackDevice], FDesignFontHeight);
-  ChangeFontColor([CBLanguage, CBCapture, CBPlayBack], clBlack);
+  ChangeFontHeight([BTestPlaybackDevice], FDesignSmallFontHeight);
+  ChangeFontColor([CBLanguage, CBCapture, CBPlayBack, BTestPlaybackDevice], clBlack);
+{$endif}
+{$if defined(LCLCOCOA)}
+  ChangeFontColor([BOk, BCancel, BTestPlaybackDevice], clDefault);
 {$endif}
 end;
 

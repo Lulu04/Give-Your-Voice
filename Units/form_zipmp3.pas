@@ -342,11 +342,14 @@ end;
 procedure TFormZipMP3.AdjustFont;
 begin
   FrameZipFiles1.AdjustFont;
-  {$ifdef Linux}
+{$if defined(LCLGTK2) or defined(LCLCOCOA)}
   ChangeFontHeightOnFormChilds(Self, FDesignFontHeight);
   ChangeFontHeight([Label4], FDesignSmallFontHeight);
   ChangeFontColor([Edit1], clBlack);
-  {$endif}
+{$endif}
+{$if defined(LCLCOCOA)}
+  BZipFiles.Flat := False;
+{$endif}
 end;
 
 end.

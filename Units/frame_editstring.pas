@@ -147,7 +147,7 @@ end;
 
 procedure TFrameEditString.AdjustFont;
 begin
-{$ifdef LINUX}
+{$if defined(LCLGTK2) or defined(LCLCOCOA)}
   ChangeFontHeight([Self, Label1, Edit1], FDesignFontHeight);
   ChangeFontHeight([Label2], FDesignFontHeight-3);
   ChangeFontColor([Edit1], clBlack);

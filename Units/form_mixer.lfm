@@ -1,7 +1,7 @@
 object FormMixer: TFormMixer
-  Left = -7
+  Left = 72
   Height = 608
-  Top = 0
+  Top = 27
   Width = 845
   Caption = 'Mixer'
   ClientHeight = 608

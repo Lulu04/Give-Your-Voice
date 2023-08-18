@@ -177,11 +177,17 @@ end;
 
 procedure TFormAskSectionName.AdjustFont;
 begin
-  {$ifdef Linux}
+{$if defined(LCLGTK2) or defined(LCLCOCOA)}
   ChangeFontHeightOnFormChilds(Self, FDesignFontHeight);
   ChangeFontHeight([Label3, Label4, Label5, Label6, Label7,
                     Label11, Label12, Label13, Label14, Label8], FDesignSmallFontHeight);
+  {$if defined(LCLGTK2)}
   ChangeFontColor([Edit1, SpinEdit1, Edit2, ComboBox1, SpinEdit2, Edit4], clBlack);
+  {$endif}
+  {$endif}
+  {$if defined(LCLCOCOA)}
+    BOk.Flat := False;
+    BCancel.Flat := False;
   {$endif}
 end;
 

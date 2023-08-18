@@ -45,7 +45,7 @@ type
 
 implementation
 
-uses u_resource_string, utilitaire_fichier {$ifdef Linux},u_utils, u_common{$endif};
+uses u_resource_string, utilitaire_fichier {$if defined(Linux) or defined(Darwin)},u_utils, u_common{$endif};
 
 {$R *.lfm}
 
@@ -98,9 +98,12 @@ end;
 
 procedure TFrameZipFiles.AdjustFont;
 begin
-  {$ifdef Linux}
+{$if defined(LCLGTK2) or defined(LCLCOCOA)}
   ChangeFontHeightOnFormChilds(Self, FDesignFontHeight);
-  {$endif}
+{$endif}
+{$if defined(LCLCOCOA)}
+  BCancelZipper.Flat := False;
+{$endif}
 end;
 
 function TFrameZipFiles.ZipFiles(const zipFilename,

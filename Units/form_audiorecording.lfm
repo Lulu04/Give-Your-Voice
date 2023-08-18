@@ -36,7 +36,7 @@ object FormRecord: TFormRecord
     Height = 201
     Top = 2
     Width = 307
-    PageIndex = 0
+    PageIndex = 3
     Anchors = [akTop, akLeft, akRight]
     BorderSpacing.Left = 2
     BorderSpacing.Top = 2
@@ -473,7 +473,6 @@ object FormRecord: TFormRecord
           BorderSpacing.Bottom = 20
           Caption = 'Label'
           Flat = True
-          Font.Color = clBlack
           Font.Height = 20
           Images = DataModule1.ImageList1
           ImageIndex = 11
@@ -490,8 +489,9 @@ object FormRecord: TFormRecord
           AnchorSideTop.Side = asrBottom
           Left = 116
           Height = 28
-          Top = 85
+          Top = 89
           Width = 74
+          BorderSpacing.Top = 4
           Color = 1973790
           Font.Color = 14342874
           Font.Height = 20

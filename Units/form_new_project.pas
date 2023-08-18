@@ -77,10 +77,14 @@ end;
 
 procedure TFormNewProject.AdjustFont;
 begin
-{$ifdef LINUX}
+{$if defined(LCLGTK2) or defined(LCLCOCOA)}
   ChangeFontHeightOnFormChilds(Self, FDesignFontHeight);
   ChangeFontColor([Edit1, Edit2, Edit3], clBlack);
   ChangeFontHeight([Label11, Label23, Label24], FDesignSmallFontHeight);
+{$endif}
+{$if defined(LCLCOCOA)}
+  BCreateProject.Flat := False;
+  ChangeFontColor([BCreateProject, Edit1, Edit2, Edit3], clDefault);
 {$endif}
 end;
 

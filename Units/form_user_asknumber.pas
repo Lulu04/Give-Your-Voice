@@ -37,7 +37,7 @@ var
   FormUserAskNumber: TFormUserAskNumber;
 
 implementation
-uses LCLType{$ifdef LINUX}, u_common, u_utils{$endif};
+uses LCLType{$if defined(Linux) or defined(Darwin)}, u_common, u_utils{$endif};
 
 {$R *.lfm}
 
@@ -82,9 +82,15 @@ end;
 
 procedure TFormUserAskNumber.AdjustFont;
 begin
-{$ifdef LINUX}
+{$if defined(LCLGTK2) or defined(LCLCOCOA)}
   ChangeFontHeightOnFormChilds(Self, FDesignFontHeight);
+  {$if defined(LCLGTK2)}
   ChangeFontColor([FloatSpinEdit1], clBlack);
+  {$endif}
+{$endif}
+{$if defined(LCLCOCOA)}
+  BOk.Flat := False;
+  BCancel.Flat := False;
 {$endif}
 end;
 
