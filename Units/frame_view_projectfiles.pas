@@ -1170,28 +1170,14 @@ end;
 procedure TFrameViewProjectFiles.TVMouseUp(Sender: TObject;
   Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin
-  if (Button = mbRight) and (TV.Selected <> NIL) {and
-      not SelectedIsRoot} then begin
-    if SelectedIsSection then PopupSection.PopUp
-    else if SelectedIsFolderMP3 then PopupMP3Folder.PopUp
-    else if SelectedIsFolderZIP then PopupZIPFolder.PopUp
-    else if SelectedIsFile then PopupRecording.PopUp;
-
- {   if SelectedIsSection then begin
-      if TV.Selected.Text = PROJECT_OUTPUT_FOLDER_MP3 then
-        PopupMP3Folder.PopUp
-      else if TV.Selected.Text = PROJECT_OUTPUT_FOLDER_ZIP then
-        PopupZIPFolder.PopUp
-      else
-        PopupSection.PopUp;
-    end else begin
-      if SelectedIsRecordingFile then PopupRecording.PopUp;
-    end; }
-
+  if Button = mbRight then begin
+    if TV.Selected <> NIL then begin
+      if SelectedIsSection then PopupSection.PopUp
+      else if SelectedIsFolderMP3 then PopupMP3Folder.PopUp
+      else if SelectedIsFolderZIP then PopupZIPFolder.PopUp
+      else if SelectedIsFile then PopupRecording.PopUp;
+    end else PopupEmpty.PopUp;
   end;
-
-  if (Button = mbRight) and (TV.Selected = NIL) then
-    PopupEmpty.PopUp;
 end;
 
 procedure TFrameViewProjectFiles.TVMouseWheel(Sender: TObject;
