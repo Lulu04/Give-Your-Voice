@@ -49,7 +49,7 @@ var
   FormAbout: TFormAbout;
 
 implementation
-uses LCLIntf, u_program_options, u_common, u_resource_string, u_utils,
+uses LCLIntf, u_common, u_resource_string, u_utils,
   u_userdialogs, u_web, form_main, u_crossplatform, LCLType;
 
 {$R *.lfm}
