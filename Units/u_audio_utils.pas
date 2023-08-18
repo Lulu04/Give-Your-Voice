@@ -1436,10 +1436,10 @@ begin
 
   if FCaptureContext.Error then begin
     Log.Error('alsound: failed to create capture context');
-    Log.Info('with device index: '+aDeviceIndex.ToString+'   max device index on this system: '+High(ALSManager.ListOfCaptureDeviceName).ToString, 1);
+    Log.Mess('with device index: '+aDeviceIndex.ToString+'   max device index on this system: '+High(ALSManager.ListOfCaptureDeviceName).ToString, 1);
     if InRange(aDeviceIndex, Low(ALSManager.ListOfCaptureDeviceName), High(ALSManager.ListOfCaptureDeviceName)) then
-      Log.Info('device name: '+ALSManager.ListOfCaptureDeviceName[aDeviceIndex], 1);
-    Log.Info(FCaptureContext.StrError, 1);
+      Log.Mess('device name: '+ALSManager.ListOfCaptureDeviceName[aDeviceIndex], 1);
+    Log.Mess(FCaptureContext.StrError, 1);
   end;
 end;
 
@@ -1473,10 +1473,10 @@ begin
   FPlaybackContext := ALSManager.CreatePlaybackContext(aDeviceIndex, attribs);
   if FPlaybackContext.Error then begin
     Log.Error('alsound: failed to create playback context');
-    Log.Info('device index: '+aDeviceIndex.ToString+'   max device index on this system: '+High(ALSManager.ListOfPlaybackDeviceName).ToString, 1);
+    Log.Mess('device index: '+aDeviceIndex.ToString+'   max device index on this system: '+High(ALSManager.ListOfPlaybackDeviceName).ToString, 1);
     if InRange(aDeviceIndex, Low(ALSManager.ListOfPlaybackDeviceName), High(ALSManager.ListOfPlaybackDeviceName)) then
-      Log.Info('device name: '+ALSManager.ListOfPlaybackDeviceName[aDeviceIndex], 1);
-    Log.Info(FPlaybackContext.StrError, 1);
+      Log.Mess('device name: '+ALSManager.ListOfPlaybackDeviceName[aDeviceIndex], 1);
+    Log.Mess(FPlaybackContext.StrError, 1);
   end;
 
   FCompressorProp.InitDefault;
@@ -1527,7 +1527,7 @@ begin
 
   if FLoopbackContext.Error then begin
     Log.Error('alsound: failed to create loopback context');
-    Log.Error(FLoopbackContext.StrError, 1);
+    Log.Mess(FLoopbackContext.StrError, 1);
   end;
   if not FCompressor.Ready then
     Log.Error('alsound: failed to create compressor effect for loopback context');
