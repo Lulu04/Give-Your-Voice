@@ -25,8 +25,8 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <EditorIndex Value="9"/>
-        <TopLine Value="169"/>
-        <CursorPos X="61" Y="178"/>
+        <TopLine Value="884"/>
+        <CursorPos X="48" Y="904"/>
         <UsageCount Value="201"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -56,11 +56,10 @@
       <Unit>
         <Filename Value="Units\u_common.pas"/>
         <IsPartOfProject Value="True"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="6"/>
         <WindowIndex Value="1"/>
-        <TopLine Value="91"/>
-        <CursorPos X="21" Y="111"/>
+        <TopLine Value="98"/>
+        <CursorPos X="24" Y="122"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
       </Unit>
@@ -400,9 +399,10 @@
         <ComponentName Value="FormProjectManager"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="6"/>
-        <TopLine Value="607"/>
-        <CursorPos X="36" Y="627"/>
+        <TopLine Value="78"/>
+        <CursorPos X="26" Y="95"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -520,7 +520,7 @@
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="30"/>
         <TopLine Value="487"/>
-        <CursorPos X="28" Y="493"/>
+        <CursorPos X="53" Y="488"/>
         <UsageCount Value="77"/>
         <Loaded Value="True"/>
       </Unit>
@@ -542,6 +542,15 @@
         <UnitName Value="Unit1"/>
         <EditorIndex Value="-1"/>
         <UsageCount Value="32"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\UnitsCommon\i18_utils.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="19"/>
+        <TopLine Value="92"/>
+        <CursorPos X="43" Y="107"/>
+        <UsageCount Value="30"/>
+        <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="Z:\ALSound\source\alsound.pas"/>
@@ -1060,97 +1069,13 @@
         <Loaded Value="True"/>
       </Unit>
       <Unit>
-        <Filename Value="..\UnitsCommon\i18_utils.pas"/>
-        <IsPartOfProject Value="True"/>
-        <EditorIndex Value="19"/>
-        <TopLine Value="92"/>
-        <CursorPos X="43" Y="107"/>
-        <UsageCount Value="30"/>
-        <Loaded Value="True"/>
-      </Unit>
-      <Unit>
         <Filename Value="C:\lazarus\lcl\lclproc.pas"/>
         <UnitName Value="LCLProc"/>
         <EditorIndex Value="-1"/>
         <UsageCount Value="9"/>
       </Unit>
     </Units>
-    <General>
-      <ActiveWindowIndexAtStart Value="1"/>
-    </General>
     <JumpHistory HistoryIndex="29">
-      <Position>
-        <Filename Value="Units\u_program_options.pas"/>
-        <Caret Line="204" TopLine="190"/>
-      </Position>
-      <Position>
-        <Filename Value="Units\u_program_options.pas"/>
-        <Caret Line="205" TopLine="190"/>
-      </Position>
-      <Position>
-        <Filename Value="..\UnitsCommon\i18_utils.pas"/>
-        <Caret Line="185" TopLine="173"/>
-      </Position>
-      <Position>
-        <Filename Value="Units\form_options.pas"/>
-        <Caret Line="129" Column="89" TopLine="112"/>
-      </Position>
-      <Position>
-        <Filename Value="..\UnitsCommon\i18_utils.pas"/>
-        <Caret Line="185" Column="23" TopLine="173"/>
-      </Position>
-      <Position>
-        <Filename Value="..\UnitsCommon\i18_utils.pas"/>
-        <Caret Line="54" Column="14" TopLine="36"/>
-      </Position>
-      <Position>
-        <Filename Value="Units\u_program_options.pas"/>
-        <Caret Line="209" TopLine="190"/>
-      </Position>
-      <Position>
-        <Filename Value="Units\u_program_options.pas"/>
-        <Caret Line="167" TopLine="154"/>
-      </Position>
-      <Position>
-        <Filename Value="Units\form_options.pas"/>
-        <Caret Line="124" TopLine="112"/>
-      </Position>
-      <Position>
-        <Filename Value="Units\u_program_options.pas"/>
-        <Caret Line="208" Column="15" TopLine="196"/>
-      </Position>
-      <Position>
-        <Filename Value="Units\u_program_options.pas"/>
-        <Caret Line="18" Column="19" TopLine="8"/>
-      </Position>
-      <Position>
-        <Filename Value="Units\u_program_options.pas"/>
-        <Caret Line="121" TopLine="115"/>
-      </Position>
-      <Position>
-        <Filename Value="Units\u_program_options.pas"/>
-        <Caret Line="209" TopLine="196"/>
-      </Position>
-      <Position>
-        <Filename Value="Units\u_program_options.pas"/>
-        <Caret Line="121" TopLine="108"/>
-      </Position>
-      <Position>
-        <Filename Value="Units\u_project.pas"/>
-        <Caret Line="477" Column="33" TopLine="468"/>
-      </Position>
-      <Position>
-        <Filename Value="Units\u_program_options.pas"/>
-        <Caret Line="209" TopLine="196"/>
-      </Position>
-      <Position>
-        <Filename Value="Units\u_program_options.pas"/>
-        <Caret Line="121" TopLine="108"/>
-      </Position>
-      <Position>
-        <Filename Value="Units\u_program_options.pas"/>
-        <Caret Line="209" TopLine="196"/>
-      </Position>
       <Position>
         <Filename Value="Units\u_program_options.pas"/>
         <Caret Line="117" Column="33" TopLine="108"/>
@@ -1198,6 +1123,78 @@
       <Position>
         <Filename Value="..\UnitsCommon\i18_utils.pas"/>
         <Caret Line="35" Column="20" TopLine="19"/>
+      </Position>
+      <Position>
+        <Filename Value="Units\form_project_manager.pas"/>
+        <Caret Line="620" Column="33" TopLine="607"/>
+      </Position>
+      <Position>
+        <Filename Value="Units\form_project_manager.pas"/>
+        <Caret Line="44" Column="19" TopLine="35"/>
+      </Position>
+      <Position>
+        <Filename Value="Units\form_main.pas"/>
+        <Caret Line="10" Column="12"/>
+      </Position>
+      <Position>
+        <Filename Value="Units\form_project_manager.pas"/>
+        <Caret Line="85" Column="18" TopLine="65"/>
+      </Position>
+      <Position>
+        <Filename Value="Units\form_main.pas"/>
+        <Caret Line="115" Column="21" TopLine="95"/>
+      </Position>
+      <Position>
+        <Filename Value="Units\form_project_manager.pas"/>
+        <Caret Line="638" Column="21" TopLine="616"/>
+      </Position>
+      <Position>
+        <Filename Value="Units\form_project_manager.pas"/>
+        <Caret Line="44" Column="20" TopLine="34"/>
+      </Position>
+      <Position>
+        <Filename Value="Units\form_main.pas"/>
+        <Caret Line="596" Column="30" TopLine="592"/>
+      </Position>
+      <Position>
+        <Filename Value="Units\form_main.pas"/>
+        <Caret Line="150" Column="20" TopLine="137"/>
+      </Position>
+      <Position>
+        <Filename Value="Units\form_project_manager.pas"/>
+        <Caret Line="154" TopLine="147"/>
+      </Position>
+      <Position>
+        <Filename Value="Units\form_project_manager.pas"/>
+        <Caret Line="47" Column="20" TopLine="33"/>
+      </Position>
+      <Position>
+        <Filename Value="Units\form_project_manager.pas"/>
+        <Caret Line="198" TopLine="183"/>
+      </Position>
+      <Position>
+        <Filename Value="Units\form_project_manager.pas"/>
+        <Caret Line="84" Column="19" TopLine="62"/>
+      </Position>
+      <Position>
+        <Filename Value="Units\form_project_manager.pas"/>
+        <Caret Line="636" Column="13" TopLine="615"/>
+      </Position>
+      <Position>
+        <Filename Value="Units\u_common.pas"/>
+        <Caret Line="122" Column="24" TopLine="98"/>
+      </Position>
+      <Position>
+        <Filename Value="Units\form_project_manager.pas"/>
+        <Caret Line="15" Column="37"/>
+      </Position>
+      <Position>
+        <Filename Value="Units\form_main.pas"/>
+        <Caret Line="904" Column="48" TopLine="884"/>
+      </Position>
+      <Position>
+        <Filename Value="Units\form_project_manager.pas"/>
+        <Caret Line="196" Column="5" TopLine="183"/>
       </Position>
     </JumpHistory>
     <RunParams>

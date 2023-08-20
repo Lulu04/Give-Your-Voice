@@ -14,7 +14,6 @@ object FormProjectManager: TFormProjectManager
   Font.Color = 14342874
   Font.Height = 20
   KeyPreview = True
-  OnActivate = FormActivate
   OnCreate = FormCreate
   OnDestroy = FormDestroy
   OnKeyUp = FormKeyUp
