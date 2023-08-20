@@ -9,12 +9,10 @@ uses
   ExtCtrls, Buttons, StdCtrls, LCLTranslator,
   LMessages, {LCLIntf,}   // messages functions
   ALSound,
-  frame_channel_level, frame_viewaudio, frame_view_projectfiles,
+  u_common, frame_channel_level, frame_viewaudio, frame_view_projectfiles,
   LCL_utils, {frame_trackbar,} u_main_undoredo;
 
-const
-  LM_MESSAGE_MainGui = LM_USER+1;
-    MESS_MAINGUI_CLOSEAPP = 0;
+
 type
 
   { TFormMain }
@@ -156,7 +154,7 @@ var
   FormMain: TFormMain;
 
 implementation
-uses u_project, u_common, form_options, u_audio_utils, utilitaire_fichier,
+uses u_project, form_options, u_audio_utils, utilitaire_fichier,
   u_logfile, u_program_options, u_userdialogs, u_resource_string,
   form_firsttimewizard, u_utils, form_about, u_crossplatform,
   form_project_manager, u_web, form_remembertodonate, LCLType, LCLIntf, Clipbrd,

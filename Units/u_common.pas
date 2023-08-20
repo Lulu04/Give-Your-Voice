@@ -5,7 +5,8 @@ unit u_common;
 interface
 
 uses
-  Classes, SysUtils, ALSound;
+  Classes, SysUtils, ALSound, LMessages;
+
 
 const
   APP_NAME = 'Give Your Voice';
@@ -113,6 +114,14 @@ const
   SupportedLanguages: array[0..3] of string=(
      'English', 'en',
      'Français', 'fr');
+
+// GUI messages definition
+const
+  LM_MESSAGE_MainGui = LM_USER+1;
+      MESS_MAINGUI_CLOSEAPP = 0;
+
+  LM_MESSAGE_ProjectManagerGui = LM_USER+2;
+      MESS_ASK_USER_TO_SHOW_USERGUIDE = 0;
 
 implementation
 

@@ -6,9 +6,9 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, Buttons,
-  StdCtrls, ComCtrls, ExtCtrls,
+  StdCtrls, ComCtrls, ExtCtrls, LMessages,
   Zipper,
-  frame_progressbar;
+  frame_progressbar, u_common;
 
 type
 
@@ -41,7 +41,6 @@ type
     TVProjects: TTreeView;
     TVPaths: TTreeView;
     procedure BOpenProjectClick(Sender: TObject);
-    procedure FormActivate(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
     procedure FormKeyUp(Sender: TObject; var Key: Word; {%H-}Shift: TShiftState);
@@ -81,6 +80,8 @@ type
     procedure ProcessZipperOnStartFileEvent(Sender: TObject; Const AFileName: String);
 
     procedure AdjustFont;
+  private
+    procedure GuiMessageHandler(var Message: TLMessage); message LM_MESSAGE_ProjectManagerGui;
   public
   end;
 
@@ -89,9 +90,9 @@ var
 
 implementation
 
-uses u_program_options, u_crossplatform, u_common, u_project, u_utils,
+uses u_program_options, u_crossplatform, u_project, u_utils,
   utilitaire_fichier, LCLType, form_main, u_userdialogs, u_resource_string,
-  FileUtil, Math;
+  FileUtil, Math, LCLIntf;
 
 {$R *.lfm}
 
@@ -149,17 +150,6 @@ begin
   end;
 end;
 
-procedure TFormProjectManager.FormActivate(Sender: TObject);
-begin
-  // ask to user if s/he want to read the user guide
-  if FormProjectManager_FAskUserToShowUserGuide then begin
-    Application.ProcessMessages;
-    if AskConfirmation(SDoYouWantToShowUserGuide, SYes, SNo, mtConfirmation) = mrOk then
-      ShowGYVUserGuide;
-    FormProjectManager_FAskUserToShowUserGuide := False;
-  end;
-end;
-
 procedure TFormProjectManager.FormCreate(Sender: TObject);
 begin
   FProjectFileFound := TStringList.Create;
@@ -200,6 +190,12 @@ begin
 
   // fill the folder list
   UpdateWorkingDirectoryView;
+
+  // ask to user if s/he want to read the user guide
+  if FormProjectManager_FAskUserToShowUserGuide then begin
+    PostMessage(self.Handle, LM_MESSAGE_ProjectManagerGui, MESS_ASK_USER_TO_SHOW_USERGUIDE, 0);
+    FormProjectManager_FAskUserToShowUserGuide := False;
+  end;
 end;
 
 procedure TFormProjectManager.TVPathsChanging(Sender: TObject; Node: TTreeNode;
@@ -628,6 +624,16 @@ begin
   ChangeFontColor([BSearchFolder, BNewProject, BOpenProject, BZipProject,
                    BUnzipProject, BDeleteProject, BCancel, BCancelZipper], clDefault);
 {$endif}
+end;
+
+procedure TFormProjectManager.GuiMessageHandler(var Message: TLMessage);
+begin
+  case Message.wParam of
+    MESS_ASK_USER_TO_SHOW_USERGUIDE: begin
+        if AskConfirmation(SDoYouWantToShowUserGuide, SYes, SNo, mtConfirmation) = mrOk then
+          ShowGYVUserGuide;
+    end;
+  end;
 end;
 
 end.
