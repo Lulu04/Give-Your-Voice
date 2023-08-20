@@ -18,7 +18,60 @@ type
 function CheckForNewVersionOnGitHub(out newVersion: string): TResultCheckOnlineVersion;
 
 implementation
-uses u_common, fphttpclient, opensslsockets, u_logfile;
+uses u_common, u_logfile,
+{$ifdef Darwin}
+  Process, UTF8Process
+{$else}
+  fphttpclient, opensslsockets
+{$endif};
+
+
+{$ifdef Darwin}
+function CheckForNewVersionOnGitHub(out newVersion: string): TResultCheckOnlineVersion;
+var process: TProcessUTF8;
+  f: string;
+  t: TStringList;
+begin
+  Result := rcovNoNewVersion;
+  newVersion := '';
+
+  if not Project.TempFolderExists then exit;
+
+  f := Project.TempFolder+'loadedversion';
+  try
+    try
+      process := TProcessUTF8.Create(NIL);
+      process.CommandLine := 'curl -o '+f+' '+URL_FOR_VERSION_ON_GITHUB;
+      process.Options := process.Options+[poWaitOnExit, poNoConsole];
+      process.Execute;
+    finally
+      process.Free;
+    end;
+    if not FileExists(f) then exit;
+
+    t := TStringList.Create;
+    try
+      t.LoadFromFile(f);
+      if t.Count = 0 then exit;
+      newVersion := t.Strings[0];
+      if StrComp(PChar(newVersion), PChar(APP_VERSION)) > 0 then begin
+        Result := rcovNewVersionAvailable;
+        Log.Info('gyv: found new app version: '+newVersion);
+      end;
+    finally
+      t.Free;
+    end;
+  except
+    on E: Exception do begin
+      Log.Warning('gyv: check for new version fail'+LineEnding+
+                  '    '+E.Message);
+      Result := rcovErrorAccessingInternet;
+  end;
+
+  if FichierExistant(f) then SupprimeFichier(f);
+end;
+
+{$else}
 
 function CheckForNewVersionOnGitHub(out newVersion: string): TResultCheckOnlineVersion;
 var Client: TFpHttpClient;
@@ -49,6 +102,7 @@ begin
     end;
   end;
 end;
+{$endif}
 
 end.
 
