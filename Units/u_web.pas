@@ -10,7 +10,8 @@ uses
 type
   TResultCheckOnlineVersion = (rcovErrorAccessingInternet,
                                rcovNoNewVersion,
-                               rcovNewVersionAvailable);
+                               rcovNewVersionAvailable,
+                               rcovErrorNoTempFolder);
 
 // https://forum.lazarus.freepascal.org/index.php/topic,62587.msg473413.html#msg473413
 // return True if a new version of the application exists.
@@ -20,7 +21,7 @@ function CheckForNewVersionOnGitHub(out newVersion: string): TResultCheckOnlineV
 implementation
 uses u_common, u_logfile,
 {$ifdef Darwin}
-  Process, UTF8Process
+  Process, UTF8Process, u_project, utilitaire_fichier
 {$else}
   fphttpclient, opensslsockets
 {$endif};
@@ -32,7 +33,7 @@ var process: TProcessUTF8;
   f: string;
   t: TStringList;
 begin
-  Result := rcovNoNewVersion;
+  Result := rcovErrorNoTempFolder;
   newVersion := '';
 
   if not Project.TempFolderExists then exit;
@@ -41,13 +42,19 @@ begin
   try
     try
       process := TProcessUTF8.Create(NIL);
-      process.CommandLine := 'curl -o '+f+' '+URL_FOR_VERSION_ON_GITHUB;
+      process.Executable := 'curl';
+      process.Parameters.Add('--max-time 8 -o '+f+' '+URL_FOR_VERSION_ON_GITHUB);
       process.Options := process.Options+[poWaitOnExit, poNoConsole];
       process.Execute;
     finally
       process.Free;
     end;
-    if not FileExists(f) then exit;
+    if not FileExists(f) then begin
+      Result := rcovErrorAccessingInternet;
+      Log.Error('gyv: check for new version fail');
+      Log.Mess('curl failed to download version file', 1);
+      exit;
+    end;
 
     t := TStringList.Create;
     try
@@ -66,6 +73,7 @@ begin
       Log.Warning('gyv: check for new version fail'+LineEnding+
                   '    '+E.Message);
       Result := rcovErrorAccessingInternet;
+    end;
   end;
 
   if FichierExistant(f) then SupprimeFichier(f);
