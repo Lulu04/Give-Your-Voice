@@ -8,9 +8,9 @@ unit u_utils;
 interface
 
 uses
-  Classes, SysUtils, Graphics, Controls, Forms, StdCtrls, Dialogs,
+  Classes, SysUtils, Graphics, Controls, Forms, Dialogs,
   BGRABitmap, BGRABitmapTypes, BGRAGradients, BGRAGradientScanner,
-  u_common;
+  u_common, i18_utils;
 
   function FileIsInMixedOutputFolder(const aFile: string): boolean;
   function FileIsARecording(const aFile: string): boolean;
@@ -116,13 +116,6 @@ type
   end;
 
 
-// LANGUAGES utils
-  function GetOSLanguage: string;
-  procedure FillComboBoxWithAvailableLanguage(aCB: TComboBox);
-  function ComboBoxToLanguage(aCB: TComboBox): string;
-  procedure LanguageToComboBox(aLang: string; aCB: TComboBox);
-
-
   type
 // HELPER FOR TUserMarks
 
@@ -168,84 +161,8 @@ type
 
 implementation
 uses LazUTF8, u_program_options, u_crossplatform, u_resource_string,
-  Math, utilitaire_fichier, PropertyUtils, utilitaire_bgrabitmap, LCLIntf,
-  {$IFDEF windows}
-  //Windows,
-  {$ELSE}
-  Unix,
-   {$IFDEF LCLCarbon}
-   MacOSAll,
-   {$ENDIF}
-  {$ENDIF}
-  gettext;
+  Math, utilitaire_fichier, PropertyUtils, utilitaire_bgrabitmap, LCLIntf;
 
-
-function GetOSLanguage: string;
-var
-  l, fbl: string;
-  {$IFDEF LCLCarbon}
-  theLocaleRef: CFLocaleRef;
-  locale: CFStringRef;
-  buffer: StringPtr;
-  bufferSize: CFIndex;
-  encoding: CFStringEncoding;
-  success: boolean;
-  {$ENDIF}
-begin
-  {$IFDEF LCLCarbon}
-  theLocaleRef := CFLocaleCopyCurrent;
-  locale := CFLocaleGetIdentifier(theLocaleRef);
-  encoding := 0;
-  bufferSize := 256;
-  buffer := new(StringPtr);
-  success := CFStringGetPascalString(locale, buffer, bufferSize, encoding);
-  if success then
-    l := string(buffer^)
-  else
-    l := '';
-  fbl := Copy(l, 1, 2);
-  dispose(buffer);
-  {$ELSE}
-  l := '';
-  fbl := '';
-  GetLanguageIDs(l, fbl);
-  {$ENDIF}
-  Result := fbl;
-end;
-
-
-procedure FillComboBoxWithAvailableLanguage(aCB: TComboBox);
-begin
-  aCB.Clear;
-  aCB.Items.Add('English (en)');
-  aCB.Items.Add('Français (fr)');
-end;
-
-function ComboBoxToLanguage(aCB: TComboBox): string;
-var i: integer;
-  aItem: string;
-begin
-  Result := '';
-  if aCB.ItemIndex = -1 then exit;
-  aItem := aCB.Items.Strings[aCB.ItemIndex];
-  i := Pos('(', aItem);
-  if i = 0 then exit;
-  if Pos(')', aItem) <> i+3 then exit;
-  Result := Copy(aItem, i+1, 2);
-end;
-
-procedure LanguageToComboBox(aLang: string; aCB: TComboBox);
-var i: integer;
-begin
-  if Length(aLang) = 2 then
-    for i:=0 to aCB.Items.Count-1 do
-      if Pos('('+aLang+')', aCB.Items.Strings[i]) > 0 then begin
-        aCB.ItemIndex := i;
-        exit;
-      end;
-
-  aCB.ItemIndex := -1;
-end;
 
 { TRecordingFileFormater }
 

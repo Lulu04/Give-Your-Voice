@@ -160,7 +160,7 @@ uses u_project, u_common, form_options, u_audio_utils, utilitaire_fichier,
   u_logfile, u_program_options, u_userdialogs, u_resource_string,
   form_firsttimewizard, u_utils, form_about, u_crossplatform,
   form_project_manager, u_web, form_remembertodonate, LCLType, LCLIntf, Clipbrd,
-  Math
+  Math, i18_utils
   {$if defined(Linux) or defined(Darwin)},u_datamodule{$endif};
 
 {$R *.lfm}
@@ -174,6 +174,8 @@ begin
    FDesignSmallFontHeight := ScaleDesignToForm(11);
  {$endif}
 
+  // Register the supported languages
+  AppLang.RegisterLanguagesSupportedByApp(SupportedLanguages);
 
   FrameChannelsLevel1 := TFrameChannelsLevel.Create(Self);
   FrameChannelsLevel1.Parent := Panel2;
