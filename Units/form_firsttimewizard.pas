@@ -181,7 +181,7 @@ begin
 {$if defined(LCLGTK2) or defined(LCLCOCOA)}
   Font.Height := FDesignFontHeight;
   ChangeFontHeight([Label1], 30);
-  ChangeFontHeight([Label4, Label6, Label7, Label8, BTestPlaybackDevice], FDesignFontHeight-2);
+  ChangeFontHeight([Label4, Label6, Label7, Label8, Label9, BTestPlaybackDevice], FDesignFontHeight-2);
   ChangeFontHeight([Label2, Label3, ComboBox1, SpeedButton1, CBCapture,
      CBPlayBack, Speedbutton3, Label5, SpeedButton2], FDesignFontHeight);
   {$if defined(LCLGTK2)}
