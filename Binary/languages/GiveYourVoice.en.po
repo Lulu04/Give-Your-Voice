@@ -1151,6 +1151,10 @@ msgstr "Enter the duration of the silence to insert:"
 msgid "Impossible d'ouvrir une connexion internet"
 msgstr "Unable to open an internet connection"
 
+#: u_resource_string.serrornotempfolder
+msgid "Impossible de contrôler la version, le répertoire temporaire est manquant"
+msgstr "Unable to check version, temporary directory is missing"
+
 #: u_resource_string.serrorwhenpreparingrecordingfile
 msgid "Erreur lors de la préparation du fichier d'enregistrement"
 msgstr "Error while preparing the recording file"
@@ -1686,4 +1690,3 @@ msgstr "Failed to create ZIP file"
 #: u_resource_string.szipprojectfailed
 msgid "une erreur est apparue lors de la compression du projet..."
 msgstr "an error occured while compressing the project..."
-

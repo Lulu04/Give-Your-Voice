@@ -77,6 +77,7 @@ begin
     res := CheckForNewVersionOnGitHub(newVersion);
     Screen.EndWaitCursor;
     case res of
+      rcovErrorNoTempFolder: ShowMess(SErrorNoTempFolder, SOk, mtInformation);
       rcovErrorAccessingInternet: ShowMess(SErrorAccessingInternet, SOk, mtInformation);
       rcovNoNewVersion: ShowMess(SAppIsUpToDate, SOk, mtInformation);
       rcovNewVersionAvailable: begin

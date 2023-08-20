@@ -1085,6 +1085,10 @@ msgstr ""
 msgid "Impossible d'ouvrir une connexion internet"
 msgstr ""
 
+#: u_resource_string.serrornotempfolder
+msgid "Impossible de contrôler la version, le répertoire temporaire est manquant"
+msgstr ""
+
 #: u_resource_string.serrorwhenpreparingrecordingfile
 msgid "Erreur lors de la préparation du fichier d'enregistrement"
 msgstr ""
