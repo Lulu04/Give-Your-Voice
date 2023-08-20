@@ -42,8 +42,7 @@ begin
   try
     try
       process := TProcessUTF8.Create(NIL);
-      process.Executable := 'curl';
-      process.Parameters.Add('--max-time 8 -o '+f+' '+URL_FOR_VERSION_ON_GITHUB);
+      process.ParseCmdLine('curl --max-time 8 -o "'+f+'" '+URL_FOR_VERSION_ON_GITHUB);
       process.Options := process.Options+[poWaitOnExit, poNoConsole];
       process.Execute;
     finally
@@ -64,7 +63,7 @@ begin
       if StrComp(PChar(newVersion), PChar(APP_VERSION)) > 0 then begin
         Result := rcovNewVersionAvailable;
         Log.Info('gyv: found new app version: '+newVersion);
-      end;
+      end else Result := rcovNoNewVersion;
     finally
       t.Free;
     end;
