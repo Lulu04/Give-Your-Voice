@@ -58,7 +58,7 @@
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="6"/>
         <WindowIndex Value="1"/>
-        <TopLine Value="61"/>
+        <TopLine Value="25"/>
         <CursorPos X="37" Y="85"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
@@ -479,7 +479,7 @@
         <EditorIndex Value="7"/>
         <WindowIndex Value="1"/>
         <TopLine Value="38"/>
-        <CursorPos Y="47"/>
+        <CursorPos X="54" Y="50"/>
         <UsageCount Value="201"/>
         <Loaded Value="True"/>
       </Unit>
@@ -504,7 +504,7 @@
         <WindowIndex Value="1"/>
         <TopLine Value="2570"/>
         <CursorPos X="42" Y="2585"/>
-        <UsageCount Value="85"/>
+        <UsageCount Value="87"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -513,7 +513,7 @@
         <EditorIndex Value="14"/>
         <TopLine Value="29"/>
         <CursorPos X="64" Y="36"/>
-        <UsageCount Value="85"/>
+        <UsageCount Value="87"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -522,27 +522,27 @@
         <EditorIndex Value="30"/>
         <TopLine Value="487"/>
         <CursorPos X="53" Y="488"/>
-        <UsageCount Value="85"/>
+        <UsageCount Value="87"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="..\UnitsCommon\propertyutils.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="PropertyUtils"/>
-        <UsageCount Value="85"/>
+        <UsageCount Value="87"/>
       </Unit>
       <Unit>
         <Filename Value="..\UnitsCommon\lcl_utils.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="LCL_utils"/>
-        <UsageCount Value="85"/>
+        <UsageCount Value="87"/>
       </Unit>
       <Unit>
         <Filename Value="..\UnitsCommon\unit1.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="Unit1"/>
         <EditorIndex Value="-1"/>
-        <UsageCount Value="40"/>
+        <UsageCount Value="42"/>
       </Unit>
       <Unit>
         <Filename Value="..\UnitsCommon\i18_utils.pas"/>
@@ -550,7 +550,7 @@
         <EditorIndex Value="19"/>
         <TopLine Value="92"/>
         <CursorPos X="43" Y="107"/>
-        <UsageCount Value="38"/>
+        <UsageCount Value="40"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -1057,7 +1057,7 @@
         <EditorIndex Value="3"/>
         <WindowIndex Value="1"/>
         <CursorPos X="41" Y="58"/>
-        <UsageCount Value="35"/>
+        <UsageCount Value="36"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -1066,7 +1066,7 @@
         <WindowIndex Value="1"/>
         <TopLine Value="76"/>
         <CursorPos X="3" Y="74"/>
-        <UsageCount Value="35"/>
+        <UsageCount Value="36"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
