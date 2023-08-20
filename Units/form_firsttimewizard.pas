@@ -58,7 +58,7 @@ var
 implementation
 
 uses u_program_options, u_resource_string, u_audio_utils
-  {$if defined(Linux) or defined(Darwin)}, u_common{$endif}, i18_utils;
+  {$if defined(Linux) or defined(Darwin)}, u_common, u_utils{$endif}, i18_utils;
 
 {$R *.lfm}
 
