@@ -6,18 +6,19 @@ unit u_program_options;
 interface
 
 uses
-  Classes, SysUtils, project_util, LCLTranslator, u_utils, u_common;
+  Classes, SysUtils, LCLTranslator,
+  u_utils, u_common, project_util, i18_utils;
 
 type
   { TProgramOptions }
 
   TProgramOptions = record
   private
-    FLanguage: string; // user language
     procedure InitDefault;
     function SaveToString: string;
     procedure LoadFromString(const s: string);
-    procedure SetLanguage(AValue: string);
+    function GetLanguage: TLanguageIdentifier;
+    procedure SetLanguage(AValue: TLanguageIdentifier);
   public
     PlaybackDeviceIndex,       // index of the audio playback device to use
     CaptureDeviceIndex: integer; // index of the audio capture device to use
@@ -61,7 +62,7 @@ type
 
     procedure Save;
     procedure Load;
-    property Language: string read FLanguage write SetLanguage;
+    property Language: TLanguageIdentifier read GetLanguage write SetLanguage;
   end;
 
 var
@@ -77,8 +78,6 @@ procedure TProgramOptions.InitDefault;
 begin
   PlaybackDeviceIndex := 0;
   CaptureDeviceIndex := 0;
-
-  FLanguage := 'en';
 
   AudioSilenceAttenuationTimeMS := 50;
   InsertedSilenceDurationMS := 100;
@@ -119,7 +118,7 @@ begin
   prop.Init('|');
   prop.Add('PlaybackDeviceIndex', PlaybackDeviceIndex);
   prop.Add('CaptureDeviceIndex', CaptureDeviceIndex);
-  prop.Add('Language', FLanguage);
+  prop.Add('Language', AppLang.UsedLangID);
   prop.Add('AudioSilenceAttenuationTime', AudioSilenceAttenuationTimeMS);
   prop.Add('InsertedSilenceDurationMS', InsertedSilenceDurationMS);
   prop.Add('RemoveNoiseWhenRecording', RemoveNoiseWhenRecording);
@@ -163,7 +162,7 @@ begin
   prop.IntegerValueOf('PlaybackDeviceIndex', PlaybackDeviceIndex, PlaybackDeviceIndex);
   prop.IntegerValueOf('CaptureDeviceIndex', CaptureDeviceIndex, CaptureDeviceIndex);
 
-  lang := FLanguage;
+  lang := 'en';
   prop.StringValueOf('Language', lang, lang);
   SetLanguage(lang);
 
@@ -200,10 +199,14 @@ begin
   prop.IntegerValueOf('DateOriginRememberUserToDonate', DateOriginRememberUserToDonate, DateOriginRememberUserToDonate);
 end;
 
-procedure TProgramOptions.SetLanguage(AValue: string);
+function TProgramOptions.GetLanguage: TLanguageIdentifier;
 begin
-  FLanguage := AValue;
-  SetDefaultLang(AValue, GetAppLanguagesFolder);
+  Result := AppLang.UsedLangID;
+end;
+
+procedure TProgramOptions.SetLanguage(AValue: TLanguageIdentifier);
+begin
+  AppLang.UseLanguage(AValue, GetAppLanguagesFolder);
   if Project <> NIL then
     Project.OnLanguageChange;
 end;

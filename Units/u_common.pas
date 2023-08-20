@@ -107,6 +107,13 @@ const
   LIBRIVOX_DISCLAMER_POEM_BEGIN = '<Titre> de <Auteur>. Lu pour LibriVox par <votre nom>.';
   LIBRIVOX_DISCLAMER_POEM_END = 'Fin du poème. Cet enregistrement est dans le domaine public.'; }
 
+
+// List of supported languages
+const
+  SupportedLanguages: array[0..3] of string=(
+     'English', 'en',
+     'Français', 'fr');
+
 implementation
 
 end.

@@ -58,7 +58,7 @@ var
 
 implementation
 uses u_program_options, u_audio_utils, u_resource_string, form_main, u_utils,
-  u_crossplatform, LCLType
+  u_crossplatform, LCLType, i18_utils
   {$if defined(LINUX) or defined(Darwin)}, u_common{$endif};
 
 {$R *.lfm}
@@ -76,8 +76,6 @@ begin
   CBPlayback.Items.AddStrings(ALSManager.ListOfPlaybackDeviceName, False);
 
   BTestPlaybackDevice.Caption := STest;
-
-  FillComboBoxWithAvailableLanguage(CBLanguage);
 
   PrefsToWidgets;
 end;
@@ -122,7 +120,8 @@ begin
   CBCapture.ItemIndex := ProgramOptions.CaptureDeviceIndex;
   CBPlaybackSelect(CBCapture);
 
-  LanguageToComboBox(ProgramOptions.Language, CBLanguage);
+  AppLang.FillComboBoxWithSupportedLanguage(CBLanguage);
+  AppLang.ComboBoxSetSelectedLanguage(CBLanguage, ProgramOptions.Language);
 
   CheckBox1.Checked := ProgramOptions.RemoveNoiseWhenRecording;
 
@@ -209,7 +208,7 @@ end;
 procedure TFormOptions.CBLanguageSelect(Sender: TObject);
 begin
   if CBLanguage.ItemIndex = -1 then exit;
-  ProgramOptions.Language := ComboBoxToLanguage(CBLanguage);
+  ProgramOptions.Language := AppLang.ComboBoxGetSelectedLanguage(CBLanguage);
 
   if FWidgetsCallBackLocked then exit;
   BOk.Enabled := True;

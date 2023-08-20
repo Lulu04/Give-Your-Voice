@@ -58,7 +58,7 @@ var
 implementation
 
 uses u_program_options, u_resource_string, u_audio_utils
-  {$if defined(Linux) or defined(Darwin)}, u_common{$endif}, u_utils;
+  {$if defined(Linux) or defined(Darwin)}, u_common{$endif}, i18_utils;
 
 {$R *.lfm}
 
@@ -69,7 +69,8 @@ begin
   SpeedButton1.Enabled := ComboBox1.ItemIndex <> -1;
   if ComboBox1.ItemIndex = -1 then exit;
 
-  ProgramOptions.Language := ComboBoxToLanguage(ComboBox1);
+  ProgramOptions.Language := AppLang.ComboBoxGetSelectedLanguage(ComboBox1);
+  ProgramOptions.Save;
 
   SpeedButton1.Caption := SNext;
   SpeedButton3.Caption := SNext;
@@ -120,18 +121,26 @@ begin
 end;
 
 procedure TFormFirstRun.FormShow(Sender: TObject);
+var langToUse: TLanguageIdentifier;
 begin
   AdjustFont;
+  OnLanguageChange;
 
   Panel1.Visible := False;
   SpeedButton3.Visible := False;
   Panel2.Visible := False;
 
-  ProgramOptions.Language := 'en'; // force some gui caption to be filled
-
-  FillComboBoxWithAvailableLanguage(ComboBox1);
-  LanguageToComboBox(GetOSLanguage, ComboBox1);
-  ProgramOptions.Language := ComboBoxToLanguage(ComboBox1);
+  // choose a default langage
+  if AppLang.OSLanguageIsSupportedByApp then
+    langToUse := AppLang.GetOSLanguage
+  else
+    langToUse := 'en';
+  // fill the combobox with the supported languages list
+  AppLang.FillComboBoxWithSupportedLanguage(ComboBox1);
+  // select the default language
+  AppLang.ComboBoxSetSelectedLanguage(ComboBox1, langToUse);
+  // save the default language in program options and translate GUI
+  ProgramOptions.Language := langToUse;
 
   SpeedButton1.Caption := SNext;
   SpeedButton3.Caption := SNext;
