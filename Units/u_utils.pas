@@ -781,21 +781,21 @@ begin
 end;
 
 function MsgDlgTypeToBGRABitmap(aMsgType: TMsgDlgType; aWidth, aHeight: integer): TBGRABitmap;
-var im: TBGRABitmap;
 begin
+  if aWidth < aHeight then aHeight := -1
+    else if aHeight < aWidth then aWidth := -1;
+
   try
     case aMsgType of
-      mtWarning: im := TBGRABitmap.Create(GetAppDataFolder+'state_warning_200.png');
-      mtError: im := TBGRABitmap.Create(GetAppDataFolder+'state_error_200.png');
-      mtInformation: im := TBGRABitmap.Create(GetAppDataFolder+'state_information_200.png');
-      mtConfirmation: im := TBGRABitmap.Create(GetAppDataFolder+'state_unknown_200.png');
-      else im := TBGRABitmap.Create(aWidth, aHeight, BGRAPixelTransparent);
+      mtWarning: Result := SVGFileToBGRABitmap(GetAppDataFolder+'DlgWarning.svg', aWidth, aHeight);
+      mtError: Result := SVGFileToBGRABitmap(GetAppDataFolder+'DlgError.svg', aWidth, aHeight);
+      mtInformation: Result := SVGFileToBGRABitmap(GetAppDataFolder+'DlgInformation.svg', aWidth, aHeight);
+      mtConfirmation: Result := SVGFileToBGRABitmap(GetAppDataFolder+'DlgQuestion.svg', aWidth, aHeight);
+      else Result := TBGRABitmap.Create(aWidth, aHeight, BGRAPixelTransparent);
     end;
   except
-    im := TBGRABitmap.Create(aWidth, aHeight, BGRAPixelTransparent);
+    Result := TBGRABitmap.Create(aWidth, aHeight, BGRAPixelTransparent);
   end;
-  Result := im.Resample(aWidth, aHeight);
-  im.Free;
 end;
 
 procedure RenameAudioFileNameInMixSessionFile(const aPreviousAudioFileName,
