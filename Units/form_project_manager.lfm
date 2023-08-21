@@ -108,60 +108,6 @@ object FormProjectManager: TFormProjectManager
       OnClick = BOpenProjectClick
       ParentFont = False
     end
-    object BUnzipProject: TSpeedButton
-      AnchorSideLeft.Control = PanelToolsProject
-      AnchorSideTop.Control = BZipProject
-      AnchorSideTop.Side = asrBottom
-      AnchorSideRight.Control = PanelToolsProject
-      AnchorSideRight.Side = asrBottom
-      Cursor = crHandPoint
-      Left = 8
-      Height = 28
-      Hint = 'Pour décompresser un projet précédemment zippé'
-      Top = 144
-      Width = 216
-      Anchors = [akTop, akLeft, akRight]
-      AutoSize = True
-      BorderSpacing.Left = 8
-      BorderSpacing.Top = 10
-      BorderSpacing.Right = 8
-      Caption = 'Dézipper'
-      Font.Color = clBlack
-      Font.Height = 20
-      Images = DataModule1.ImageList1
-      ImageIndex = 42
-      OnClick = BOpenProjectClick
-      ShowHint = True
-      ParentFont = False
-      ParentShowHint = False
-    end
-    object BZipProject: TSpeedButton
-      AnchorSideLeft.Control = PanelToolsProject
-      AnchorSideTop.Control = BOpenProject
-      AnchorSideTop.Side = asrBottom
-      AnchorSideRight.Control = PanelToolsProject
-      AnchorSideRight.Side = asrBottom
-      Cursor = crHandPoint
-      Left = 8
-      Height = 28
-      Hint = 'Lorsqu''un projet est terminé, vous pouvez compresser son contenu au format ZIP'#13#10'afin de gagner de la place sur votre disque.'
-      Top = 106
-      Width = 216
-      Anchors = [akTop, akLeft, akRight]
-      AutoSize = True
-      BorderSpacing.Left = 8
-      BorderSpacing.Top = 30
-      BorderSpacing.Right = 8
-      Caption = 'Zipper'
-      Font.Color = clBlack
-      Font.Height = 20
-      Images = DataModule1.ImageList1
-      ImageIndex = 43
-      OnClick = BOpenProjectClick
-      ShowHint = True
-      ParentFont = False
-      ParentShowHint = False
-    end
     object BOpenProject: TSpeedButton
       AnchorSideLeft.Control = PanelToolsProject
       AnchorSideTop.Control = BNewProject
@@ -217,7 +163,7 @@ object FormProjectManager: TFormProjectManager
     end
     object BDeleteProject: TSpeedButton
       AnchorSideLeft.Control = PanelToolsProject
-      AnchorSideTop.Control = BUnzipProject
+      AnchorSideTop.Control = PanelZipTool
       AnchorSideTop.Side = asrBottom
       AnchorSideRight.Control = PanelToolsProject
       AnchorSideRight.Side = asrBottom
@@ -225,7 +171,7 @@ object FormProjectManager: TFormProjectManager
       Left = 8
       Height = 28
       Hint = 'Pour supprimer un projet du disque'
-      Top = 202
+      Top = 203
       Width = 216
       Anchors = [akTop, akLeft, akRight]
       AutoSize = True
@@ -241,6 +187,75 @@ object FormProjectManager: TFormProjectManager
       ShowHint = True
       ParentFont = False
       ParentShowHint = False
+    end
+    object PanelZipTool: TPanel
+      AnchorSideLeft.Control = PanelToolsProject
+      AnchorSideTop.Control = BOpenProject
+      AnchorSideTop.Side = asrBottom
+      AnchorSideRight.Control = PanelToolsProject
+      AnchorSideRight.Side = asrBottom
+      Left = 0
+      Height = 72
+      Top = 101
+      Width = 232
+      Anchors = [akTop, akLeft, akRight]
+      BorderSpacing.Top = 25
+      BevelOuter = bvNone
+      ClientHeight = 72
+      ClientWidth = 232
+      TabOrder = 0
+      object BZipProject: TSpeedButton
+        AnchorSideLeft.Control = PanelZipTool
+        AnchorSideTop.Control = PanelZipTool
+        AnchorSideRight.Control = PanelZipTool
+        AnchorSideRight.Side = asrBottom
+        Cursor = crHandPoint
+        Left = 8
+        Height = 28
+        Hint = 'Lorsqu''un projet est terminé, vous pouvez compresser son contenu au format ZIP'#13#10'afin de gagner de la place sur votre disque.'
+        Top = 0
+        Width = 216
+        Anchors = [akTop, akLeft, akRight]
+        AutoSize = True
+        BorderSpacing.Left = 8
+        BorderSpacing.Right = 8
+        Caption = 'Zipper'
+        Font.Color = clBlack
+        Font.Height = 20
+        Images = DataModule1.ImageList1
+        ImageIndex = 43
+        OnClick = BOpenProjectClick
+        ShowHint = True
+        ParentFont = False
+        ParentShowHint = False
+      end
+      object BUnzipProject: TSpeedButton
+        AnchorSideLeft.Control = PanelZipTool
+        AnchorSideTop.Control = BZipProject
+        AnchorSideTop.Side = asrBottom
+        AnchorSideRight.Control = PanelZipTool
+        AnchorSideRight.Side = asrBottom
+        Cursor = crHandPoint
+        Left = 8
+        Height = 28
+        Hint = 'Pour décompresser un projet précédemment zippé'
+        Top = 38
+        Width = 216
+        Anchors = [akTop, akLeft, akRight]
+        AutoSize = True
+        BorderSpacing.Left = 8
+        BorderSpacing.Top = 10
+        BorderSpacing.Right = 8
+        Caption = 'Dézipper'
+        Font.Color = clBlack
+        Font.Height = 20
+        Images = DataModule1.ImageList1
+        ImageIndex = 42
+        OnClick = BOpenProjectClick
+        ShowHint = True
+        ParentFont = False
+        ParentShowHint = False
+      end
     end
   end
   object PanelToolsFolder: TPanel

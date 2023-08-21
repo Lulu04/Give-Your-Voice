@@ -31,6 +31,7 @@ type
     Panel2: TPanel;
     Panel3: TPanel;
     Panel4: TPanel;
+    PanelZipTool: TPanel;
     PanelZipProgress: TPanel;
     PanelToolsFolder: TPanel;
     PanelToolsProject: TPanel;
@@ -163,6 +164,12 @@ begin
   FrameProgressBar2.Name := 'FrameProgressBar2';
   FrameProgressBar2.Parent := Panel2;
   FrameProgressBar2.Align := alClient;
+
+  {$ifdef Darwin}
+  // disable zip/unzip tools for macos: there is an issue with TZipper/TUnzipper
+  BZipProject.Visible := False;
+  BUnzipProject.Visible := False;
+  {$endif}
 end;
 
 procedure TFormProjectManager.FormDestroy(Sender: TObject);
