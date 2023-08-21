@@ -1430,7 +1430,8 @@ var s, sel: string;
    if LazFileutils.FindFirstUTF8(Dossier+DirectorySeparator+'*', faAnyFile, sr ) = 0 then begin
      repeat
       if Sr.Attr and faDirectory > 0 then begin
-        if not((Sr.Name = '.') or (Sr.Name = '..')) then begin
+        if not((Sr.Name = '.') or (Sr.Name = '..')) and
+           (Sr.Name[1] <> '.'){hidden folder}  then begin
           // found a folder
           n := TV.Items.AddChild(aNode, Sr.Name);
           if Sr.Name = PROJECT_OUTPUT_FOLDER_MP3 then begin
@@ -1451,7 +1452,8 @@ var s, sel: string;
         end;
       end else if (ExtractFileExt(Sr.Name) <> PROJECT_FILE_EXT) and
                   (ExtractFileName(Sr.Name) <> MIX_SESSION_FILENAME) and
-                  (ExtractFileExt(Sr.Name) <> USER_MARK_FILE_EXT) then begin
+                  (ExtractFileExt(Sr.Name) <> USER_MARK_FILE_EXT) and
+                  (Sr.Name[1] <> '.'){ hidden file}  then begin
         // found a file
         n := TV.Items.AddChild(aNode, Sr.Name);
         if ExtractFileName(Dossier) = PROJECT_OUTPUT_FOLDER_MP3 then begin
