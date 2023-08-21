@@ -188,7 +188,7 @@ procedure TFormZipMP3.UpdateFileList;
           // found a folder ?? ignore it
         end;
       end else if ExtractFileExt(Sr.Name) = PROJECT_MIXED_FILE_EXT then begin
-        // found a zip file
+        // found a mp3 file
         n := TV.Items.AddChild(aNode, Sr.Name);
         n.SelectedIndex := 48; // not selected
         n.ImageIndex := 48;
