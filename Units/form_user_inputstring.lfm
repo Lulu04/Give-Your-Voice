@@ -1,11 +1,11 @@
 object FormUserInput: TFormUserInput
   Left = 414
-  Height = 114
+  Height = 126
   Top = 380
   Width = 521
   BorderIcons = []
   BorderStyle = bsNone
-  ClientHeight = 114
+  ClientHeight = 126
   ClientWidth = 521
   Color = 1710618
   Font.Color = 13948116
@@ -23,7 +23,7 @@ object FormUserInput: TFormUserInput
     AnchorSideBottom.Control = Owner
     AnchorSideBottom.Side = asrBottom
     Left = 0
-    Height = 114
+    Height = 126
     Top = 0
     Width = 521
     Anchors = [akTop, akLeft, akRight, akBottom]
@@ -55,7 +55,7 @@ object FormUserInput: TFormUserInput
     Cursor = crHandPoint
     Left = 311
     Height = 28
-    Top = 76
+    Top = 88
     Width = 80
     Anchors = [akRight, akBottom]
     AutoSize = True
@@ -81,7 +81,7 @@ object FormUserInput: TFormUserInput
     Cursor = crHandPoint
     Left = 421
     Height = 28
-    Top = 76
+    Top = 88
     Width = 80
     Anchors = [akRight, akBottom]
     AutoSize = True
@@ -105,7 +105,7 @@ object FormUserInput: TFormUserInput
     AnchorSideRight.Side = asrBottom
     AnchorSideBottom.Control = SpeedButton1
     Left = 52
-    Height = 64
+    Height = 76
     Top = 2
     Width = 449
     Anchors = [akTop, akLeft, akRight, akBottom]
