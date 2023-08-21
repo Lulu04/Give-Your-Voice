@@ -100,6 +100,7 @@ begin
 {$if defined(LCLCOCOA)}
   Speedbutton1.Flat := False;
   Speedbutton2.Flat := False;
+  ChangeFontColor([Speedbutton1, Speedbutton2], clDefault);
 {$endif}
 end;
 

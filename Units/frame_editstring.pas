@@ -152,6 +152,9 @@ begin
   ChangeFontHeight([Label2], FDesignFontHeight-3);
   ChangeFontColor([Edit1], clBlack);
 {$endif}
+{$if defined(LCLCOCOA)}
+  ChangeFontColor([Edit1], clDefault);
+{$endif}
 end;
 
 constructor TFrameEditString.Create(aOwner: TComponent);
