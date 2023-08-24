@@ -184,11 +184,11 @@ begin
   {$if defined(LCLGTK2)}
   ChangeFontColor([Edit1, SpinEdit1, Edit2, ComboBox1, SpinEdit2, Edit4], clBlack);
   {$endif}
-  {$endif}
-  {$if defined(LCLCOCOA)}
+{$endif}
+{$if defined(LCLCOCOA)}
     BOk.Flat := False;
     BCancel.Flat := False;
-  {$endif}
+{$endif}
 end;
 
 procedure TFormAskSectionName.FormCreate(Sender: TObject);

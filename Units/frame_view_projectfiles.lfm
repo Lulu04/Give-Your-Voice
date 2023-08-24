@@ -2,9 +2,9 @@ object FrameViewProjectFiles: TFrameViewProjectFiles
   Left = 0
   Height = 240
   Top = 0
-  Width = 640
+  Width = 705
   ClientHeight = 240
-  ClientWidth = 640
+  ClientWidth = 705
   TabOrder = 0
   DesignLeft = 303
   DesignTop = 173
@@ -12,7 +12,7 @@ object FrameViewProjectFiles: TFrameViewProjectFiles
     Left = 0
     Height = 240
     Top = 0
-    Width = 640
+    Width = 705
     Align = alClient
     BackgroundColor = 2631720
     BorderStyle = bsNone
@@ -22,7 +22,7 @@ object FrameViewProjectFiles: TFrameViewProjectFiles
     Font.Color = 14342874
     Font.Height = 20
     HotTrack = True
-    Images = DataModule1.ImageList1
+    Images = DataModule1.ILTreeView
     Indent = 30
     ParentFont = False
     ReadOnly = True
@@ -69,7 +69,7 @@ object FrameViewProjectFiles: TFrameViewProjectFiles
       Color = 1973790
       Flat = True
       Images = DataModule1.ImageList1
-      ImageIndex = 6
+      ImageIndex = 11
       Transparent = False
       OnClick = BAddRecordClick
       ShowHint = True
@@ -92,7 +92,7 @@ object FrameViewProjectFiles: TFrameViewProjectFiles
       Color = 1973790
       Flat = True
       Images = DataModule1.ImageList1
-      ImageIndex = 7
+      ImageIndex = 12
       Transparent = False
       OnClick = BAddRecordClick
       ShowHint = True
@@ -115,7 +115,7 @@ object FrameViewProjectFiles: TFrameViewProjectFiles
       Color = 1973790
       Flat = True
       Images = DataModule1.ImageList1
-      ImageIndex = 16
+      ImageIndex = 7
       Transparent = False
       OnClick = BAddRecordClick
       ShowHint = True
@@ -168,7 +168,7 @@ object FrameViewProjectFiles: TFrameViewProjectFiles
       Color = 1973790
       Flat = True
       Images = DataModule1.ImageList1
-      ImageIndex = 21
+      ImageIndex = 22
       Transparent = False
       OnClick = BAddRecordClick
       ShowHint = True
@@ -193,7 +193,7 @@ object FrameViewProjectFiles: TFrameViewProjectFiles
       Flat = True
       Font.Color = 13553358
       Images = DataModule1.ImageList1
-      ImageIndex = 27
+      ImageIndex = 23
       Transparent = False
       OnClick = BAddRecordClick
       ShowHint = True
@@ -228,7 +228,7 @@ object FrameViewProjectFiles: TFrameViewProjectFiles
       Color = 1973790
       Flat = True
       Images = DataModule1.ImageList1
-      ImageIndex = 20
+      ImageIndex = 21
       Transparent = False
       OnClick = BAddRecordClick
       ShowHint = True
@@ -239,27 +239,26 @@ object FrameViewProjectFiles: TFrameViewProjectFiles
     Enabled = False
     Interval = 100
     OnTimer = Timer1Timer
-    Left = 296
-    Top = 24
+    Left = 24
   end
   object PopupSection: TPopupMenu
     Images = DataModule1.ImageList1
     OnPopup = PopupSectionPopup
-    Left = 384
-    Top = 88
+    Left = 200
+    Top = 64
     object MIInsertSection: TMenuItem
       Caption = 'Insérer une section ici...'
-      ImageIndex = 20
+      ImageIndex = 21
       OnClick = BAddRecordClick
     end
     object MIRenameSection: TMenuItem
       Caption = 'Renommer...'
-      ImageIndex = 16
+      ImageIndex = 7
       OnClick = BAddRecordClick
     end
     object MIImportAudioInSection: TMenuItem
       Caption = 'Importer des fichiers audio dans la section...'
-      ImageIndex = 55
+      ImageIndex = 48
       OnClick = BAddRecordClick
     end
     object Separator1: TMenuItem
@@ -267,18 +266,18 @@ object FrameViewProjectFiles: TFrameViewProjectFiles
     end
     object MIDeleteSection: TMenuItem
       Caption = 'Supprimer'
-      ImageIndex = 22
+      ImageIndex = 10
       OnClick = BAddRecordClick
     end
   end
   object PopupRecording: TPopupMenu
     Images = DataModule1.ImageList1
     OnPopup = PopupRecordingPopup
-    Left = 472
-    Top = 88
+    Left = 304
+    Top = 64
     object MIRenameFile: TMenuItem
       Caption = 'Renommer...'
-      ImageIndex = 16
+      ImageIndex = 7
       OnClick = BAddRecordClick
     end
     object Separator4: TMenuItem
@@ -286,12 +285,12 @@ object FrameViewProjectFiles: TFrameViewProjectFiles
     end
     object MIInsertFile: TMenuItem
       Caption = 'Insérer un nouvel enregistrement ici...'
-      ImageIndex = 21
+      ImageIndex = 22
       OnClick = BAddRecordClick
     end
     object MIImportAudioAndInsertHere: TMenuItem
       Caption = 'Importer un enregistrement et l''insérer ici...'
-      ImageIndex = 55
+      ImageIndex = 48
       OnClick = BAddRecordClick
     end
     object Separator2: TMenuItem
@@ -299,22 +298,26 @@ object FrameViewProjectFiles: TFrameViewProjectFiles
     end
     object MIDeleteFile: TMenuItem
       Caption = 'Supprimer'
-      ImageIndex = 22
+      ImageIndex = 10
       OnClick = BAddRecordClick
     end
   end
   object PopupEmpty: TPopupMenu
     Images = DataModule1.ImageList1
     OnPopup = PopupEmptyPopup
-    Left = 560
-    Top = 88
+    Left = 408
+    Top = 64
     object MIAddFolder: TMenuItem
       Caption = 'Ajouter'
-      ImageIndex = 20
+      ImageIndex = 21
       OnClick = BAddRecordClick
     end
     object Separator3: TMenuItem
       Caption = '-'
+    end
+    object MIFontSize: TMenuItem
+      Caption = 'Taille des caractères...'
+      OnClick = BAddRecordClick
     end
     object MIRefresh: TMenuItem
       Caption = 'Rafraîchir l''arborescence'
@@ -324,11 +327,10 @@ object FrameViewProjectFiles: TFrameViewProjectFiles
   object PopupMP3Folder: TPopupMenu
     Images = DataModule1.ImageList1
     OnPopup = PopupMP3FolderPopup
-    Left = 432
-    Top = 24
+    Left = 200
     object MIZipMP3Folder: TMenuItem
       Caption = 'MP3 -> ZIP'
-      ImageIndex = 50
+      ImageIndex = 44
       OnClick = BAddRecordClick
     end
     object Separator5: TMenuItem
@@ -336,23 +338,21 @@ object FrameViewProjectFiles: TFrameViewProjectFiles
     end
     object MIClearMP3Folder: TMenuItem
       Caption = 'Vider'
-      ImageIndex = 5
+      ImageIndex = 1
       OnClick = BAddRecordClick
     end
   end
   object PopupZIPFolder: TPopupMenu
     Images = DataModule1.ImageList1
-    Left = 552
-    Top = 24
+    Left = 328
     object MIDeleteZIPFolder: TMenuItem
       Caption = 'Supprimer'
-      ImageIndex = 22
+      ImageIndex = 10
       OnClick = BAddRecordClick
     end
   end
   object OD1: TOpenDialog
     Options = [ofAllowMultiSelect, ofPathMustExist, ofFileMustExist, ofEnableSizing, ofViewDetail, ofAutoPreview]
-    Left = 352
-    Top = 24
+    Left = 96
   end
 end

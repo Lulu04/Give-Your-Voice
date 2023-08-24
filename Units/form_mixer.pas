@@ -158,7 +158,7 @@ begin
 
   ToggleSpeedButtonManager1 := TToggleSpeedButtonManager.Create;
   ToggleSpeedButtonManager1.ToggleType := tsbLikeCheckBox;
-  ToggleSpeedButtonManager1.SetImageIndexes(14, -1);
+  ToggleSpeedButtonManager1.SetImageIndexes(5, -1);
   ToggleSpeedButtonManager1.Add(BCompressor, False);
   ToggleSpeedButtonManager1.Add(BBassBoost, True);
   ToggleSpeedButtonManager1.Add(BAmplify, True);

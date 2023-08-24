@@ -157,7 +157,7 @@ object FormOptions: TFormOptions
     Caption = 'Annuler'
     Font.Color = clBlack
     Images = DataModule1.ImageList1
-    ImageIndex = 15
+    ImageIndex = 6
     OnClick = BCancelClick
     ParentFont = False
   end
@@ -179,7 +179,7 @@ object FormOptions: TFormOptions
     Enabled = False
     Font.Color = clBlack
     Images = DataModule1.ImageList1
-    ImageIndex = 14
+    ImageIndex = 5
     OnClick = BCancelClick
     ParentFont = False
   end

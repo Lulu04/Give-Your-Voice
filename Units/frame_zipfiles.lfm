@@ -95,7 +95,7 @@ object FrameZipFiles: TFrameZipFiles
     Font.Color = clBlack
     Font.Height = 20
     Images = DataModule1.ImageList1
-    ImageIndex = 15
+    ImageIndex = 6
     OnClick = BCancelZipperClick
     ParentFont = False
   end

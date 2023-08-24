@@ -338,7 +338,7 @@ object FormAskSectionName: TFormAskSectionName
     Flat = True
     Font.Style = [fsBold]
     Images = DataModule1.ImageList1
-    ImageIndex = 14
+    ImageIndex = 5
     Transparent = False
     OnClick = BOkClick
     ParentFont = False
@@ -362,7 +362,7 @@ object FormAskSectionName: TFormAskSectionName
     Flat = True
     Font.Style = [fsBold]
     Images = DataModule1.ImageList1
-    ImageIndex = 15
+    ImageIndex = 6
     Transparent = False
     OnClick = BOkClick
     ParentFont = False

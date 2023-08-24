@@ -59,7 +59,8 @@ var
 
 implementation
 uses LazFileutils, LCLType, u_project, u_resource_string, u_utils, u_common,
-  u_userdialogs, form_main, u_crossplatform, u_program_options, utilitaire_fichier;
+  u_userdialogs, form_main, u_crossplatform, u_program_options, u_datamodule,
+  utilitaire_fichier;
 
 {$R *.lfm}
 
@@ -105,7 +106,7 @@ begin
 
   ToggleSpeedButtonManager1 := TToggleSpeedButtonManager.Create;
   ToggleSpeedButtonManager1.ToggleType := tsbLikeCheckBox;
-  ToggleSpeedButtonManager1.SetImageIndexes(49, 48);
+  ToggleSpeedButtonManager1.SetImageIndexes(IMAGE_INDEX_IL1_CHECK_CHECKED, IMAGE_INDEX_IL1_CHECK_UNCHECKED);
   ToggleSpeedButtonManager1.Add(BCheckFileForLitAudio, False);
 end;
 
@@ -165,12 +166,12 @@ var n: TTreeNode;
 begin
   n := TV.GetNodeAt(X, Y);
   if n = NIL then exit;
-  if n.ImageIndex = 49 then begin
-    n.SelectedIndex := 48;
-    n.ImageIndex := 48;
+  if n.ImageIndex = IMAGE_INDEX_IL1_CHECK_UNCHECKED then begin
+    n.SelectedIndex := IMAGE_INDEX_IL1_CHECK_CHECKED;
+    n.ImageIndex := IMAGE_INDEX_IL1_CHECK_CHECKED;
   end else begin
-    n.SelectedIndex := 49;
-    n.ImageIndex := 49;
+    n.SelectedIndex := IMAGE_INDEX_IL1_CHECK_UNCHECKED;
+    n.ImageIndex := IMAGE_INDEX_IL1_CHECK_UNCHECKED;
   end;
 
   BZipFiles.Enabled := not Label4.Visible and (Length(GetSelectedFiles) > 0);
@@ -190,8 +191,8 @@ procedure TFormZipMP3.UpdateFileList;
       end else if ExtractFileExt(Sr.Name) = PROJECT_MIXED_FILE_EXT then begin
         // found a mp3 file
         n := TV.Items.AddChild(aNode, Sr.Name);
-        n.SelectedIndex := 48; // not selected
-        n.ImageIndex := 48;
+        n.SelectedIndex := IMAGE_INDEX_IL1_CHECK_UNCHECKED; // not selected
+        n.ImageIndex := n.SelectedIndex;
       end;
      until LazFileutils.FindNextUTF8(Sr) <> 0;
    end;
@@ -204,8 +205,8 @@ begin
   TV.BeginUpdate;
 
   with TV.Items.Add(NIL, '') do begin
-    SelectedIndex := 32;
-    ImageIndex := 32;
+    SelectedIndex := IMAGE_INDEX_IL1_FOLDER_MP3;
+    ImageIndex := IMAGE_INDEX_IL1_FOLDER_MP3;
   end;
   ScruteLeDossier(Project.ProjectOutputFolder, TV.Items.GetFirstNode); // on lance la recherche récursive
   TV.EndUpdate;
@@ -224,7 +225,7 @@ begin
 
   c := 0;
   for i:=0 to n.Count-1 do
-    if n.Items[i].ImageIndex = 49 then
+    if n.Items[i].ImageIndex = IMAGE_INDEX_IL1_CHECK_CHECKED then
       inc(c);
 
   if c = 0 then exit;
@@ -232,7 +233,7 @@ begin
 
   c := 0;
   for i:=0 to n.Count-1 do
-    if n.Items[i].ImageIndex = 49 then begin
+    if n.Items[i].ImageIndex = IMAGE_INDEX_IL1_CHECK_CHECKED then begin
       Result[c] := Project.ProjectOutputFolder+n.Items[i].Text;
       inc(c);
     end;
@@ -312,11 +313,11 @@ begin
   n := TV.Items.GetFirstNode;
   for i:=0 to n.Count-1 do begin
     if aState  then begin
-      n.Items[i].ImageIndex := 49;
-      n.Items[i].SelectedIndex := 49;
+      n.Items[i].ImageIndex := IMAGE_INDEX_IL1_CHECK_CHECKED;
+      n.Items[i].SelectedIndex := IMAGE_INDEX_IL1_CHECK_CHECKED;
     end else begin
-      n.Items[i].ImageIndex := 48;
-      n.Items[i].SelectedIndex := 48;
+      n.Items[i].ImageIndex := IMAGE_INDEX_IL1_CHECK_UNCHECKED;
+      n.Items[i].SelectedIndex := IMAGE_INDEX_IL1_CHECK_UNCHECKED;
     end;
   end;
   TV.EndUpdate;

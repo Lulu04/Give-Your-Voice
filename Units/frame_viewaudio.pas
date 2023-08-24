@@ -193,7 +193,8 @@ type
 implementation
 uses als_dsp_utils, u_audio_utils, u_program_options, form_main,
   u_main_undoredo, u_userdialogs, form_audiorecording, u_resource_string,
-  u_crossplatform, Graphics, Dialogs, Math, utilitaire_fichier, u_logfile;
+  u_crossplatform, Graphics, Dialogs, Math, utilitaire_fichier, u_logfile,
+  utilitaire_bgrabitmap;
 
 {$R *.lfm}
 
@@ -504,7 +505,7 @@ procedure TFrameViewAudio.RedrawMarkerImage;
 var im, im1: TBGRABitmap;
 begin
   try
-    im := TBGRABitmap.Create(GetAppDataFolder+'state_error_200.png');
+    im := SVGFileToBGRABitmap(GetAppDataFolder+'DlgError.svg', ScaleDesignToForm(32), -1);
   except
     im := TBGRABitmap.Create(32, 32, BGRAPixelTransparent);
     im.FontHeight := 32;

@@ -50,7 +50,7 @@ object FormUserMessage: TFormUserMessage
     Flat = True
     Font.Color = clBlack
     Images = DataModule1.ImageList1
-    ImageIndex = 14
+    ImageIndex = 5
     Transparent = False
     OnClick = BOkClick
     ParentFont = False

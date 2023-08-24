@@ -128,7 +128,7 @@ object FormMain: TFormMain
         Height = 323
         Top = 41
         Width = 250
-        PageIndex = 0
+        PageIndex = 1
         Anchors = [akTop, akLeft, akRight, akBottom]
         BorderSpacing.Bottom = 10
         Color = 2631720
@@ -145,6 +145,8 @@ object FormMain: TFormMain
             BorderStyle = bsNone
             ClientHeight = 323
             ClientWidth = 250
+            Color = 3355443
+            ParentColor = False
             TabOrder = 0
             object BActivateImprovedListening: TSpeedButton
               AnchorSideLeft.Control = ScrollBox3
@@ -163,7 +165,7 @@ object FormMain: TFormMain
               Font.Color = clBlack
               Font.Height = 20
               Images = DataModule1.ImageList1
-              ImageIndex = 14
+              ImageIndex = 5
               OnClick = BActivateImprovedListeningClick
               ShowHint = True
               ParentFont = False
@@ -405,7 +407,7 @@ object FormMain: TFormMain
             Height = 255
             Top = 68
             Width = 250
-            PageIndex = 0
+            PageIndex = 2
             Anchors = [akTop, akLeft, akRight, akBottom]
             TabOrder = 1
             object PageURLLibrivox: TPage
@@ -420,6 +422,8 @@ object FormMain: TFormMain
                 BorderStyle = bsNone
                 ClientHeight = 255
                 ClientWidth = 250
+                Color = 3355443
+                ParentColor = False
                 TabOrder = 0
                 object Label35: TLabel
                   AnchorSideLeft.Control = ScrollBox2
@@ -454,7 +458,6 @@ object FormMain: TFormMain
                   BorderSpacing.Left = 3
                   BorderSpacing.Right = 3
                   Caption = 'Label'
-                  Color = 1973790
                   Font.Color = 14342874
                   Font.Height = 20
                   Font.Style = [fsBold]
@@ -462,7 +465,6 @@ object FormMain: TFormMain
                   ParentFont = False
                   ParentShowHint = False
                   ShowHint = True
-                  Transparent = False
                   WordWrap = True
                   OnClick = Label8Click
                 end
@@ -480,6 +482,8 @@ object FormMain: TFormMain
                 BorderStyle = bsNone
                 ClientHeight = 255
                 ClientWidth = 250
+                Color = 3355443
+                ParentColor = False
                 TabOrder = 0
                 object Label20: TLabel
                   AnchorSideLeft.Control = ScrollBox1
@@ -498,7 +502,6 @@ object FormMain: TFormMain
                   BorderSpacing.Top = 30
                   BorderSpacing.Right = 3
                   Caption = 'Transférer vos MP3 sur'#13#10'www.grosfichier.com'
-                  Color = 1973790
                   Font.Color = 14342874
                   Font.Height = 20
                   Font.Style = [fsBold]
@@ -506,7 +509,6 @@ object FormMain: TFormMain
                   ParentFont = False
                   ParentShowHint = False
                   ShowHint = True
-                  Transparent = False
                   WordWrap = True
                   OnClick = Label8Click
                 end
@@ -527,7 +529,6 @@ object FormMain: TFormMain
                   BorderSpacing.Top = 20
                   BorderSpacing.Right = 3
                   Caption = 'Envoyer un essai sur'#13#10'litteratureaudio.com'
-                  Color = 1973790
                   Font.Color = 14342874
                   Font.Height = 20
                   Font.Style = [fsBold]
@@ -535,13 +536,13 @@ object FormMain: TFormMain
                   ParentFont = False
                   ParentShowHint = False
                   ShowHint = True
-                  Transparent = False
                   WordWrap = True
                   OnClick = Label8Click
                 end
               end
             end
             object PageURLFreeMusics: TPage
+              Color = 3355443
               object Label8: TLabel
                 AnchorSideLeft.Control = PageURLFreeMusics
                 AnchorSideTop.Control = PageURLFreeMusics
@@ -558,7 +559,6 @@ object FormMain: TFormMain
                 BorderSpacing.Top = 30
                 BorderSpacing.Right = 3
                 Caption = 'musopen.com'
-                Color = 1973790
                 Font.Color = 14342874
                 Font.Height = 20
                 Font.Style = [fsBold]
@@ -566,7 +566,6 @@ object FormMain: TFormMain
                 ParentFont = False
                 ParentShowHint = False
                 ShowHint = True
-                Transparent = False
                 WordWrap = True
                 OnClick = Label8Click
               end
@@ -587,7 +586,6 @@ object FormMain: TFormMain
                 BorderSpacing.Top = 10
                 BorderSpacing.Right = 3
                 Caption = 'Wikimedia Commons'
-                Color = 1973790
                 Font.Color = 14342874
                 Font.Height = 20
                 Font.Style = [fsBold]
@@ -595,7 +593,6 @@ object FormMain: TFormMain
                 ParentFont = False
                 ParentShowHint = False
                 ShowHint = True
-                Transparent = False
                 WordWrap = True
                 OnClick = Label8Click
               end
@@ -617,7 +614,6 @@ object FormMain: TFormMain
                 BorderSpacing.Top = 10
                 BorderSpacing.Right = 3
                 Caption = 'ccMixter'
-                Color = 1973790
                 Font.Color = 14342874
                 Font.Height = 20
                 Font.Style = [fsBold]
@@ -625,7 +621,6 @@ object FormMain: TFormMain
                 ParentFont = False
                 ParentShowHint = False
                 ShowHint = True
-                Transparent = False
                 WordWrap = True
                 OnClick = Label8Click
               end
@@ -694,8 +689,8 @@ object FormMain: TFormMain
           BorderSpacing.Left = 5
           Color = 1973790
           Flat = True
-          Images = DataModule1.ImageList1
-          ImageIndex = 52
+          Images = DataModule1.ILToolBar2
+          ImageIndex = 0
           Transparent = False
           OnClick = BImproveListeningClick
           ShowHint = True
@@ -716,8 +711,8 @@ object FormMain: TFormMain
           BorderSpacing.Left = 5
           Color = 1973790
           Flat = True
-          Images = DataModule1.ImageList1
-          ImageIndex = 53
+          Images = DataModule1.ILToolBar2
+          ImageIndex = 1
           Transparent = False
           OnClick = BImproveListeningClick
           ShowHint = True
@@ -740,8 +735,8 @@ object FormMain: TFormMain
           BorderSpacing.Bottom = 1
           Color = 1973790
           Flat = True
-          Images = DataModule1.ImageList1
-          ImageIndex = 57
+          Images = DataModule1.ILToolBar2
+          ImageIndex = 4
           Transparent = False
           OnClick = BImproveListeningClick
           ShowHint = True
@@ -763,8 +758,8 @@ object FormMain: TFormMain
           BorderSpacing.Right = 5
           Color = 1973790
           Flat = True
-          Images = DataModule1.ImageList1
-          ImageIndex = 45
+          Images = DataModule1.ILToolBar2
+          ImageIndex = 5
           Transparent = False
           OnClick = BImproveListeningClick
           ShowHint = True
@@ -785,7 +780,7 @@ object FormMain: TFormMain
           BorderSpacing.Right = 5
           Color = 1973790
           Flat = True
-          Images = DataModule1.ImageList1
+          Images = DataModule1.ILToolBar2
           ImageIndex = 3
           Transparent = False
           OnClick = BImproveListeningClick
@@ -806,8 +801,8 @@ object FormMain: TFormMain
           BorderSpacing.Right = 5
           Color = 1973790
           Flat = True
-          Images = DataModule1.ImageList1
-          ImageIndex = 38
+          Images = DataModule1.ILToolBar2
+          ImageIndex = 2
           Transparent = False
           OnClick = BOpenProjectManagerClick
           ShowHint = True
@@ -883,7 +878,7 @@ object FormMain: TFormMain
       Color = 1973790
       Flat = True
       Images = DataModule1.ImageList1
-      ImageIndex = 9
+      ImageIndex = 14
       Transparent = False
       OnClick = BBackwardClick
       ShowHint = True
@@ -904,7 +899,7 @@ object FormMain: TFormMain
       Color = 1973790
       Flat = True
       Images = DataModule1.ImageList1
-      ImageIndex = 10
+      ImageIndex = 15
       Transparent = False
       OnClick = BBackwardClick
       ShowHint = True
@@ -925,7 +920,7 @@ object FormMain: TFormMain
       Color = 1973790
       Flat = True
       Images = DataModule1.ImageList1
-      ImageIndex = 6
+      ImageIndex = 11
       Transparent = False
       OnClick = BBackwardClick
       ShowHint = True
@@ -946,7 +941,7 @@ object FormMain: TFormMain
       Color = 1973790
       Flat = True
       Images = DataModule1.ImageList1
-      ImageIndex = 7
+      ImageIndex = 12
       Transparent = False
       OnClick = BBackwardClick
       ShowHint = True
@@ -967,7 +962,7 @@ object FormMain: TFormMain
       Color = 1973790
       Flat = True
       Images = DataModule1.ImageList1
-      ImageIndex = 8
+      ImageIndex = 13
       Transparent = False
       OnClick = BBackwardClick
       ShowHint = True
@@ -988,7 +983,7 @@ object FormMain: TFormMain
       Color = 1973790
       Flat = True
       Images = DataModule1.ImageList1
-      ImageIndex = 11
+      ImageIndex = 16
       Transparent = False
       OnClick = BBackwardClick
       ShowHint = True
@@ -1115,7 +1110,7 @@ object FormMain: TFormMain
         Color = 1973790
         Flat = True
         Images = DataModule1.ImageList1
-        ImageIndex = 33
+        ImageIndex = 28
         Transparent = False
         OnClick = BSilenceOnSelectionClick
         ShowHint = True
@@ -1135,7 +1130,7 @@ object FormMain: TFormMain
         Color = 1973790
         Flat = True
         Images = DataModule1.ImageList1
-        ImageIndex = 35
+        ImageIndex = 30
         Transparent = False
         OnClick = BSilenceOnSelectionClick
         ShowHint = True
@@ -1155,7 +1150,7 @@ object FormMain: TFormMain
         Color = 1973790
         Flat = True
         Images = DataModule1.ImageList1
-        ImageIndex = 34
+        ImageIndex = 29
         Transparent = False
         OnClick = BSilenceOnSelectionClick
         ShowHint = True
@@ -1188,7 +1183,7 @@ object FormMain: TFormMain
         Color = 1973790
         Flat = True
         Images = DataModule1.ImageList1
-        ImageIndex = 25
+        ImageIndex = 4
         Transparent = False
         OnClick = BBackwardClick
         ShowHint = True
@@ -1209,7 +1204,7 @@ object FormMain: TFormMain
         Color = 1973790
         Flat = True
         Images = DataModule1.ImageList1
-        ImageIndex = 24
+        ImageIndex = 3
         Transparent = False
         OnClick = BBackwardClick
         ShowHint = True
@@ -1248,7 +1243,7 @@ object FormMain: TFormMain
         Enabled = False
         Flat = True
         Images = DataModule1.ImageList1
-        ImageIndex = 13
+        ImageIndex = 17
         Transparent = False
         OnClick = BSilenceOnSelectionClick
         ShowHint = True
@@ -1265,7 +1260,7 @@ object FormMain: TFormMain
         Color = 1973790
         Flat = True
         Images = DataModule1.ImageList1
-        ImageIndex = 30
+        ImageIndex = 26
         Transparent = False
         OnClick = BSilenceOnSelectionClick
         OnMouseDown = BInsertSilenceMouseDown
@@ -1300,7 +1295,7 @@ object FormMain: TFormMain
         Enabled = False
         Flat = True
         Images = DataModule1.ImageList1
-        ImageIndex = 12
+        ImageIndex = 2
         Transparent = False
         OnClick = BSilenceOnSelectionClick
         ShowHint = True
@@ -1333,7 +1328,7 @@ object FormMain: TFormMain
         Color = 1973790
         Flat = True
         Images = DataModule1.ImageList1
-        ImageIndex = 29
+        ImageIndex = 25
         Transparent = False
         OnClick = BBackwardClick
         ShowHint = True
@@ -1353,7 +1348,7 @@ object FormMain: TFormMain
         Color = 1973790
         Flat = True
         Images = DataModule1.ImageList1
-        ImageIndex = 28
+        ImageIndex = 24
         Transparent = False
         OnClick = BBackwardClick
         ShowHint = True
@@ -1362,7 +1357,7 @@ object FormMain: TFormMain
     end
   end
   object OpenDialog1: TOpenDialog
-    Left = 776
-    Top = 176
+    Left = 784
+    Top = 272
   end
 end

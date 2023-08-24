@@ -91,9 +91,9 @@ var
 
 implementation
 
-uses u_program_options, u_crossplatform, u_project, u_utils,
-  utilitaire_fichier, LCLType, form_main, u_userdialogs, u_resource_string,
-  FileUtil, Math, LCLIntf;
+uses u_program_options, u_crossplatform, u_project, u_utils, utilitaire_fichier,
+  LCLType, form_main, u_userdialogs, u_resource_string, u_datamodule, FileUtil,
+  Math, LCLIntf;
 
 {$R *.lfm}
 
@@ -249,8 +249,8 @@ begin
 
     // add the root with the project's Folder
     with TVProjects.Items.Add(NIL, SelectedProjectFolder) do begin
-      SelectedIndex := 31;
-      ImageIndex := 31;
+      SelectedIndex := IMAGE_INDEX_IL1_FOLDER;
+      ImageIndex := IMAGE_INDEX_IL1_FOLDER;
     end;
 
     n := TVProjects.Items.GetFirstNode;
@@ -281,8 +281,8 @@ begin
              // add entry in list of project found and link between TVProjects and FProjectFileFound
              with TVProjects.Items.AddChild(n, des.GetProjectTitleWithoutPath) do begin
                Data := Pointer(FProjectFileFound.Add(t.Strings[i]));
-               SelectedIndex := 17;
-               ImageIndex := 17;
+               SelectedIndex := IMAGE_INDEX_IL1_ROOT;
+               ImageIndex := IMAGE_INDEX_IL1_ROOT;
              end;
            end;
          except
@@ -292,8 +292,8 @@ begin
         '.zip': begin
          with TVProjects.Items.AddChild(n, t.Strings[i]) do begin
            Data := Pointer(FProjectFileFound.Add(t.Strings[i]));
-           SelectedIndex := 41;
-           ImageIndex := 41;
+           SelectedIndex := IMAGE_INDEX_IL1_FILE_ZIP;
+           ImageIndex := IMAGE_INDEX_IL1_FILE_ZIP;
          end;
         end;
 
@@ -353,15 +353,15 @@ begin
   TVPaths.BeginUpdate;
   TVPaths.Items.Clear;
   // add the root with the project's Folder
-  with TVPaths.Items.Add(NIL, 'Répertoire de travail') do begin
+  with TVPaths.Items.Add(NIL, SWorkingDirectory) do begin
     //SelectedIndex := 31;
     //ImageIndex := 31;
   end;
   n := TVPaths.Items.GetFirstNode;
   for i:=0 to High(ProgramOptions.UserWorkingDirectoryList.Items) do begin
    with TVPaths.Items.AddChild(n, ProgramOptions.UserWorkingDirectoryList.Items[i]) do begin
-     SelectedIndex := 31;
-     ImageIndex := 31;
+     SelectedIndex := IMAGE_INDEX_IL1_FOLDER;
+     ImageIndex := IMAGE_INDEX_IL1_FOLDER;
    end;
   end;
   TVPaths.EndUpdate;

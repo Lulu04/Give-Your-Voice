@@ -104,7 +104,7 @@ object FormProjectManager: TFormProjectManager
       Font.Color = clBlack
       Font.Height = 20
       Images = DataModule1.ImageList1
-      ImageIndex = 15
+      ImageIndex = 6
       OnClick = BOpenProjectClick
       ParentFont = False
     end
@@ -129,7 +129,7 @@ object FormProjectManager: TFormProjectManager
       Font.Color = clBlack
       Font.Height = 20
       Images = DataModule1.ImageList1
-      ImageIndex = 40
+      ImageIndex = 35
       OnClick = BOpenProjectClick
       ShowHint = True
       ParentFont = False
@@ -155,7 +155,7 @@ object FormProjectManager: TFormProjectManager
       Font.Color = clBlack
       Font.Height = 20
       Images = DataModule1.ImageList1
-      ImageIndex = 39
+      ImageIndex = 34
       OnClick = BOpenProjectClick
       ShowHint = True
       ParentFont = False
@@ -182,7 +182,7 @@ object FormProjectManager: TFormProjectManager
       Font.Color = clBlack
       Font.Height = 20
       Images = DataModule1.ImageList1
-      ImageIndex = 22
+      ImageIndex = 10
       OnClick = BOpenProjectClick
       ShowHint = True
       ParentFont = False
@@ -223,7 +223,7 @@ object FormProjectManager: TFormProjectManager
         Font.Color = clBlack
         Font.Height = 20
         Images = DataModule1.ImageList1
-        ImageIndex = 43
+        ImageIndex = 38
         OnClick = BOpenProjectClick
         ShowHint = True
         ParentFont = False
@@ -250,7 +250,7 @@ object FormProjectManager: TFormProjectManager
         Font.Color = clBlack
         Font.Height = 20
         Images = DataModule1.ImageList1
-        ImageIndex = 42
+        ImageIndex = 37
         OnClick = BOpenProjectClick
         ShowHint = True
         ParentFont = False
@@ -299,7 +299,7 @@ object FormProjectManager: TFormProjectManager
       Font.Color = clBlack
       Font.Height = 20
       Images = DataModule1.ImageList1
-      ImageIndex = 54
+      ImageIndex = 9
       OnClick = BOpenProjectClick
       ShowHint = True
       ParentFont = False
@@ -516,7 +516,7 @@ object FormProjectManager: TFormProjectManager
           Font.Color = clBlack
           Font.Height = 13
           Images = DataModule1.ImageList1
-          ImageIndex = 15
+          ImageIndex = 6
           OnClick = BOpenProjectClick
           ParentFont = False
         end

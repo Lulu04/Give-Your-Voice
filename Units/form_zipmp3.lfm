@@ -1,7 +1,7 @@
 object FormZipMP3: TFormZipMP3
-  Left = 216
+  Left = 310
   Height = 516
-  Top = 138
+  Top = 132
   Width = 698
   BorderIcons = [biSystemMenu]
   Caption = 'MP3 -> ZIP'
@@ -213,7 +213,7 @@ object FormZipMP3: TFormZipMP3
     Font.Color = clBlack
     Font.Height = 20
     Images = DataModule1.ImageList1
-    ImageIndex = 50
+    ImageIndex = 44
     Transparent = False
     OnClick = BZipFilesClick
     ParentFont = False
@@ -235,7 +235,7 @@ object FormZipMP3: TFormZipMP3
     Font.Color = clBlack
     Font.Height = 14
     Images = DataModule1.ImageList1
-    ImageIndex = 5
+    ImageIndex = 1
     ImageWidth = 20
     OnClick = BZipFilesClick
     ParentFont = False
@@ -274,7 +274,7 @@ object FormZipMP3: TFormZipMP3
     Font.Color = clBlack
     Font.Height = 14
     Images = DataModule1.ImageList1
-    ImageIndex = 51
+    ImageIndex = 45
     ImageWidth = 20
     OnClick = BZipFilesClick
     ParentFont = False
@@ -294,7 +294,7 @@ object FormZipMP3: TFormZipMP3
     Color = 1973790
     Flat = True
     Images = DataModule1.ImageList1
-    ImageIndex = 49
+    ImageIndex = 43
     OnClick = Label7Click
     ShowHint = True
     ParentShowHint = False

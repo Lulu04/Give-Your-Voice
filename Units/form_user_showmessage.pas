@@ -76,6 +76,7 @@ begin
 {$endif}
 {$if defined(LCLCOCOA)}
   BOk.Flat := False;
+  ChangeFontColor([BOk], clDefault);
 {$endif}
 end;
 
