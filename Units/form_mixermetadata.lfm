@@ -167,7 +167,7 @@ object FormMixerMetaData: TFormMixerMetaData
     Flat = True
     Font.Color = clBlack
     Images = DataModule1.ImageList1
-    ImageIndex = 27
+    ImageIndex = 23
     Transparent = False
     OnClick = BMixClick
     ShowHint = True

@@ -15,6 +15,7 @@
 {"hash":157316910,"name":"tframeviewprojectfiles.miimportaudioandinserthere.caption","sourcebytes":[73,109,112,111,114,116,101,114,32,117,110,32,101,110,114,101,103,105,115,116,114,101,109,101,110,116,32,101,116,32,108,39,105,110,115,195,169,114,101,114,32,105,99,105,46,46,46],"value":"Importer un enregistrement et l'ins\u00E9rer ici..."},
 {"hash":125352194,"name":"tframeviewprojectfiles.mideletefile.caption","sourcebytes":[83,117,112,112,114,105,109,101,114],"value":"Supprimer"},
 {"hash":135711362,"name":"tframeviewprojectfiles.miaddfolder.caption","sourcebytes":[65,106,111,117,116,101,114],"value":"Ajouter"},
+{"hash":187143534,"name":"tframeviewprojectfiles.mifontsize.caption","sourcebytes":[84,97,105,108,108,101,32,100,101,115,32,99,97,114,97,99,116,195,168,114,101,115,46,46,46],"value":"Taille des caract\u00E8res..."},
 {"hash":257535285,"name":"tframeviewprojectfiles.mirefresh.caption","sourcebytes":[82,97,102,114,97,195,174,99,104,105,114,32,108,39,97,114,98,111,114,101,115,99,101,110,99,101],"value":"Rafra\u00EEchir l'arborescence"},
 {"hash":51740080,"name":"tframeviewprojectfiles.mizipmp3folder.caption","sourcebytes":[77,80,51,32,45,62,32,90,73,80],"value":"MP3 -> ZIP"},
 {"hash":6093506,"name":"tframeviewprojectfiles.miclearmp3folder.caption","sourcebytes":[86,105,100,101,114],"value":"Vider"},

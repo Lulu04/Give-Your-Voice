@@ -68,7 +68,7 @@ object FormUserInput: TFormUserInput
     Flat = True
     Font.Color = clBlack
     Images = DataModule1.ImageList1
-    ImageIndex = 14
+    ImageIndex = 5
     Transparent = False
     OnClick = SpeedButton1Click
     ParentFont = False
@@ -92,7 +92,7 @@ object FormUserInput: TFormUserInput
     Flat = True
     Font.Color = clBlack
     Images = DataModule1.ImageList1
-    ImageIndex = 15
+    ImageIndex = 6
     Transparent = False
     OnClick = SpeedButton2Click
     ParentFont = False

@@ -36,7 +36,7 @@ object FormRecord: TFormRecord
     Height = 201
     Top = 2
     Width = 307
-    PageIndex = 3
+    PageIndex = 4
     Anchors = [akTop, akLeft, akRight]
     BorderSpacing.Left = 2
     BorderSpacing.Top = 2
@@ -196,7 +196,7 @@ object FormRecord: TFormRecord
           Caption = 'Label'
           Flat = True
           Images = DataModule1.ImageList1
-          ImageIndex = 33
+          ImageIndex = 28
           Transparent = False
           OnClick = BAddUserMarkClick
           ShowHint = True
@@ -475,7 +475,7 @@ object FormRecord: TFormRecord
           Flat = True
           Font.Height = 20
           Images = DataModule1.ImageList1
-          ImageIndex = 11
+          ImageIndex = 16
           Transparent = False
           OnClick = BStartRecordClick
           ShowHint = True
@@ -593,7 +593,7 @@ object FormRecord: TFormRecord
           Font.Color = 14342874
           Font.Height = 20
           Images = DataModule1.ImageList1
-          ImageIndex = 21
+          ImageIndex = 22
           Transparent = False
           OnClick = BSaveClick
           ShowHint = True

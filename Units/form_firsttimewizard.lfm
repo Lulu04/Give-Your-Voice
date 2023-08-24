@@ -108,7 +108,7 @@ object FormFirstRun: TFormFirstRun
     BorderSpacing.Top = 20
     Caption = 'Label'
     Images = DataModule1.ImageList1
-    ImageIndex = 14
+    ImageIndex = 5
     OnClick = SpeedButton1Click
   end
   object Panel1: TPanel
@@ -314,7 +314,7 @@ object FormFirstRun: TFormFirstRun
     AutoSize = True
     Caption = 'Label'
     Images = DataModule1.ImageList1
-    ImageIndex = 14
+    ImageIndex = 5
     Visible = False
     OnClick = SpeedButton1Click
   end
@@ -357,7 +357,7 @@ object FormFirstRun: TFormFirstRun
       Caption = 'Cliquez pour fermer cet assistant'
       Font.Style = [fsBold]
       Images = DataModule1.ImageList1
-      ImageIndex = 14
+      ImageIndex = 5
       OnClick = SpeedButton2Click
       ParentFont = False
     end

@@ -2878,7 +2878,7 @@ begin
   FrameTrackBar1.OnChange := @ProcessVolumeCursorChange;
 
   ToggleSpeedButtonManager1 := TToggleSpeedButtonManager.Create;
-  ToggleSpeedButtonManager1.SetImageIndexes(14, -1);
+  ToggleSpeedButtonManager1.SetImageIndexes(5, -1);
   ToggleSpeedButtonManager1.SetActivatedColors(clBtnFace, clBlack);
   ToggleSpeedButtonManager1.SetDeactivatedColors(clBtnFace, clBlack);
   ToggleSpeedButtonManager1.Add(BMute, False);

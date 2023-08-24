@@ -1,7 +1,7 @@
 object FormMixer: TFormMixer
-  Left = 72
+  Left = 314
   Height = 608
-  Top = 27
+  Top = 21
   Width = 845
   Caption = 'Mixer'
   ClientHeight = 608
@@ -83,7 +83,7 @@ object FormMixer: TFormMixer
           Color = 1973790
           Flat = True
           Images = DataModule1.ImageList1
-          ImageIndex = 9
+          ImageIndex = 14
           Transparent = False
           OnClick = BPlayClick
           ShowHint = True
@@ -106,7 +106,7 @@ object FormMixer: TFormMixer
           Color = 1973790
           Flat = True
           Images = DataModule1.ImageList1
-          ImageIndex = 10
+          ImageIndex = 15
           Transparent = False
           OnClick = BPlayClick
           ShowHint = True
@@ -131,7 +131,7 @@ object FormMixer: TFormMixer
           Color = 1973790
           Flat = True
           Images = DataModule1.ImageList1
-          ImageIndex = 6
+          ImageIndex = 11
           Transparent = False
           OnClick = BPlayClick
           ShowHint = True
@@ -157,7 +157,7 @@ object FormMixer: TFormMixer
           Color = 1973790
           Flat = True
           Images = DataModule1.ImageList1
-          ImageIndex = 7
+          ImageIndex = 12
           Transparent = False
           OnClick = BPlayClick
           ShowHint = True
@@ -262,7 +262,7 @@ object FormMixer: TFormMixer
           Color = 1973790
           Flat = True
           Images = DataModule1.ImageList1
-          ImageIndex = 29
+          ImageIndex = 25
           Transparent = False
           OnClick = BPlayClick
           ShowHint = True
@@ -285,7 +285,7 @@ object FormMixer: TFormMixer
           Color = 1973790
           Flat = True
           Images = DataModule1.ImageList1
-          ImageIndex = 47
+          ImageIndex = 41
           Transparent = False
           OnClick = BPlayClick
           ShowHint = True
@@ -510,7 +510,7 @@ object FormMixer: TFormMixer
         Font.Color = clBlack
         Font.Height = 12
         Images = DataModule1.ImageList1
-        ImageIndex = 14
+        ImageIndex = 5
         OnClick = BBassBoostClick
         ShowHint = True
         ParentFont = False
@@ -533,7 +533,7 @@ object FormMixer: TFormMixer
         Font.Color = clBlack
         Font.Height = 12
         Images = DataModule1.ImageList1
-        ImageIndex = 14
+        ImageIndex = 5
         OnClick = BBassBoostClick
         ShowHint = True
         ParentFont = False
@@ -581,7 +581,7 @@ object FormMixer: TFormMixer
         Font.Color = clBlack
         Font.Height = 12
         Images = DataModule1.ImageList1
-        ImageIndex = 14
+        ImageIndex = 5
         OnClick = BBassBoostClick
         ShowHint = True
         ParentFont = False
@@ -651,7 +651,7 @@ object FormMixer: TFormMixer
         BorderSpacing.Right = 2
         Flat = True
         Images = DataModule1.ImageList1
-        ImageIndex = 45
+        ImageIndex = 50
         OnClick = BPlayClick
         ShowHint = True
         ParentShowHint = False
@@ -695,7 +695,7 @@ object FormMixer: TFormMixer
         Flat = True
         Font.Color = clBlack
         Images = DataModule1.ImageList1
-        ImageIndex = 27
+        ImageIndex = 23
         Transparent = False
         OnClick = BMixClick
         ShowHint = True
@@ -743,7 +743,7 @@ object FormMixer: TFormMixer
       Height = 151
       Top = 1
       Width = 424
-      PageIndex = 0
+      PageIndex = 1
       Align = alClient
       TabOrder = 0
       object PageMixingProgress: TPage
@@ -778,7 +778,7 @@ object FormMixer: TFormMixer
           BorderSpacing.Bottom = 10
           Caption = 'Annuler'
           Images = DataModule1.ImageList1
-          ImageIndex = 15
+          ImageIndex = 6
           OnClick = BMixClick
         end
         object Panel5: TPanel
@@ -818,7 +818,7 @@ object FormMixer: TFormMixer
           BorderSpacing.Bottom = 10
           Caption = 'Garder'
           Images = DataModule1.ImageList1
-          ImageIndex = 14
+          ImageIndex = 5
           OnClick = BMixClick
           ShowHint = True
           ParentShowHint = False
@@ -857,7 +857,7 @@ object FormMixer: TFormMixer
           BorderSpacing.Bottom = 10
           Caption = 'Changer les paramètres'
           Images = DataModule1.ImageList1
-          ImageIndex = 25
+          ImageIndex = 4
           OnClick = BMixClick
           ShowHint = True
           ParentShowHint = False
@@ -880,7 +880,7 @@ object FormMixer: TFormMixer
           Font.Height = 13
           Font.Style = [fsBold]
           Images = DataModule1.ImageList1
-          ImageIndex = 6
+          ImageIndex = 11
           Transparent = False
           OnClick = BMixClick
           ShowHint = True

@@ -193,7 +193,7 @@ object FrameMixer: TFrameMixer
       Width = 24
       Anchors = [akTop, akRight]
       Images = DataModule1.ImageList1
-      ImageIndex = 15
+      ImageIndex = 6
       OnClick = BHideVolumeCursorClick
     end
     object BMute: TSpeedButton
@@ -213,7 +213,7 @@ object FrameMixer: TFrameMixer
       BorderSpacing.Bottom = 3
       Caption = 'Muet'
       Images = DataModule1.ImageList1
-      ImageIndex = 14
+      ImageIndex = 5
       ImageWidth = 15
       OnClick = BMuteClick
     end

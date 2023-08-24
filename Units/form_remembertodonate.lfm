@@ -40,7 +40,7 @@ object FormRememberToDonate: TFormRememberToDonate
     Font.Color = clBlack
     Font.Height = 20
     Images = DataModule1.ImageList1
-    ImageIndex = 44
+    ImageIndex = 39
     OnClick = BDonateClick
     ParentFont = False
   end
@@ -63,7 +63,7 @@ object FormRememberToDonate: TFormRememberToDonate
     Font.Color = clBlack
     Font.Height = 20
     Images = DataModule1.ImageList1
-    ImageIndex = 15
+    ImageIndex = 6
     OnClick = BCloseClick
     ParentFont = False
   end

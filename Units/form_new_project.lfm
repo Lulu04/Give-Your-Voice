@@ -140,7 +140,7 @@ object FormNewProject: TFormNewProject
     Font.Color = clBlack
     Font.Height = 20
     Images = DataModule1.ImageList1
-    ImageIndex = 39
+    ImageIndex = 34
     Transparent = False
     OnClick = BCreateProjectClick
     ParentFont = False

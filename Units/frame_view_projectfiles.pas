@@ -32,6 +32,7 @@ type
   { TFrameViewProjectFiles }
 
   TFrameViewProjectFiles = class(TFrame)
+    MIFontSize: TMenuItem;
     MIInsertFile: TMenuItem;
     MIImportAudioAndInsertHere: TMenuItem;
     MIImportAudioInSection: TMenuItem;
@@ -102,6 +103,7 @@ type
     procedure ShiftFilePrefixFromNode(aFileNode: TTreeNode; delta: integer);
     function NodeToFilenameOrPath(aNode: TTreeNode): string;
     procedure DoZipMP3Files;
+    procedure DoChangeTVFontSize;
   private
     FSound: TALSSound;
     procedure ShowToolPanel;
@@ -179,7 +181,7 @@ implementation
 uses u_project, LazFileUtils, utilitaire_fichier, form_main, u_userdialogs,
   u_utils, u_audio_utils, u_program_options, u_resource_string,
   form_ask_sectionname, form_zipmp3, form_mixer, Graphics, Math, LCLType,
-  LazUTF8, LCLIntf, form_audiorecording;
+  LazUTF8, LCLIntf, form_audiorecording, u_datamodule, form_ask_treefontsize;
 
 {$R *.lfm}
 
@@ -643,6 +645,22 @@ begin
   FormZipMP3.Free;
 end;
 
+procedure TFrameViewProjectFiles.DoChangeTVFontSize;
+var p: TPoint;
+begin
+  FormAskTreeFontSize := TFormAskTreeFontSize.Create(NIL);
+  try
+    p.x := ClientWidth;
+    p.y := ClientHeight div 2;
+    p := ClientToScreen(p);
+    FormAskTreeFontSize.Left := p.x - FormAskTreeFontSize.Width;
+    FormAskTreeFontSize.Top := p.y - FormAskTreeFontSize.Height div 2;
+    FormAskTreeFontSize.ShowModal;
+  finally
+    FormAskTreeFontSize.Free;
+  end;
+end;
+
 procedure TFrameViewProjectFiles.StopSound;
 begin
   if ALSManager.Error then exit;
@@ -877,11 +895,11 @@ begin
   if not RepertoireExistant(aFolder) then exit;
 
   if FolderHaveUserMarksFile(aFolder) then begin
-    aFolderNode.SelectedIndex := 37;  // chapter with user marks
-    aFolderNode.ImageIndex := 37;
+    aFolderNode.SelectedIndex := IMAGE_INDEX_TV_SECTION_WITH_USERMARK;
+    aFolderNode.ImageIndex := IMAGE_INDEX_TV_SECTION_WITH_USERMARK;
   end else begin
-    aFolderNode.SelectedIndex := 18;  // chapter
-    aFolderNode.ImageIndex := 18;
+    aFolderNode.SelectedIndex := IMAGE_INDEX_TV_SECTION;
+    aFolderNode.ImageIndex := IMAGE_INDEX_TV_SECTION;
   end;
 end;
 
@@ -891,11 +909,11 @@ begin
   if not IsFile(aFile) then exit;
 
   if FichierExistant(ChangeFileExt(aFile, USER_MARK_FILE_EXT)) then begin
-    aFileNode.SelectedIndex := 36; // record with user marks
-    aFileNode.ImageIndex := 36;
+    aFileNode.SelectedIndex := IMAGE_INDEX_TV_RECORD_WITH_USERMARK;
+    aFileNode.ImageIndex := IMAGE_INDEX_TV_RECORD_WITH_USERMARK;
   end else begin
-    aFileNode.SelectedIndex := 19; // record icon
-    aFileNode.ImageIndex := 19;
+    aFileNode.SelectedIndex := IMAGE_INDEX_TV_RECORD;
+    aFileNode.ImageIndex := IMAGE_INDEX_TV_RECORD;
   end;
 end;
 
@@ -1189,17 +1207,16 @@ begin
   Panel1.Visible := False;
   Panel2.Visible := False;
 
-  if ssCtrl in shift then begin
+{  if ssCtrl in shift then begin
     h := TV.Font.Height;
     if WheelDelta < 0 then
       dec(h)
     else inc(h);
     TV.Font.Height := EnsureRange(h, 13, 30);
-
     ProgramOptions.ViewFilesFontHeight := TV.Font.Height;
     //ProgramOptions.Save;
     Handled := True;
-  end;
+  end;   }
 end;
 
 procedure TFrameViewProjectFiles.TVResize(Sender: TObject);
@@ -1310,6 +1327,8 @@ begin
   end;
 
   if Sender = MIRefresh then UpdateFileList;
+
+  if Sender = MIFontSize then DoChangeTVFontSize;
 end;
 
 procedure TFrameViewProjectFiles.PopupRecordingPopup(Sender: TObject);
@@ -1436,12 +1455,12 @@ var s, sel: string;
           n := TV.Items.AddChild(aNode, Sr.Name);
           if Sr.Name = PROJECT_OUTPUT_FOLDER_MP3 then begin
             mp3FolderNode := n;     // MP3 folder
-            n.SelectedIndex := 32;
+            n.SelectedIndex := IMAGE_INDEX_TV_FOLDER_MP3;
             n.ImageIndex := n.SelectedIndex;
           end else
           if Sr.Name = PROJECT_OUTPUT_FOLDER_ZIP then begin
             zipFolderNode := n;     // ZIP folder
-            n.SelectedIndex := 41;
+            n.SelectedIndex := IMAGE_INDEX_TV_FOLDER_ZIP;
             n.ImageIndex := n.SelectedIndex;
           end else begin
             inc(FSectionFolderCount);
@@ -1457,17 +1476,17 @@ var s, sel: string;
         // found a file
         n := TV.Items.AddChild(aNode, Sr.Name);
         if ExtractFileName(Dossier) = PROJECT_OUTPUT_FOLDER_MP3 then begin
-          n.SelectedIndex := 32; // mp3 icon
+          n.SelectedIndex := IMAGE_INDEX_TV_FILE_MP3; // mp3 icon
           n.ImageIndex := n.SelectedIndex;
         end else if ExtractFileName(Dossier) = PROJECT_OUTPUT_FOLDER_ZIP then begin
-          n.SelectedIndex := 41; // zip icon
+          n.SelectedIndex := IMAGE_INDEX_TV_FILE_ZIP; // zip icon
           n.ImageIndex := n.SelectedIndex;
         end else begin
           if FichierExistant(Dossier + DirectorySeparator + ChangeFileExt(Sr.Name, USER_MARK_FILE_EXT)) then begin
-            n.SelectedIndex := 36; // record with user marks
+            n.SelectedIndex := IMAGE_INDEX_TV_RECORD_WITH_USERMARK; // record with user marks
             n.ImageIndex := n.SelectedIndex;
           end else begin
-            n.SelectedIndex := 19; // record icon
+            n.SelectedIndex := IMAGE_INDEX_TV_RECORD; // record icon
             n.ImageIndex := n.SelectedIndex;
           end;
         end;
@@ -1499,8 +1518,8 @@ begin
   end
   else s := SProjectContent;
   with TV.Items.Add(NIL, s) do begin
-    SelectedIndex := 17;
-    ImageIndex := 17;
+    SelectedIndex := IMAGE_INDEX_TV_ROOT;
+    ImageIndex := IMAGE_INDEX_TV_ROOT;
   end;
   ScruteLeDossier(Project.ProjectFolder, TV.Items.GetFirstNode); // on lance la recherche récursive
   TV.EndUpdate;
