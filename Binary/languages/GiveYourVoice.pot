@@ -67,6 +67,10 @@ msgstr ""
 msgid "Aperçu"
 msgstr ""
 
+#: tformasktreefontsize.label16.caption
+msgid "Réglage de la taille des caractères"
+msgstr ""
+
 #: tformfirstrun.label1.caption
 msgid "Give your Voice !"
 msgstr ""
@@ -861,6 +865,10 @@ msgctxt "tframeviewprojectfiles.mideletezipfolder.caption"
 msgid "Supprimer"
 msgstr ""
 
+#: tframeviewprojectfiles.mifontsize.caption
+msgid "Taille des caractères..."
+msgstr ""
+
 #: tframeviewprojectfiles.miimportaudioandinserthere.caption
 msgid "Importer un enregistrement et l'insérer ici..."
 msgstr ""
@@ -1582,6 +1590,10 @@ msgstr ""
 msgid ""
 "Attention, supprimer un projet du disque est définitif.\n"
 "Pour confirmer la suppression, tapez le mot 'supprimer'"
+msgstr ""
+
+#: u_resource_string.sworkingdirectory
+msgid "Répertoire de travail"
 msgstr ""
 
 #: u_resource_string.syes

@@ -377,6 +377,13 @@
         <Filename Value="..\UnitsCommon\i18_utils.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit>
+      <Unit>
+        <Filename Value="Units\form_ask_treefontsize.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormAskTreeFontSize"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

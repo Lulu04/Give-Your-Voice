@@ -20,7 +20,8 @@ uses
   frame_progressbar, u_mp3gain, form_about, u_crossplatform,
   form_project_manager, form_ask_sectionname, form_help, form_zipmp3,
   frame_zipfiles, form_mixermetadata, u_web, form_remembertodonate,
-  utilitaire_fichier, u_logfile, PropertyUtils, LCL_utils, ALSound, i18_utils;
+  utilitaire_fichier, u_logfile, PropertyUtils, LCL_utils, ALSound, i18_utils,
+  form_ask_treefontsize;
 
 {$R *.res}
 

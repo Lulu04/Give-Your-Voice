@@ -1,0 +1,87 @@
+object FormAskTreeFontSize: TFormAskTreeFontSize
+  Left = 514
+  Height = 134
+  Top = 277
+  Width = 276
+  BorderIcons = []
+  BorderStyle = bsNone
+  ClientHeight = 134
+  ClientWidth = 276
+  Color = 3815994
+  KeyPreview = True
+  OnKeyUp = FormKeyUp
+  OnShow = FormShow
+  LCLVersion = '2.2.4.0'
+  object Shape1: TShape
+    Left = 0
+    Height = 134
+    Top = 0
+    Width = 276
+    Align = alClient
+    Brush.Style = bsClear
+    Pen.Color = 33023
+    Pen.Width = 2
+  end
+  object BOk: TSpeedButton
+    AnchorSideLeft.Control = Owner
+    AnchorSideLeft.Side = asrCenter
+    AnchorSideBottom.Control = Owner
+    AnchorSideBottom.Side = asrBottom
+    Cursor = crHandPoint
+    Left = 98
+    Height = 28
+    Top = 96
+    Width = 80
+    Anchors = [akLeft, akBottom]
+    AutoSize = True
+    BorderSpacing.Bottom = 10
+    Constraints.MinWidth = 80
+    Caption = 'Label'
+    Flat = True
+    Font.Style = [fsBold]
+    Images = DataModule1.ImageList1
+    ImageIndex = 5
+    Transparent = False
+    OnClick = BOkClick
+    ParentFont = False
+  end
+  object Label16: TLabel
+    AnchorSideLeft.Control = Owner
+    AnchorSideTop.Control = Owner
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    Left = 10
+    Height = 15
+    Top = 5
+    Width = 256
+    Anchors = [akTop, akLeft, akRight]
+    BorderSpacing.Left = 10
+    BorderSpacing.Top = 5
+    BorderSpacing.Right = 10
+    Caption = 'Réglage de la taille des caractères'
+    Font.Color = 3124978
+    Font.Height = 15
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+    WordWrap = True
+  end
+  object SpinEdit1: TSpinEdit
+    AnchorSideLeft.Control = Owner
+    AnchorSideLeft.Side = asrCenter
+    AnchorSideTop.Control = Label16
+    AnchorSideTop.Side = asrBottom
+    Left = 97
+    Height = 28
+    Top = 30
+    Width = 83
+    BorderSpacing.Top = 10
+    Font.Height = 20
+    MaxValue = 30
+    MinValue = 13
+    OnChange = SpinEdit1Change
+    ParentFont = False
+    TabOrder = 0
+    Value = 20
+  end
+end
