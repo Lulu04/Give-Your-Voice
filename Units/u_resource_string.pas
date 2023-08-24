@@ -39,7 +39,7 @@ SDelete='Supprimer';
 SNext='Suivant';
 SMicLevel='Niveau du micro';
 
-//SProjectManager='GESTIONNAIRE'+LineEnding+'DE PROJETS';
+SWorkingDirectory='Répertoire de travail';
 SAskToEraseMP3FilesBeforeZip='Avant de compresser ce projet, voulez-vous effacer les fichiers de son dossier MP3 ?'+LineEnding+
       'Cela réduira la taille du zip.';
 SAskToEraseZIPFolderBeforeZip='Avant de compresser ce projet, voulez-vous supprimer son dossier ZIP ?';
