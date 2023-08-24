@@ -1345,8 +1345,13 @@ end;
 
 procedure TFrameViewProjectFiles.PopupMP3FolderPopup(Sender: TObject);
 begin
+{$ifdef Darwin}
+  // zip actions are not allowed on MacOS due to a bug in Zipper
+  MIZipMP3Folder.Enabled := False;
+{$else}
   MIZipMP3Folder.Enabled := Project.OutputFolderExists and
                             not RepertoireEstVide(Project.ProjectOutputFolder);
+{$endif}
   MIClearMP3Folder.Enabled := MIZipMP3Folder.Enabled;
 end;
 
