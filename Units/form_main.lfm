@@ -128,7 +128,7 @@ object FormMain: TFormMain
         Height = 323
         Top = 41
         Width = 250
-        PageIndex = 1
+        PageIndex = 0
         Anchors = [akTop, akLeft, akRight, akBottom]
         BorderSpacing.Bottom = 10
         Color = 2631720
@@ -407,7 +407,7 @@ object FormMain: TFormMain
             Height = 255
             Top = 68
             Width = 250
-            PageIndex = 2
+            PageIndex = 0
             Anchors = [akTop, akLeft, akRight, akBottom]
             TabOrder = 1
             object PageURLLibrivox: TPage

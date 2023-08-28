@@ -91,8 +91,8 @@ var
   MainUndoRedoManager: TMainUndoRedoManager;
 
 implementation
-uses u_audio_utils, u_project, form_main, u_userdialogs,
-  frame_viewaudio, u_resource_string, utilitaire_fichier, u_logfile, Dialogs;
+uses u_audio_utils, u_project, form_main, u_userdialogs, frame_viewaudio,
+  u_resource_string, u_crossplatform, utilitaire_fichier, u_logfile, Dialogs;
 
 { TMainUndoRedoItem }
 
@@ -483,7 +483,7 @@ begin
   if not UndoAvailable then
     Result := ''
   else
-    Result := Format(SUndoCaption, [UndoPeekCurrent.Caption]);
+    Result := Format(SUndoCaption, [UndoPeekCurrent.Caption, StrCtrlPlusKey('Z')]);
 end;
 
 function TMainUndoRedoManager.CurrentRedoCaption: string;
@@ -491,7 +491,7 @@ begin
   if not RedoAvailable then
     Result := ''
   else
-    Result := Format(SRedoCaption, [RedoPeekCurrent.Caption]);
+    Result := Format(SRedoCaption, [RedoPeekCurrent.Caption, StrCtrlPlusKey('Y')]);
 end;
 
 procedure TMainUndoRedoManager.Clear;

@@ -168,8 +168,13 @@ SInsertionOfNewRecordIntoProjectFailed='L''insertion du nouvel enregistrement da
 
 SUndoCommandFailed='La commande <Annuler %0:s> a échoué...';
 SRedoCommandFailed='La commande <Refaire %0:s> a échoué...';
-SUndoCaption='Annuler %0:s (Ctrl Z)';
-SRedoCaption='Refaire %0:s (Ctrl Y)';
+{$if defined(Windows) or defined(Linux)}
+SUndoCaption='Annuler %0:s (%1:s)';
+SRedoCaption='Refaire %0:s (%1:s)';
+{$elseif defined(Darwin)}
+SUndoCaption='Annuler %0:s (%1:s)';
+SRedoCaption='Refaire %0:s (%1:s)';
+{$endif}
 
 SSelectionWillBeReplacedByNewRecord='la sélection sera remplacée par le nouvel enregistrement';
 SInsertNewRecordToTheBeginning='le nouvel enregistrement sera inséré au début';
