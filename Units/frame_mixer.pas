@@ -53,7 +53,7 @@ type
  TMixerSoundObject = record
    ApplyFadeAtBeginAndEnd: boolean;
    MaxGainValue: single;
-   g: TALSBoundedFParam;   // gain qu'on fait varier à chaque sample pour
+   g: TALSCustomBoundedFParam;   // gain qu'on fait varier à chaque sample pour
                         // effectuer les fadein, fadeout et l'enveloppe de gain
    SamplesToDo: int64;
    AccuSamples: int64;
@@ -2245,7 +2245,7 @@ var
       AccuSamples := 0;
       SamplesToDo := 0;
       WorkingindexCurveGain := 0;
-      g := TALSBoundedFParam.Create(0.0, 1.0, 1.0);
+      g := TALSCustomBoundedFParam.Create(0.0, 1.0, 1.0);
 
       flagDoSetPosition := (aTimePosMS > TimePosMS) and (aTimePosMS < EndTimePosMS);
 
