@@ -178,11 +178,7 @@ begin
 end;
 
 procedure TFormMixer.BBassBoostClick(Sender: TObject);
-//var i: integer;
 begin
-  // to do: lors d'une preview, l'utilisateur peut modifier les effets pour écouter en temps réel
-  // la différence. il faut donc prévenir FrameMixer1 de cela
-
   if Sender = BCompressor then
     FrameMixer1.SetPreviewCompressor(ToggleSpeedButtonManager1.Checked[BCompressor]);
 
@@ -194,18 +190,6 @@ begin
 
   if (Sender = BAmplify) or (Sender = CBAmplify) then
     FrameMixer1.SetPreviewAmplifyGain(GetAmplifyGain);
-
-
-  if (Sender = BBassBoost) or (Sender = FSEBassBoost) then begin
- {   FLBEqualizerBassBoost.Mute :=  not ToggleSpeedButtonManager1.Checked[BBassBoost];
-    FLBEqualizerBassBoostProp.LowGain  := GetBassGain;
-    FLBEqualizerBassBoost.UpdateParameters(FLBEqualizerBassBoostProp);  }
-  end;
-
-  if (Sender = BAmplify) or (Sender = CBAmplify) then begin
-   { for i:=0 to High(FSounds) do
-      FSounds[i].Volume.Value := GetAmplifyGain; }
-  end;
 end;
 
 procedure TFormMixer.BPlayClick(Sender: TObject);
