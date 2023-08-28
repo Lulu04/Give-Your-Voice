@@ -317,6 +317,7 @@ object FrameViewProjectFiles: TFrameViewProjectFiles
     end
     object MIFontSize: TMenuItem
       Caption = 'Taille des caractères...'
+      ImageIndex = 54
       OnClick = BAddRecordClick
     end
     object MIRefresh: TMenuItem
