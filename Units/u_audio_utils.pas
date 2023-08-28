@@ -1052,7 +1052,7 @@ var reader: TAudioFileReader;
   writer: TAudioFileWriter;
   buf: TALSPlaybackBuffer;
   f: string;
-  gain: TALSBoundedFParam;
+  gain: TALSCustomBoundedFParam;
   p: PSingle;
   i, j, iRampUp: integer;
 begin
@@ -1111,7 +1111,7 @@ begin
   if aAttenuationTime = 0 then
     buf.FillWithSilence
   else begin
-    gain := TALSBoundedFParam.Create(0.0, 1.0, 1.0);
+    gain := TALSCustomBoundedFParam.Create(0.0, 1.0, 1.0);
     gain.ChangeTo(0.0, aAttenuationTime, ALS_StartFastEndSlow);
     iRampUp := buf.FrameCapacity-Trunc(reader.SampleRate*aAttenuationTime);
     for i:=0 to buf.FrameCapacity-1 do begin

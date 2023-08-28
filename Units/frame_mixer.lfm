@@ -6,8 +6,8 @@ object FrameMixer: TFrameMixer
   ClientHeight = 474
   ClientWidth = 751
   TabOrder = 0
-  DesignLeft = 137
-  DesignTop = 158
+  DesignLeft = 353
+  DesignTop = 135
   object PBTime: TPaintBox
     AnchorSideLeft.Control = Owner
     AnchorSideTop.Control = Owner
@@ -224,7 +224,7 @@ object FrameMixer: TFrameMixer
     Top = 264
     object MIAddMusic: TMenuItem
       Caption = 'Ajouter une musique...'
-      ImageIndex = 4
+      ImageIndex = 5
       OnClick = MIAddMusicClick
     end
   end
