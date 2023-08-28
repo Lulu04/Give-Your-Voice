@@ -130,7 +130,7 @@ var
 implementation
 uses form_main, u_project, u_userdialogs, u_audio_utils, Math, u_program_options,
   u_resource_string, utilitaire_fichier, u_utils, LCLType,
-  form_help, form_mixermetadata, u_crossplatform, LibSndFile;
+  form_help, form_mixermetadata, u_crossplatform, u_datamodule, LibSndFile;
 
 {$R *.lfm}
 
@@ -165,7 +165,8 @@ begin
 
   ToggleSpeedButtonManager2 := TToggleSpeedButtonManager.Create;
   ToggleSpeedButtonManager2.ToggleType := tsbLikeCheckBox;
-  ToggleSpeedButtonManager2.SetImageIndexes(47, 46);
+  ToggleSpeedButtonManager2.SetImageIndexes(IMAGE_INDEX_IL1_MIXER_SHOW_VOLUME_ENVELOPE,
+                                            IMAGE_INDEX_IL1_MIXER_HIDE_VOLUME_ENVELOPE);
   ToggleSpeedButtonManager2.SetActivatedColors($001E1E1E, clBlack);
   ToggleSpeedButtonManager2.SetDeactivatedColors($001E1E1E, clBlack);
   ToggleSpeedButtonManager2.Add(BShowVolumeEnvelope, True);
