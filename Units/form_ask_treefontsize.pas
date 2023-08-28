@@ -47,6 +47,7 @@ begin
 
   case Key of
     VK_ESCAPE: ModalResult := mrCancel;
+    VK_RETURN: ModalResult := mrOk;
   end;
 end;
 

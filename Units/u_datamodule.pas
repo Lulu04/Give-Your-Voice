@@ -189,6 +189,8 @@ begin
   AddImageToImageList('DlgQuestion.svg', ImageList1);
   AddImageToImageList('ToolBar2About.svg', ImageList1);
   AddImageToImageList('MixerMuted.svg', ImageList1);
+  AddImageToImageList('MixerInsertMusic.svg', ImageList1);
+  AddImageToImageList('TreeFontHeight.svg', ImageList1);
   ImageList1.EndUpdate;
 end;
 

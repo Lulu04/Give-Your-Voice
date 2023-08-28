@@ -1,11 +1,11 @@
 object FormAskTreeFontSize: TFormAskTreeFontSize
   Left = 514
-  Height = 134
+  Height = 77
   Top = 277
   Width = 276
   BorderIcons = []
   BorderStyle = bsNone
-  ClientHeight = 134
+  ClientHeight = 77
   ClientWidth = 276
   Color = 3815994
   KeyPreview = True
@@ -14,7 +14,7 @@ object FormAskTreeFontSize: TFormAskTreeFontSize
   LCLVersion = '2.2.4.0'
   object Shape1: TShape
     Left = 0
-    Height = 134
+    Height = 77
     Top = 0
     Width = 276
     Align = alClient
@@ -25,17 +25,20 @@ object FormAskTreeFontSize: TFormAskTreeFontSize
   object BOk: TSpeedButton
     AnchorSideLeft.Control = Owner
     AnchorSideLeft.Side = asrCenter
-    AnchorSideBottom.Control = Owner
-    AnchorSideBottom.Side = asrBottom
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = SpinEdit1
+    AnchorSideBottom.Side = asrCenter
     Cursor = crHandPoint
-    Left = 98
+    Left = 196
     Height = 28
-    Top = 96
-    Width = 80
-    Anchors = [akLeft, akBottom]
+    Top = 30
+    Width = 70
+    Anchors = [akRight, akBottom]
     AutoSize = True
+    BorderSpacing.Right = 10
     BorderSpacing.Bottom = 10
-    Constraints.MinWidth = 80
+    Constraints.MinWidth = 70
     Caption = 'Label'
     Flat = True
     Font.Style = [fsBold]
@@ -68,13 +71,13 @@ object FormAskTreeFontSize: TFormAskTreeFontSize
   end
   object SpinEdit1: TSpinEdit
     AnchorSideLeft.Control = Owner
-    AnchorSideLeft.Side = asrCenter
     AnchorSideTop.Control = Label16
     AnchorSideTop.Side = asrBottom
-    Left = 97
+    Left = 10
     Height = 28
     Top = 30
     Width = 83
+    BorderSpacing.Left = 10
     BorderSpacing.Top = 10
     Font.Height = 20
     MaxValue = 30
