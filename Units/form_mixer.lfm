@@ -743,7 +743,7 @@ object FormMixer: TFormMixer
       Height = 151
       Top = 1
       Width = 424
-      PageIndex = 1
+      PageIndex = 0
       Align = alClient
       TabOrder = 0
       object PageMixingProgress: TPage
