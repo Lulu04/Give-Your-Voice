@@ -1990,17 +1990,17 @@ begin
     VK_DELETE: CutSelection;
 
     VK_A: begin
-      if ssCtrl in Shift then SelectAll;
+      if CommandKey in Shift then SelectAll;
       if ssAlt in Shift then ViewAll;
     end;
 
     VK_I: InsertSilenceAtCursorPos;
 
-    VK_S: if not (ssCtrl in Shift) then SilenceOnSelection;
+    VK_S: SilenceOnSelection;
 
-    VK_Y: if (ssCtrl in Shift) and MainUndoRedoManager.RedoAvailable then Redo;
+    VK_Y: if (CommandKey in Shift) and MainUndoRedoManager.RedoAvailable then Redo;
 
-    VK_Z: if (ssCtrl in Shift) and MainUndoRedoManager.UndoAvailable then Undo;
+    VK_Z: if (CommandKey in Shift) and MainUndoRedoManager.UndoAvailable then Undo;
 
   end;
 end;

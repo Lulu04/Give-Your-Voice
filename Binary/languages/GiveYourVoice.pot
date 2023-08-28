@@ -1458,7 +1458,7 @@ msgstr ""
 
 #: u_resource_string.sredocaption
 #, object-pascal-format
-msgid "Refaire %0:s (Ctrl Y)"
+msgid "Refaire %0:s (%1:s)"
 msgstr ""
 
 #: u_resource_string.sredocommandfailed
@@ -1570,7 +1570,7 @@ msgstr ""
 
 #: u_resource_string.sundocaption
 #, object-pascal-format
-msgid "Annuler %0:s (Ctrl Z)"
+msgid "Annuler %0:s (%1:s)"
 msgstr ""
 
 #: u_resource_string.sundocommandfailed

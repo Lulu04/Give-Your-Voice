@@ -32,7 +32,7 @@ MacOS: to do
     - normalization at 89dB as MP3Gain, (can be modified)
     - editable metadata
 - Export several MP3 files into a single ZIP file.
-- Compress your completed projects to free disk space.
+- Compress your completed projects to free disk space (not available for MacOS).
 - Supported language: French, English.
 - This software is made with love! :)
 

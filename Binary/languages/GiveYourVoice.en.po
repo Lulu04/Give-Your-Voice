@@ -1551,8 +1551,8 @@ msgstr ""
 
 #: u_resource_string.sredocaption
 #, object-pascal-format
-msgid "Refaire %0:s (Ctrl Y)"
-msgstr "Redo %0:s (Ctrl Y)"
+msgid "Refaire %0:s (%1:s)"
+msgstr "Redo %0:s (%1:s)"
 
 #: u_resource_string.sredocommandfailed
 #, object-pascal-format
@@ -1663,8 +1663,8 @@ msgstr "Toggle mute"
 
 #: u_resource_string.sundocaption
 #, object-pascal-format
-msgid "Annuler %0:s (Ctrl Z)"
-msgstr "Cancel %0:s (Ctrl Z)"
+msgid "Annuler %0:s (%1:s)"
+msgstr "Cancel %0:s (%1:s)"
 
 #: u_resource_string.sundocommandfailed
 #, object-pascal-format

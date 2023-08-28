@@ -26,6 +26,11 @@ procedure InitALSManagerLibrariesSubFolder;
 // return os name
 function OSName: string;
 
+// return ssCtrl for Windows and Linux, ssMeta for MacOS
+function CommandKey: TShiftStateEnum; inline;
+// return 'Ctrl+<key>' for Windows and Linux, 'Cmd+<key>' for MacOS
+function StrCtrlPlusKey(aKey: string): string;
+
 // Return TRUE if Key is F1 (Windows/Linux) or CONTROL+H (MacOS)
 // if it is, Key is redefined to VK_UNKNOWN
 function CheckKeyToShowUserGuide(var Key: Word; Shift: TShiftState): boolean;
@@ -146,6 +151,24 @@ begin
   {$elseif defined(Darwin)}
      Result := 'MacOS 64';
   {$endif}
+end;
+
+function CommandKey: TShiftStateEnum;
+begin
+  {$if defined(Windows) or defined(Linux)}
+  Result := ssCtrl;
+  {$elseif defined(Darwin)}
+  Result := ssMeta;
+  {$endif}
+end;
+
+function StrCtrlPlusKey(aKey: string): string;
+begin
+ {$if defined(Windows) or defined(Linux)}
+ Result := 'Ctrl+'+aKey;
+ {$elseif defined(Darwin)}
+ Result := 'Cmd+'+aKey;
+ {$endif}
 end;
 
 function CheckKeyToShowUserGuide(var Key: Word; Shift: TShiftState): boolean;
