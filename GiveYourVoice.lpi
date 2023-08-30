@@ -369,11 +369,6 @@
         <UnitName Value="LCL_utils"/>
       </Unit>
       <Unit>
-        <Filename Value="..\UnitsCommon\unit1.pas"/>
-        <IsPartOfProject Value="True"/>
-        <UnitName Value="Unit1"/>
-      </Unit>
-      <Unit>
         <Filename Value="..\UnitsCommon\i18_utils.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit>

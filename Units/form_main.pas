@@ -172,6 +172,17 @@ begin
    FDesignSmallFontHeight := ScaleDesignToForm(11);
  {$endif}
 
+  // Sets the font and background color for the hint
+  SetAppHintAttributes($0071FFFF,
+                 RGBToColor(10,10,10),
+                 {$if defined(Linux) or defined(Darwin)}
+                 FDesignFontHeight-2,
+                 {$else}
+                 ScaleDesignToForm(18),
+                 {$endif}
+                 [],
+                 taCenter);
+
   // Register the supported languages
   AppLang.RegisterLanguagesSupportedByApp(SupportedLanguages);
 
