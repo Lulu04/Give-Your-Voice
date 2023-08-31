@@ -894,6 +894,11 @@ begin
   CheckBox3.Hint := BBassBoostButtonHint;
   Label11.Hint := BBassBoostButtonHint;
 
+  {$ifdef Darwin}
+  BUserGuide.Hint := SShowUserGuide+LineEnding+'(Ctrl+H)';
+  {$else}
+  BUserGuide.Hint := SShowUserGuide+LineEnding+'(F1)';
+  {$endif}
 
   Label7.Caption := SMicLevel;
 

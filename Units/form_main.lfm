@@ -751,7 +751,6 @@ object FormMain: TFormMain
           Cursor = crHandPoint
           Left = 213
           Height = 32
-          Hint = 'Affiche le guide d''utilisation du programme'#13#10'(touche F1)'
           Top = 4
           Width = 32
           Anchors = [akTop, akRight]
