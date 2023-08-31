@@ -239,11 +239,12 @@ object FrameMixer: TFrameMixer
     Top = 264
     object MISetVolumeMusic: TMenuItem
       Caption = 'Ajuster le volume...'
-      ImageIndex = 56
+      ImageIndex = 49
       OnClick = MIAddMusicClick
     end
     object MIInvertMuteMusic: TMenuItem
       Caption = 'Label'
+      ImageIndex = 55
       OnClick = BMuteClick
     end
     object Separator1: TMenuItem
@@ -251,7 +252,7 @@ object FrameMixer: TFrameMixer
     end
     object MIDeleteMusic: TMenuItem
       Caption = 'Supprimer cette musique'
-      ImageIndex = 22
+      ImageIndex = 10
       OnClick = MIAddMusicClick
     end
   end
@@ -272,11 +273,12 @@ object FrameMixer: TFrameMixer
     Top = 376
     object MISetVolumeSound: TMenuItem
       Caption = 'Ajuster le volume...'
-      ImageIndex = 56
+      ImageIndex = 49
       OnClick = MIAddMusicClick
     end
     object MIInvertMuteSound: TMenuItem
       Caption = 'Label'
+      ImageIndex = 55
       OnClick = BMuteClick
     end
     object Separator2: TMenuItem
@@ -284,7 +286,7 @@ object FrameMixer: TFrameMixer
     end
     object MIDeleteSound: TMenuItem
       Caption = 'Supprimer ce bruitage'
-      ImageIndex = 22
+      ImageIndex = 10
       OnClick = MIAddMusicClick
     end
   end

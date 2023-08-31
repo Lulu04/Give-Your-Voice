@@ -191,6 +191,7 @@ begin
   AddImageToImageList('MixerMuted.svg', ImageList1);
   AddImageToImageList('MixerInsertMusic.svg', ImageList1);
   AddImageToImageList('TreeFontHeight.svg', ImageList1);
+  AddImageToImageList('MixerToggleMuted.svg', ImageList1);
   ImageList1.EndUpdate;
 end;
 
