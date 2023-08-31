@@ -68,13 +68,12 @@ end;
 
 procedure TFormHelp.FormClose(Sender: TObject; var CloseAction: TCloseAction);
 begin
-  HelpButton.Tag := 0;
   CloseAction := caFree;
 end;
 
 procedure TFormHelp.FormDeactivate(Sender: TObject);
 begin
- // Close;
+  Close;
 end;
 
 procedure TFormHelp.FormKeyUp(Sender: TObject; var Key: Word; Shift: TShiftState);
@@ -90,7 +89,15 @@ end;
 procedure TFormHelp.AdjustFont;
 begin
 {$if defined(LCLGTK2) or defined(LCLCOCOA)}
-  ChangeFontHeightOnFormChilds(Self, FDesignFontHeight);
+  //ChangeFontHeightOnFormChilds(Self, FDesignFontHeight-2);
+  Memo1.Font.Name := 'Arial';
+  Memo1.Font.Style := [fsBold];
+  Memo1.Font.Height := ScaleDesignToForm(FDesignFontHeight-2);
+{$endif}
+{$if defined(Windows)}
+  Memo1.Font.Name := 'Arial';
+  Memo1.Font.Style := [fsBold];
+  Memo1.Font.Height := ScaleDesignToForm(16);
 {$endif}
 end;
 

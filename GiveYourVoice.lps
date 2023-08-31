@@ -25,7 +25,8 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <EditorIndex Value="9"/>
-        <CursorPos X="6" Y="13"/>
+        <TopLine Value="172"/>
+        <CursorPos X="43" Y="178"/>
         <UsageCount Value="201"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -116,7 +117,7 @@
         <ResourceBaseClass Value="DataModule"/>
         <EditorIndex Value="32"/>
         <TopLine Value="172"/>
-        <CursorPos X="28" Y="175"/>
+        <CursorPos X="40" Y="195"/>
         <UsageCount Value="202"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -266,8 +267,8 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <EditorIndex Value="10"/>
-        <TopLine Value="156"/>
-        <CursorPos X="57" Y="164"/>
+        <TopLine Value="218"/>
+        <CursorPos X="49" Y="238"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -289,7 +290,7 @@
         <ResourceBaseClass Value="Frame"/>
         <EditorIndex Value="13"/>
         <TopLine Value="182"/>
-        <CursorPos Y="193"/>
+        <CursorPos X="44" Y="190"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -385,7 +386,6 @@
       <Unit>
         <Filename Value="Units\u_crossplatform.pas"/>
         <IsPartOfProject Value="True"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="6"/>
         <WindowIndex Value="2"/>
         <TopLine Value="22"/>
@@ -425,10 +425,11 @@
         <ComponentName Value="FormHelp"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="8"/>
         <WindowIndex Value="2"/>
-        <TopLine Value="71"/>
-        <CursorPos X="57" Y="77"/>
+        <TopLine Value="76"/>
+        <CursorPos X="42" Y="94"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -503,7 +504,7 @@
         <WindowIndex Value="1"/>
         <TopLine Value="3764"/>
         <CursorPos Y="3778"/>
-        <UsageCount Value="174"/>
+        <UsageCount Value="179"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -512,7 +513,7 @@
         <EditorIndex Value="15"/>
         <TopLine Value="62"/>
         <CursorPos X="39" Y="81"/>
-        <UsageCount Value="174"/>
+        <UsageCount Value="179"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -521,13 +522,13 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="561"/>
         <CursorPos X="20" Y="141"/>
-        <UsageCount Value="174"/>
+        <UsageCount Value="179"/>
       </Unit>
       <Unit>
         <Filename Value="..\UnitsCommon\propertyutils.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="PropertyUtils"/>
-        <UsageCount Value="174"/>
+        <UsageCount Value="179"/>
       </Unit>
       <Unit>
         <Filename Value="..\UnitsCommon\lcl_utils.pas"/>
@@ -535,9 +536,9 @@
         <UnitName Value="LCL_utils"/>
         <EditorIndex Value="7"/>
         <WindowIndex Value="2"/>
-        <TopLine Value="129"/>
-        <CursorPos X="26" Y="139"/>
-        <UsageCount Value="174"/>
+        <TopLine Value="206"/>
+        <CursorPos Y="228"/>
+        <UsageCount Value="179"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -546,7 +547,7 @@
         <EditorIndex Value="20"/>
         <TopLine Value="92"/>
         <CursorPos X="43" Y="107"/>
-        <UsageCount Value="127"/>
+        <UsageCount Value="132"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -558,7 +559,7 @@
         <EditorIndex Value="29"/>
         <TopLine Value="52"/>
         <CursorPos X="36" Y="50"/>
-        <UsageCount Value="50"/>
+        <UsageCount Value="55"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -1018,7 +1019,7 @@
         <EditorIndex Value="3"/>
         <WindowIndex Value="1"/>
         <CursorPos X="41" Y="58"/>
-        <UsageCount Value="78"/>
+        <UsageCount Value="81"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -1027,7 +1028,7 @@
         <WindowIndex Value="1"/>
         <TopLine Value="76"/>
         <CursorPos X="3" Y="74"/>
-        <UsageCount Value="78"/>
+        <UsageCount Value="81"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -1056,7 +1057,7 @@
         <Filename Value="..\UnitsCommon\utilitaire_bgrabitmap.pas"/>
         <EditorIndex Value="26"/>
         <CursorPos X="21" Y="8"/>
-        <UsageCount Value="44"/>
+        <UsageCount Value="47"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -1072,7 +1073,7 @@
         <EditorIndex Value="14"/>
         <TopLine Value="104"/>
         <CursorPos X="13" Y="118"/>
-        <UsageCount Value="19"/>
+        <UsageCount Value="22"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -1096,79 +1097,7 @@
     <General>
       <ActiveWindowIndexAtStart Value="2"/>
     </General>
-    <JumpHistory HistoryIndex="28">
-      <Position>
-        <Filename Value="Units\u_crossplatform.pas"/>
-        <Caret Line="100" TopLine="81"/>
-      </Position>
-      <Position>
-        <Filename Value="Units\u_crossplatform.pas"/>
-        <Caret Line="59" Column="16" TopLine="42"/>
-      </Position>
-      <Position>
-        <Filename Value="Units\form_main.pas"/>
-        <Caret Line="176" Column="14" TopLine="163"/>
-      </Position>
-      <Position>
-        <Filename Value="Units\u_crossplatform.pas"/>
-        <Caret Line="39" Column="11" TopLine="26"/>
-      </Position>
-      <Position>
-        <Filename Value="Units\u_crossplatform.pas"/>
-        <Caret Line="250" Column="3" TopLine="229"/>
-      </Position>
-      <Position>
-        <Filename Value="Units\u_crossplatform.pas"/>
-        <Caret Line="39" Column="11" TopLine="38"/>
-      </Position>
-      <Position>
-        <Filename Value="Units\u_crossplatform.pas"/>
-        <Caret Line="252" Column="39" TopLine="229"/>
-      </Position>
-      <Position>
-        <Filename Value="Units\form_main.pas"/>
-        <Caret Line="176" TopLine="163"/>
-      </Position>
-      <Position>
-        <Filename Value="Units\u_crossplatform.pas"/>
-        <Caret Line="87" Column="13" TopLine="73"/>
-      </Position>
-      <Position>
-        <Filename Value="Units\u_crossplatform.pas"/>
-        <Caret Line="39" Column="16" TopLine="25"/>
-      </Position>
-      <Position>
-        <Filename Value="Units\u_crossplatform.pas"/>
-        <Caret Line="247" Column="31" TopLine="230"/>
-      </Position>
-      <Position>
-        <Filename Value="Units\u_crossplatform.pas"/>
-        <Caret Line="41" Column="51" TopLine="26"/>
-      </Position>
-      <Position>
-        <Filename Value="Units\u_crossplatform.pas"/>
-        <Caret Line="43" Column="50" TopLine="27"/>
-      </Position>
-      <Position>
-        <Filename Value="Units\u_crossplatform.pas"/>
-        <Caret Line="60" Column="55" TopLine="45"/>
-      </Position>
-      <Position>
-        <Filename Value="Units\u_crossplatform.pas"/>
-        <Caret Line="60" Column="21" TopLine="45"/>
-      </Position>
-      <Position>
-        <Filename Value="Units\u_crossplatform.pas"/>
-        <Caret Line="82" Column="11" TopLine="70"/>
-      </Position>
-      <Position>
-        <Filename Value="Units\u_crossplatform.pas"/>
-        <Caret Line="93" Column="32" TopLine="70"/>
-      </Position>
-      <Position>
-        <Filename Value="Units\u_crossplatform.pas"/>
-        <Caret Line="39" Column="16" TopLine="34"/>
-      </Position>
+    <JumpHistory HistoryIndex="29">
       <Position>
         <Filename Value="Units\u_crossplatform.pas"/>
         <Caret Line="264" Column="12" TopLine="245"/>
@@ -1212,6 +1141,82 @@
       <Position>
         <Filename Value="Units\u_crossplatform.pas"/>
         <Caret Line="37" Column="44" TopLine="29"/>
+      </Position>
+      <Position>
+        <Filename Value="Units\form_main.pas"/>
+        <Caret Line="105" Column="20" TopLine="95"/>
+      </Position>
+      <Position>
+        <Filename Value="..\UnitsCommon\lcl_utils.pas"/>
+        <Caret Line="16" Column="18"/>
+      </Position>
+      <Position>
+        <Filename Value="..\UnitsCommon\lcl_utils.pas"/>
+        <Caret Line="213" Column="14" TopLine="198"/>
+      </Position>
+      <Position>
+        <Filename Value="..\UnitsCommon\lcl_utils.pas"/>
+        <Caret Line="16" Column="23"/>
+      </Position>
+      <Position>
+        <Filename Value="..\UnitsCommon\lcl_utils.pas"/>
+        <Caret Line="217" Column="23" TopLine="213"/>
+      </Position>
+      <Position>
+        <Filename Value="..\UnitsCommon\lcl_utils.pas"/>
+        <Caret Line="157" Column="26" TopLine="143"/>
+      </Position>
+      <Position>
+        <Filename Value="..\UnitsCommon\lcl_utils.pas"/>
+        <Caret Line="210" Column="13" TopLine="194"/>
+      </Position>
+      <Position>
+        <Filename Value="..\UnitsCommon\lcl_utils.pas"/>
+        <Caret Line="156" Column="20" TopLine="144"/>
+      </Position>
+      <Position>
+        <Filename Value="..\UnitsCommon\lcl_utils.pas"/>
+        <Caret Line="175" TopLine="163"/>
+      </Position>
+      <Position>
+        <Filename Value="..\UnitsCommon\lcl_utils.pas"/>
+        <Caret Line="157" Column="18" TopLine="142"/>
+      </Position>
+      <Position>
+        <Filename Value="..\UnitsCommon\lcl_utils.pas"/>
+        <Caret Line="228" TopLine="206"/>
+      </Position>
+      <Position>
+        <Filename Value="Units\form_mixer.pas"/>
+        <Caret Line="164" Column="57" TopLine="156"/>
+      </Position>
+      <Position>
+        <Filename Value="Units\form_mixer.pas"/>
+        <Caret Line="238" Column="9" TopLine="223"/>
+      </Position>
+      <Position>
+        <Filename Value="Units\form_help.pas"/>
+        <Caret Line="20" Column="18" TopLine="17"/>
+      </Position>
+      <Position>
+        <Filename Value="Units\form_mixer.pas"/>
+        <Caret Line="231" Column="41" TopLine="223"/>
+      </Position>
+      <Position>
+        <Filename Value="Units\form_mixer.pas"/>
+        <Caret Line="308" Column="65" TopLine="301"/>
+      </Position>
+      <Position>
+        <Filename Value="Units\form_mixer.pas"/>
+        <Caret Line="19" Column="21" TopLine="6"/>
+      </Position>
+      <Position>
+        <Filename Value="Units\form_mixer.pas"/>
+        <Caret Line="237" Column="31" TopLine="217"/>
+      </Position>
+      <Position>
+        <Filename Value="Units\form_help.pas"/>
+        <Caret Line="101" Column="46" TopLine="80"/>
       </Position>
     </JumpHistory>
     <RunParams>

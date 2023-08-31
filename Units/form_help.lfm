@@ -1,7 +1,7 @@
 object FormHelp: TFormHelp
-  Left = 425
+  Left = 561
   Height = 197
-  Top = 416
+  Top = 242
   Width = 455
   BorderIcons = [biSystemMenu]
   Caption = 'Aide'
@@ -21,7 +21,7 @@ object FormHelp: TFormHelp
     Top = 0
     Width = 455
     Align = alClient
-    Color = 11468799
+    Color = 7471103
     Font.Color = 1907997
     Font.Height = 20
     ParentBidiMode = False
