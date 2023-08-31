@@ -20,6 +20,7 @@ SAppIsUpToDate='Vous avez déjà la dernière version';
 SErrorAccessingInternet='Impossible d''ouvrir une connexion internet';
 SErrorNoTempFolder='Impossible de contrôler la version, le répertoire temporaire est manquant';
 SDoYouWantToShowUserGuide='Voulez-vous consulter le manuel utilisateur ?';
+SShowUserGuide='Affiche le guide d''utilisation du programme';
 SVersion='version';
 SCredits='Crédits';
 SIconAppBy='Icone du programme par %0:s'+LineEnding+

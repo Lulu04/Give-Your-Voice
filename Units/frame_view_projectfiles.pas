@@ -1352,7 +1352,8 @@ begin
   MIZipMP3Folder.Enabled := Project.OutputFolderExists and
                             not RepertoireEstVide(Project.ProjectOutputFolder);
 {$endif}
-  MIClearMP3Folder.Enabled := MIZipMP3Folder.Enabled;
+  MIClearMP3Folder.Enabled := Project.OutputFolderExists and
+                            not RepertoireEstVide(Project.ProjectOutputFolder);;
 end;
 
 procedure TFrameViewProjectFiles.PopupEmptyPopup(Sender: TObject);

@@ -230,14 +230,6 @@ msgctxt "tformmain.bundo.hint"
 msgid "Annuler"
 msgstr "Cancel"
 
-#: tformmain.buserguide.hint
-msgid ""
-"Affiche le guide d'utilisation du programme\n"
-"(touche F1)"
-msgstr ""
-"Show the user guide\n"
-"(key F1)"
-
 #: tformmain.bweblinks.hint
 msgctxt "tformmain.bweblinks.hint"
 msgid "Quelques liens internet utiles"
@@ -1596,6 +1588,10 @@ msgstr "the selection will be replaced by the new record"
 msgid "réglages pour"
 msgstr "settings for"
 
+#: u_resource_string.sshowuserguide
+msgid "Affiche le guide d'utilisation du programme"
+msgstr "Show program user guide"
+
 #: u_resource_string.ssilencefailed
 msgid "La commande 'Silence' a échoué..."
 msgstr "The 'Silence' command failed..."
@@ -1702,4 +1698,3 @@ msgstr "Failed to create ZIP file"
 #: u_resource_string.szipprojectfailed
 msgid "une erreur est apparue lors de la compression du projet..."
 msgstr "an error occured while compressing the project..."
-
