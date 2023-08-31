@@ -21,7 +21,6 @@ type
   private
     procedure AdjustFont;
   public
-    HelpButton: TSpeedButton;
 
   end;
 
@@ -37,9 +36,6 @@ procedure _ShowHelp(const aMultiLineTextHelp: string; aHelpButton: TSpeedButton;
 var p: TPoint;
   w, h: integer;
 begin
-  if aHelpButton.Tag <> 0 then exit;
-  aHelpButton.Tag := 1;
-
   if ShowBigWindow then begin
     w := FormMain.ScaleDesignToForm(800);
     h := FormMain.ScaleDesignToForm(400);
@@ -57,7 +53,6 @@ begin
               w, h);
     Memo1.Clear;
     Memo1.Lines.AddText(aMultiLineTextHelp);
-    HelpButton := aHelpButton;
     Show;
   end;
 end;

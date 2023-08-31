@@ -53,7 +53,7 @@ object FormUserInput: TFormUserInput
     AnchorSideBottom.Control = Owner
     AnchorSideBottom.Side = asrBottom
     Cursor = crHandPoint
-    Left = 311
+    Left = 308
     Height = 28
     Top = 88
     Width = 80
@@ -79,10 +79,10 @@ object FormUserInput: TFormUserInput
     AnchorSideBottom.Control = Owner
     AnchorSideBottom.Side = asrBottom
     Cursor = crHandPoint
-    Left = 421
+    Left = 418
     Height = 28
     Top = 88
-    Width = 80
+    Width = 83
     Anchors = [akRight, akBottom]
     AutoSize = True
     BorderSpacing.Bottom = 10
