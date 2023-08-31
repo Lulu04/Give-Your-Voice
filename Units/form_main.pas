@@ -178,9 +178,10 @@ begin
                  {$if defined(Linux) or defined(Darwin)}
                  FDesignFontHeight-2,
                  {$else}
-                 ScaleDesignToForm(18),
+                 ScaleDesignToForm(16),
                  {$endif}
-                 [],
+                 'Arial',
+                 [fsBold],
                  taCenter);
 
   // Register the supported languages
