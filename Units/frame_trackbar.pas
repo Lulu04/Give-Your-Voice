@@ -56,12 +56,12 @@ type
     procedure DeleteCursorsImage;
     procedure UpdateCursorsRect;
     procedure ProcessValueChange;
-    procedure AdjustFont;
   public
     constructor Create(TheOwner: TComponent); override;
     destructor Destroy; override;
     procedure EraseBackground({%H-}DC: HDC); override;
 
+    procedure AdjustFont;
     procedure Init(aOrientation: TTrackBarOrientation; aReversed,
         aActiveIntervalMode, aShowValue: boolean);
 
@@ -74,7 +74,8 @@ type
     property OnChange: TNotifyEvent read FOnChange write FOnChange;
   end;
 implementation
-uses Math, Graphics, u_utils;
+uses Math, Graphics, u_utils
+{$if defined(LCLGTK2) or defined(LCLCOCOA)}, u_common{$endif};
 
 {$R *.lfm}
 
@@ -224,6 +225,7 @@ begin
       Font.Color := Self.Font.Color
     else
       Font.Color := clGrayText;
+    Font.Height := Self.Font.Height;
 
     txt := FDisplayPrefix+
            FormatFloat('0.0', GetIntervalMax*FCoefBeforeDisplayValue)+
@@ -446,7 +448,9 @@ end;
 
 procedure TFrameTrackBar.AdjustFont;
 begin
-
+{$if defined(LCLGTK2) or defined(LCLCOCOA)}
+  ChangeFontHeight([Self], FDesignSmallFontHeight);
+{$endif}
 end;
 
 destructor TFrameTrackBar.Destroy;

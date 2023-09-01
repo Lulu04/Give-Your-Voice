@@ -276,7 +276,6 @@ type
     function SessionNameForLoadSave: string;
     function SessionFilenameForLoadSave: string;
     procedure LoadSession;
-    procedure AdjustFont;
   private
     FrameTrackBar1: TFrameTrackBar;
     FTargetObjectForCursorVolume: PMixerSoundObject;
@@ -286,6 +285,7 @@ type
     ToggleSpeedButtonManager1: TToggleSpeedButtonManager;
   public
     FGainAnalyzer: TComputeGain89dB;
+    procedure AdjustFont;
     procedure ProcessSoundOnCustomDSPEvent(Sender: TALSSound;
                                            const aBuffer: TALSPlaybackBuffer;
                                            aUserData: Pointer);
@@ -2405,12 +2405,16 @@ end;
 
 procedure TFrameMixer.AdjustFont;
 begin
+  FrameTrackBar1.AdjustFont;
 {$if defined(LCLGTK2) or defined(LCLCOCOA)}
   ChangeFontHeight([PBTime, PBVoice, PBMusic, PBSound], FDesignFontHeight);
+  ChangeFontHeight([BMute, Label3], FDesignFontHeight-ScaleDesignToForm(2));
 {$endif}
 {$if defined(LCLCOCOA)}
   BMute.Flat := False;
+  ChangeFontColor([BMute], clDefault);
 {$endif}
+  FrameTrackBar1.AdjustFont;
 end;
 
 procedure TFrameMixer.ShowPanelVolume(aY: integer);
@@ -2860,7 +2864,6 @@ end;
 constructor TFrameMixer.Create(TheOwner: TComponent);
 begin
   inherited Create(TheOwner);
-  AdjustFont;
 
   FVoiceView.TempImage := TBGRABitmap.Create(1, 1);
   FVoiceView.FGradientBackground := TBGRABitmap.Create(1, 1);
