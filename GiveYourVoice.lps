@@ -24,9 +24,10 @@
         <ComponentName Value="FormMain"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="9"/>
-        <TopLine Value="778"/>
-        <CursorPos X="32" Y="787"/>
+        <TopLine Value="468"/>
+        <CursorPos X="40" Y="479"/>
         <UsageCount Value="201"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -59,7 +60,7 @@
         <EditorIndex Value="6"/>
         <WindowIndex Value="1"/>
         <TopLine Value="67"/>
-        <CursorPos X="39" Y="85"/>
+        <CursorPos X="47" Y="83"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
       </Unit>
@@ -267,7 +268,6 @@
         <ComponentName Value="FormMixer"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="10"/>
         <TopLine Value="649"/>
         <CursorPos X="48" Y="660"/>
@@ -537,8 +537,7 @@
         <UnitName Value="LCL_utils"/>
         <EditorIndex Value="7"/>
         <WindowIndex Value="2"/>
-        <TopLine Value="177"/>
-        <CursorPos X="42" Y="187"/>
+        <CursorPos X="18" Y="14"/>
         <UsageCount Value="186"/>
         <Loaded Value="True"/>
       </Unit>
@@ -1096,78 +1095,6 @@
     </Units>
     <JumpHistory HistoryIndex="29">
       <Position>
-        <Filename Value="Units\form_mixer.pas"/>
-        <Caret Line="93" Column="19" TopLine="84"/>
-      </Position>
-      <Position>
-        <Filename Value="Units\frame_mixer.pas"/>
-        <Caret Line="2402" Column="35" TopLine="2396"/>
-      </Position>
-      <Position>
-        <Filename Value="Units\frame_mixer.pas"/>
-        <Caret Line="294" Column="20" TopLine="278"/>
-      </Position>
-      <Position>
-        <Filename Value="Units\frame_mixer.pas"/>
-        <Caret Line="2866" TopLine="2862"/>
-      </Position>
-      <Position>
-        <Filename Value="Units\frame_mixer.pas"/>
-        <Caret Line="288" Column="20" TopLine="276"/>
-      </Position>
-      <Position>
-        <Filename Value="Units\frame_mixer.pas"/>
-        <Caret Line="2408" Column="25" TopLine="2405"/>
-      </Position>
-      <Position>
-        <Filename Value="Units\frame_trackbar.pas"/>
-        <Caret Line="64" Column="15" TopLine="52"/>
-      </Position>
-      <Position>
-        <Filename Value="Units\frame_trackbar.pas"/>
-        <Caret Line="452" Column="24" TopLine="447"/>
-      </Position>
-      <Position>
-        <Filename Value="Units\frame_trackbar.pas"/>
-        <Caret Line="21" Column="19" TopLine="6"/>
-      </Position>
-      <Position>
-        <Filename Value="..\UnitsCommon\lcl_utils.pas"/>
-        <Caret Line="16" Column="19" TopLine="4"/>
-      </Position>
-      <Position>
-        <Filename Value="..\UnitsCommon\lcl_utils.pas"/>
-        <Caret Line="162" Column="22" TopLine="143"/>
-      </Position>
-      <Position>
-        <Filename Value="..\UnitsCommon\lcl_utils.pas"/>
-        <Caret Line="229" Column="32" TopLine="224"/>
-      </Position>
-      <Position>
-        <Filename Value="..\UnitsCommon\lcl_utils.pas"/>
-        <Caret Line="156" Column="21" TopLine="150"/>
-      </Position>
-      <Position>
-        <Filename Value="..\UnitsCommon\lcl_utils.pas"/>
-        <Caret Line="171" Column="20" TopLine="165"/>
-      </Position>
-      <Position>
-        <Filename Value="..\UnitsCommon\lcl_utils.pas"/>
-        <Caret Line="157" Column="35" TopLine="142"/>
-      </Position>
-      <Position>
-        <Filename Value="Units\frame_trackbar.pas"/>
-        <Caret Line="227" Column="32" TopLine="216"/>
-      </Position>
-      <Position>
-        <Filename Value="Units\frame_trackbar.pas"/>
-        <Caret Line="64" Column="19" TopLine="42"/>
-      </Position>
-      <Position>
-        <Filename Value="Units\frame_trackbar.pas"/>
-        <Caret Line="451" Column="10" TopLine="447"/>
-      </Position>
-      <Position>
         <Filename Value="Units\frame_trackbar.pas"/>
         <Caret Line="434" Column="52" TopLine="414"/>
       </Position>
@@ -1193,10 +1120,6 @@
       </Position>
       <Position>
         <Filename Value="Units\frame_mixer.pas"/>
-        <Caret Line="2865" Column="3" TopLine="2880"/>
-      </Position>
-      <Position>
-        <Filename Value="Units\frame_mixer.pas"/>
         <Caret Line="288" Column="20" TopLine="282"/>
       </Position>
       <Position>
@@ -1214,6 +1137,82 @@
       <Position>
         <Filename Value="Units\form_main.pas"/>
         <Caret Line="125" Column="18" TopLine="122"/>
+      </Position>
+      <Position>
+        <Filename Value="..\UnitsCommon\lcl_utils.pas"/>
+        <Caret Line="172" Column="12" TopLine="159"/>
+      </Position>
+      <Position>
+        <Filename Value="..\UnitsCommon\lcl_utils.pas"/>
+        <Caret Line="155" Column="19" TopLine="142"/>
+      </Position>
+      <Position>
+        <Filename Value="..\UnitsCommon\lcl_utils.pas"/>
+        <Caret Line="174" TopLine="168"/>
+      </Position>
+      <Position>
+        <Filename Value="..\UnitsCommon\lcl_utils.pas"/>
+        <Caret Line="157" Column="16" TopLine="141"/>
+      </Position>
+      <Position>
+        <Filename Value="..\UnitsCommon\lcl_utils.pas"/>
+        <Caret Line="184" Column="11" TopLine="176"/>
+      </Position>
+      <Position>
+        <Filename Value="..\UnitsCommon\lcl_utils.pas"/>
+        <Caret Line="159" Column="19" TopLine="144"/>
+      </Position>
+      <Position>
+        <Filename Value="..\UnitsCommon\lcl_utils.pas"/>
+        <Caret Line="193" Column="13" TopLine="190"/>
+      </Position>
+      <Position>
+        <Filename Value="..\UnitsCommon\lcl_utils.pas"/>
+        <Caret Line="165" Column="24" TopLine="145"/>
+      </Position>
+      <Position>
+        <Filename Value="..\UnitsCommon\lcl_utils.pas"/>
+        <Caret Line="248" Column="23" TopLine="240"/>
+      </Position>
+      <Position>
+        <Filename Value="..\UnitsCommon\lcl_utils.pas"/>
+        <Caret Line="16" Column="11" TopLine="4"/>
+      </Position>
+      <Position>
+        <Filename Value="..\UnitsCommon\lcl_utils.pas"/>
+        <Caret Line="252" Column="25" TopLine="246"/>
+      </Position>
+      <Position>
+        <Filename Value="..\UnitsCommon\lcl_utils.pas"/>
+        <Caret Line="161" Column="25" TopLine="144"/>
+      </Position>
+      <Position>
+        <Filename Value="..\UnitsCommon\lcl_utils.pas"/>
+        <Caret Line="235" Column="34" TopLine="226"/>
+      </Position>
+      <Position>
+        <Filename Value="Units\form_main.pas"/>
+        <Caret Line="787" Column="32" TopLine="778"/>
+      </Position>
+      <Position>
+        <Filename Value="Units\form_main.pas"/>
+        <Caret Line="108" Column="18" TopLine="92"/>
+      </Position>
+      <Position>
+        <Filename Value="Units\form_main.pas"/>
+        <Caret Line="485" Column="3" TopLine="477"/>
+      </Position>
+      <Position>
+        <Filename Value="Units\form_main.pas"/>
+        <Caret Line="105" Column="21" TopLine="96"/>
+      </Position>
+      <Position>
+        <Filename Value="Units\form_main.pas"/>
+        <Caret Line="175" TopLine="164"/>
+      </Position>
+      <Position>
+        <Filename Value="Units\form_main.pas"/>
+        <Caret Line="108" Column="19" TopLine="93"/>
       </Position>
     </JumpHistory>
     <RunParams>

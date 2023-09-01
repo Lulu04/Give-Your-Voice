@@ -172,18 +172,6 @@ begin
    FDesignSmallFontHeight := ScaleDesignToForm(11);
  {$endif}
 
-  // Sets the font and background color for the hint
-  SetAppHintAttributes($0071FFFF,
-                 RGBToColor(10,10,10),
-                 {$if defined(Linux) or defined(Darwin)}
-                 FDesignFontHeight-2,
-                 {$else}
-                 ScaleDesignToForm(16),
-                 {$endif}
-                 'Arial',
-                 [fsBold],
-                 taCenter);
-
   // Register the supported languages
   AppLang.RegisterLanguagesSupportedByApp(SupportedLanguages);
 
@@ -482,6 +470,17 @@ procedure TFormMain.FormShow(Sender: TObject);
 var newVersion: string;
   res: TResultCheckOnlineVersion;
 begin
+  // Sets the font and background color for the hint
+  SetAppHintAttributes($0071FFFF,
+                 RGBToColor(10,10,10),
+                 {$if defined(Linux) or defined(Darwin)}
+                 13,
+                 {$else}
+                 16,
+                 {$endif}
+                 'Arial',
+                 [fsBold],
+                 taCenter);
   AdjustFont;
   OnLanguageChange;
 
