@@ -212,9 +212,11 @@ object FrameMixer: TFrameMixer
       BorderSpacing.Right = 3
       BorderSpacing.Bottom = 3
       Caption = 'Muet'
+      Flat = True
       Images = DataModule1.ImageList1
       ImageIndex = 5
       ImageWidth = 15
+      Transparent = False
       OnClick = BMuteClick
     end
   end

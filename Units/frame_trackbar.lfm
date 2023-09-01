@@ -5,6 +5,8 @@ object FrameTrackBar: TFrameTrackBar
   Width = 380
   ClientHeight = 149
   ClientWidth = 380
+  Font.Color = 15395562
+  ParentFont = False
   TabOrder = 0
   DesignLeft = 527
   DesignTop = 395

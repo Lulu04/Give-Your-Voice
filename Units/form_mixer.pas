@@ -651,7 +651,8 @@ procedure TFormMixer.AdjustFont;
 begin
 {$if defined(LCLGTK2) or defined(LCLCOCOA)}
   ChangeFontHeightOnFormChilds(Self, FDesignFontHeight);
-  ChangeFontHeight([BCompressor, BBassBoost, FSEBassBoost, BAmplify, CBAmplify], FDesignFontHeight-2);
+  Label16.Font.Height := 0;
+  ChangeFontHeight([BCompressor, BBassBoost, FSEBassBoost, BAmplify, CBAmplify], FDesignFontHeight-ScaleDesignToForm(2));
   ChangeFontColor([FSEBassBoost, CBAmplify, ComboBox1, FSE3], clBlack);
 {$endif}
 {$if defined(LCLCOCOA)}
@@ -662,6 +663,7 @@ begin
   BBassBoost.Flat := False;
   ChangeFontColor([BCompressor, BAmplify, BBassBoost, FSEBassBoost, CBAmplify, FSE3, BMix], clDefault);
 {$endif}
+  FrameMixer1.AdjustFont;
 end;
 
 function TFormMixer.ShowVolumeEnvelope: boolean;
