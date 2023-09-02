@@ -83,8 +83,8 @@ type
     procedure TVMouseDown(Sender: TObject; Button: TMouseButton; {%H-}Shift: TShiftState; X, Y: Integer);
     procedure TVMouseUp(Sender: TObject; Button: TMouseButton;
       {%H-}Shift: TShiftState; {%H-}X, {%H-}Y: Integer);
-    procedure TVMouseWheel(Sender: TObject; Shift: TShiftState;
-      WheelDelta: Integer; {%H-}MousePos: TPoint; var Handled: Boolean);
+    procedure TVMouseWheel(Sender: TObject; {%H-}Shift: TShiftState;
+      {%H-}WheelDelta: Integer; {%H-}MousePos: TPoint; var {%H-}Handled: Boolean);
     procedure TVResize(Sender: TObject);
     procedure TVSelectionChanged(Sender: TObject);
   private
@@ -1201,22 +1201,10 @@ end;
 procedure TFrameViewProjectFiles.TVMouseWheel(Sender: TObject;
   Shift: TShiftState; WheelDelta: Integer; MousePos: TPoint;
   var Handled: Boolean);
-var h: integer;
 begin
   StopSound;
   Panel1.Visible := False;
   Panel2.Visible := False;
-
-{  if ssCtrl in shift then begin
-    h := TV.Font.Height;
-    if WheelDelta < 0 then
-      dec(h)
-    else inc(h);
-    TV.Font.Height := EnsureRange(h, 13, 30);
-    ProgramOptions.ViewFilesFontHeight := TV.Font.Height;
-    //ProgramOptions.Save;
-    Handled := True;
-  end;   }
 end;
 
 procedure TFrameViewProjectFiles.TVResize(Sender: TObject);

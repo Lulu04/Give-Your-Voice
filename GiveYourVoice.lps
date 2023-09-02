@@ -24,10 +24,9 @@
         <ComponentName Value="FormMain"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="9"/>
         <TopLine Value="468"/>
-        <CursorPos X="40" Y="479"/>
+        <CursorPos X="5" Y="478"/>
         <UsageCount Value="201"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -140,8 +139,8 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Frame"/>
         <EditorIndex Value="1"/>
-        <TopLine Value="1346"/>
-        <CursorPos X="50" Y="1361"/>
+        <TopLine Value="74"/>
+        <CursorPos X="50" Y="86"/>
         <UsageCount Value="203"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -290,7 +289,7 @@
         <ComponentName Value="FrameMixer"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Frame"/>
-        <EditorIndex Value="13"/>
+        <EditorIndex Value="14"/>
         <TopLine Value="2405"/>
         <CursorPos X="44" Y="2415"/>
         <UsageCount Value="200"/>
@@ -301,8 +300,7 @@
         <Filename Value="Units\u_mixer_undoredo.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="11"/>
-        <TopLine Value="62"/>
-        <CursorPos X="22" Y="71"/>
+        <CursorPos X="15" Y="10"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
       </Unit>
@@ -390,8 +388,7 @@
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="6"/>
         <WindowIndex Value="2"/>
-        <TopLine Value="22"/>
-        <CursorPos X="44" Y="37"/>
+        <CursorPos X="20" Y="6"/>
         <UsageCount Value="202"/>
         <Loaded Value="True"/>
       </Unit>
@@ -402,8 +399,8 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <EditorIndex Value="6"/>
-        <TopLine Value="614"/>
-        <CursorPos X="40" Y="625"/>
+        <TopLine Value="309"/>
+        <CursorPos Y="324"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -467,8 +464,8 @@
         <ComponentName Value="FormMixerMetaData"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="12"/>
-        <TopLine Value="111"/>
+        <EditorIndex Value="13"/>
+        <TopLine Value="110"/>
         <CursorPos X="44" Y="130"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
@@ -505,7 +502,7 @@
         <WindowIndex Value="1"/>
         <TopLine Value="3764"/>
         <CursorPos Y="3778"/>
-        <UsageCount Value="186"/>
+        <UsageCount Value="187"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -514,7 +511,7 @@
         <EditorIndex Value="15"/>
         <TopLine Value="62"/>
         <CursorPos X="39" Y="81"/>
-        <UsageCount Value="186"/>
+        <UsageCount Value="187"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -523,13 +520,13 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="561"/>
         <CursorPos X="20" Y="141"/>
-        <UsageCount Value="186"/>
+        <UsageCount Value="187"/>
       </Unit>
       <Unit>
         <Filename Value="..\UnitsCommon\propertyutils.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="PropertyUtils"/>
-        <UsageCount Value="186"/>
+        <UsageCount Value="187"/>
       </Unit>
       <Unit>
         <Filename Value="..\UnitsCommon\lcl_utils.pas"/>
@@ -537,8 +534,9 @@
         <UnitName Value="LCL_utils"/>
         <EditorIndex Value="7"/>
         <WindowIndex Value="2"/>
-        <CursorPos X="18" Y="14"/>
-        <UsageCount Value="186"/>
+        <TopLine Value="153"/>
+        <CursorPos X="16" Y="165"/>
+        <UsageCount Value="187"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -546,7 +544,7 @@
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="20"/>
         <CursorPos X="43" Y="107"/>
-        <UsageCount Value="139"/>
+        <UsageCount Value="140"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -558,7 +556,7 @@
         <EditorIndex Value="29"/>
         <TopLine Value="52"/>
         <CursorPos X="36" Y="50"/>
-        <UsageCount Value="62"/>
+        <UsageCount Value="63"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -886,9 +884,9 @@
         <Filename Value="C:\lazarus\fpc\3.2.2\source\packages\rtl-generics\src\generics.collections.pas"/>
         <UnitName Value="Generics.Collections"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="24"/>
-        <CursorPos X="13" Y="37"/>
-        <UsageCount Value="3"/>
+        <TopLine Value="25"/>
+        <CursorPos X="20" Y="1186"/>
+        <UsageCount Value="10"/>
       </Unit>
       <Unit>
         <Filename Value="C:\home\lulu\fpcupdeluxe\fpcupdeluxe\lazarus\lcl\include\sysenvapis_unix.inc"/>
@@ -1069,11 +1067,10 @@
       </Unit>
       <Unit>
         <Filename Value="..\ALSound\source\als_velocity_curve.inc"/>
-        <EditorIndex Value="14"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="104"/>
         <CursorPos X="13" Y="118"/>
         <UsageCount Value="25"/>
-        <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="C:\lazarus\lcl\include\hintwindow.inc"/>
@@ -1092,96 +1089,16 @@
         <CursorPos X="16" Y="143"/>
         <UsageCount Value="14"/>
       </Unit>
+      <Unit>
+        <Filename Value="..\UnitsCommon\undo_redo_manager.pas"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="12"/>
+        <CursorPos Y="4"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit>
     </Units>
-    <JumpHistory HistoryIndex="29">
-      <Position>
-        <Filename Value="Units\frame_trackbar.pas"/>
-        <Caret Line="434" Column="52" TopLine="414"/>
-      </Position>
-      <Position>
-        <Filename Value="Units\frame_trackbar.pas"/>
-        <Caret Line="21" Column="19" TopLine="7"/>
-      </Position>
-      <Position>
-        <Filename Value="Units\frame_trackbar.pas"/>
-        <Caret Line="226" Column="18" TopLine="216"/>
-      </Position>
-      <Position>
-        <Filename Value="Units\frame_trackbar.pas"/>
-        <Caret Line="64" Column="20" TopLine="42"/>
-      </Position>
-      <Position>
-        <Filename Value="Units\frame_mixer.pas"/>
-        <Caret Line="2413" Column="30" TopLine="2405"/>
-      </Position>
-      <Position>
-        <Filename Value="Units\frame_mixer.pas"/>
-        <Caret Line="294" Column="20" TopLine="276"/>
-      </Position>
-      <Position>
-        <Filename Value="Units\frame_mixer.pas"/>
-        <Caret Line="288" Column="20" TopLine="282"/>
-      </Position>
-      <Position>
-        <Filename Value="Units\form_mixer.pas"/>
-        <Caret Line="653" Column="27" TopLine="649"/>
-      </Position>
-      <Position>
-        <Filename Value="Units\u_utils.pas"/>
-        <Caret Line="99" Column="13" TopLine="86"/>
-      </Position>
-      <Position>
-        <Filename Value="Units\form_main.pas"/>
-        <Caret Line="893" Column="17" TopLine="884"/>
-      </Position>
-      <Position>
-        <Filename Value="Units\form_main.pas"/>
-        <Caret Line="125" Column="18" TopLine="122"/>
-      </Position>
-      <Position>
-        <Filename Value="..\UnitsCommon\lcl_utils.pas"/>
-        <Caret Line="172" Column="12" TopLine="159"/>
-      </Position>
-      <Position>
-        <Filename Value="..\UnitsCommon\lcl_utils.pas"/>
-        <Caret Line="155" Column="19" TopLine="142"/>
-      </Position>
-      <Position>
-        <Filename Value="..\UnitsCommon\lcl_utils.pas"/>
-        <Caret Line="174" TopLine="168"/>
-      </Position>
-      <Position>
-        <Filename Value="..\UnitsCommon\lcl_utils.pas"/>
-        <Caret Line="157" Column="16" TopLine="141"/>
-      </Position>
-      <Position>
-        <Filename Value="..\UnitsCommon\lcl_utils.pas"/>
-        <Caret Line="184" Column="11" TopLine="176"/>
-      </Position>
-      <Position>
-        <Filename Value="..\UnitsCommon\lcl_utils.pas"/>
-        <Caret Line="159" Column="19" TopLine="144"/>
-      </Position>
-      <Position>
-        <Filename Value="..\UnitsCommon\lcl_utils.pas"/>
-        <Caret Line="193" Column="13" TopLine="190"/>
-      </Position>
-      <Position>
-        <Filename Value="..\UnitsCommon\lcl_utils.pas"/>
-        <Caret Line="165" Column="24" TopLine="145"/>
-      </Position>
-      <Position>
-        <Filename Value="..\UnitsCommon\lcl_utils.pas"/>
-        <Caret Line="248" Column="23" TopLine="240"/>
-      </Position>
-      <Position>
-        <Filename Value="..\UnitsCommon\lcl_utils.pas"/>
-        <Caret Line="16" Column="11" TopLine="4"/>
-      </Position>
-      <Position>
-        <Filename Value="..\UnitsCommon\lcl_utils.pas"/>
-        <Caret Line="252" Column="25" TopLine="246"/>
-      </Position>
+    <JumpHistory HistoryIndex="24">
       <Position>
         <Filename Value="..\UnitsCommon\lcl_utils.pas"/>
         <Caret Line="161" Column="25" TopLine="144"/>
@@ -1213,6 +1130,74 @@
       <Position>
         <Filename Value="Units\form_main.pas"/>
         <Caret Line="108" Column="19" TopLine="93"/>
+      </Position>
+      <Position>
+        <Filename Value="Units\form_main.pas"/>
+        <Caret Line="478" Column="5" TopLine="468"/>
+      </Position>
+      <Position>
+        <Filename Value="Units\frame_view_projectfiles.pas"/>
+        <Caret Line="1204" TopLine="1197"/>
+      </Position>
+      <Position>
+        <Filename Value="Units\frame_view_projectfiles.pas"/>
+        <Caret Line="86" Column="50" TopLine="74"/>
+      </Position>
+      <Position>
+        <Filename Value="Units\form_project_manager.pas"/>
+        <Caret Line="285" TopLine="268"/>
+      </Position>
+      <Position>
+        <Filename Value="Units\form_project_manager.pas"/>
+        <Caret Line="301" TopLine="279"/>
+      </Position>
+      <Position>
+        <Filename Value="Units\form_project_manager.pas"/>
+        <Caret Line="322" Column="8" TopLine="310"/>
+      </Position>
+      <Position>
+        <Filename Value="Units\form_project_manager.pas"/>
+        <Caret Line="323" Column="12" TopLine="309"/>
+      </Position>
+      <Position>
+        <Filename Value="Units\u_crossplatform.pas"/>
+        <Caret Line="36" Column="49"/>
+      </Position>
+      <Position>
+        <Filename Value="..\UnitsCommon\lcl_utils.pas"/>
+        <Caret Line="165" Column="21" TopLine="152"/>
+      </Position>
+      <Position>
+        <Filename Value="..\UnitsCommon\lcl_utils.pas"/>
+        <Caret Line="243" Column="3" TopLine="239"/>
+      </Position>
+      <Position>
+        <Filename Value="..\UnitsCommon\lcl_utils.pas"/>
+        <Caret Line="165" Column="16" TopLine="153"/>
+      </Position>
+      <Position>
+        <Filename Value="Units\u_crossplatform.pas"/>
+        <Caret Line="6" Column="20"/>
+      </Position>
+      <Position>
+        <Filename Value="Units\form_project_manager.pas"/>
+        <Caret Line="324" TopLine="309"/>
+      </Position>
+      <Position>
+        <Filename Value="Units\u_mixer_undoredo.pas"/>
+        <Caret Line="10" Column="15"/>
+      </Position>
+      <Position>
+        <Filename Value="..\UnitsCommon\undo_redo_manager.pas"/>
+        <Caret Line="4"/>
+      </Position>
+      <Position>
+        <Filename Value="..\UnitsCommon\undo_redo_manager.pas"/>
+        <Caret Line="5" Column="6"/>
+      </Position>
+      <Position>
+        <Filename Value="..\UnitsCommon\undo_redo_manager.pas"/>
+        <Caret Line="6"/>
       </Position>
     </JumpHistory>
     <RunParams>
