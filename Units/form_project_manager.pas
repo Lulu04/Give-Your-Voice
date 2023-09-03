@@ -280,10 +280,7 @@ begin
              des.LoadFrom(tProjectFile);
              // add entry in list of project found and link between TVProjects and FProjectFileFound
              with TVProjects.Items.AddChild(n, des.GetProjectTitleWithoutPath) do begin
-              {$PUSH}
-              {$WARN 4056 off : Conversion between ordinals and pointers is not portable}
                Data := Pointer(FProjectFileFound.Add(t.Strings[i]));
-              {$POP}
                SelectedIndex := IMAGE_INDEX_IL1_ROOT;
                ImageIndex := IMAGE_INDEX_IL1_ROOT;
              end;
@@ -294,10 +291,7 @@ begin
 
         '.zip': begin
          with TVProjects.Items.AddChild(n, t.Strings[i]) do begin
-          {$PUSH}
-          {$WARN 4056 off : Conversion between ordinals and pointers is not portable}
            Data := Pointer(FProjectFileFound.Add(t.Strings[i]));
-          {$POP}
            SelectedIndex := IMAGE_INDEX_IL1_FILE_ZIP;
            ImageIndex := IMAGE_INDEX_IL1_FILE_ZIP;
          end;
@@ -319,10 +313,7 @@ end;
 function TFormProjectManager.GetSelectedProjectFile: string;
 var i: int64;
 begin
-{$PUSH}
-{$WARN 4055 off : Conversion between ordinals and pointers is not portable}
   i := int64(TVProjects.Selected.Data);
-{$POP}
   Result := SelectedProjectFolder+FProjectFileFound.Strings[i];
 end;
 
