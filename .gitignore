@@ -10,3 +10,4 @@ ReleaseTools/giveyourvoice_linux32_gtk2_no_install.tar.gz
 Binary/GiveYourVoice.dbg
 Binary/x86_64-linux/libopenal.so.bak
 .DS_Store
+*.lps
