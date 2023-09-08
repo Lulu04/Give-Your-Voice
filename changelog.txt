@@ -1,3 +1,13 @@
+giveyourvoice (1.0.6) unstable; urgency=low
+  * added MacOS support(beta): zip/unzip actions are not available for MacOS due to a bug in Zipper
+  * added support for high resolution icons regardless of monitor PPI
+  * fixed some minor bugs
+  * fixed multiple gui bugs
+  * improved the code for multiple languages support
+  * now the background and font color for the hints are the same on all platforms
+  
+-- Lulu04 <lulutech@gmx.fr>  Fri, 08 Sep 2023 14:00:00 +0100
+
 giveyourvoice (1.0.5) unstable; urgency=low
 
   * added vcruntime140.dll to the win64 release necessary for sndfile.dll
@@ -5,7 +15,7 @@ giveyourvoice (1.0.5) unstable; urgency=low
   * updated user guide
   * corrected french user guide: all screenshots were missing
 
--- Lulu04 <lulutech@gmx.fr>  Sun, 06 Aug 2023 20:00:00 +0100
+-- Lulu04 <lulutech@gmx.fr>  Thu, 10 Aug 2023 18:00:00 +0100
 
 giveyourvoice (1.0.4) unstable; urgency=low
 
