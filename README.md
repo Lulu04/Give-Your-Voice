@@ -9,7 +9,7 @@ Author: Lulu
 # Target platform
 Windows 64b (tested on Win10)  
 Linux 64b (tested on Ubuntu 22.04 LTS)  
-MacOS: to do  
+MacOS version 10.15 and more with intel processor (tested on 10.15 Catalina)
 
 # Features
 - One directory per section (chapter/text/poem...) -> your project is well organized.
@@ -61,4 +61,5 @@ The directory structure should be like:
 **\.\.\. Give-Your-Voice**  
 **\.\.\. UnitsCommon**  
 
-Now, you are able to open the Lazarus project in the directory "Give-Your-Voice".  
+Now, you are able to open the Lazarus project in the directory "Give-Your-Voice".
+**NOTE FOR MAC USER:** with Lazarus create an application bundle. After that, with the Finder, go in 'Give-Your-Voice/Binary/' and copy the 3 folders 'Data' 'languages' and 'x86_64-macos' and paste them in the Resources folder located in the bundle.
