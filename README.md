@@ -47,8 +47,6 @@ The mixer window where you produce the MP3 files
 ![The mixer window where you produce the MP3 files](https://github.com/Lulu04/Give-Your-Voice/blob/main/screenshot/03mixer.png)  
   
 # How to compile
-> At this time, the software works only for Windows 64b and Linux 64b.
-
 You must have Lazarus IDE installed on your system with BGRABitmap package.  
 - create a directory named GYV on your disk
 - in 'GYV' directory clone this repository. You can also download the zip.
@@ -62,4 +60,5 @@ The directory structure should be like:
 **\.\.\. UnitsCommon**  
 
 Now, you are able to open the Lazarus project in the directory "Give-Your-Voice".  
+  
 **NOTE FOR MAC USER:** with Lazarus create an application bundle. After that, with the Finder, go in 'Give-Your-Voice/Binary/' and copy the 3 folders 'Data' 'languages' and 'x86_64-macos' and paste them in the Resources folder located in the bundle.
