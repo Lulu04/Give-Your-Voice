@@ -9,7 +9,7 @@ Author: Lulu
 # Target platform
 Windows 64b (tested on Win10)  
 Linux 64b (tested on Ubuntu 22.04 LTS)  
-MacOS version 10.15 and more with intel processor (tested on 10.15 Catalina)
+MacOS version 10.15 and more with intel processor (tested on MacOS 10.15 Catalina)
 
 # Features
 - One directory per section (chapter/text/poem...) -> your project is well organized.
@@ -31,7 +31,7 @@ MacOS version 10.15 and more with intel processor (tested on 10.15 Catalina)
     - MP3 generated at 44100Hz, mono, constant bitrate mode, 128kbps
     - normalization at 89dB as MP3Gain, (can be modified)
     - editable metadata
-- Export several MP3 files into a single ZIP file.
+- Export several MP3 files into a single ZIP file (not available for MacOS).
 - Compress your completed projects to free disk space (not available for MacOS).
 - Supported language: French, English.
 - This software is made with love! :)
