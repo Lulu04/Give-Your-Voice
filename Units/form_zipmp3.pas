@@ -301,7 +301,7 @@ begin
     FormMain.FrameViewProjectFiles1.FocusOn(zipFileName);
   end;
 
-  // close the window if all files are selected
+  // close the window if all files was selected
   if AllFilesAreSelected then Close;
 end;
 
