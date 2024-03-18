@@ -12,7 +12,7 @@ object FormRememberToDonate: TFormRememberToDonate
   Font.Height = 20
   OnShow = FormShow
   Position = poOwnerFormCenter
-  LCLVersion = '2.2.4.0'
+  LCLVersion = '2.2.6.0'
   object Shape1: TShape
     Left = 0
     Height = 215
@@ -37,6 +37,7 @@ object FormRememberToDonate: TFormRememberToDonate
     BorderSpacing.Left = 40
     BorderSpacing.Bottom = 15
     Caption = 'Faire un don'
+    Enabled = False
     Font.Color = clBlack
     Font.Height = 20
     Images = DataModule1.ImageList1
