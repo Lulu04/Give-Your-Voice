@@ -1696,7 +1696,7 @@ function TAudioFileReadWrite.OpenReadWrite(const aFileName: string): boolean;
 var sfinfo: TSF_INFO;
 begin
   sfinfo.Format := 0;
-  Handle := ALSOpenAudioFile(aFileName, SFM_RDWR, @sfinfo);
+  Handle := ALSOpenAudioFile(aFileName, SFM_RDWR, sfinfo);
   Format := sfinfo.Format;
   Channels := sfinfo.Channels;
   Frames := sfinfo.Frames;
@@ -1804,7 +1804,7 @@ begin
   sfinfo.Format := cint(aFormat);
   sfinfo.Channels := cint(aChannels);
   sfinfo.SampleRate := cint(aSampleRate);
-  Handle := ALSOpenAudioFile(aFileName, SFM_WRITE, @sfinfo);
+  Handle := ALSOpenAudioFile(aFileName, SFM_WRITE, sfinfo);
   Result := Handle <> NIL;
 
   FileName := aFileName;
@@ -2012,7 +2012,7 @@ function TAudioFileReader.OpenRead(const aFileName: string; aPostLogMessage: boo
 var sfinfo: TSF_INFO;
 begin
   sfinfo.Format := 0;
-  Handle := ALSOpenAudioFile(aFileName, SFM_READ, @sfinfo);
+  Handle := ALSOpenAudioFile(aFileName, SFM_READ, sfinfo);
 
   Result := Handle <> NIL;
   if Result then begin
