@@ -47,7 +47,7 @@ implementation
 
 uses u_resource_string, utilitaire_fichier
   {$if defined(Linux) or defined(Darwin)},u_utils, u_common{$endif}
-  {$if defined(Darwin)}, TProcess{$endif};
+  {$if defined(Darwin)}, Process{$endif};
 
 {$R *.lfm}
 
